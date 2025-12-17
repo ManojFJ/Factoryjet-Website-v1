@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Contact form submissions - allow anyone to create, but no one can read/update/delete
+    match /contactus/{document} {
+      // Allow anyone to submit a contact form (create only)
+      allow create: if true;
+
+      // Only authenticated admins can read, update, or delete
+      // For now, disable all read/write except create
+      allow read, update, delete: if false;
+    }
+
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

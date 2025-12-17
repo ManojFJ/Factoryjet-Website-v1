@@ -1,0 +1,114 @@
+import React from 'react';
+import { ArrowUpRight, TrendingUp, Zap, Globe, ShoppingBag } from 'lucide-react';
+
+const Portfolio: React.FC = () => {
+  const cases = [
+    {
+      category: "Branding & Contracting",
+      client: "Impulse Branding Solutions",
+      founder: "Kiran Mahadik",
+      metric: "₹3 Cr Revenue (6 Months)",
+      desc: "Migrated to modern stack (WordPress + Breakdance) in just 2 weeks. 15+ pages fully optimized for GEO/AIO. Resulted in 125% organic traffic increase and Google Gemini citations.",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      color: "bg-blue-600",
+      icon: TrendingUp
+    },
+    {
+      category: "MEP & BIM Consulting",
+      client: "Formative Concepts",
+      founder: "Director: Vishal B.",
+      metric: "₹90 Lakh Revenue (4 Months)",
+      desc: "Brand new 20+ page site. Went from ZERO to 5000 global visitors. Optimized for AIO/GEO to get cited by ChatGPT. Generated 30+ high-value leads in first 4 months.",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      color: "bg-indigo-600",
+      icon: Globe
+    },
+    {
+      category: "DTC + B2B E-Commerce",
+      client: "Belle Maison",
+      founder: "Ricky B.",
+      metric: "₹1.5 Cr Sales (120 Days)",
+      desc: "Launched wholesale & retail store with 800+ products. AI-enhanced imagery and powerful product SEO. Integrated abandoned cart recovery and marketing automation.",
+      image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      color: "bg-orange-500",
+      icon: ShoppingBag
+    },
+    {
+      category: "AI-Native SaaS",
+      client: "Commerceflo.ai",
+      founder: "Rajapandian Alagarsamy",
+      metric: "Global Traffic & AI Citations",
+      desc: "30+ page high-performance website for an AI startup. Integrated HubSpot CRM for lead gen. Optimized for AEO/AIO to drive global traffic and convert visitors into leads.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      color: "bg-emerald-600",
+      icon: Zap
+    }
+  ];
+
+  return (
+    <section id="portfolio" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-3xl">
+                <h2 className="text-jet-blue font-bold tracking-wide uppercase text-sm mb-3">Our Work</h2>
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-jet-navy mb-4">
+                    Real results, real revenue.
+                </h3>
+                <p className="text-jet-slate text-lg">
+                    See how we've helped businesses like yours transform their digital presence and generate crores in new value.
+                </p>
+            </div>
+            <button className="flex items-center gap-2 font-bold text-jet-navy hover:text-jet-blue transition-colors group whitespace-nowrap">
+                View All Case Studies <ArrowUpRight size={20} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+            </button>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+            {cases.map((project, idx) => (
+                <div key={idx} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-gray-900 border border-gray-100 flex flex-col h-full">
+                    {/* Image Background */}
+                    <div className="aspect-[16/9] w-full overflow-hidden relative">
+                        <img
+                            src={project.image}
+                            alt={project.client}
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
+
+                        <div className="absolute top-4 left-4">
+                             <span className={`px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg ${project.color} flex items-center gap-1.5`}>
+                                <project.icon size={12} /> {project.category}
+                             </span>
+                        </div>
+                    </div>
+
+                    {/* Content Overlay */}
+                    <div className="relative p-6 md:p-8 flex-grow flex flex-col -mt-12">
+                        <div className="bg-white rounded-xl p-6 shadow-xl border border-gray-100 flex-grow">
+                             <div className="flex justify-between items-start mb-2">
+                                 <div>
+                                    <h4 className="text-xl font-bold text-jet-navy">{project.client}</h4>
+                                    <p className="text-xs text-gray-500 font-medium mb-3">{project.founder && `Founder: ${project.founder}`}</p>
+                                 </div>
+                             </div>
+
+                             <div className="mb-4 bg-green-50 border border-green-100 p-3 rounded-lg">
+                                 <span className="text-jetGreen font-bold text-lg flex items-center gap-2">
+                                    <TrendingUp size={20} /> {project.metric}
+                                 </span>
+                             </div>
+
+                             <p className="text-jet-slate text-sm leading-relaxed">
+                                 {project.desc}
+                             </p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Portfolio;
