@@ -1,4 +1,5 @@
-import Header from './components/Header';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Hero from './components/Hero';
 import About from './components/About';
 import WhyUs from './components/WhyUs';
@@ -9,12 +10,11 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
-import Footer from './components/Footer';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header variant="transparent" />
       <main>
         <Hero />
         <About />

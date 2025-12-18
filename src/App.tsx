@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { ContactModalProvider } from './context/ContactModalContext';
 import ContactFormModal from './components/ContactFormModal';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/Home'));
@@ -26,6 +27,7 @@ function App() {
   return (
     <ContactModalProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />

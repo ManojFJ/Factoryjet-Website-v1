@@ -46,26 +46,26 @@ const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4 md:gap-6">
             <div className="max-w-3xl">
-                <h2 className="text-jet-blue font-bold tracking-wide uppercase text-sm mb-3">Our Work</h2>
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-jet-navy mb-4">
+                <h2 className="text-jet-blue font-bold tracking-wide uppercase text-xs md:text-sm mb-2 md:mb-3">Our Work</h2>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-jet-navy mb-3 md:mb-4">
                     Real results, real revenue.
                 </h3>
-                <p className="text-jet-slate text-lg">
+                <p className="text-jet-slate text-sm md:text-lg">
                     See how we've helped businesses like yours transform their digital presence and generate crores in new value.
                 </p>
             </div>
-            <button className="flex items-center gap-2 font-bold text-jet-navy hover:text-jet-blue transition-colors group whitespace-nowrap">
-                View All Case Studies <ArrowUpRight size={20} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+            <button className="flex items-center gap-2 font-bold text-jet-navy hover:text-jet-blue transition-colors group whitespace-nowrap text-sm md:text-base">
+                View All Case Studies <ArrowUpRight size={16} className="md:w-5 md:h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
             </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {cases.map((project, idx) => (
-                <div key={idx} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-gray-900 border border-gray-100 flex flex-col h-full">
+                <div key={idx} className="group relative rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-gray-900 border border-gray-100 flex flex-col h-full">
                     {/* Image Background */}
                     <div className="aspect-[16/9] w-full overflow-hidden relative">
                         <img
@@ -75,30 +75,30 @@ const Portfolio: React.FC = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
 
-                        <div className="absolute top-4 left-4">
-                             <span className={`px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg ${project.color} flex items-center gap-1.5`}>
-                                <project.icon size={12} /> {project.category}
+                        <div className="absolute top-3 left-3 md:top-4 md:left-4">
+                             <span className={`px-2 md:px-3 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-bold text-white shadow-lg ${project.color} flex items-center gap-1 md:gap-1.5`}>
+                                <project.icon size={10} className="md:w-3 md:h-3" /> {project.category}
                              </span>
                         </div>
                     </div>
 
                     {/* Content Overlay */}
-                    <div className="relative p-6 md:p-8 flex-grow flex flex-col -mt-12">
-                        <div className="bg-white rounded-xl p-6 shadow-xl border border-gray-100 flex-grow">
+                    <div className="relative p-4 md:p-6 lg:p-8 flex-grow flex flex-col -mt-10 md:-mt-12">
+                        <div className="bg-white rounded-lg md:rounded-xl p-4 md:p-6 shadow-xl border border-gray-100 flex-grow">
                              <div className="flex justify-between items-start mb-2">
                                  <div>
-                                    <h4 className="text-xl font-bold text-jet-navy">{project.client}</h4>
-                                    <p className="text-xs text-gray-500 font-medium mb-3">{project.founder && `Founder: ${project.founder}`}</p>
+                                    <h4 className="text-base md:text-xl font-bold text-jet-navy">{project.client}</h4>
+                                    <p className="text-[10px] md:text-xs text-gray-500 font-medium mb-2 md:mb-3">{project.founder && `Founder: ${project.founder}`}</p>
                                  </div>
                              </div>
 
-                             <div className="mb-4 bg-green-50 border border-green-100 p-3 rounded-lg">
-                                 <span className="text-jetGreen font-bold text-lg flex items-center gap-2">
-                                    <TrendingUp size={20} /> {project.metric}
+                             <div className="mb-3 md:mb-4 bg-green-50 border border-green-100 p-2 md:p-3 rounded-lg">
+                                 <span className="text-jetGreen font-bold text-sm md:text-lg flex items-center gap-1.5 md:gap-2">
+                                    <TrendingUp size={16} className="md:w-5 md:h-5" /> {project.metric}
                                  </span>
                              </div>
 
-                             <p className="text-jet-slate text-sm leading-relaxed">
+                             <p className="text-jet-slate text-xs md:text-sm leading-relaxed">
                                  {project.desc}
                              </p>
                         </div>

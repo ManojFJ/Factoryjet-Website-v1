@@ -254,32 +254,32 @@ const Pricing: React.FC = () => {
   const currentTiers = activeTab === 'website' ? webTiers : activeTab === 'ecommerce' ? ecomTiers : amcTiers;
 
   return (
-    <section id="pricing" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="pricing" className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
       {/* Subtle Mesh Background */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 via-white to-white pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-jet-blue font-bold tracking-wide uppercase text-sm mb-3">Transparent, Value-Driven Pricing</h2>
-          <h3 className="text-3xl md:text-5xl font-display font-bold text-jet-navy mb-6">
-            Enterprise stacks at <br/> SMB-friendly prices.
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <h2 className="text-jet-blue font-bold tracking-wide uppercase text-xs md:text-sm mb-2 md:mb-3">Transparent, Value-Driven Pricing</h2>
+          <h3 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy mb-4 md:mb-6">
+            Enterprise stacks at <br className="hidden md:block"/> SMB-friendly prices.
           </h3>
-          <p className="text-slate-600 text-lg">
+          <p className="text-slate-600 text-sm md:text-lg">
             Choose the perfect stack for your stage of growth. No hidden fees.
           </p>
         </div>
 
         {/* Intelligent Tab Switcher */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex bg-white p-1.5 rounded-full border border-slate-200 shadow-sm relative">
+        <div className="flex justify-center mb-10 md:mb-16 overflow-x-auto pb-2">
+          <div className="inline-flex bg-white p-1 md:p-1.5 rounded-full border border-slate-200 shadow-sm relative">
             {(['website', 'ecommerce', 'amc'] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`
-                  relative px-6 py-2.5 rounded-full text-sm font-bold transition-colors z-10
+                  relative px-3 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-colors z-10 whitespace-nowrap
                   ${activeTab === tab ? 'text-white' : 'text-slate-500 hover:text-jet-navy'}
                 `}
               >
@@ -290,7 +290,8 @@ const Pricing: React.FC = () => {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-                {tab === 'website' ? 'Website Design' : tab === 'ecommerce' ? 'E-Commerce' : 'AMC (Maintenance)'}
+                {tab === 'website' ? 'Website' : tab === 'ecommerce' ? 'E-Commerce' : 'AMC'}
+                <span className="hidden md:inline">{tab === 'website' ? ' Design' : tab === 'amc' ? ' (Maintenance)' : ''}</span>
               </button>
             ))}
           </div>
@@ -304,7 +305,7 @@ const Pricing: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid lg:grid-cols-3 gap-8 items-start"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start"
           >
             {currentTiers.map((tier, idx) => (
               <div
@@ -312,49 +313,49 @@ const Pricing: React.FC = () => {
                 className={`
                   relative bg-white rounded-2xl flex flex-col h-full
                   ${tier.isPopular
-                    ? 'border-2 border-jet-blue shadow-2xl shadow-blue-900/10 z-10 scale-105 lg:-mt-4 lg:mb-4'
+                    ? 'border-2 border-jet-blue shadow-2xl shadow-blue-900/10 z-10 lg:scale-105 lg:-mt-4 lg:mb-4'
                     : 'border border-slate-200 shadow-xl shadow-slate-200/50'
                   }
                 `}
               >
                 {/* Popular Badge */}
                 {tier.isPopular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-jetOrange text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md shadow-orange-500/20 whitespace-nowrap">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-jetOrange text-white px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md shadow-orange-500/20 whitespace-nowrap">
                     {tier.highlight}
                   </div>
                 )}
 
                 {/* Card Header */}
-                <div className="p-8 border-b border-slate-100 bg-slate-50/50 rounded-t-2xl">
-                  <h4 className="text-jet-navy font-bold tracking-wide uppercase text-sm mb-4">{tier.name}</h4>
-                  <div className="flex items-baseline gap-1 mb-4">
-                    <span className="text-4xl lg:text-5xl font-display font-bold text-jet-navy">{tier.price}</span>
-                    <span className="text-slate-400 text-sm font-medium">
+                <div className="p-5 md:p-8 border-b border-slate-100 bg-slate-50/50 rounded-t-2xl">
+                  <h4 className="text-jet-navy font-bold tracking-wide uppercase text-xs md:text-sm mb-3 md:mb-4">{tier.name}</h4>
+                  <div className="flex items-baseline gap-1 mb-3 md:mb-4">
+                    <span className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy">{tier.price}</span>
+                    <span className="text-slate-400 text-xs md:text-sm font-medium">
                        {tier.price.includes('/Year') ? '' : '+ GST'}
                     </span>
                   </div>
-                  <p className="text-slate-500 text-sm leading-relaxed">{tier.description}</p>
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed">{tier.description}</p>
                 </div>
 
                 {/* Feature Stacking (Dense List) */}
-                <div className="p-8 flex-grow">
-                  <div className="space-y-8">
+                <div className="p-5 md:p-8 flex-grow">
+                  <div className="space-y-5 md:space-y-8">
                     {tier.features.map((group, gIdx) => (
                       <div key={gIdx}>
-                        <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-100 pb-1">
+                        <h5 className="text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 md:mb-3 border-b border-slate-100 pb-1">
                           {group.category}
                         </h5>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-2 md:space-y-2.5">
                           {group.items.map((item, iIdx) => (
-                            <li key={iIdx} className="flex items-start gap-3">
-                              <div className="mt-1 w-4 h-4 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                                <Check size={10} className="text-jetGreen stroke-[3]" />
+                            <li key={iIdx} className="flex items-start gap-2 md:gap-3">
+                              <div className="mt-0.5 md:mt-1 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                                <Check className="w-2 h-2 md:w-2.5 md:h-2.5 text-jetGreen stroke-[3]" />
                               </div>
-                              <span className="text-sm text-slate-600 font-medium leading-tight">
+                              <span className="text-xs md:text-sm text-slate-600 font-medium leading-tight">
                                 {/* Use basic formatting for tech terms if possible, otherwise simple text */}
                                 {item.split(' ').map((word, wIdx) =>
                                   ['Redis', 'Lighthouse', 'Schema.org', 'Cloudflare', 'Next.js', 'React', 'XML', 'SSL', 'DDoS'].some(tech => word.includes(tech))
-                                  ? <span key={wIdx} className="font-mono text-xs text-slate-800 bg-slate-100 px-1 rounded mx-0.5">{word}</span>
+                                  ? <span key={wIdx} className="font-mono text-[10px] md:text-xs text-slate-800 bg-slate-100 px-1 rounded mx-0.5">{word}</span>
                                   : word + ' '
                                 )}
                               </span>
@@ -367,11 +368,11 @@ const Pricing: React.FC = () => {
                 </div>
 
                 {/* Card Footer / CTA */}
-                <div className="p-8 pt-0 mt-auto">
+                <div className="p-5 md:p-8 pt-0 mt-auto">
                   <button
                     onClick={openModal}
                     className={`
-                      w-full py-4 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 group
+                      w-full py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm transition-all duration-300 flex items-center justify-center gap-2 group
                       ${tier.isPopular
                         ? 'bg-jetOrange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/30 hover:shadow-xl hover:-translate-y-1'
                         : 'bg-white border-2 border-slate-200 text-jet-navy hover:border-jet-blue hover:text-jet-blue'
@@ -379,7 +380,7 @@ const Pricing: React.FC = () => {
                     `}
                   >
                     {tier.buttonText}
-                    {tier.isPopular && <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />}
+                    {tier.isPopular && <ArrowRight size={14} className="md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />}
                   </button>
                 </div>
 
@@ -389,11 +390,11 @@ const Pricing: React.FC = () => {
         </AnimatePresence>
 
         {/* Bottom CTA Box */}
-        <div className="mt-20 max-w-2xl mx-auto text-center bg-white border border-slate-200 p-8 rounded-2xl shadow-sm">
-           <h4 className="font-display font-bold text-xl text-jet-navy mb-2">Not sure which plan is right for you?</h4>
-           <p className="text-slate-500 mb-6">Our solution architects will analyze your business and recommend the perfect stack.</p>
-           <button onClick={openModal} className="text-jet-blue font-bold hover:underline flex items-center justify-center gap-2 mx-auto">
-             Book a Free Architecture Call <ArrowRight size={16} />
+        <div className="mt-12 md:mt-20 max-w-2xl mx-auto text-center bg-white border border-slate-200 p-5 md:p-8 rounded-2xl shadow-sm">
+           <h4 className="font-display font-bold text-lg md:text-xl text-jet-navy mb-2">Not sure which plan is right for you?</h4>
+           <p className="text-slate-500 mb-4 md:mb-6 text-sm md:text-base">Our solution architects will analyze your business and recommend the perfect stack.</p>
+           <button onClick={openModal} className="text-jet-blue font-bold hover:underline flex items-center justify-center gap-2 mx-auto text-sm md:text-base">
+             Book a Free Architecture Call <ArrowRight size={14} className="md:w-4 md:h-4" />
            </button>
         </div>
 

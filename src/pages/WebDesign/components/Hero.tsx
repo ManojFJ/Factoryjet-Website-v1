@@ -13,16 +13,16 @@ export const Hero = () => {
   // const opacity = useTransform(scrollY, [0, 300], [1, 0]); 
 
   return (
-    <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-slate-50 pt-20">
+    <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-slate-50 pt-24 md:pt-20">
       {/* 1. Cinematic Background */}
       <div className="absolute inset-0 pointer-events-none select-none">
         {/* Main Aura */}
         <div className="absolute top-[-20%] left-[20%] w-[60%] h-[60%] rounded-full bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-orange-400/20 blur-[120px] animate-pulse-slow" />
-        
+
         {/* Secondary Orbs */}
-        <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-jet-blue/5 rounded-full blur-[80px]" />
-        <div className="absolute bottom-[10%] left-[10%] w-[300px] h-[300px] bg-jet-orange/5 rounded-full blur-[80px]" />
-        
+        <div className="absolute top-[10%] right-[10%] w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-jet-blue/5 rounded-full blur-[80px]" />
+        <div className="absolute bottom-[10%] left-[10%] w-[150px] h-[150px] md:w-[300px] md:h-[300px] bg-jet-orange/5 rounded-full blur-[80px]" />
+
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       </div>
@@ -34,14 +34,14 @@ export const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8"
+          className="mb-6 md:mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all cursor-default group">
+          <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all cursor-default group">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span className="text-xs font-semibold text-slate-600 tracking-wide uppercase group-hover:text-jet-blue transition-colors">
+            <span className="text-[10px] md:text-xs font-semibold text-slate-600 tracking-wide uppercase group-hover:text-jet-blue transition-colors">
               Accepting New Projects
             </span>
           </div>
@@ -52,16 +52,16 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-6xl mx-auto"
+          className="text-center max-w-6xl mx-auto px-4"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-8 drop-shadow-sm">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6 md:mb-8 drop-shadow-sm">
             Build a Website That <br className="hidden md:block" />
             <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-jet-blue via-indigo-600 to-purple-600">
                 Actually Converts
               </span>
               {/* Underline decoration */}
-              <svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-3 md:h-6 text-jet-orange opacity-100" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <svg className="absolute -bottom-1 md:-bottom-2 lg:-bottom-4 left-0 w-full h-2 md:h-3 lg:h-6 text-jet-orange opacity-100" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" className="animate-[dash_1.5s_ease-in-out_forwards]" strokeDasharray="100" strokeDashoffset="100" />
                 <style>{`
                   @keyframes dash {
@@ -78,7 +78,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-2xl text-slate-600 text-center max-w-3xl mx-auto mb-10 leading-relaxed font-light"
+          className="text-base md:text-lg lg:text-2xl text-slate-600 text-center max-w-3xl mx-auto mb-8 md:mb-10 px-4 leading-relaxed font-light"
         >
           {HERO_CONTENT.subHeadline.split('.')[0]}. <span className="hidden md:inline">{HERO_CONTENT.subHeadline.split('.')[1]}.</span>
         </motion.p>
@@ -88,20 +88,20 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mb-24 relative z-20"
+          className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-16 md:mb-24 relative z-20 px-4"
         >
           {HERO_CONTENT.ctas.slice(0, 2).map((cta, idx) => (
             <button
               key={idx}
-              className={`px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 active:scale-95 ${
+              className={`w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:-translate-y-1 active:scale-95 ${
                 cta.primary
                   ? 'bg-slate-900 text-white shadow-xl shadow-slate-900/20 hover:bg-slate-800 hover:shadow-2xl'
                   : 'bg-white text-slate-700 border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300'
               }`}
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 {cta.text}
-                {cta.primary && <ArrowRight className="w-5 h-5" />}
+                {cta.primary && <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />}
               </span>
             </button>
           ))}

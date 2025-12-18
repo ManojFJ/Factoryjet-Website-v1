@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-12 lg:pt-36 lg:pb-24 bg-[#0052CC] min-h-[90vh] flex items-center">
+    <section className="relative overflow-hidden pt-24 pb-8 md:pt-28 md:pb-12 lg:pt-36 lg:pb-24 bg-[#0052CC] min-h-[85vh] md:min-h-[90vh] flex items-center">
 
       {/* 1. Stunning Jet Blue Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0052CC] via-[#053885] to-[#02122b]"></div>
@@ -35,44 +35,44 @@ const Hero: React.FC = () => {
             className="flex flex-col justify-center"
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-xs backdrop-blur-md shadow-lg shadow-blue-500/20 mb-6 hover:bg-white/20 transition-colors cursor-default w-fit">
-              <span className="relative flex h-2 w-2">
+            <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[10px] md:text-xs backdrop-blur-md shadow-lg shadow-blue-500/20 mb-4 md:mb-6 hover:bg-white/20 transition-colors cursor-default w-fit">
+              <span className="relative flex h-1.5 w-1.5 md:h-2 md:w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2 md:w-2 bg-cyan-400"></span>
               </span>
               <span className="text-cyan-50 tracking-wide uppercase font-bold">New: AI-Enhanced Development</span>
             </div>
 
             {/* Headline - Fits in 3 Lines */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.1] mb-5 drop-shadow-lg tracking-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.15] md:leading-[1.1] mb-4 md:mb-5 drop-shadow-lg tracking-tight">
               Build World-Class <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-100">Websites</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">Stores</span> <br className="hidden lg:block" />
               That Drive Revenue.
             </h1>
 
-            <p className="text-base md:text-lg text-blue-100/90 mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-sm md:text-lg text-blue-100/90 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
               FactoryJet is India's trusted partner for SMBs. We build high-converting digital storefronts that attract customers and drive real results.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <button className="relative overflow-hidden bg-jetOrange hover:bg-orange-600 text-white px-8 py-3.5 rounded-xl font-bold text-base transition-all shadow-[0_0_40px_-10px_rgba(255,107,53,0.6)] hover:shadow-[0_0_60px_-10px_rgba(255,107,53,0.8)] hover:-translate-y-1 flex items-center justify-center gap-2 group">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-10">
+              <button className="relative overflow-hidden bg-jetOrange hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all shadow-[0_0_40px_-10px_rgba(255,107,53,0.6)] hover:shadow-[0_0_60px_-10px_rgba(255,107,53,0.8)] hover:-translate-y-1 flex items-center justify-center gap-2 group">
                 <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-in-out -skew-x-12 -ml-4 w-[120%]"></div>
-                <Rocket size={18} className="fill-white/20 relative z-10" />
+                <Rocket size={16} className="md:w-[18px] md:h-[18px] fill-white/20 relative z-10" />
                 <span className="relative z-10">Start Your Project</span>
               </button>
 
-              <button className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-3.5 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-white/5 hover:-translate-y-1">
-                View Portfolio <ArrowRight size={18} />
+              <button className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-white/5 hover:-translate-y-1">
+                View Portfolio <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
               </button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+            <div className="grid grid-cols-2 gap-x-3 md:gap-x-4 gap-y-2">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-2 text-blue-50 text-sm font-medium">
+                <div key={index} className="flex items-center gap-1.5 md:gap-2 text-blue-50 text-xs md:text-sm font-medium">
                   <div className="bg-cyan-500/20 rounded-full p-0.5 shrink-0">
-                    <CheckCircle className="text-cyan-300" size={14} />
+                    <CheckCircle className="text-cyan-300 w-3 h-3 md:w-[14px] md:h-[14px]" />
                   </div>
                   {benefit}
                 </div>
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="relative flex items-center justify-center lg:justify-end"
+            className="relative hidden md:flex items-center justify-center lg:justify-end"
           >
             {/* Glow behind the mockup */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-blue-500/30 blur-[60px] rounded-full -z-10 mix-blend-screen"></div>

@@ -205,67 +205,64 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-jet-blue font-bold tracking-wide uppercase text-sm mb-3">Knowledge Base</h2>
-          <h3 className="text-3xl md:text-5xl font-display font-bold text-jet-navy mb-6">
-            Common Questions & <br/><span className="text-jet-blue">Straight Answers</span>
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <h2 className="text-jet-blue font-bold tracking-wide uppercase text-xs md:text-sm mb-2 md:mb-3">Knowledge Base</h2>
+          <h3 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy mb-4 md:mb-6">
+            Common Questions & <br className="hidden md:block"/><span className="text-jet-blue">Straight Answers</span>
           </h3>
-          <p className="text-slate-500 text-lg">
+          <p className="text-slate-500 text-sm md:text-lg">
             Everything you need to know about our process, technology, and deliverables.
             We believe in complete transparency.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-12">
 
           {/* Left Column: Category Navigation */}
           <div className="lg:col-span-4">
-            <div className="sticky top-32 space-y-2">
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-4">Browse Topics</p>
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => {
-                    setActiveCategory(cat.id);
-                    setOpenIndex(0); // Reset open question when switching
-                  }}
-                  className={`
-                    w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left group border
-                    ${activeCategory === cat.id
-                      ? 'bg-jet-blue text-white border-jet-blue shadow-lg shadow-blue-500/20'
-                      : 'bg-white text-jet-slate border-transparent hover:bg-slate-50 hover:border-slate-200'
-                    }
-                  `}
-                >
-                  <div className={`
-                    p-2 rounded-lg transition-colors shrink-0
-                    ${activeCategory === cat.id ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-white group-hover:text-jet-blue'}
-                  `}>
-                    <cat.icon size={20} />
-                  </div>
-                  <div>
-                    <span className="block font-bold text-sm md:text-base">{cat.label}</span>
-                    <span className={`text-xs mt-0.5 block ${activeCategory === cat.id ? 'text-blue-100' : 'text-slate-400'}`}>
-                      {cat.desc}
-                    </span>
-                  </div>
-                </button>
-              ))}
-
-              {/* Mobile Hint */}
-              <div className="lg:hidden text-center text-xs text-slate-400 mt-4">
-                Select a topic above to view questions
+            <div className="lg:sticky lg:top-32 space-y-1 md:space-y-2">
+              <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 md:mb-4 px-2 md:px-4">Browse Topics</p>
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      setActiveCategory(cat.id);
+                      setOpenIndex(0); // Reset open question when switching
+                    }}
+                    className={`
+                      w-full flex items-center gap-2 md:gap-4 p-2.5 md:p-4 rounded-xl transition-all duration-300 text-left group border
+                      ${activeCategory === cat.id
+                        ? 'bg-jet-blue text-white border-jet-blue shadow-lg shadow-blue-500/20'
+                        : 'bg-white text-jet-slate border-transparent hover:bg-slate-50 hover:border-slate-200'
+                      }
+                    `}
+                  >
+                    <div className={`
+                      p-1.5 md:p-2 rounded-lg transition-colors shrink-0
+                      ${activeCategory === cat.id ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-white group-hover:text-jet-blue'}
+                    `}>
+                      <cat.icon className="w-4 h-4 md:w-5 md:h-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block font-bold text-xs md:text-base truncate">{cat.label}</span>
+                      <span className={`text-[10px] md:text-xs mt-0.5 hidden md:block ${activeCategory === cat.id ? 'text-blue-100' : 'text-slate-400'}`}>
+                        {cat.desc}
+                      </span>
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Right Column: Accordion Questions */}
           <div className="lg:col-span-8">
-            <div className="bg-slate-50/50 rounded-3xl p-1">
+            <div className="bg-slate-50/50 rounded-2xl md:rounded-3xl p-1">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCategory}
@@ -273,13 +270,13 @@ const FAQ: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="space-y-4"
+                  className="space-y-3 md:space-y-4"
                 >
                   {faqData[activeCategory]?.map((item, index) => (
                     <div
                       key={index}
                       className={`
-                        bg-white rounded-2xl border transition-all duration-300 overflow-hidden
+                        bg-white rounded-xl md:rounded-2xl border transition-all duration-300 overflow-hidden
                         ${openIndex === index
                           ? 'border-jet-blue/30 shadow-lg shadow-blue-900/5'
                           : 'border-slate-200 hover:border-slate-300'
@@ -288,16 +285,16 @@ const FAQ: React.FC = () => {
                     >
                       <button
                         onClick={() => toggleQuestion(index)}
-                        className="w-full flex items-start justify-between p-6 text-left cursor-pointer"
+                        className="w-full flex items-start justify-between p-4 md:p-6 text-left cursor-pointer"
                       >
-                        <span className={`font-display font-bold text-lg pr-8 leading-snug ${openIndex === index ? 'text-jet-blue' : 'text-jet-navy'}`}>
+                        <span className={`font-display font-bold text-sm md:text-lg pr-4 md:pr-8 leading-snug ${openIndex === index ? 'text-jet-blue' : 'text-jet-navy'}`}>
                           {item.q}
                         </span>
                         <div className={`
-                          shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors
+                          shrink-0 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-colors
                           ${openIndex === index ? 'bg-jet-blue text-white' : 'bg-slate-100 text-slate-500'}
                         `}>
-                          {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                          {openIndex === index ? <Minus className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" /> : <Plus className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" />}
                         </div>
                       </button>
 
@@ -307,9 +304,9 @@ const FAQ: React.FC = () => {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 pt-0">
-                          <div className="h-px w-full bg-slate-100 mb-4" />
-                          <p className="text-jet-slate leading-relaxed">
+                        <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
+                          <div className="h-px w-full bg-slate-100 mb-3 md:mb-4" />
+                          <p className="text-jet-slate leading-relaxed text-sm md:text-base">
                             {/* Render simple markdown-like bolding */}
                             {item.a.split('**').map((part, i) =>
                               i % 2 === 1 ? <strong key={i} className="text-jet-navy font-bold">{part}</strong> : part
@@ -324,9 +321,9 @@ const FAQ: React.FC = () => {
             </div>
 
             {/* Contextual CTA */}
-            <div className="mt-8 text-center p-6 bg-blue-50 rounded-2xl border border-blue-100">
-               <p className="text-jet-navy font-medium mb-2">Can't find the answer you're looking for?</p>
-               <a href="#cta" className="text-jet-blue font-bold hover:underline">Chat with our team directly →</a>
+            <div className="mt-6 md:mt-8 text-center p-4 md:p-6 bg-blue-50 rounded-xl md:rounded-2xl border border-blue-100">
+               <p className="text-jet-navy font-medium mb-2 text-sm md:text-base">Can't find the answer you're looking for?</p>
+               <a href="#cta" className="text-jet-blue font-bold hover:underline text-sm md:text-base">Chat with our team directly →</a>
             </div>
           </div>
 

@@ -2,8 +2,8 @@
 import React, { useState, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { FilterTabs } from './components/FilterTabs';
 import { CaseCard } from './components/CaseCard';
 import { CaseStudyPage } from './components/CaseStudyPage';
@@ -39,23 +39,23 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex flex-col font-sans">
-      <Header />
+      <Header variant="solid" />
       
-      <main className="flex-grow pt-32 pb-24">
+      <main className="flex-grow pt-20 md:pt-32 pb-12 md:pb-24">
         {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 md:mb-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-6xl font-bold text-slate-900 mb-4 md:mb-6 tracking-tight">
               Work that drives <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 exponential growth
               </span>
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+            <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-6 md:mb-8 px-2 md:px-0">
               Explore how we help global leaders in E-commerce, SaaS, and Enterprise modernize their digital infrastructure.
             </p>
           </motion.div>
@@ -68,9 +68,9 @@ const App: React.FC = () => {
 
         {/* Masonry Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <motion.div 
-             layout 
-             className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
+           <motion.div
+             layout
+             className="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-8 space-y-4 md:space-y-8"
            >
              <AnimatePresence mode='popLayout'>
                {filteredCases.map((caseStudy) => (
@@ -102,29 +102,29 @@ const App: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32">
-          <div className="bg-slate-900 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-32">
+          <div className="bg-slate-900 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-16 text-center relative overflow-hidden">
             {/* Background Accents */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
             
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-display">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 font-display">
                 Ready to be our next success story?
               </h2>
-              <p className="text-slate-400 max-w-xl mx-auto mb-10 text-lg">
+              <p className="text-slate-400 max-w-xl mx-auto mb-6 md:mb-10 text-base md:text-lg px-2 md:px-0">
                 Let's discuss how FactoryJet can accelerate your digital transformation journey today.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
                 <button
                   onClick={openModal}
-                  className="w-full sm:w-auto bg-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto bg-secondary hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2 text-sm md:text-base"
                 >
-                  Start a Project <ArrowRight size={20} />
+                  Start a Project <ArrowRight size={18} className="md:w-5 md:h-5" />
                 </button>
                 <Link
                   to="/pricing"
-                  className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all backdrop-blur-sm border border-white/10 text-center"
+                  className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold transition-all backdrop-blur-sm border border-white/10 text-center text-sm md:text-base"
                 >
                   View Pricing
                 </Link>

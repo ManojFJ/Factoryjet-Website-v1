@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { Features } from './components/Features';
@@ -19,8 +21,8 @@ function App() {
 
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900 selection:bg-jet-orange/20 selection:text-jet-orange">
-      {/* Sticky Mobile Bar / Header could go here, omitting for pure landing page focus based on prompt */}
-      
+      <Header variant="solid" />
+
       <Hero />
       <Services />
       <Features />
@@ -29,7 +31,8 @@ function App() {
       <Showcase />
       <Analysis />
       <Info />
-      
+
+      <Footer />
     </main>
   );
 }

@@ -347,22 +347,22 @@ const PricingCard: React.FC<{ tier: PricingTier; onSelectPlan: () => void }> = (
         </div>
       )}
 
-      <div className="p-6 md:p-8 border-b border-slate-100">
-        <h3 className="text-jet-blue font-heading font-bold text-lg md:text-xl uppercase tracking-wider mb-2">
+      <div className="p-4 md:p-6 lg:p-8 border-b border-slate-100">
+        <h3 className="text-jet-blue font-heading font-bold text-base md:text-lg lg:text-xl uppercase tracking-wider mb-2">
           {tier.name}
         </h3>
-        <p className="text-slate-500 text-sm font-medium mb-4">{tier.tagline}</p>
-        
-        <div className="flex items-baseline mb-6">
-          <span className="text-4xl md:text-5xl font-bold text-jet-navy tracking-tight">{tier.price}</span>
-          <span className="text-slate-400 font-medium ml-2 text-sm">
+        <p className="text-slate-500 text-xs md:text-sm font-medium mb-3 md:mb-4">{tier.tagline}</p>
+
+        <div className="flex items-baseline mb-4 md:mb-6">
+          <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-jet-navy tracking-tight">{tier.price}</span>
+          <span className="text-slate-400 font-medium ml-2 text-xs md:text-sm">
              {tier.period ? tier.period : '+ GST'}
           </span>
         </div>
 
         <button
           onClick={onSelectPlan}
-          className={`w-full py-3 px-6 rounded-lg font-bold text-sm transition-all duration-200 transform active:scale-95 ${
+          className={`w-full py-2.5 md:py-3 px-4 md:px-6 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 transform active:scale-95 ${
             tier.isHero
               ? 'bg-jet-orange text-white hover:bg-orange-600 shadow-md hover:shadow-lg'
               : 'bg-white border-2 border-jet-blue text-jet-blue hover:bg-jet-blue hover:text-white'
@@ -376,20 +376,20 @@ const PricingCard: React.FC<{ tier: PricingTier; onSelectPlan: () => void }> = (
         {tier.features.map((section, idx) => (
           <div key={idx} className="border-b border-slate-100 last:border-0">
             {section.category && (
-              <div className="bg-slate-50/80 px-6 py-2">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+              <div className="bg-slate-50/80 px-4 md:px-6 py-1.5 md:py-2">
+                <h4 className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">
                   {section.category}
                 </h4>
               </div>
             )}
-            <ul className="py-2">
+            <ul className="py-1 md:py-2">
               {section.features.map((feature, fIdx) => (
-                <li 
-                  key={fIdx} 
-                  className="px-6 py-2.5 flex items-start text-sm text-jet-slate group hover:bg-slate-50 transition-colors"
+                <li
+                  key={fIdx}
+                  className="px-4 md:px-6 py-2 md:py-2.5 flex items-start text-sm text-jet-slate group hover:bg-slate-50 transition-colors"
                 >
-                  <Check className="w-4 h-4 text-jet-green min-w-[16px] mt-0.5 mr-3" strokeWidth={3} />
-                  <span className="font-medium leading-relaxed font-mono text-xs md:text-sm text-slate-600">
+                  <Check className="w-3 h-3 md:w-4 md:h-4 text-jet-green min-w-[12px] md:min-w-[16px] mt-0.5 mr-2 md:mr-3" strokeWidth={3} />
+                  <span className="font-medium leading-relaxed font-mono text-[11px] md:text-xs lg:text-sm text-slate-600">
                     {feature}
                   </span>
                 </li>
@@ -430,28 +430,28 @@ const FactoryJetPricing = () => {
   const activeFaqs = FAQ_DATA.find(cat => cat.id === faqCategory)?.items || [];
 
   return (
-    <div className="min-h-screen pb-20 font-sans">
+    <div className="min-h-screen pb-12 md:pb-20 font-sans">
       {/* --- HERO SECTION --- */}
-      <header className="relative pt-24 pb-16 px-4 text-center bg-gradient-to-b from-white via-blue-50/30 to-slate-50">
+      <header className="relative pt-20 md:pt-24 pb-12 md:pb-16 px-4 text-center bg-gradient-to-b from-white via-blue-50/30 to-slate-50">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold text-jet-navy mb-6 tracking-tight">
+          <h1 className="text-3xl md:text-6xl font-heading font-bold text-jet-navy mb-4 md:mb-6 tracking-tight">
             Transparent, <span className="text-jet-blue">Value-Driven</span> Pricing
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Enterprise-grade technology stacks at SMB-friendly prices. 
+          <p className="text-base md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Enterprise-grade technology stacks at SMB-friendly prices.
             No hidden fees, just pure engineering excellence.
           </p>
         </div>
       </header>
 
       {/* --- TAB SWITCHER --- */}
-      <div className="sticky top-4 z-40 mx-auto max-w-fit px-2 mb-12">
-        <div className="bg-white/90 backdrop-blur-md p-1.5 rounded-full border border-slate-200 shadow-lg flex items-center space-x-1">
+      <div className="sticky top-20 md:top-4 z-40 mx-auto max-w-full md:max-w-fit px-2 mb-8 md:mb-12">
+        <div className="bg-white/90 backdrop-blur-md p-1 md:p-1.5 rounded-full border border-slate-200 shadow-lg flex items-center space-x-1 overflow-x-auto no-scrollbar">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative px-6 py-2.5 rounded-full text-sm font-bold transition-colors duration-200 ${
+              className={`relative px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-colors duration-200 whitespace-nowrap ${
                 activeTab === tab.id ? 'text-white' : 'text-slate-500 hover:text-jet-navy'
               }`}
             >
@@ -477,7 +477,7 @@ const FactoryJetPricing = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -10 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8 items-start"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-8 items-start"
           >
             {getData().map((tier, idx) => (
               <div key={idx} className={tier.isHero ? 'md:-mt-4 md:mb-4' : ''}>
@@ -489,17 +489,17 @@ const FactoryJetPricing = () => {
       </section>
 
       {/* --- ADVANCED FAQ SECTION --- */}
-      <section className="max-w-6xl mx-auto mt-32 px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-jet-navy mb-4">
+      <section className="max-w-6xl mx-auto mt-16 md:mt-32 px-4 md:px-8">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-jet-navy mb-3 md:mb-4">
             Common Questions & <span className="text-jet-blue">Straight Answers</span>
           </h2>
-          <p className="text-slate-500 text-lg">
+          <p className="text-slate-500 text-sm md:text-base lg:text-lg">
             Everything you need to know about our process, technology, and deliverables.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-10">
+        <div className="grid lg:grid-cols-12 gap-6 md:gap-10">
           {/* FAQ CATEGORY TABS (Left on Desktop) */}
           <div className="lg:col-span-4">
              <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-2 lg:sticky lg:top-24">
@@ -514,19 +514,19 @@ const FactoryJetPricing = () => {
                           setFaqCategory(cat.id);
                           setOpenFaqIndex(0); // Reset accordion on switch
                         }}
-                        className={`flex items-center w-full p-4 rounded-xl text-left transition-all duration-300 relative group flex-shrink-0 lg:flex-shrink ${
-                          isActive 
-                            ? 'bg-jet-blue text-white shadow-md' 
+                        className={`flex items-center w-full p-3 md:p-4 rounded-xl text-left transition-all duration-300 relative group flex-shrink-0 lg:flex-shrink ${
+                          isActive
+                            ? 'bg-jet-blue text-white shadow-md'
                             : 'text-slate-600 hover:bg-slate-50'
                         }`}
                       >
-                         <Icon className={`w-5 h-5 mr-3 ${isActive ? 'text-white' : 'text-jet-blue group-hover:scale-110 transition-transform'}`} />
+                         <Icon className={`w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 ${isActive ? 'text-white' : 'text-jet-blue group-hover:scale-110 transition-transform'}`} />
                          <div>
-                            <span className="block font-bold text-sm">{cat.category}</span>
-                            <span className={`text-xs ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>5 Questions</span>
+                            <span className="block font-bold text-xs md:text-sm">{cat.category}</span>
+                            <span className={`text-[10px] md:text-xs ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>5 Questions</span>
                          </div>
                          {isActive && (
-                           <motion.div 
+                           <motion.div
                              layoutId="activeFaqTab"
                              className="absolute inset-0 border-2 border-transparent rounded-xl pointer-events-none"
                              initial={false}
@@ -553,27 +553,27 @@ const FactoryJetPricing = () => {
                 {activeFaqs.map((faq, idx) => {
                   const isOpen = openFaqIndex === idx;
                   return (
-                    <div 
-                      key={idx} 
-                      className={`group border rounded-2xl transition-all duration-300 overflow-hidden bg-white ${
-                        isOpen 
-                          ? 'border-jet-blue shadow-lg ring-1 ring-blue-100' 
+                    <div
+                      key={idx}
+                      className={`group border rounded-xl md:rounded-2xl transition-all duration-300 overflow-hidden bg-white ${
+                        isOpen
+                          ? 'border-jet-blue shadow-lg ring-1 ring-blue-100'
                           : 'border-slate-200 hover:border-blue-200 hover:shadow-md'
                       }`}
                     >
                       <button
                         onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                        className="w-full flex items-center justify-between p-5 md:p-6 text-left"
+                        className="w-full flex items-center justify-between p-4 md:p-5 lg:p-6 text-left"
                       >
-                        <span className={`font-heading font-semibold text-base md:text-lg pr-8 transition-colors ${
+                        <span className={`font-heading font-semibold text-sm md:text-base lg:text-lg pr-4 md:pr-8 transition-colors ${
                           isOpen ? 'text-jet-blue' : 'text-jet-navy group-hover:text-jet-blue'
                         }`}>
                           {faq.q}
                         </span>
-                        <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        <div className={`flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                           isOpen ? 'bg-jet-blue text-white rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50'
                         }`}>
-                          {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                          {isOpen ? <Minus className="w-3 h-3 md:w-4 md:h-4" /> : <Plus className="w-3 h-3 md:w-4 md:h-4" />}
                         </div>
                       </button>
 
@@ -585,13 +585,13 @@ const FactoryJetPricing = () => {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                           >
-                            <div className="px-6 pb-6 pt-0">
-                               <div className="h-px w-full bg-slate-100 mb-4" />
+                            <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
+                               <div className="h-px w-full bg-slate-100 mb-3 md:mb-4" />
                                <div className="flex items-start">
                                   <div className="mt-1 mr-4 hidden md:block">
                                     <div className="w-2 h-2 rounded-full bg-jet-orange" />
                                   </div>
-                                  <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                                  <p className="text-slate-600 leading-relaxed text-xs md:text-sm lg:text-base">
                                     {faq.a}
                                   </p>
                                </div>
@@ -609,39 +609,33 @@ const FactoryJetPricing = () => {
       </section>
 
       {/* --- FINAL CTA --- */}
-      <section className="max-w-4xl mx-auto mt-32 px-6">
-        <div className="bg-jet-navy rounded-2xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden group">
+      <section className="max-w-4xl mx-auto mt-16 md:mt-32 px-4 md:px-6">
+        <div className="bg-jet-navy rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-center shadow-2xl relative overflow-hidden group">
           {/* Abstract background shape */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-jet-blue opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2 blur-3xl transition-opacity group-hover:opacity-20 duration-700" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-jet-orange opacity-5 rounded-full transform -translate-x-1/3 translate-y-1/3 blur-2xl" />
-          
+
           <div className="relative z-10">
-            <h2 className="text-3xl font-heading font-bold text-white mb-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-white mb-3 md:mb-4">
               Not sure which stack fits your scale?
             </h2>
-            <p className="text-slate-300 mb-8 max-w-xl mx-auto">
+            <p className="text-slate-300 text-sm md:text-base mb-6 md:mb-8 max-w-xl mx-auto">
               Talk to a Senior Solutions Architect, not a salesperson. We'll audit your current digital footprint for free.
             </p>
             <button
               onClick={openModal}
-              className="bg-jet-orange text-white hover:bg-orange-600 font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 flex items-center mx-auto"
+              className="bg-jet-orange text-white hover:bg-orange-600 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 flex items-center mx-auto text-sm md:text-base"
             >
               Book a Free Consultation
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
             </button>
-            <p className="mt-4 text-xs text-white font-mono uppercase tracking-wider">
+            <p className="mt-3 md:mt-4 text-[10px] md:text-xs text-white font-mono uppercase tracking-wider">
               No obligation • 15-min Technical Discovery
             </p>
           </div>
         </div>
       </section>
 
-      {/* --- FOOTER --- */}
-      <footer className="mt-20 border-t border-slate-200 py-10 bg-white text-center">
-        <p className="text-slate-400 text-sm">
-          © {new Date().getFullYear()} FactoryJet Digital Systems. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 };
