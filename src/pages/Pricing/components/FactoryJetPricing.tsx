@@ -432,7 +432,7 @@ const FactoryJetPricing = () => {
   return (
     <div className="min-h-screen pb-12 md:pb-20 font-sans">
       {/* --- HERO SECTION --- */}
-      <header className="relative pt-20 md:pt-24 pb-12 md:pb-16 px-4 text-center bg-gradient-to-b from-white via-blue-50/30 to-slate-50">
+      <header className="relative pt-28 md:pt-24 pb-12 md:pb-16 px-4 text-center bg-gradient-to-b from-white via-blue-50/30 to-slate-50">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-6xl font-heading font-bold text-jet-navy mb-4 md:mb-6 tracking-tight">
             Transparent, <span className="text-jet-blue">Value-Driven</span> Pricing
@@ -489,7 +489,7 @@ const FactoryJetPricing = () => {
       </section>
 
       {/* --- ADVANCED FAQ SECTION --- */}
-      <section className="max-w-6xl mx-auto mt-16 md:mt-32 px-4 md:px-8">
+      <section className="max-w-6xl mx-auto mt-16 md:mt-32 px-4 md:px-8 overflow-x-hidden">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-jet-navy mb-3 md:mb-4">
             Common Questions & <span className="text-jet-blue">Straight Answers</span>
