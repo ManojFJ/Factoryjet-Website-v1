@@ -416,7 +416,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></div>
                            System Online
                         </div>
-                        <Globe2 className="text-blue-400/50" size={32} strokeWidth={1} className="w-8 h-8 md:w-12 md:h-12" />
+                        <Globe2 className="text-blue-400/50 w-8 h-8 md:w-12 md:h-12" size={32} strokeWidth={1} />
                      </div>
 
                      <div className="bg-black/60 backdrop-blur-xl border border-white/10 rounded-lg md:rounded-xl p-3 md:p-6 font-mono text-xs md:text-sm text-blue-100 shadow-2xl">

@@ -21,13 +21,7 @@ export default defineConfig(({ mode }) => {
       },
       build: {
         target: 'es2020',
-        minify: 'terser',
-        terserOptions: {
-          compress: {
-            drop_console: true,
-            drop_debugger: true,
-          },
-        },
+        minify: 'esbuild',
         rollupOptions: {
           output: {
             manualChunks: {
@@ -41,6 +35,9 @@ export default defineConfig(({ mode }) => {
         cssCodeSplit: true,
         sourcemap: false,
         chunkSizeWarningLimit: 500,
+      },
+      esbuild: {
+        drop: ['console', 'debugger'],
       },
     };
 });
