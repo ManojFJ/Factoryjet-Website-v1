@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
+import { useContactModal } from '../../../context/ContactModalContext';
 
 const CTA: React.FC = () => {
+  const { openModal } = useContactModal();
+
   return (
     <section id="cta" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto relative rounded-2xl md:rounded-3xl overflow-hidden bg-jet-blue">
@@ -19,12 +22,18 @@ const CTA: React.FC = () => {
               Join 500+ businesses who trust FactoryJet. Whether you need a stunning website or a powerful store, we deliver in days, not months.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-              <button className="bg-white text-jet-blue hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all shadow-lg flex items-center justify-center gap-2">
+              <button
+                onClick={openModal}
+                className="bg-white text-jet-blue hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all shadow-lg flex items-center justify-center gap-2"
+              >
                 Schedule Free Call <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </button>
-              <button className="bg-blue-800/50 hover:bg-blue-800 text-white border border-blue-400/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+              <a
+                href="tel:+919699977699"
+                className="bg-blue-800/50 hover:bg-blue-800 text-white border border-blue-400/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
+              >
                 <Phone className="w-4 h-4 md:w-5 md:h-5" /> +91 96999 77699
-              </button>
+              </a>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, TrendingUp, Zap, Globe, ShoppingBag } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
@@ -13,7 +14,8 @@ const Portfolio: React.FC = () => {
       color: "bg-blue-600",
       icon: TrendingUp,
       width: 662,
-      height: 372
+      height: 372,
+      slug: "impulse-branding"
     },
     {
       category: "MEP & BIM Consulting",
@@ -25,7 +27,8 @@ const Portfolio: React.FC = () => {
       color: "bg-indigo-600",
       icon: Globe,
       width: 662,
-      height: 372
+      height: 372,
+      slug: "formative-concepts"
     },
     {
       category: "DTC + B2B E-Commerce",
@@ -37,7 +40,8 @@ const Portfolio: React.FC = () => {
       color: "bg-orange-500",
       icon: ShoppingBag,
       width: 662,
-      height: 372
+      height: 372,
+      slug: "belle-maison"
     },
     {
       category: "AI-Native SaaS",
@@ -49,7 +53,8 @@ const Portfolio: React.FC = () => {
       color: "bg-emerald-600",
       icon: Zap,
       width: 662,
-      height: 372
+      height: 372,
+      slug: "commerceflo"
     }
   ];
 
@@ -75,14 +80,14 @@ const Portfolio: React.FC = () => {
                     See how we've helped businesses like yours transform their digital presence and generate crores in new value.
                 </p>
             </div>
-            <button className="flex items-center gap-2 font-bold text-jet-navy hover:text-jet-blue transition-colors group whitespace-nowrap text-sm md:text-base">
+            <Link to="/case" className="flex items-center gap-2 font-bold text-jet-navy hover:text-jet-blue transition-colors group whitespace-nowrap text-sm md:text-base">
                 View All Case Studies <ArrowUpRight size={16} className="md:w-5 md:h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {cases.map((project, idx) => (
-                <div key={idx} className="group relative rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-gray-900 border border-gray-100 flex flex-col h-full">
+                <Link key={idx} to={`/case/${project.slug}`} className="group relative rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-gray-900 border border-gray-100 flex flex-col h-full">
                     {/* Image Background */}
                     <div className="aspect-[16/9] w-full overflow-hidden relative">
                         <img
@@ -126,7 +131,7 @@ const Portfolio: React.FC = () => {
                              </p>
                         </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
       </div>

@@ -73,10 +73,10 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
           }
         `}
       >
-        {/* Logo */}
+        {/* Logo - White version on dark hero, regular on scrolled/solid */}
         <Link to="/" className="flex items-center cursor-pointer group">
           <img
-            src="/FinalLogo.svg"
+            src={showSolidStyle ? "/FinalLogo.svg" : "/FinalLogoWhite.svg"}
             alt="FactoryJet"
             width={160}
             height={40}
