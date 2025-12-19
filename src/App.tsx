@@ -12,6 +12,8 @@ const CasePage = lazy(() => import('./pages/Case'));
 const EcommPage = lazy(() => import('./pages/Ecomm'));
 const PricingPage = lazy(() => import('./pages/Pricing'));
 const WebDesignPage = lazy(() => import('./pages/WebDesign'));
+const ContactPage = lazy(() => import('./pages/Contact'));
+const MumbaiPage = lazy(() => import('./pages/Mumbai'));
 
 // Loading component
 const PageLoader = () => (
@@ -37,6 +39,8 @@ function App() {
             <Route path="/ecommerce" element={<EcommPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/web-design" element={<WebDesignPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/mumbai" element={<MumbaiPage />} />
           </Routes>
         </Suspense>
         <ContactFormModal />
