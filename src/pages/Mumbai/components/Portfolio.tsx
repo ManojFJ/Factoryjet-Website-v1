@@ -83,14 +83,14 @@ const Portfolio: React.FC<PortfolioProps> = ({ onCtaClick }) => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-jet-white">
+    <section id="portfolio" className="py-16 md:py-24 bg-jet-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="text-jet-blue font-bold text-sm uppercase tracking-widest mb-4 block">Our Client Success Stories</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-jet-navy">Real Results from Real Businesses</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-jet-navy">Real Results from Real Businesses</h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 md:mb-16">
           {cases.map((c, i) => (
             <div key={i} className="bg-white p-6 rounded-2xl border border-jet-light group hover:shadow-xl transition-all duration-300 cursor-pointer" onClick={onCtaClick}>
               <div className={`w-12 h-12 ${c.color} rounded-xl flex items-center justify-center mb-4`}>
@@ -108,7 +108,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onCtaClick }) => {
         </div>
 
         <div className="text-center">
-          <div className="inline-flex flex-col md:flex-row items-center gap-6 p-6 bg-white rounded-2xl border border-jet-light shadow-sm">
+          <div className="inline-flex flex-col md:flex-row items-center gap-4 md:gap-6 p-5 sm:p-6 bg-white rounded-2xl border border-jet-light shadow-sm">
             <div className="flex -space-x-4">
               {[1, 2, 3, 4].map(i => (
                 <img key={i} src={`https://picsum.photos/seed/${i}/100/100`} className="w-10 h-10 rounded-full border-2 border-white" alt="Avatar" />

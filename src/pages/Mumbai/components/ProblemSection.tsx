@@ -8,10 +8,10 @@ interface ProblemSectionProps {
 
 const ProblemSection: React.FC<ProblemSectionProps> = ({ onCtaClick }) => {
   return (
-    <section className="py-24 bg-jet-white">
+    <section className="py-16 md:py-24 bg-jet-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-jet-navy">
+        <div className="max-w-3xl mb-10 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-4 md:mb-6 text-jet-navy">
             Is Your Website Costing You Sales? Mumbai Businesses Lose &#8377;50,000+ Monthly to Poor Websites.
           </h2>
           <p className="text-lg text-jet-slate">
@@ -20,9 +20,9 @@ const ProblemSection: React.FC<ProblemSectionProps> = ({ onCtaClick }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {/* Card 1 */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-jet-light group hover:shadow-xl transition-all duration-300">
+          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-jet-light group hover:shadow-xl transition-all duration-300">
             <div className="w-14 h-14 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Smartphone size={32} />
             </div>
@@ -36,7 +36,7 @@ const ProblemSection: React.FC<ProblemSectionProps> = ({ onCtaClick }) => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-jet-light group hover:shadow-xl transition-all duration-300">
+          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-jet-light group hover:shadow-xl transition-all duration-300">
             <div className="w-14 h-14 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <AlertTriangle size={32} />
             </div>
@@ -50,7 +50,7 @@ const ProblemSection: React.FC<ProblemSectionProps> = ({ onCtaClick }) => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-jet-light group hover:shadow-xl transition-all duration-300">
+          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-jet-light group hover:shadow-xl transition-all duration-300">
             <div className="w-14 h-14 bg-blue-50 text-jet-blue rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <IndianRupee size={32} />
             </div>
@@ -64,9 +64,9 @@ const ProblemSection: React.FC<ProblemSectionProps> = ({ onCtaClick }) => {
           </div>
         </div>
 
-        <div className="mt-16 p-8 bg-jet-blue rounded-2xl text-center text-white relative overflow-hidden">
+        <div className="mt-10 md:mt-16 p-6 md:p-8 bg-jet-blue rounded-2xl text-center text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl" />
-          <h3 className="text-2xl font-bold mb-4">There's a better way.</h3>
+          <h3 className="text-xl sm:text-2xl font-bold mb-4">There's a better way.</h3>
           <p className="text-blue-100 max-w-2xl mx-auto mb-8">
             FactoryJet delivers world-class websites for Mumbai businesses&mdash;in 4 weeks, at prices that make sense.</p>
           <button 

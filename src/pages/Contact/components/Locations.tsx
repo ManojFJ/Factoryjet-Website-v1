@@ -3,15 +3,15 @@ import { MapPin, Globe, Building } from 'lucide-react';
 
 const Locations: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           
           {/* Text Content */}
           <div>
-             <h2 className="text-3xl font-display font-bold text-slate-900 mb-8">Where We're Located</h2>
+             <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-6 md:mb-8">Where We're Located</h2>
              
-             <div className="space-y-8">
+             <div className="space-y-6 md:space-y-8">
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Building className="w-6 h-6 text-jetBlue" />
@@ -58,7 +58,7 @@ const Locations: React.FC = () => {
           </div>
 
           {/* Abstract Map Visualization */}
-          <div className="relative h-[400px] bg-slate-100 rounded-3xl overflow-hidden shadow-inner border border-slate-200">
+          <div className="relative h-[260px] sm:h-[320px] md:h-[400px] bg-slate-100 rounded-3xl overflow-hidden shadow-inner border border-slate-200">
             {/* Simple CSS Pattern to simulate map */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#cbd5e1 2px, transparent 2px)', backgroundSize: '30px 30px' }}></div>
             

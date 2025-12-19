@@ -25,7 +25,7 @@ const MumbaiPage: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="min-h-screen relative bg-white text-jet-navy font-body overflow-x-hidden">
+    <div className="min-h-screen relative bg-white text-jet-navy font-body overflow-x-hidden pb-24 lg:pb-0">
       <Header onCtaClick={openModal} />
       <main>
         <Hero onCtaClick={openModal} />

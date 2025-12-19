@@ -8,24 +8,24 @@ interface CTAProps {
 
 const CTA: React.FC<CTAProps> = ({ onCtaClick }) => {
   return (
-    <section className="py-24 bg-jet-blue relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-jet-blue relative overflow-hidden">
       {/* Decorative patterns */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-jet-orange/10 rounded-full -ml-40 -mb-40 blur-3xl" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-white mb-4 md:mb-6 leading-tight">
             Ready to Grow Your <br /> Mumbai Business Online?
           </h2>
-          <p className="text-xl text-blue-100 mb-12">
+          <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-8 md:mb-12">
             Join 200+ Mumbai SMBs who've transformed their digital presence with FactoryJet. 
             Get your free website audit today&mdash;no strings attached.</p>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12">
             <button 
               onClick={onCtaClick}
-              className="w-full md:w-auto bg-jet-orange text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:bg-orange-600 transition-all shimmer flex items-center justify-center gap-2"
+              className="w-full md:w-auto bg-jet-orange text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl shadow-2xl hover:bg-orange-600 transition-all shimmer flex items-center justify-center gap-2"
             >
               &#128640; Get Your Free Website Audit
             </button>

@@ -34,14 +34,14 @@ const SocialProof: React.FC = () => {
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <div className="py-16 bg-white overflow-hidden border-y border-slate-100">
-      <div className="container mx-auto px-4 mb-12">
+    <div className="py-12 md:py-16 bg-white overflow-hidden border-y border-slate-100">
+      <div className="container mx-auto px-4 mb-8 md:mb-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-md text-center md:text-left">
             <h2 className="text-2xl font-bold text-jet-navy font-heading">Trusted by 200+ Mumbai SMBs</h2>
             <p className="text-sm text-jet-gray mt-2 font-medium">Powering businesses with the world's most robust technology and payment ecosystems.</p>
           </div>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 md:gap-8">
             <div className="text-center">
               <p className="text-2xl font-bold text-jet-blue">&#8377;15Cr+</p>
               <p className="text-[10px] font-bold text-jet-gray uppercase tracking-widest">Revenue Built</p>

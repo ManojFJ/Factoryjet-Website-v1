@@ -41,7 +41,7 @@ const Chip: React.FC<ChipProps> = ({
   <button
     type="button"
     onClick={onClick}
-    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all border ${
+    className={`px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-all border ${
       selected 
         ? 'bg-jetBlue text-white border-jetBlue shadow-md transform scale-[1.02]' 
         : 'bg-white text-slate-600 border-slate-200 hover:border-jetBlue/50 hover:bg-blue-50'
@@ -92,16 +92,16 @@ const ContactForm: React.FC = () => {
 
   if (isSuccess) {
     return (
-      <section className="py-16 container mx-auto px-4 max-w-4xl">
-        <div className="bg-white rounded-2xl p-12 text-center shadow-glass border border-emerald-100">
-          <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+      <section className="py-12 md:py-16 container mx-auto px-4 max-w-4xl">
+        <div className="bg-white rounded-2xl p-6 md:p-12 text-center shadow-glass border border-emerald-100">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5 md:mb-6">
             <Check className="w-10 h-10 text-jetGreen" />
           </div>
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">Thank You! Request Received.</h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">Thank You! Request Received.</h2>
+          <p className="text-base sm:text-lg text-slate-600 mb-6 md:mb-8 max-w-xl mx-auto">
             We have received your details. A team member will review your request and respond within <strong>2 business hours</strong>.
           </p>
-          <div className="bg-slate-50 p-6 rounded-xl text-left max-w-md mx-auto space-y-3">
+          <div className="bg-slate-50 p-4 sm:p-6 rounded-xl text-left max-w-md mx-auto space-y-3">
              <div className="flex items-center gap-3">
                <div className="w-2 h-2 bg-jetGreen rounded-full"></div>
                <span className="text-sm text-slate-700">Immediate: Confirmation Email Sent</span>
@@ -111,7 +111,7 @@ const ContactForm: React.FC = () => {
                <span className="text-sm text-slate-700">Within 2 Hours: Personal Response</span>
              </div>
           </div>
-          <button onClick={() => setIsSuccess(false)} className="mt-8 text-jetBlue font-medium hover:underline">
+          <button onClick={() => setIsSuccess(false)} className="mt-6 md:mt-8 text-jetBlue font-medium hover:underline">
             Submit another response
           </button>
         </div>
@@ -120,23 +120,23 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <section id="contact-form" className="py-16 bg-slate-50">
+    <section id="contact-form" className="py-12 md:py-16 bg-slate-50">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-6 md:p-12">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-display font-bold text-slate-900">Get a Custom Proposal for Your Project</h2>
+        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-5 sm:p-6 md:p-12">
+          <div className="text-center mb-8 md:mb-10">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900">Get a Custom Proposal for Your Project</h2>
             <p className="text-slate-600 mt-2">Fill out the details below. We guarantee a response within 2 business hours.</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-12">
+          <form onSubmit={handleSubmit} className="space-y-10 md:space-y-12">
             
             {/* Step 1: About You */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="space-y-5 md:space-y-6">
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-jetBlue text-white font-bold text-sm">1</span>
-                <h3 className="text-xl font-bold text-slate-800">Tell Us About You</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800">Tell Us About You</h3>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Your Name *</label>
                   <input required type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-jetBlue focus:border-jetBlue outline-none transition-all bg-white" placeholder="John Doe" />
@@ -161,15 +161,15 @@ const ContactForm: React.FC = () => {
             </div>
 
             {/* Step 2: About Needs */}
-            <div className="space-y-8 pt-8 border-t border-slate-100">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="space-y-6 md:space-y-8 pt-6 md:pt-8 border-t border-slate-100">
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-jetBlue text-white font-bold text-sm">2</span>
-                <h3 className="text-xl font-bold text-slate-800">Tell Us About Your Needs</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800">Tell Us About Your Needs</h3>
               </div>
               
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-4">What services are you interested in? (Select all that apply)</label>
-                <div className="flex flex-wrap gap-3">
+                <label className="block text-sm font-semibold text-slate-700 mb-3 md:mb-4">What services are you interested in? (Select all that apply)</label>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {SERVICES.map(service => (
                     <Chip key={service} label={service} selected={formData.services.includes(service)} onClick={() => toggleService(service)} multi />
                   ))}
@@ -177,17 +177,17 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-4">What's your primary goal?</label>
-                <div className="flex flex-wrap gap-3">
+                <label className="block text-sm font-semibold text-slate-700 mb-3 md:mb-4">What's your primary goal?</label>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {GOALS.map(item => (
                     <Chip key={item} label={item} selected={formData.goal === item} onClick={() => handleSingleSelect('goal', item)} />
                   ))}
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div>
-                   <label className="block text-sm font-semibold text-slate-700 mb-4">What's your timeline?</label>
+                   <label className="block text-sm font-semibold text-slate-700 mb-3 md:mb-4">What's your timeline?</label>
                    <div className="flex flex-col gap-2">
                     {TIMELINES.map(item => (
                       <label key={item} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-slate-50 cursor-pointer">
@@ -198,7 +198,7 @@ const ContactForm: React.FC = () => {
                    </div>
                 </div>
                 <div>
-                   <label className="block text-sm font-semibold text-slate-700 mb-4">Estimated Budget Range</label>
+                   <label className="block text-sm font-semibold text-slate-700 mb-3 md:mb-4">Estimated Budget Range</label>
                    <div className="flex flex-col gap-2">
                     {BUDGETS.map(item => (
                       <label key={item} className="flex items-center gap-3 p-3 border rounded-lg hover:bg-slate-50 cursor-pointer">
@@ -212,10 +212,10 @@ const ContactForm: React.FC = () => {
             </div>
 
             {/* Step 3: Tell Us More */}
-            <div className="space-y-6 pt-8 border-t border-slate-100">
-               <div className="flex items-center gap-3 mb-4">
+            <div className="space-y-5 md:space-y-6 pt-6 md:pt-8 border-t border-slate-100">
+               <div className="flex items-center gap-3 mb-3 md:mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-jetBlue text-white font-bold text-sm">3</span>
-                <h3 className="text-xl font-bold text-slate-800">Tell Us More</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800">Tell Us More</h3>
               </div>
 
               <div>
@@ -237,13 +237,13 @@ const ContactForm: React.FC = () => {
             </div>
 
              {/* Step 4: Contact Pref */}
-             <div className="space-y-6 pt-8 border-t border-slate-100">
-               <div className="flex items-center gap-3 mb-4">
+             <div className="space-y-5 md:space-y-6 pt-6 md:pt-8 border-t border-slate-100">
+               <div className="flex items-center gap-3 mb-3 md:mb-4">
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-jetBlue text-white font-bold text-sm">4</span>
-                <h3 className="text-xl font-bold text-slate-800">Preferred Contact Method</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800">Preferred Contact Method</h3>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                    <label className="block text-sm font-semibold text-slate-700 mb-2">How should we contact you?</label>
                    <select name="contactMethod" value={formData.contactMethod} onChange={handleInputChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-jetBlue bg-white">
@@ -265,11 +265,11 @@ const ContactForm: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-8">
+            <div className="pt-6 md:pt-8">
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-jetOrange hover:bg-orange-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full bg-jetOrange hover:bg-orange-600 text-white font-bold text-base sm:text-lg py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 {isSubmitting ? (
                   <>Processing...</>

@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-24 md:pb-0">
       <main>
         <Hero />
         <ContactMethods />

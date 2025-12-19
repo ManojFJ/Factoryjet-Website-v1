@@ -34,16 +34,16 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
+    <section className="py-14 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <span className="text-jet-blue font-bold text-xs uppercase tracking-widest mb-3 block">Testimonials & Impact</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-jet-navy">Proven in Mumbai, <br className="md:hidden" /> Trusted Locally</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading text-jet-navy">Proven in Mumbai, <br className="md:hidden" /> Trusted Locally</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-12 md:mb-16">
           {reviews.map((r, i) => (
-            <div key={i} className="bg-jet-white p-6 rounded-[2rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+            <div key={i} className="bg-jet-white p-5 sm:p-6 rounded-[2rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="flex gap-1 mb-4">
                 {[...Array(r.rating)].map((_, idx) => <Star key={idx} size={14} className="text-yellow-500 fill-yellow-500" />)}
               </div>
@@ -65,17 +65,17 @@ const Testimonials: React.FC = () => {
             <div className="grid lg:grid-cols-2">
               
               {/* CONTENT PANEL */}
-              <div className="p-8 md:p-14 lg:p-20 flex flex-col justify-center bg-white text-jet-navy order-2 lg:order-1 relative z-20">
-                <div className="inline-flex items-center gap-2 bg-jet-green/10 px-4 py-1.5 rounded-full mb-6 border border-jet-green/20">
+              <div className="p-6 sm:p-8 md:p-14 lg:p-20 flex flex-col justify-center bg-white text-jet-navy order-2 lg:order-1 relative z-20">
+                <div className="inline-flex items-center gap-2 bg-jet-green/10 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-5 md:mb-6 border border-jet-green/20">
                   <Layers size={14} className="text-jet-green" />
                   <span className="text-[10px] font-black text-jet-green uppercase tracking-widest">Enterprise ERP Success</span>
                 </div>
                 
-                <h3 className="text-3xl md:text-5xl font-bold font-heading mb-6 leading-tight tracking-tight">
+                <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold font-heading mb-4 md:mb-6 leading-tight tracking-tight">
                   Digitizing <span className="text-jet-green underline decoration-green-100 decoration-8 underline-offset-4">Grofresh</span> Exports
                 </h3>
                 
-                <p className="text-base text-jet-slate mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base text-jet-slate mb-6 md:mb-8 leading-relaxed">
                   How we transformed a traditional fresh produce processing company into a <strong>100% digital powerhouse</strong>&mdash;handling everything from purchase to global exports.</p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">

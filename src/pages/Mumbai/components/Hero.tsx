@@ -10,13 +10,13 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
-    <section className="relative min-h-[92vh] flex items-center pt-20 pb-10 bg-white overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center pt-16 pb-8 md:pt-20 md:pb-10 bg-white overflow-hidden">
       {/* Dynamic Background Accents */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[140px] opacity-70 -z-10" />
       <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-orange-50 rounded-full blur-[100px] opacity-50 -z-10" />
       
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
+        <div className="grid lg:grid-cols-12 gap-6 md:gap-8 items-center">
           
           {/* Left Content: Messaging */}
           <motion.div 
@@ -25,14 +25,14 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 bg-jet-blue/10 px-4 py-1.5 rounded-full mb-5 border border-jet-blue/5">
+            <div className="inline-flex items-center gap-2 bg-jet-blue/10 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-4 md:mb-5 border border-jet-blue/5">
               <span className="w-1.5 h-1.5 bg-jet-green rounded-full animate-pulse" />
               <span className="text-[10px] font-bold text-jet-blue uppercase tracking-widest">
                 Mumbai's #1 Digital Agency 2026
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl xl:text-7xl font-bold font-heading leading-[1.05] mb-5 text-jet-navy tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold font-heading leading-[1.05] mb-4 md:mb-5 text-jet-navy tracking-tight">
               High-Conversion <br />
               <span className="text-jet-blue">Websites Built</span> For <br />
               <span className="text-jet-orange">Mumbai SMBs</span>
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               Serving 200+ clients in Andheri, Bandra & Lower Parel.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 sm:gap-y-3 gap-x-4 sm:gap-x-6 mb-6 md:mb-8">
               {[
                 { text: '200+ Mumbai Clients', icon: <Users size={16} /> },
                 { text: '4-Week Delivery', icon: <Zap size={16} /> },
@@ -80,7 +80,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="w-full max-w-[480px]">
+            <div className="w-full max-w-full sm:max-w-[480px]">
               <MultiStepForm />
             </div>
           </motion.div>

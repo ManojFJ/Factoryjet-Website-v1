@@ -46,14 +46,14 @@ const PlanCard: React.FC<{ plan: PricingPlan; onCtaClick?: () => void }> = ({ pl
         </div>
       )}
       
-      <div className="p-8">
+      <div className="p-6 md:p-8">
         <div className="flex items-center gap-2 mb-2">
           <h3 className="text-xl font-black text-jet-navy tracking-tighter">{plan.name}</h3>
           {plan.popular && <BadgeCheck size={16} className="text-jet-blue" />}
         </div>
-        <p className="text-xs text-jet-gray font-bold uppercase tracking-widest mb-6">{plan.tagline}</p>
+        <p className="text-xs text-jet-gray font-bold uppercase tracking-widest mb-5 md:mb-6">{plan.tagline}</p>
         
-        <div className="flex items-baseline gap-1 mb-8">
+        <div className="flex items-baseline gap-1 mb-6 md:mb-8">
           <span className="text-4xl sm:text-5xl font-black text-jet-navy tracking-tighter">&#8377;{plan.price}</span>
           <div className="flex flex-col">
             <span className="text-[10px] text-jet-gray font-black uppercase">+ GST</span>
@@ -73,7 +73,7 @@ const PlanCard: React.FC<{ plan: PricingPlan; onCtaClick?: () => void }> = ({ pl
         </button>
       </div>
 
-      <div className="px-8 pb-8 flex flex-col gap-6">
+      <div className="px-6 pb-6 md:px-8 md:pb-8 flex flex-col gap-5 md:gap-6">
         {/* Always visible categories */}
         {initialCategories.map((cat, idx) => (
           <div key={idx} className="space-y-4">
@@ -262,11 +262,11 @@ const Pricing: React.FC<PricingProps> = ({ onCtaClick }) => {
   };
 
   return (
-    <section id="pricing" className="py-16 md:py-20 bg-jet-white">
+    <section id="pricing" className="py-12 md:py-20 bg-jet-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-jet-navy mb-4 tracking-tighter">Honest Tech. <span className="text-jet-blue underline decoration-jet-blue/20">Mumbai Pricing.</span></h2>
-          <p className="text-jet-slate mb-8 max-w-xl mx-auto font-medium text-sm md:text-base">No hidden fees. No "agency overhead". Just world-class engineering built for your ROI.</p>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-jet-navy mb-4 tracking-tighter">Honest Tech. <span className="text-jet-blue underline decoration-jet-blue/20">Mumbai Pricing.</span></h2>
+          <p className="text-jet-slate mb-6 md:mb-8 max-w-xl mx-auto font-medium text-sm md:text-base">No hidden fees. No "agency overhead". Just world-class engineering built for your ROI.</p>
           
           <div className="inline-flex p-1.5 bg-white rounded-[1.5rem] border border-slate-200 shadow-lg mb-8 overflow-x-auto max-w-full no-scrollbar">
             {(['website', 'ecommerce', 'amc'] as const).map((tab) => (
@@ -283,28 +283,28 @@ const Pricing: React.FC<PricingProps> = ({ onCtaClick }) => {
 
         <motion.div 
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 items-start max-w-6xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16 items-start max-w-6xl mx-auto"
         >
           {getPlans().map((plan, i) => (
             <PlanCard key={`${activeTab}-${i}`} plan={plan} onCtaClick={onCtaClick} />
           ))}
         </motion.div>
 
-        <div className="max-w-6xl mx-auto bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-dashed border-slate-300 shadow-sm">
-          <div className="flex flex-col lg:flex-row items-center gap-10">
-            <div className="flex items-center gap-6 flex-1 text-center md:text-left">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-jet-green/10 rounded-[2rem] flex items-center justify-center flex-shrink-0">
+        <div className="max-w-6xl mx-auto bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-dashed border-slate-300 shadow-sm">
+          <div className="flex flex-col lg:flex-row items-center gap-6 md:gap-10">
+            <div className="flex items-center gap-5 md:gap-6 flex-1 text-center md:text-left">
+              <div className="w-14 h-14 md:w-20 md:h-20 bg-jet-green/10 rounded-[2rem] flex items-center justify-center flex-shrink-0">
                 <Trophy size={36} className="text-jet-green" />
               </div>
               <div>
-                <h4 className="text-xl md:text-2xl font-black text-jet-navy tracking-tight mb-1">Mumbai's ROI Leader</h4>
+                <h4 className="text-lg sm:text-xl md:text-2xl font-black text-jet-navy tracking-tight mb-1">Mumbai's ROI Leader</h4>
                 <p className="text-sm text-jet-slate font-medium leading-relaxed">
                   We leverage high-end open-source stacks to provide enterprise power at 1/5th the cost of Bandra/Andheri agencies.
                 </p>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8 bg-slate-50 px-8 md:px-10 py-6 rounded-[2.5rem] border border-slate-100 w-full lg:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8 bg-slate-50 px-6 sm:px-8 md:px-10 py-5 md:py-6 rounded-[2.5rem] border border-slate-100 w-full lg:w-auto">
                <div className="flex flex-col items-center">
                   <ShieldCheck size={24} className="text-jet-blue mb-1" />
                   <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Secure Payments</span>

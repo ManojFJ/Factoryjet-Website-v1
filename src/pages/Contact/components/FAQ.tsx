@@ -45,12 +45,12 @@ const AccordionGroup: React.FC<{ items: AccordionItem[], title: string, icon: Re
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 h-full">
-      <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+    <div className="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100 h-full">
+      <div className="flex items-center gap-3 mb-5 md:mb-6 pb-4 border-b border-slate-100">
         <div className="p-2 bg-blue-50 text-jetBlue rounded-lg">
           {icon}
         </div>
-        <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-slate-900">{title}</h3>
       </div>
       <div className="space-y-4">
         {items.map((item, index) => (
@@ -94,17 +94,17 @@ const AccordionGroup: React.FC<{ items: AccordionItem[], title: string, icon: Re
 
 const FAQ: React.FC = () => {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-16 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
           <h2 className="text-sm font-bold text-jetOrange uppercase tracking-widest mb-2">Got Questions?</h2>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">Everything You Need to Know</h3>
-          <p className="text-slate-600 text-lg">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">Everything You Need to Know</h3>
+          <p className="text-slate-600 text-base sm:text-lg">
             We believe in radical transparency. Here are honest answers to the most common questions we get from clients like you.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           <AccordionGroup 
             items={GENERAL_FAQS} 
             title="General & First Steps" 
@@ -127,8 +127,8 @@ const FAQ: React.FC = () => {
           />
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-slate-600 mb-4">Still have a question we didn't answer?</p>
+        <div className="mt-8 md:mt-12 text-center">
+          <p className="text-slate-600 mb-3 md:mb-4">Still have a question we didn't answer?</p>
           <a href="#contact-form" className="inline-flex items-center gap-2 text-jetBlue font-bold hover:underline">
             Ask us directly in the form above <span aria-hidden="true">&rarr;</span>
           </a>

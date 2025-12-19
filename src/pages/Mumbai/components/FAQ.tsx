@@ -14,22 +14,22 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold font-heading text-jet-navy mb-12 text-center">Questions Mumbai Business Owners Ask</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold font-heading text-jet-navy mb-8 md:mb-12 text-center">Questions Mumbai Business Owners Ask</h2>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <div key={i} className="border border-jet-light rounded-2xl overflow-hidden shadow-sm">
                 <button 
                   onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-jet-white transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left bg-white hover:bg-jet-white transition-colors"
                 >
                   <span className="font-bold text-jet-navy">{faq.q}</span>
                   {openIdx === i ? <ChevronUp className="text-jet-blue" /> : <ChevronDown className="text-jet-gray" />}
                 </button>
                 {openIdx === i && (
-                  <div className="p-6 bg-jet-white border-t border-jet-light text-jet-slate leading-relaxed">
+                  <div className="p-4 sm:p-6 bg-jet-white border-t border-jet-light text-jet-slate leading-relaxed">
                     {faq.a}
                   </div>
                 )}

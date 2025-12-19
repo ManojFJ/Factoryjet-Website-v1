@@ -4,12 +4,12 @@ import { Linkedin, Instagram, Twitter, Youtube, MapPin, Mail, Phone, MessageCirc
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-jet-navy text-white pt-20 pb-10">
+    <footer className="bg-jet-navy text-white pt-12 md:pt-20 pb-8 md:pb-10">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
           {/* Col 1 */}
           <div>
-            <div className="text-2xl font-bold font-heading mb-6">
+            <div className="text-xl sm:text-2xl font-bold font-heading mb-6">
               <span className="text-jet-blue">Factory</span>
               <span className="text-jet-orange">Jet</span>
             </div>
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 </a>
               ))}
             </div>
-            <div className="mt-6 flex items-center gap-2">
+            <div className="mt-4 md:mt-6 flex items-center gap-2">
               <span className="text-yellow-500 font-bold">4.9/5.0 &#9733;</span>
               <span className="text-xs text-jet-gray">on Google Reviews</span>
             </div>
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 py-10 border-y border-white/5 grayscale opacity-50 mb-10">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 py-8 md:py-10 border-y border-white/5 grayscale opacity-50 mb-8 md:mb-10">
           <span className="text-xs font-bold uppercase">Google Partner</span>
           <span className="text-xs font-bold uppercase">Shopify Expert</span>
           <span className="text-xs font-bold uppercase">Razorpay Partner</span>
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
           <span className="text-xs font-bold uppercase">SSL Secure</span>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-jet-gray text-xs">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-jet-gray text-xs">
           <p>&copy; 2026 FactoryJet Technologies. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>

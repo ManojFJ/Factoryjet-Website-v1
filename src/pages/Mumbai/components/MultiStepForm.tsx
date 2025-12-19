@@ -45,13 +45,13 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ onSuccess, variant = 'her
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white border-2 border-jet-green p-8 rounded-3xl shadow-2xl w-full text-center"
+        className="bg-white border-2 border-jet-green p-6 sm:p-8 rounded-3xl shadow-2xl w-full text-center"
       >
-        <div className="w-16 h-16 bg-jet-green/10 text-jet-green rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 bg-jet-green/10 text-jet-green rounded-full flex items-center justify-center mx-auto mb-5 md:mb-6">
           <CheckCircle2 size={36} />
         </div>
-        <h3 className="text-2xl font-bold text-jet-navy mb-3">Audit Requested!</h3>
-        <p className="text-jet-slate mb-6 text-sm">
+        <h3 className="text-xl sm:text-2xl font-bold text-jet-navy mb-3">Audit Requested!</h3>
+        <p className="text-jet-slate mb-5 md:mb-6 text-sm">
           Thank you, <span className="font-bold text-jet-blue">{formData.name}</span>. 
           Our team is reviewing <span className="font-bold">{formData.company}</span>. 
           Check WhatsApp at <span className="font-bold">+91 {formData.mobile}</span> shortly.
@@ -65,12 +65,12 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ onSuccess, variant = 'her
   }
 
   return (
-    <div className={`bg-white/95 backdrop-blur-3xl border border-jet-light p-5 md:p-7 rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)] w-full relative overflow-hidden`}>
+    <div className={`bg-white/95 backdrop-blur-3xl border border-jet-light p-4 sm:p-5 md:p-7 rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)] w-full relative overflow-hidden`}>
       {/* Progress Header */}
-      <div className="mb-6">
+      <div className="mb-5 md:mb-6">
         <div className="flex justify-between items-center mb-3">
           <div>
-            <h3 className="text-lg font-bold text-jet-navy font-heading">Free Website Audit</h3>
+            <h3 className="text-base sm:text-lg font-bold text-jet-navy font-heading">Free Website Audit</h3>
             <p className="text-[10px] text-jet-gray font-bold uppercase tracking-widest">Mumbai SMB Growth Program</p>
           </div>
           <div className="text-right">
@@ -138,15 +138,15 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ onSuccess, variant = 'her
               </div>
             </div>
 
-            <button
-              onClick={nextStep}
-              disabled={!isStep1Valid}
-              className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-lg ${
-                isStep1Valid 
-                ? 'bg-jet-blue text-white hover:bg-blue-700 shadow-blue-500/20' 
-                : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-              }`}
-            >
+              <button
+                onClick={nextStep}
+                disabled={!isStep1Valid}
+                className={`w-full py-3.5 sm:py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-lg ${
+                  isStep1Valid 
+                  ? 'bg-jet-blue text-white hover:bg-blue-700 shadow-blue-500/20' 
+                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                }`}
+              >
               Next: Business Info <ArrowRight size={18} />
             </button>
           </motion.div>
@@ -203,13 +203,13 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ onSuccess, variant = 'her
             </div>
 
             <div className="flex gap-3">
-              <button onClick={prevStep} className="flex-1 py-4 border-2 border-slate-100 text-jet-gray rounded-2xl font-bold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+              <button onClick={prevStep} className="flex-1 py-3.5 sm:py-4 border-2 border-slate-100 text-jet-gray rounded-2xl font-bold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 <ArrowLeft size={16} /> Back
               </button>
               <button
                 onClick={nextStep}
                 disabled={!isStep2Valid}
-                className={`flex-[2] py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-lg ${
+                className={`flex-[2] py-3.5 sm:py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-lg ${
                   isStep2Valid 
                   ? 'bg-jet-blue text-white hover:bg-blue-700 shadow-blue-500/20' 
                   : 'bg-slate-200 text-slate-400 cursor-not-allowed'
@@ -275,13 +275,13 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ onSuccess, variant = 'her
             </div>
 
             <div className="flex gap-3">
-              <button onClick={prevStep} className="flex-1 py-4 border-2 border-slate-100 text-jet-gray rounded-2xl font-bold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+              <button onClick={prevStep} className="flex-1 py-3.5 sm:py-4 border-2 border-slate-100 text-jet-gray rounded-2xl font-bold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 <ArrowLeft size={16} />
               </button>
               <button
                 onClick={handleSubmit}
                 disabled={!isStep3Valid}
-                className={`flex-[3] py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-xl shimmer ${
+                className={`flex-[3] py-3.5 sm:py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all transform active:scale-95 shadow-xl shimmer ${
                   isStep3Valid 
                   ? 'bg-jet-orange text-white hover:bg-orange-600 shadow-orange-500/20' 
                   : 'bg-slate-200 text-slate-400 cursor-not-allowed'

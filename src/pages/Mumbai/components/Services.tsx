@@ -8,11 +8,11 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ onCtaClick }) => {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <span className="text-jet-blue font-bold text-sm uppercase tracking-widest mb-4 block">What We Do</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-jet-navy mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-jet-navy mb-4 md:mb-6">
             Everything Mumbai SMBs Need to Grow Online
           </h2>
           <p className="text-lg text-jet-slate">
@@ -20,16 +20,16 @@ const Services: React.FC<ServicesProps> = ({ onCtaClick }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 mb-20">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10 mb-12 md:mb-20">
           {/* Card 1 */}
           <div 
             onClick={onCtaClick}
-            className="group bg-white rounded-3xl p-8 md:p-10 border border-jet-light shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden cursor-pointer"
+            className="group bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-jet-light shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden cursor-pointer"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 group-hover:scale-125 transition-transform" />
             
             <div className="relative">
-              <div className="w-16 h-16 bg-jet-blue text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-jet-blue text-white rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-lg shadow-blue-200">
                 <Monitor size={32} />
               </div>
               
@@ -58,7 +58,7 @@ const Services: React.FC<ServicesProps> = ({ onCtaClick }) => {
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold">Next.js</span>
               </div>
 
-              <div className="flex items-baseline justify-between border-t border-jet-light pt-6">
+              <div className="flex items-baseline justify-between border-t border-jet-light pt-5 md:pt-6">
                 <span className="text-jet-gray text-sm font-medium">Starting from</span>
                 <span className="text-3xl font-bold text-jet-navy">&#8377;29,999</span>
               </div>
@@ -68,12 +68,12 @@ const Services: React.FC<ServicesProps> = ({ onCtaClick }) => {
           {/* Card 2 */}
           <div 
             onClick={onCtaClick}
-            className="group bg-white rounded-3xl p-8 md:p-10 border border-jet-light shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden cursor-pointer"
+            className="group bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-jet-light shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden cursor-pointer"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -mr-8 -mt-8 group-hover:scale-125 transition-transform" />
             
             <div className="relative">
-              <div className="w-16 h-16 bg-jet-orange text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-orange-200">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-jet-orange text-white rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-lg shadow-orange-200">
                 <ShoppingBag size={32} />
               </div>
               
@@ -102,7 +102,7 @@ const Services: React.FC<ServicesProps> = ({ onCtaClick }) => {
                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold">Custom</span>
               </div>
 
-              <div className="flex items-baseline justify-between border-t border-jet-light pt-6">
+              <div className="flex items-baseline justify-between border-t border-jet-light pt-5 md:pt-6">
                 <span className="text-jet-gray text-sm font-medium">Starting from</span>
                 <span className="text-3xl font-bold text-jet-navy">&#8377;49,999</span>
               </div>
@@ -111,22 +111,22 @@ const Services: React.FC<ServicesProps> = ({ onCtaClick }) => {
         </div>
 
         {/* Feature strip */}
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="flex gap-4 p-6 bg-jet-white rounded-2xl border border-jet-light">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+          <div className="flex gap-4 p-5 md:p-6 bg-jet-white rounded-2xl border border-jet-light">
             <Zap className="text-jet-blue flex-shrink-0" />
             <div>
               <h4 className="font-bold text-jet-navy">4-Week Delivery</h4>
               <p className="text-xs text-jet-slate mt-1">Faster than any Andheri agency. Guaranteed.</p>
             </div>
           </div>
-          <div className="flex gap-4 p-6 bg-jet-white rounded-2xl border border-jet-light">
+          <div className="flex gap-4 p-5 md:p-6 bg-jet-white rounded-2xl border border-jet-light">
             <CreditCard className="text-jet-orange flex-shrink-0" />
             <div>
               <h4 className="font-bold text-jet-navy">All India Payments</h4>
               <p className="text-xs text-jet-slate mt-1">UPI, GPay, Razorpay&mdash;all included free.</p>
             </div>
           </div>
-          <div className="flex gap-4 p-6 bg-jet-white rounded-2xl border border-jet-light">
+          <div className="flex gap-4 p-5 md:p-6 bg-jet-white rounded-2xl border border-jet-light">
             <Users className="text-jet-green flex-shrink-0" />
             <div>
               <h4 className="font-bold text-jet-navy">Mumbai-Based Team</h4>
