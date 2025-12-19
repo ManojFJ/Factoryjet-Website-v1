@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-block mb-4 md:mb-6">
               <img
-                src="/FinalLogo.svg"
+                src="/FinalLogoWhite.svg"
                 alt="FactoryJet"
                 width={160}
                 height={40}
-                className="h-8 md:h-10 w-auto object-contain brightness-0 invert"
+                className="h-8 md:h-10 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-400 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
