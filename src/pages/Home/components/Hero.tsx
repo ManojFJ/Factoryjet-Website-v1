@@ -130,8 +130,15 @@ const Hero: React.FC = () => {
                       {/* Sidebar / Hero Banner */}
                       <div className="relative w-2/3 h-full group">
                           <img
-                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=75"
+                            srcSet="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=300&q=75 300w, https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=75 500w"
+                            sizes="33vw"
                             alt="Fashion Website Hero"
+                            width={320}
+                            height={200}
+                            loading="eager"
+                            decoding="async"
+                            fetchPriority="high"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
@@ -149,12 +156,12 @@ const Hero: React.FC = () => {
                           <h4 className="text-[8px] font-bold text-gray-900 mb-2">Trending</h4>
                           <div className="flex flex-col gap-2">
                               {[
-                                  { price: "₹2.4k", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80" },
-                                  { price: "₹5.9k", img: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=300&q=80" },
+                                  { price: "₹2.4k", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=64&q=75" },
+                                  { price: "₹5.9k", img: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=64&q=75" },
                               ].map((item, i) => (
                                   <div key={i} className="bg-white p-1.5 rounded-lg border border-gray-100 shadow-sm flex items-center gap-2">
                                       <div className="w-8 h-8 bg-gray-100 rounded overflow-hidden flex-shrink-0">
-                                          <img src={item.img} className="w-full h-full object-cover" alt="Product" />
+                                          <img src={item.img} width={32} height={32} loading="lazy" decoding="async" className="w-full h-full object-cover" alt="Product" />
                                       </div>
                                       <div>
                                         <div className="h-1 w-8 bg-gray-200 rounded mb-0.5"></div>

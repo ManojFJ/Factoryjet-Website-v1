@@ -77,8 +77,14 @@ export const CaseCard: React.FC<CaseCardProps> = ({ data, onClick }) => {
           </div>
           
           <motion.img
-            src={data.image}
+            src={`${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75`}
+            srcSet={`${data.image.split('?')[0]}?auto=format&fit=crop&w=300&q=75 300w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=450&q=75 450w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt={data.client}
+            width={600}
+            height={400}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6 }}

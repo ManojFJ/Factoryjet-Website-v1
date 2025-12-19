@@ -9,9 +9,11 @@ const Portfolio: React.FC = () => {
       founder: "Kiran Mahadik",
       metric: "₹3 Cr Revenue (6 Months)",
       desc: "Migrated to modern stack (WordPress + Breakdance) in just 2 weeks. 15+ pages fully optimized for GEO/AIO. Resulted in 125% organic traffic increase and Google Gemini citations.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
       color: "bg-blue-600",
-      icon: TrendingUp
+      icon: TrendingUp,
+      width: 662,
+      height: 372
     },
     {
       category: "MEP & BIM Consulting",
@@ -19,9 +21,11 @@ const Portfolio: React.FC = () => {
       founder: "Director: Vishal B.",
       metric: "₹90 Lakh Revenue (4 Months)",
       desc: "Brand new 20+ page site. Went from ZERO to 5000 global visitors. Optimized for AIO/GEO to get cited by ChatGPT. Generated 30+ high-value leads in first 4 months.",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
       color: "bg-indigo-600",
-      icon: Globe
+      icon: Globe,
+      width: 662,
+      height: 372
     },
     {
       category: "DTC + B2B E-Commerce",
@@ -29,9 +33,11 @@ const Portfolio: React.FC = () => {
       founder: "Ricky B.",
       metric: "₹1.5 Cr Sales (120 Days)",
       desc: "Launched wholesale & retail store with 800+ products. AI-enhanced imagery and powerful product SEO. Integrated abandoned cart recovery and marketing automation.",
-      image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45",
       color: "bg-orange-500",
-      icon: ShoppingBag
+      icon: ShoppingBag,
+      width: 662,
+      height: 372
     },
     {
       category: "AI-Native SaaS",
@@ -39,11 +45,22 @@ const Portfolio: React.FC = () => {
       founder: "Rajapandian Alagarsamy",
       metric: "Global Traffic & AI Citations",
       desc: "30+ page high-performance website for an AI startup. Integrated HubSpot CRM for lead gen. Optimized for AEO/AIO to drive global traffic and convert visitors into leads.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
       color: "bg-emerald-600",
-      icon: Zap
+      icon: Zap,
+      width: 662,
+      height: 372
     }
   ];
+
+  const getOptimizedImageUrl = (baseUrl: string, width: number) => {
+    return `${baseUrl}?auto=format&fit=crop&w=${width}&q=75`;
+  };
+
+  const generateSrcSet = (baseUrl: string) => {
+    const widths = [400, 600, 800];
+    return widths.map(w => `${baseUrl}?auto=format&fit=crop&w=${w}&q=75 ${w}w`).join(', ');
+  };
 
   return (
     <section id="portfolio" className="py-16 md:py-24 bg-white">
@@ -69,8 +86,14 @@ const Portfolio: React.FC = () => {
                     {/* Image Background */}
                     <div className="aspect-[16/9] w-full overflow-hidden relative">
                         <img
-                            src={project.image}
+                            src={getOptimizedImageUrl(project.image, project.width)}
+                            srcSet={generateSrcSet(project.image)}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             alt={project.client}
+                            width={project.width}
+                            height={project.height}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />

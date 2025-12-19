@@ -249,8 +249,15 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent z-20 pointer-events-none"></div>
 
                <img
-                 src={caseStudy.image}
+                 src={`${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=1200&q=75`}
+                 srcSet={`${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w, ${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=900&q=75 900w, ${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=1200&q=75 1200w`}
+                 sizes="(max-width: 768px) 100vw, 80vw"
                  alt={caseStudy.client}
+                 width={1200}
+                 height={750}
+                 loading="eager"
+                 decoding="async"
+                 fetchPriority="high"
                  className="w-full h-auto aspect-[16/10] object-cover"
                />
             </div>
@@ -322,8 +329,14 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
               <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl aspect-[4/3]">
                  <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply z-10"></div>
                  <img
-                   src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2070&auto=format&fit=crop"
+                   src="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=800&q=75"
+                   srcSet="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=400&q=75 400w, https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=600&q=75 600w, https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&w=800&q=75 800w"
+                   sizes="(max-width: 1024px) 100vw, 50vw"
                    alt="Complex chaotic code"
+                   width={800}
+                   height={600}
+                   loading="lazy"
+                   decoding="async"
                    className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
                  />
                  {/* Glass Overlay Card */}
@@ -386,8 +399,14 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
                <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-bl from-blue-100 to-slate-100 rounded-[1.5rem] md:rounded-[2rem] transform -rotate-2 group-hover:-rotate-1 transition-transform duration-700"></div>
                <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl aspect-[4/3] bg-slate-900">
                   <img
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=75"
+                    srcSet="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=75 400w, https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=75 600w, https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=75 800w"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     alt="Futuristic data network"
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-80 mix-blend-overlay group-hover:scale-105 transition-transform duration-1000"
                   />
                   {/* Abstract UI Overlay */}

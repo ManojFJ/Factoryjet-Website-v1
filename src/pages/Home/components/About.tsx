@@ -26,11 +26,17 @@ const About: React.FC = () => {
             <div className="relative z-10">
                {/* Main Image Container */}
                <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl shadow-blue-900/10 border border-gray-100 bg-white p-1">
-                  <div className="rounded-lg md:rounded-xl overflow-hidden relative">
+                  <div className="rounded-lg md:rounded-xl overflow-hidden relative aspect-[3/2]">
                     <img
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=648&q=75"
+                      srcSet="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=75 400w, https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=648&q=75 648w, https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=75 800w"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       alt="Indian professional team collaborating"
-                      className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                      width={648}
+                      height={432}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                     />
                     {/* Gradient Overlay for better text contrast if needed later */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
