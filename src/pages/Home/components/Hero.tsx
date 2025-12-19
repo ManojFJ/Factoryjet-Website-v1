@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Star, MousePointer, BarChart3, Rocket } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -27,12 +26,10 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-          {/* Text Content - Left Side */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-center"
+          {/* Text Content - Left Side - Using CSS animation instead of framer-motion for LCP */}
+          <div
+            className="flex flex-col justify-center animate-[fadeInUp_0.8s_ease-out_forwards]"
+            style={{ opacity: 0 }}
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[10px] md:text-xs backdrop-blur-md shadow-lg shadow-blue-500/20 mb-4 md:mb-6 hover:bg-white/20 transition-colors cursor-default w-fit">
@@ -78,14 +75,12 @@ const Hero: React.FC = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Hero Visual/Dashboard Mockup - Right Side */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="relative hidden md:flex items-center justify-center lg:justify-end"
+          {/* Hero Visual/Dashboard Mockup - Right Side - Using CSS animation for faster LCP */}
+          <div
+            className="relative hidden md:flex items-center justify-center lg:justify-end animate-[fadeInRight_1s_ease-out_0.2s_forwards]"
+            style={{ opacity: 0 }}
           >
             {/* Glow behind the mockup */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-blue-500/30 blur-[60px] rounded-full -z-10 mix-blend-screen"></div>
@@ -144,7 +139,7 @@ const Hero: React.FC = () => {
                           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
                           <div className="absolute bottom-4 left-4 flex flex-col justify-end">
                               <span className="text-[7px] bg-white text-black px-1.5 py-0.5 rounded-full w-fit font-bold uppercase tracking-widest mb-1.5 shadow-sm">New Season</span>
-                              <h3 className="text-white font-display font-bold text-xl leading-none mb-2 drop-shadow-md">Summer <br/>Essentials</h3>
+                                  <div className="text-white font-display font-bold text-xl leading-none mb-2 drop-shadow-md" aria-hidden="true">Summer <br/>Essentials</div>
                               <button className="bg-white text-black text-[8px] font-bold px-3 py-1.5 w-fit rounded-full hover:bg-gray-100 transition-colors shadow-lg">
                                   Explore
                               </button>
@@ -173,25 +168,21 @@ const Hero: React.FC = () => {
                       </div>
                   </div>
 
-                  {/* Cursor Animation Overlay */}
-                  <motion.div
-                     initial={{ x: "60%", y: "60%", opacity: 0 }}
-                     animate={{ x: "70%", y: "40%", opacity: 1 }}
-                     transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
-                     className="absolute top-0 left-0 z-30 pointer-events-none drop-shadow-xl"
+                  {/* Cursor Animation Overlay - Using CSS animation */}
+                  <div
+                     className="absolute top-0 left-0 z-30 pointer-events-none drop-shadow-xl animate-[cursorMove_4s_ease-in-out_infinite]"
+                     style={{ transform: 'translate(60%, 60%)' }}
                   >
                      <MousePointer className="text-black fill-white" size={20} />
                      <div className="ml-3 mt-1 bg-black text-white text-[8px] px-1.5 py-0.5 rounded font-bold whitespace-nowrap shadow-lg">
                         Click
                      </div>
-                  </motion.div>
+                  </div>
                </div>
 
-               {/* Floating Badges - Analytics */}
-               <motion.div
-                 animate={{ y: [0, -6, 0] }}
-                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                 className="absolute -right-4 top-16 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 max-w-[120px]"
+               {/* Floating Badges - Analytics - Using CSS animation */}
+               <div
+                 className="absolute -right-4 top-16 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 max-w-[120px] animate-[floatUp_4s_ease-in-out_infinite]"
                >
                  <div className="flex items-center gap-2 mb-1.5">
                    <div className="bg-blue-100 p-1 rounded text-blue-600">
@@ -210,13 +201,11 @@ const Hero: React.FC = () => {
                     <div className="w-1/5 bg-blue-600 h-[85%] rounded-t-[1px] relative shadow-lg shadow-blue-500/50"></div>
                     <div className="w-1/5 bg-blue-100 h-[50%] rounded-t-[1px]"></div>
                  </div>
-               </motion.div>
+               </div>
 
-               {/* Floating Badges - Rating */}
-               <motion.div
-                 animate={{ y: [0, 6, 0] }}
-                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                 className="absolute -left-4 bottom-12 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50"
+               {/* Floating Badges - Rating - Using CSS animation */}
+               <div
+                 className="absolute -left-4 bottom-12 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 animate-[floatDown_5s_ease-in-out_1s_infinite]"
                >
                  <div className="flex items-center gap-2">
                     <div className="bg-orange-100 p-1.5 rounded">
@@ -230,9 +219,9 @@ const Hero: React.FC = () => {
                       </div>
                     </div>
                  </div>
-               </motion.div>
+               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

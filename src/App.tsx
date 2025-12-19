@@ -14,6 +14,9 @@ const PricingPage = lazy(() => import('./pages/Pricing'));
 const WebDesignPage = lazy(() => import('./pages/WebDesign'));
 const ContactPage = lazy(() => import('./pages/Contact'));
 const MumbaiPage = lazy(() => import('./pages/Mumbai'));
+const TermsPage = lazy(() => import('./pages/Terms'));
+const PrivacyPage = lazy(() => import('./pages/Privacy'));
+const SitemapPage = lazy(() => import('./pages/Sitemap'));
 
 // Loading component
 const PageLoader = () => (
@@ -41,6 +44,9 @@ function App() {
             <Route path="/web-design" element={<WebDesignPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/mumbai" element={<MumbaiPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/sitemap" element={<SitemapPage />} />
           </Routes>
         </Suspense>
         <ContactFormModal />

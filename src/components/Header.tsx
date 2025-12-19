@@ -74,17 +74,14 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         `}
       >
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 cursor-pointer group">
+        <Link to="/" className="flex items-center cursor-pointer group">
           <img
             src="/logo.png"
             alt="FactoryJet"
-            width={36}
-            height={36}
-            className="w-8 h-8 md:w-9 md:h-9 object-contain"
+            width={160}
+            height={48}
+            className="h-10 md:h-12 w-auto object-contain"
           />
-          <span className={`text-lg md:text-2xl font-display font-bold tracking-tight transition-colors ${showSolidStyle ? 'text-jet-navy' : 'text-white'}`}>
-            FactoryJet
-          </span>
         </Link>
 
         {/* Desktop Nav */}

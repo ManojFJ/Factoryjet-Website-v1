@@ -9,8 +9,8 @@
     <!-- Preconnect to critical origins for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://grainy-gradients.vercel.app">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://grainy-gradients.vercel.app" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
@@ -40,6 +40,24 @@
       /* Prevent layout shift from fonts */
       html { font-size: 16px; }
       h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', system-ui, sans-serif; }
+      /* Critical Hero Section Styles for LCP optimization */
+      #root { min-height: 100vh; }
+      .min-h-screen { min-height: 100vh; }
+      .bg-white { background-color: #fff; }
+      .relative { position: relative; }
+      .overflow-hidden { overflow: hidden; }
+      .flex { display: flex; }
+      .items-center { align-items: center; }
+      .bg-\[#0052CC\] { background-color: #0052CC; }
+      /* Critical keyframe animations for Hero */
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInRight {
+        0% { opacity: 0; transform: scale(0.9) translateX(20px); }
+        100% { opacity: 1; transform: scale(1) translateX(0); }
+      }
     </style>
 
     <!-- Preload critical fonts -->

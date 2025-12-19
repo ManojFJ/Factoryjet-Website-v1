@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-// Initialize Firebase
-import './firebase';
-
 const rootElement = document.getElementById('root');
 if (!rootElement) {
   throw new Error("Could not find root element to mount to");
@@ -17,3 +14,6 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Initialize Firebase after app renders for better LCP
+import('./firebase');

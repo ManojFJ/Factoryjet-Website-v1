@@ -1,10 +1,4 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC1EBwPNqicJfuygSKfpy4te8CajzSFvL4",
   authDomain: "factoryjet-c5f8a.firebaseapp.com",
@@ -15,9 +9,34 @@ const firebaseConfig = {
   measurementId: "G-ZZ03T8W2VR"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app);
+// Lazy initialize Firebase after page load for better LCP
+let app: any = null;
+let analytics: any = null;
+let db: any = null;
 
-export { app, analytics, db };
+const initFirebase = async () => {
+  if (app) return { app, analytics, db };
+
+  const { initializeApp } = await import("firebase/app");
+  const { getAnalytics } = await import("firebase/analytics");
+  const { getFirestore } = await import("firebase/firestore");
+
+  app = initializeApp(firebaseConfig);
+  analytics = getAnalytics(app);
+  db = getFirestore(app);
+
+  return { app, analytics, db };
+};
+
+// Initialize Firebase after page becomes interactive
+if (typeof window !== 'undefined') {
+  if (document.readyState === 'complete') {
+    initFirebase();
+  } else {
+    window.addEventListener('load', () => {
+      requestIdleCallback ? requestIdleCallback(() => initFirebase()) : setTimeout(initFirebase, 100);
+    });
+  }
+}
+
+export { app, analytics, db, initFirebase };

@@ -41,6 +41,28 @@ module.exports = {
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'scale(0.9) translateX(20px)' },
+          '100%': { opacity: '1', transform: 'scale(1) translateX(0)' },
+        },
+        floatUp: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+        floatDown: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(6px)' },
+        },
+        cursorMove: {
+          '0%, 100%': { transform: 'translate(60%, 60%)', opacity: '1' },
+          '50%': { transform: 'translate(70%, 40%)', opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],

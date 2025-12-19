@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Rocket, Mail, MapPin, Phone, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,11 +10,14 @@ const Footer: React.FC = () => {
 
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4 md:mb-6">
-              <div className="w-8 h-8 bg-jet-blue rounded-lg flex items-center justify-center text-white">
-                <Rocket size={18} fill="currentColor" />
-              </div>
-              <span className="text-xl md:text-2xl font-display font-bold">FactoryJet</span>
+            <Link to="/" className="inline-block mb-4 md:mb-6">
+              <img
+                src="/logo.png"
+                alt="FactoryJet"
+                width={160}
+                height={48}
+                className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-gray-400 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
               World-class website and e-commerce development for growing businesses. Fast, affordable, and results-driven.
@@ -87,9 +90,9 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
           <p>© 2025 FactoryJet Digital Solutions. All rights reserved.</p>
           <div className="flex gap-4 md:gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+            <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link>
+            <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link>
+            <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>
