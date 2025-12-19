@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         { label: 'Case Studies', href: '/case', icon: BookOpen, desc: 'Real client success stories', isRoute: true },
       ]
     },
-    { label: 'Contact Us', href: '#cta', hasDropdown: false }
+    { label: 'Contact Us', href: '/contact', hasDropdown: false, isRoute: true }
   ];
 
   const toggleMobileSubmenu = (label: string) => {
