@@ -1,0 +1,47 @@
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+        heading: ['Poppins', 'Inter', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        jetBlue: '#0052CC',
+        jetOrange: '#FF6B35',
+        jetGreen: '#10B981',
+        'jet-blue': '#0052CC',
+        'jet-orange': '#FF6B35',
+        'jet-green': '#10B981',
+        jet: {
+          blue: '#0052CC',
+          orange: '#FF6B35',
+          green: '#10B981',
+          navy: '#0F172A',
+          slate: '#1E293B',
+          gray: '#64748B',
+          light: '#E2E8F0',
+          white: '#F8FAFC',
+        },
+        slate: {
+          850: '#1e293b',
+          900: '#0f172a',
+        },
+      },
+      backgroundImage: {
+        'hero-pattern':
+          "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+      },
+      boxShadow: {
+        neumorphic: '20px 20px 60px #d1d5db, -20px -20px 60px #ffffff',
+        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+      },
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+    },
+  },
+  plugins: [],
+};
