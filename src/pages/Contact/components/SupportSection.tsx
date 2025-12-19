@@ -21,7 +21,7 @@ const SupportSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               <div>
                 <p className="text-red-700 font-medium mb-2">Emergency Hotline (24/7)</p>
-                <p className="text-2xl font-bold text-slate-900">+91-XXXXX-XXXXX</p>
+                <p className="text-2xl font-bold text-slate-900">+91 96999 77699</p>
                 <p className="text-sm text-red-600 mt-1">Response: Within 1 hour</p>
               </div>
               
@@ -35,7 +35,7 @@ const SupportSection: React.FC = () => {
               </div>
 
                <div>
-                 <a href="mailto:emergency@factoryjet.com" className="inline-block w-full text-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors">
+                 <a href="mailto:connect@factoryjet.com" className="inline-block w-full text-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors">
                    Email Emergency Team
                  </a>
                  <p className="text-xs text-red-600 mt-2 text-center">Reserved for existing clients only</p>
@@ -52,21 +52,21 @@ const SupportSection: React.FC = () => {
             <LifeBuoy className="w-8 h-8 text-jetBlue mb-4" />
             <h3 className="text-lg font-bold text-slate-900 mb-2">Technical Support</h3>
             <p className="text-sm text-slate-600 mb-4">Monday - Friday: 9 AM - 7 PM IST</p>
-            <a href="mailto:support@factoryjet.com" className="text-jetBlue font-semibold hover:underline">support@factoryjet.com</a>
+            <a href="mailto:connect@factoryjet.com" className="text-jetBlue font-semibold hover:underline">connect@factoryjet.com</a>
           </div>
 
           <div className="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <CreditCard className="w-8 h-8 text-jetBlue mb-4" />
             <h3 className="text-lg font-bold text-slate-900 mb-2">Billing Questions</h3>
             <p className="text-sm text-slate-600 mb-4">Response Time: 24 business hours</p>
-            <a href="mailto:billing@factoryjet.com" className="text-jetBlue font-semibold hover:underline">billing@factoryjet.com</a>
+            <a href="mailto:connect@factoryjet.com" className="text-jetBlue font-semibold hover:underline">connect@factoryjet.com</a>
           </div>
 
           <div className="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <Users className="w-8 h-8 text-jetBlue mb-4" />
             <h3 className="text-lg font-bold text-slate-900 mb-2">Account Management</h3>
             <p className="text-sm text-slate-600 mb-4">Contact your dedicated manager</p>
-            <a href="mailto:accounts@factoryjet.com" className="text-jetBlue font-semibold hover:underline">accounts@factoryjet.com</a>
+            <a href="mailto:connect@factoryjet.com" className="text-jetBlue font-semibold hover:underline">connect@factoryjet.com</a>
           </div>
         </div>
       </div>

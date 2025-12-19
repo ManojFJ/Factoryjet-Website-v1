@@ -60,11 +60,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-gray-400">
               <li className="flex items-start gap-3">
                 <Phone className="shrink-0 text-jetOrange" size={20} />
-                <span>+91-96999-77699</span>
+                <span>+91 96999 77699</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="shrink-0 text-jetOrange" size={20} />
-                <span>hello@factoryjet.com</span>
+                <span>connect@factoryjet.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="shrink-0 text-jetOrange" size={20} />

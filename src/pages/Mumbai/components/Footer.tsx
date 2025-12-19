@@ -66,15 +66,15 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-jet-blue" size={18} />
-                <span>hello@factoryjet.com</span>
+                <span>connect@factoryjet.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-jet-blue" size={18} />
-                <span>+91-99999-99999</span>
+                <span>+91 96999 77699</span>
               </li>
               <li className="flex items-center gap-3">
                 <MessageCircle className="text-jet-green" size={18} />
-                <span>WhatsApp: +91-99999-99999</span>
+                <span>WhatsApp: +91 96999 77699</span>
               </li>
             </ul>
           </div>

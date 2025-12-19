@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-6 text-white">Contact</h4>
             <ul className="space-y-3 text-slate-400">
               <li>Bangalore, India</li>
-              <li>+91-XXXXX-XXXXX</li>
-              <li>hello@factoryjet.com</li>
+              <li>+91 96999 77699</li>
+              <li>connect@factoryjet.com</li>
               <li className="text-sm text-jetOrange font-bold mt-4">Response Time: &lt; 2 Hrs</li>
             </ul>
           </div>

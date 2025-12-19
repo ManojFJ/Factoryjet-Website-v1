@@ -31,16 +31,16 @@ const CTA: React.FC<CTAProps> = ({ onCtaClick }) => {
             </button>
             <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
               <a 
-                href="https://wa.me/919999999999" 
+                href="https://wa.me/919699977699?text=Hi%20FactoryJet" 
                 className="w-full md:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
               >
                 <MessageCircle size={20} /> WhatsApp Us
               </a>
               <a 
-                href="tel:+919999999999" 
+                href="tel:+919699977699" 
                 className="w-full md:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
               >
-                <Phone size={20} /> +91-99999-99999
+                <Phone size={20} /> +91 96999 77699
               </a>
             </div>
           </div>

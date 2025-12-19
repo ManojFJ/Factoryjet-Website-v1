@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Gift, MessageCircle, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 const ExitIntentPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,6 +11,8 @@ const ExitIntentPopup: React.FC = () => {
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
@@ -24,12 +28,32 @@ const ExitIntentPopup: React.FC = () => {
   const handleClose = () => {
     setIsVisible(false);
     setHasDismissed(true);
+    setIsSubmitting(false);
+    setError(null);
   };
 
-  const handleClaim = () => {
-    if (whatsapp.length === 10) {
+  const handleClaim = async () => {
+    if (whatsapp.length !== 10 || isSubmitting) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      await addDoc(collection(db, 'mumbai_exit_intent'), {
+        whatsapp: `+91${whatsapp}`,
+        email,
+        createdAt: serverTimestamp(),
+        status: 'new',
+        source: 'mumbai_exit_intent',
+      });
       setIsSuccess(true);
       setTimeout(handleClose, 3000);
+    } catch (err) {
+      console.error('Error submitting exit intent form:', err);
+      setError('Something went wrong. Please try again.');
+      setIsSubmitting(false);
     }
   };
 
@@ -128,13 +152,19 @@ const ExitIntentPopup: React.FC = () => {
 
                         <button 
                           onClick={handleClaim}
-                          disabled={whatsapp.length < 10}
+                          disabled={whatsapp.length < 10 || isSubmitting}
                           className={`w-full py-4 rounded-2xl font-bold shadow-xl flex items-center justify-center gap-2 transition-all transform active:scale-95 shimmer ${
-                            whatsapp.length === 10 ? 'bg-jet-orange text-white hover:bg-orange-600 shadow-orange-500/20' : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                            whatsapp.length === 10 && !isSubmitting ? 'bg-jet-orange text-white hover:bg-orange-600 shadow-orange-500/20' : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                           }`}
                         >
-                          Claim Free Audit <ArrowRight size={20} />
+                          {isSubmitting ? 'Submitting...' : 'Claim Free Audit'} <ArrowRight size={20} />
                         </button>
+
+                        {error && (
+                          <p className="text-center text-xs text-red-600 font-semibold">
+                            {error}
+                          </p>
+                        )}
                         
                         <p className="text-center text-[10px] text-jet-gray font-bold uppercase tracking-widest flex items-center justify-center gap-2">
                           <ShieldCheck size={12} className="text-jet-green"/> Secure & No Spam Promise

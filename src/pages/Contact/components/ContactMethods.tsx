@@ -54,13 +54,13 @@ const ContactMethods: React.FC = () => {
             <p className="text-slate-600 mb-6 flex-grow">Speak directly with a knowledgeable team member (not a receptionist). Get immediate answers.</p>
             
             <div className="space-y-3 mb-6 md:mb-8 text-sm text-slate-500">
-               <p className="font-bold text-xl sm:text-2xl text-slate-900">+91-96999 77699</p>
+               <p className="font-bold text-xl sm:text-2xl text-slate-900">+91 96999 77699</p>
                <p className="text-xs">Wait Time: &lt;2 mins during business hours</p>
             </div>
 
-            <button className="w-full py-3 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-lg hover:border-jetOrange hover:text-jetOrange transition-colors">
+            <a href="tel:+919699977699" className="w-full py-3 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-lg hover:border-jetOrange hover:text-jetOrange transition-colors text-center">
               Call Now
-            </button>
+            </a>
           </motion.div>
 
           {/* Card 3: WhatsApp */}
@@ -76,13 +76,13 @@ const ContactMethods: React.FC = () => {
             <p className="text-slate-600 mb-6 flex-grow">Quick questions, sharing documents, or ongoing communication. Response within 30 minutes.</p>
             
             <div className="space-y-3 mb-6 md:mb-8 text-sm text-slate-500">
-               <p className="font-bold text-xl sm:text-2xl text-slate-900">+91-96999-77699</p>
+               <p className="font-bold text-xl sm:text-2xl text-slate-900">+91 96999 77699</p>
                <p className="text-xs">Share screenshots & docs easily</p>
             </div>
 
-            <button className="w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2">
+            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" className="w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2">
               <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
-            </button>
+            </a>
           </motion.div>
         </div>
 
@@ -102,19 +102,19 @@ const ContactMethods: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="block text-slate-400 text-xs uppercase font-semibold">General Inquiries</span>
-                <a href="mailto:hello@factoryjet.com" className="text-jetBlue hover:underline font-medium">hello@factoryjet.com</a>
+                <a href="mailto:connect@factoryjet.com" className="text-jetBlue hover:underline font-medium">connect@factoryjet.com</a>
               </div>
               <div>
                 <span className="block text-slate-400 text-xs uppercase font-semibold">Sales</span>
-                <a href="mailto:sales@factoryjet.com" className="text-jetBlue hover:underline font-medium">sales@factoryjet.com</a>
+                <a href="mailto:connect@factoryjet.com" className="text-jetBlue hover:underline font-medium">connect@factoryjet.com</a>
               </div>
               <div>
                 <span className="block text-slate-400 text-xs uppercase font-semibold">Support</span>
-                <a href="mailto:support@factoryjet.com" className="text-jetBlue hover:underline font-medium">support@factoryjet.com</a>
+                <a href="mailto:connect@factoryjet.com" className="text-jetBlue hover:underline font-medium">connect@factoryjet.com</a>
               </div>
               <div>
                 <span className="block text-slate-400 text-xs uppercase font-semibold">Careers</span>
-                <a href="mailto:careers@factoryjet.com" className="text-jetBlue hover:underline font-medium">careers@factoryjet.com</a>
+                <a href="mailto:connect@factoryjet.com" className="text-jetBlue hover:underline font-medium">connect@factoryjet.com</a>
               </div>
             </div>
           </div>

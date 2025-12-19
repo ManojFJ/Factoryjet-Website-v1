@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ChevronRight, Send } from 'lucide-react';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 import { ContactFormData, INITIAL_FORM_STATE } from '../types';
 
 const SERVICES = [
@@ -58,6 +60,7 @@ const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>(INITIAL_FORM_STATE);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -80,14 +83,25 @@ const ContactForm: React.FC = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API Call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setError(null);
+
+    try {
+      await addDoc(collection(db, 'contactpage'), {
+        ...formData,
+        createdAt: serverTimestamp(),
+        status: 'new',
+        source: 'contact_page',
+      });
       setIsSuccess(true);
-    }, 2000);
+    } catch (err) {
+      console.error('Error submitting contact form:', err);
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {
@@ -111,7 +125,13 @@ const ContactForm: React.FC = () => {
                <span className="text-sm text-slate-700">Within 2 Hours: Personal Response</span>
              </div>
           </div>
-          <button onClick={() => setIsSuccess(false)} className="mt-6 md:mt-8 text-jetBlue font-medium hover:underline">
+          <button
+            onClick={() => {
+              setIsSuccess(false);
+              setError(null);
+            }}
+            className="mt-6 md:mt-8 text-jetBlue font-medium hover:underline"
+          >
             Submit another response
           </button>
         </div>
@@ -264,6 +284,12 @@ const ContactForm: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            {error && (
+              <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                {error}
+              </div>
+            )}
 
             <div className="pt-6 md:pt-8">
               <button 

@@ -28,8 +28,8 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Contact Us</h4>
             <ul className="space-y-4 text-sm">
-              <li>hello@factoryjet.com</li>
-              <li>+91-XXXXX-XXXXX</li>
+              <li>connect@factoryjet.com</li>
+              <li>+91 96999 77699</li>
               <li>
                 Bangalore, India<br />
                 (Serving Global Markets)

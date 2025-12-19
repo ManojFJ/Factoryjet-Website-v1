@@ -23,7 +23,7 @@ const CTA: React.FC = () => {
                 Schedule Free Call <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </button>
               <button className="bg-blue-800/50 hover:bg-blue-800 text-white border border-blue-400/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
-                <Phone className="w-4 h-4 md:w-5 md:h-5" /> +91-96999-77699
+                <Phone className="w-4 h-4 md:w-5 md:h-5" /> +91 96999 77699
               </button>
             </div>
           </div>

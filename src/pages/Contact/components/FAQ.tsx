@@ -36,7 +36,7 @@ const PRICING_FAQS: AccordionItem[] = [
 const SUPPORT_FAQS: AccordionItem[] = [
   { question: "Who will be my main point of contact?", answer: "You will be assigned a dedicated Project Manager or Account Manager. They will be your single point of contact for updates, feedback, and questions, so you never get passed around." },
   { question: "What if I have an emergency on a weekend?", answer: "For existing clients with critical support packages, we have a 24/7 emergency hotline. If your site goes down on a Sunday, we're on it within an hour." },
-  { question: "Do you offer white-label services for other agencies?", answer: "Yes, we do! We partner with design agencies and consultants to deliver backend dev or complex implementations under their brand. Email partnerships@factoryjet.com to discuss." },
+  { question: "Do you offer white-label services for other agencies?", answer: "Yes, we do! We partner with design agencies and consultants to deliver backend dev or complex implementations under their brand. Email connect@factoryjet.com to discuss." },
   { question: "How do we track the project's progress?", answer: "Transparency is key. We set up a project dashboard (using tools like Jira, Trello, or ClickUp) where you can see real-time progress. We also have weekly status calls to keep everyone aligned." },
   { question: "Do you own the code after the project is done?", answer: "Once the project is fully paid for, you own 100% of the code, design assets, and intellectual property. We don't hold your business hostage." },
 ];

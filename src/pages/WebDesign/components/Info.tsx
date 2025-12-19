@@ -150,10 +150,10 @@ export const Info = () => {
                 </span>
               </button>
 
-              <button className="group w-full sm:w-auto flex items-center justify-center gap-2 md:gap-3 px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl border border-white/30 hover:bg-white/10 text-white font-bold text-base md:text-lg backdrop-blur-sm transition-all">
+              <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" className="group w-full sm:w-auto flex items-center justify-center gap-2 md:gap-3 px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl border border-white/30 hover:bg-white/10 text-white font-bold text-base md:text-lg backdrop-blur-sm transition-all">
                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
                 <span>Chat on WhatsApp</span>
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
