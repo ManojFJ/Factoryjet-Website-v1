@@ -320,7 +320,7 @@ const Pricing: React.FC = () => {
               >
                 {/* Popular Badge */}
                 {tier.isPopular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-jetOrange text-white px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md shadow-orange-500/20 whitespace-nowrap">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-700 text-white px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-md shadow-orange-700/20 whitespace-nowrap">
                     {tier.highlight}
                   </div>
                 )}
@@ -330,7 +330,7 @@ const Pricing: React.FC = () => {
                   <h4 className="text-jet-navy font-bold tracking-wide uppercase text-xs md:text-sm mb-3 md:mb-4">{tier.name}</h4>
                   <div className="flex items-baseline gap-1 mb-3 md:mb-4">
                     <span className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy">{tier.price}</span>
-                    <span className="text-slate-400 text-xs md:text-sm font-medium">
+                    <span className="text-slate-500 text-xs md:text-sm font-medium">
                        {tier.price.includes('/Year') ? '' : '+ GST'}
                     </span>
                   </div>
@@ -342,7 +342,7 @@ const Pricing: React.FC = () => {
                   <div className="space-y-5 md:space-y-8">
                     {tier.features.map((group, gIdx) => (
                       <div key={gIdx}>
-                        <h5 className="text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 md:mb-3 border-b border-slate-100 pb-1">
+                        <h5 className="text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 md:mb-3 border-b border-slate-100 pb-1">
                           {group.category}
                         </h5>
                         <ul className="space-y-2 md:space-y-2.5">
@@ -374,7 +374,7 @@ const Pricing: React.FC = () => {
                     className={`
                       w-full py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm transition-all duration-300 flex items-center justify-center gap-2 group
                       ${tier.isPopular
-                        ? 'bg-jetOrange hover:bg-orange-600 text-white shadow-lg shadow-orange-500/30 hover:shadow-xl hover:-translate-y-1'
+                        ? 'bg-orange-700 hover:bg-orange-800 text-white shadow-lg shadow-orange-700/30 hover:shadow-xl hover:-translate-y-1'
                         : 'bg-white border-2 border-slate-200 text-jet-navy hover:border-jet-blue hover:text-jet-blue'
                       }
                     `}

@@ -65,7 +65,7 @@ const WhyUs: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <h2 className="text-jet-blue font-bold tracking-wide uppercase text-xs md:text-sm mb-2 md:mb-3">Why Choose FactoryJet</h2>
+          <h2 className="text-blue-200 font-bold tracking-wide uppercase text-xs md:text-sm mb-2 md:mb-3">Why Choose FactoryJet</h2>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-4 md:mb-6">
             Better value, faster delivery, real results.
           </h3>

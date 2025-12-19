@@ -225,7 +225,7 @@ const FAQ: React.FC = () => {
           {/* Left Column: Category Navigation */}
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32 space-y-1 md:space-y-2">
-              <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 md:mb-4 px-2 md:px-4">Browse Topics</p>
+              <p className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 md:mb-4 px-2 md:px-4">Browse Topics</p>
               <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
                 {categories.map((cat) => (
                   <button
@@ -250,7 +250,7 @@ const FAQ: React.FC = () => {
                     </div>
                     <div className="min-w-0">
                       <span className="block font-bold text-xs md:text-base truncate">{cat.label}</span>
-                      <span className={`text-[10px] md:text-xs mt-0.5 hidden md:block ${activeCategory === cat.id ? 'text-blue-100' : 'text-slate-400'}`}>
+                      <span className={`text-[10px] md:text-xs mt-0.5 hidden md:block ${activeCategory === cat.id ? 'text-blue-100' : 'text-slate-500'}`}>
                         {cat.desc}
                       </span>
                     </div>

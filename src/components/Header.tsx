@@ -143,7 +143,11 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
             className={`p-2 rounded-lg transition-colors ${showSolidStyle ? 'text-jet-navy hover:bg-gray-100' : 'text-white hover:bg-white/20'}`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -153,7 +157,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-4 lg:hidden flex flex-col gap-2 animate-in slide-in-from-top-4 duration-300">
+        <div id="mobile-menu" className="absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-4 lg:hidden flex flex-col gap-2 animate-in slide-in-from-top-4 duration-300">
           {navItems.map((item) => (
             <div key={item.label} className="border-b border-gray-100 last:border-0 pb-2 last:pb-0">
               {item.hasDropdown ? (

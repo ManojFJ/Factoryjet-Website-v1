@@ -21,12 +21,18 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-3 md:gap-4">
               {[
-                { Icon: Linkedin, href: '#' },
-                { Icon: Instagram, href: '#' },
-                { Icon: Facebook, href: '#' },
-                { Icon: Twitter, href: '#' }
-              ].map(({ Icon, href }, i) => (
-                <a key={i} href={href} className="w-9 h-9 md:w-10 md:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-jet-blue hover:text-white transition-all">
+                { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+                { Icon: Instagram, href: '#', label: 'Instagram' },
+                { Icon: Facebook, href: '#', label: 'Facebook' },
+                { Icon: Twitter, href: '#', label: 'Twitter' }
+              ].map(({ Icon, href, label }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  className="w-9 h-9 md:w-10 md:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-jet-blue hover:text-white transition-all"
+                >
                   <Icon size={16} className="md:w-[18px] md:h-[18px]" />
                 </a>
               ))}
@@ -35,7 +41,7 @@ const Footer: React.FC = () => {
 
           {/* Services Links */}
           <div>
-            <h4 className="font-bold text-base md:text-lg mb-4 md:mb-6">Services</h4>
+            <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
               <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Website Development</Link></li>
               <li><Link to="/ecommerce" className="hover:text-jet-blue transition-colors">E-Commerce Stores</Link></li>
@@ -47,7 +53,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-base md:text-lg mb-4 md:mb-6">Company</h4>
+            <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Company</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
               <li><Link to="/about" className="hover:text-jet-blue transition-colors">About Us</Link></li>
               <li><Link to="/case" className="hover:text-jet-blue transition-colors">Our Portfolio</Link></li>
@@ -60,7 +66,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className="col-span-2 md:col-span-1">
-            <h4 className="font-bold text-base md:text-lg mb-4 md:mb-6">Get in Touch</h4>
+            <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Get in Touch</h3>
             <ul className="space-y-3 md:space-y-4 text-gray-400 text-sm md:text-base">
               <li className="flex items-start gap-3">
                 <Phone className="shrink-0 text-jetOrange w-4 h-4 md:w-5 md:h-5 mt-0.5" />
@@ -78,12 +84,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-500">
+        <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
           <p>© 2025 FactoryJet Digital Solutions. All rights reserved.</p>
           <div className="flex gap-4 md:gap-6">
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
       </div>

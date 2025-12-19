@@ -92,8 +92,8 @@ const Portfolio: React.FC = () => {
                                  </div>
                              </div>
 
-                             <div className="mb-3 md:mb-4 bg-green-50 border border-green-100 p-2 md:p-3 rounded-lg">
-                                 <span className="text-jetGreen font-bold text-sm md:text-lg flex items-center gap-1.5 md:gap-2">
+                             <div className="mb-3 md:mb-4 bg-emerald-50 border border-emerald-100 p-2 md:p-3 rounded-lg">
+                                 <span className="text-emerald-800 font-bold text-sm md:text-lg flex items-center gap-1.5 md:gap-2">
                                     <TrendingUp size={16} className="md:w-5 md:h-5" /> {project.metric}
                                  </span>
                              </div>

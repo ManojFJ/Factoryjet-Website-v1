@@ -56,8 +56,8 @@ const Hero: React.FC = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-10">
-              <button className="relative overflow-hidden bg-jetOrange hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all shadow-[0_0_40px_-10px_rgba(255,107,53,0.6)] hover:shadow-[0_0_60px_-10px_rgba(255,107,53,0.8)] hover:-translate-y-1 flex items-center justify-center gap-2 group">
-                <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-in-out -skew-x-12 -ml-4 w-[120%]"></div>
+              <button className="relative overflow-hidden bg-orange-700 hover:bg-orange-800 text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all shadow-[0_0_40px_-10px_rgba(194,65,12,0.6)] hover:shadow-[0_0_60px_-10px_rgba(194,65,12,0.8)] hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                <div className="absolute inset-0 bg-black/10 group-hover:translate-x-full transition-transform duration-500 ease-in-out -skew-x-12 -ml-4 w-[120%]"></div>
                 <Rocket size={16} className="md:w-[18px] md:h-[18px] fill-white/20 relative z-10" />
                 <span className="relative z-10">Start Your Project</span>
               </button>
