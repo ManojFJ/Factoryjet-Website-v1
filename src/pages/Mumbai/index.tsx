@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Header from './components/Header';
+import Header from '../../components/Header';
 import Hero from './components/Hero';
 import StickyMobileBar from './components/StickyMobileBar';
 import SocialProof from './components/SocialProof';
@@ -26,7 +26,7 @@ const MumbaiPage: React.FC = () => {
 
   return (
     <div className="min-h-screen relative bg-white text-jet-navy font-body overflow-x-hidden pb-24 lg:pb-0">
-      <Header onCtaClick={openModal} />
+      <Header variant="transparent" />
       <main>
         <Hero onCtaClick={openModal} />
         <SocialProof />

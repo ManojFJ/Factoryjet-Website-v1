@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Rocket, ChevronDown, Monitor, ShoppingBag, BookOpen, FileText } from 'lucide-react';
+import { Menu, X, ChevronDown, Monitor, ShoppingBag, BookOpen, FileText } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
 
 interface HeaderProps {
@@ -75,9 +75,13 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer group">
-          <div className={`w-8 h-8 md:w-9 md:h-9 rounded-xl flex items-center justify-center transition-colors ${showSolidStyle ? 'bg-jet-blue text-white' : 'bg-white text-jet-blue shadow-md'}`}>
-            <Rocket size={18} className="md:w-5 md:h-5" fill="currentColor" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="FactoryJet"
+            width={36}
+            height={36}
+            className="w-8 h-8 md:w-9 md:h-9 object-contain"
+          />
           <span className={`text-lg md:text-2xl font-display font-bold tracking-tight transition-colors ${showSolidStyle ? 'text-jet-navy' : 'text-white'}`}>
             FactoryJet
           </span>
