@@ -76,11 +76,11 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         {/* Logo */}
         <Link to="/" className="flex items-center cursor-pointer group">
           <img
-            src="/logo.png"
+            src="/FinalLogo.svg"
             alt="FactoryJet"
             width={160}
-            height={48}
-            className="h-10 md:h-12 w-auto object-contain"
+            height={40}
+            className="h-8 md:h-10 w-auto object-contain"
           />
         </Link>
 
