@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { HERO_CONTENT } from '../constants';
+import { useContactModal } from '../../../context/ContactModalContext';
 
 const Hero = () => {
+  const { openModal } = useContactModal();
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-50 pt-24 md:pt-20">
       {/* Abstract Background Elements */}
@@ -51,15 +54,21 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4 md:px-0"
         >
-          <button className="w-full sm:w-auto group relative px-6 md:px-8 py-3 md:py-4 bg-jetOrange text-white font-semibold text-sm md:text-base rounded-lg overflow-hidden shadow-lg shadow-jetOrange/25 hover:shadow-xl hover:shadow-jetOrange/40 transition-all">
+          <button
+            onClick={openModal}
+            className="w-full sm:w-auto group relative px-6 md:px-8 py-3 md:py-4 bg-jetOrange text-white font-semibold text-sm md:text-base rounded-lg overflow-hidden shadow-lg shadow-jetOrange/25 hover:shadow-xl hover:shadow-jetOrange/40 transition-all"
+          >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Meet Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Get Started <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </button>
 
-          <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-900 border border-slate-200 font-semibold text-sm md:text-base rounded-lg hover:border-jetBlue hover:text-jetBlue transition-colors flex items-center justify-center gap-2">
-            View Our Work
+          <button
+            onClick={openModal}
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-900 border border-slate-200 font-semibold text-sm md:text-base rounded-lg hover:border-jetBlue hover:text-jetBlue transition-colors flex items-center justify-center gap-2"
+          >
+            Contact Us
           </button>
         </motion.div>
       </div>

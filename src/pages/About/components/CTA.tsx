@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useContactModal } from '../../../context/ContactModalContext';
 
 const CTA = () => {
+  const { openModal } = useContactModal();
+
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white border-t border-slate-100">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center">
@@ -13,11 +16,17 @@ const CTA = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4 md:px-0">
-          <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-jetBlue text-white font-bold text-sm md:text-base rounded-lg shadow-xl shadow-jetBlue/30 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+          <button
+            onClick={openModal}
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-jetBlue text-white font-bold text-sm md:text-base rounded-lg shadow-xl shadow-jetBlue/30 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+          >
             Schedule Free Consultation <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
-          <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-700 font-bold text-sm md:text-base rounded-lg border border-slate-200 hover:border-jetBlue hover:text-jetBlue transition-colors">
-            View Success Stories
+          <button
+            onClick={openModal}
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-700 font-bold text-sm md:text-base rounded-lg border border-slate-200 hover:border-jetBlue hover:text-jetBlue transition-colors"
+          >
+            Contact Us
           </button>
         </div>
       </div>
