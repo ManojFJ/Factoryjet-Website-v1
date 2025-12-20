@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
               </button>
 
               <a
-                href="https://wa.me/91969977699"
+                href="https://wa.me/919699977699"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1"
