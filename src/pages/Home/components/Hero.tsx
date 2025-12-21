@@ -15,6 +15,15 @@ const WhatsAppIcon: React.FC<{ size?: number; className?: string }> = ({ size = 
   </svg>
 );
 
+// Track WhatsApp click conversion for Google Ads
+const trackWhatsAppConversion = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      'send_to': 'AW-11127037244/N5PhCPWusNQbELy65Lkp'
+    });
+  }
+};
+
 const Hero: React.FC = () => {
   const { openModal } = useContactModal();
 
@@ -82,6 +91,7 @@ const Hero: React.FC = () => {
                 href="https://wa.me/919699977699"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1"
               >
                 <WhatsAppIcon size={18} className="md:w-[20px] md:h-[20px]" />

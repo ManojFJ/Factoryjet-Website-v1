@@ -2,6 +2,15 @@ import React from 'react';
 import { Phone, MessageCircle, Calendar, Mail, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// Track WhatsApp click conversion for Google Ads
+const trackWhatsAppConversion = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      'send_to': 'AW-11127037244/N5PhCPWusNQbELy65Lkp'
+    });
+  }
+};
+
 const ContactMethods: React.FC = () => {
   return (
     <section id="connect" className="py-12 md:py-24 bg-slate-50">
@@ -80,7 +89,7 @@ const ContactMethods: React.FC = () => {
                <p className="text-xs">Share screenshots & docs easily</p>
             </div>
 
-            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" className="w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2">
+            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={trackWhatsAppConversion} className="w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2">
               <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
             </a>
           </motion.div>

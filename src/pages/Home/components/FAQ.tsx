@@ -11,6 +11,15 @@ import {
   LifeBuoy,
 } from 'lucide-react';
 
+// Track WhatsApp click conversion for Google Ads
+const trackWhatsAppConversion = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      'send_to': 'AW-11127037244/N5PhCPWusNQbELy65Lkp'
+    });
+  }
+};
+
 // --- DATA STRUCTURE ---
 const categories = [
   { id: 'strategy', label: 'Strategy & Process', icon: Lightbulb, desc: 'Timeline, ownership, and how we work.' },
@@ -327,6 +336,7 @@ const FAQ: React.FC = () => {
                  href="https://wa.me/91969977699"
                  target="_blank"
                  rel="noopener noreferrer"
+                 onClick={trackWhatsAppConversion}
                  className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-md hover:shadow-lg"
                >
                  <svg viewBox="0 0 24 24" width={16} height={16} fill="currentColor">

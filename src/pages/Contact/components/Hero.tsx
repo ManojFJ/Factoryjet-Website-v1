@@ -2,6 +2,15 @@ import React from 'react';
 import { Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// Track WhatsApp click conversion for Google Ads
+const trackWhatsAppConversion = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      'send_to': 'AW-11127037244/N5PhCPWusNQbELy65Lkp'
+    });
+  }
+};
+
 const Hero: React.FC = () => {
   return (
     <section className="relative bg-jetBlue text-white overflow-hidden pb-12 md:pb-16 pt-20 md:pt-24 lg:pt-32">
@@ -60,7 +69,7 @@ const Hero: React.FC = () => {
             <a href="tel:+919699977699" className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-lg font-semibold transition-all text-center">
               Call Us Now
             </a>
-            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-lg font-semibold transition-all text-center">
+            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={trackWhatsAppConversion} className="flex-1 sm:flex-none px-4 py-3 sm:px-6 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-lg font-semibold transition-all text-center">
               WhatsApp Us
             </a>
           </div>

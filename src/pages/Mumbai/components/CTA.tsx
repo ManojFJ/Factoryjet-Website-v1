@@ -2,6 +2,15 @@
 import React from 'react';
 import { MessageCircle, Phone, ArrowRight } from 'lucide-react';
 
+// Track WhatsApp click conversion for Google Ads
+const trackWhatsAppConversion = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      'send_to': 'AW-11127037244/N5PhCPWusNQbELy65Lkp'
+    });
+  }
+};
+
 interface CTAProps {
   onCtaClick?: () => void;
 }
@@ -30,8 +39,9 @@ const CTA: React.FC<CTAProps> = ({ onCtaClick }) => {
               &#128640; Get Your Free Website Audit
             </button>
             <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-              <a 
-                href="https://wa.me/919699977699?text=Hi%20FactoryJet" 
+              <a
+                href="https://wa.me/919699977699?text=Hi%20FactoryJet"
+                onClick={trackWhatsAppConversion}
                 className="w-full md:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
               >
                 <MessageCircle size={20} /> WhatsApp Us

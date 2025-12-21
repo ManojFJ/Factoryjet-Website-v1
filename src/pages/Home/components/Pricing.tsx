@@ -4,6 +4,15 @@ import { Check, ArrowRight } from 'lucide-react';
 import { PricingTier } from '../types';
 import { useContactModal } from '../../../context/ContactModalContext';
 
+// Track WhatsApp click conversion for Google Ads
+const trackWhatsAppConversion = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      'send_to': 'AW-11127037244/N5PhCPWusNQbELy65Lkp'
+    });
+  }
+};
+
 const Pricing: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'website' | 'ecommerce' | 'amc'>('website');
   const { openModal } = useContactModal();
@@ -397,6 +406,7 @@ const Pricing: React.FC = () => {
              href="https://wa.me/91969977699"
              target="_blank"
              rel="noopener noreferrer"
+             onClick={trackWhatsAppConversion}
              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-all shadow-lg shadow-green-500/20 hover:shadow-xl hover:-translate-y-0.5"
            >
              <svg viewBox="0 0 24 24" width={18} height={18} fill="currentColor">
