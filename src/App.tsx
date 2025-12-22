@@ -14,6 +14,10 @@ const PricingPage = lazy(() => import('./pages/Pricing'));
 const WebDesignPage = lazy(() => import('./pages/WebDesign'));
 const ContactPage = lazy(() => import('./pages/Contact'));
 const MumbaiPage = lazy(() => import('./pages/Mumbai'));
+const AhmedabadPage = lazy(() => import('./pages/Ahmedabad'));
+const BangalorePage = lazy(() => import('./pages/Bangalore'));
+const PunePage = lazy(() => import('./pages/Pune'));
+const SuratPage = lazy(() => import('./pages/Surat'));
 const TermsPage = lazy(() => import('./pages/Terms'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const SitemapPage = lazy(() => import('./pages/Sitemap'));
@@ -44,6 +48,10 @@ function App() {
             <Route path="/web-design" element={<WebDesignPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/mumbai" element={<MumbaiPage />} />
+            <Route path="/ahmedabad" element={<AhmedabadPage />} />
+            <Route path="/bangalore" element={<BangalorePage />} />
+            <Route path="/pune" element={<PunePage />} />
+            <Route path="/surat" element={<SuratPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />

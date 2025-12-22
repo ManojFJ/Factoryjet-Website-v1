@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="text-jet-orange">Jet</span>
             </div>
             <p className="text-jet-gray text-sm leading-relaxed mb-6">
-              Mumbai's trusted web design partner for SMBs. We build high-performance e-commerce and business websites that actually convert.
+              Pune's trusted web design partner for SMBs. We build high-performance e-commerce and business websites that actually convert.
             </p>
             <div className="flex gap-4">
               {[Linkedin, Instagram, Twitter, Youtube].map((Icon, i) => (
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-jet-gray text-sm">
               <li><Link to="/web-design" className="hover:text-white transition-colors">Website Design & Development</Link></li>
               <li><Link to="/ecommerce" className="hover:text-white transition-colors">E-Commerce Store Development</Link></li>
-              <li><Link to="/web-design" className="hover:text-white transition-colors">Local SEO & GMB setup</Link></li>
+              <li><Link to="/web-design" className="hover:text-white transition-colors">Local SEO & Google My Business</Link></li>
               <li><Link to="/web-design" className="hover:text-white transition-colors">Digital Marketing</Link></li>
               <li><Link to="/web-design" className="hover:text-white transition-colors">CRM & ERP Solutions</Link></li>
             </ul>
@@ -44,16 +44,18 @@ const Footer: React.FC = () => {
 
           {/* Col 3 */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Areas We Serve</h4>
+            <h4 className="font-bold text-lg mb-6">Pune Areas We Serve</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-jet-gray text-sm">
-              <li>Andheri (E&W)</li>
-              <li>Bandra</li>
-              <li>Lower Parel</li>
-              <li>Navi Mumbai</li>
-              <li>Thane</li>
-              <li>Powai</li>
-              <li>BKC</li>
-              <li>Vashi</li>
+              <li>Koregaon Park</li>
+              <li>Hinjewadi</li>
+              <li>Baner</li>
+              <li>Kothrud</li>
+              <li>Wakad</li>
+              <li>Pimpri-Chinchwad</li>
+              <li>Viman Nagar</li>
+              <li>Aundh</li>
+              <li>Magarpatta</li>
+              <li>Kalyani Nagar</li>
             </ul>
           </div>
 
@@ -63,7 +65,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-jet-gray text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="text-jet-blue flex-shrink-0" size={18} />
-                <span>7th Floor, Crystal Tower, Andheri West, Mumbai 400053</span>
+                <span>Pune, Maharashtra 411001</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-jet-blue" size={18} />
@@ -84,7 +86,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Other Locations</h4>
             <ul className="space-y-3 text-jet-gray text-sm">
-              <li><Link to="/pune" className="hover:text-white transition-colors">Pune</Link></li>
+              <li><Link to="/mumbai" className="hover:text-white transition-colors">Mumbai</Link></li>
               <li><Link to="/bangalore" className="hover:text-white transition-colors">Bangalore</Link></li>
               <li><Link to="/ahmedabad" className="hover:text-white transition-colors">Ahmedabad</Link></li>
               <li><Link to="/surat" className="hover:text-white transition-colors">Surat</Link></li>
@@ -103,11 +105,11 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-jet-gray text-xs">
           <p>&copy; 2026 FactoryJet Technologies. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white">Terms of Service</a>
             <a href="#" className="hover:text-white">Refund Policy</a>
           </div>
-          <p>Made with &#10084; in Mumbai</p>
+          <p>Made with &#10084; in Pune</p>
         </div>
       </div>
     </footer>

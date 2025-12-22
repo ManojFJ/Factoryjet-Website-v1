@@ -18,7 +18,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import LeadFormModal from './components/LeadFormModal';
 
-const MumbaiPage: React.FC = () => {
+const AhmedabadPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -49,4 +49,4 @@ const MumbaiPage: React.FC = () => {
   );
 };
 
-export default MumbaiPage;
+export default AhmedabadPage;

@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-slate-300 py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 mb-12">
+
           {/* Brand */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <div className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <div className="w-8 h-8 bg-jetBlue rounded-lg"></div>
               FactoryJet
@@ -31,7 +32,7 @@ const Footer = () => {
               <li>connect@factoryjet.com</li>
               <li>+91 96999 77699</li>
               <li>
-                Bangalore, India<br />
+                India<br />
                 (Serving Global Markets)
               </li>
             </ul>
@@ -41,20 +42,32 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-sm">
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">About Us</li>
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">Our Team</li>
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">Careers</li>
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">Success Stories</li>
+              <li><Link to="/about" className="hover:text-jetBlue cursor-pointer transition-colors">About Us</Link></li>
+              <li><Link to="/case" className="hover:text-jetBlue cursor-pointer transition-colors">Our Portfolio</Link></li>
+              <li><Link to="/pricing" className="hover:text-jetBlue cursor-pointer transition-colors">Pricing</Link></li>
+              <li><Link to="/blog" className="hover:text-jetBlue cursor-pointer transition-colors">Blog</Link></li>
             </ul>
           </div>
 
-           {/* Legal */}
-           <div>
+          {/* Locations */}
+          <div>
+            <h4 className="text-white font-bold mb-6">Locations</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link to="/mumbai" className="hover:text-jetBlue cursor-pointer transition-colors">Mumbai</Link></li>
+              <li><Link to="/pune" className="hover:text-jetBlue cursor-pointer transition-colors">Pune</Link></li>
+              <li><Link to="/bangalore" className="hover:text-jetBlue cursor-pointer transition-colors">Bangalore</Link></li>
+              <li><Link to="/ahmedabad" className="hover:text-jetBlue cursor-pointer transition-colors">Ahmedabad</Link></li>
+              <li><Link to="/surat" className="hover:text-jetBlue cursor-pointer transition-colors">Surat</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
             <h4 className="text-white font-bold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm">
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">Privacy Policy</li>
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">Terms of Service</li>
-              <li className="hover:text-jetBlue cursor-pointer transition-colors">Sitemap</li>
+              <li><Link to="/privacy" className="hover:text-jetBlue cursor-pointer transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-jetBlue cursor-pointer transition-colors">Terms of Service</Link></li>
+              <li><Link to="/sitemap" className="hover:text-jetBlue cursor-pointer transition-colors">Sitemap</Link></li>
             </ul>
           </div>
 

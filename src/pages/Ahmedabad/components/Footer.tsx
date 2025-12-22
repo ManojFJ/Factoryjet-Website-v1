@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="text-jet-orange">Jet</span>
             </div>
             <p className="text-jet-gray text-sm leading-relaxed mb-6">
-              Mumbai's trusted web design partner for SMBs. We build high-performance e-commerce and business websites that actually convert.
+              Ahmedabad's trusted web design partner for SMBs. We build high-performance e-commerce and business websites that actually convert.
             </p>
             <div className="flex gap-4">
               {[Linkedin, Instagram, Twitter, Youtube].map((Icon, i) => (
@@ -46,14 +46,14 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Areas We Serve</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-jet-gray text-sm">
-              <li>Andheri (E&W)</li>
-              <li>Bandra</li>
-              <li>Lower Parel</li>
-              <li>Navi Mumbai</li>
-              <li>Thane</li>
-              <li>Powai</li>
-              <li>BKC</li>
-              <li>Vashi</li>
+              <li>Navrangpura</li>
+              <li>Prahlad Nagar</li>
+              <li>SG Highway</li>
+              <li>Satellite</li>
+              <li>Bodakdev</li>
+              <li>Vastrapur</li>
+              <li>Gandhinagar</li>
+              <li>Surat</li>
             </ul>
           </div>
 
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-jet-gray text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="text-jet-blue flex-shrink-0" size={18} />
-                <span>7th Floor, Crystal Tower, Andheri West, Mumbai 400053</span>
+                <span>4th Floor, Aaryans Corporate Park, Navrangpura, Ahmedabad 380009</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-jet-blue" size={18} />
@@ -84,9 +84,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Other Locations</h4>
             <ul className="space-y-3 text-jet-gray text-sm">
+              <li><Link to="/mumbai" className="hover:text-white transition-colors">Mumbai</Link></li>
               <li><Link to="/pune" className="hover:text-white transition-colors">Pune</Link></li>
               <li><Link to="/bangalore" className="hover:text-white transition-colors">Bangalore</Link></li>
-              <li><Link to="/ahmedabad" className="hover:text-white transition-colors">Ahmedabad</Link></li>
               <li><Link to="/surat" className="hover:text-white transition-colors">Surat</Link></li>
             </ul>
           </div>
@@ -103,11 +103,11 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-jet-gray text-xs">
           <p>&copy; 2026 FactoryJet Technologies. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white">Terms of Service</a>
             <a href="#" className="hover:text-white">Refund Policy</a>
           </div>
-          <p>Made with &#10084; in Mumbai</p>
+          <p>Made with &#10084; in Ahmedabad</p>
         </div>
       </div>
     </footer>
