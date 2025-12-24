@@ -44,13 +44,15 @@ const Footer: React.FC = () => {
 
           {/* Services Links */}
           <div>
-            <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Services</h3>
+            <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Website Development</Link></li>
-              <li><Link to="/ecommerce" className="hover:text-jet-blue transition-colors">E-Commerce Stores</Link></li>
-              <li><Link to="/ecommerce" className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
-              <li><Link to="/ecommerce" className="hover:text-jet-blue transition-colors">WooCommerce</Link></li>
-              <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Landing Pages</Link></li>
+              <li><Link to="/services/web-development/mumbai" className="hover:text-jet-blue transition-colors">Web Development</Link></li>
+              <li><Link to="/services/web-design/mumbai" className="hover:text-jet-blue transition-colors">Web Design</Link></li>
+              <li><Link to="/services/ecommerce-development/mumbai" className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
+              <li><Link to="/services/shopify-development/mumbai" className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
+              <li><Link to="/services/wordpress-development/mumbai" className="hover:text-jet-blue transition-colors">WordPress</Link></li>
+              <li><Link to="/services/mobile-app-development/mumbai" className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
+              <li><Link to="/services/seo-services/mumbai" className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
             </ul>
           </div>
 

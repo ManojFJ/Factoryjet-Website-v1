@@ -65,11 +65,10 @@ const Hero: React.FC = () => {
               <span className="text-cyan-50 tracking-wide uppercase font-bold">New: AI-Enhanced Development</span>
             </div>
 
-            {/* Headline - Fits in 3 Lines */}
+            {/* Headline - SEO Optimized H1 with visual enhancement */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.15] md:leading-[1.1] mb-4 md:mb-5 drop-shadow-lg tracking-tight">
-              Build World-Class <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-100">Websites</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">Stores</span> <br className="hidden lg:block" />
-              That Drive Revenue.
+              World-Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-100">Web</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">E-Commerce</span> <br className="hidden lg:block" />
+              Development Services
             </h1>
 
             <p className="text-sm md:text-lg text-blue-100/90 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">

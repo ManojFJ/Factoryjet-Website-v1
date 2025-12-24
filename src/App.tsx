@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { ContactModalProvider } from './context/ContactModalContext';
 import ContactFormModal from './components/ContactFormModal';
 import ScrollToTop from './components/ScrollToTop';
@@ -21,6 +22,8 @@ const SuratPage = lazy(() => import('./pages/Surat'));
 const TermsPage = lazy(() => import('./pages/Terms'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const SitemapPage = lazy(() => import('./pages/Sitemap'));
+// New Service + Location Page
+const ServiceLocationPage = lazy(() => import('./pages/ServiceLocation'));
 
 // Loading component
 const PageLoader = () => (
@@ -34,32 +37,36 @@ const PageLoader = () => (
 
 function App() {
   return (
-    <ContactModalProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/case" element={<CasePage />} />
-            <Route path="/ecommerce" element={<EcommPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/web-design" element={<WebDesignPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/mumbai" element={<MumbaiPage />} />
-            <Route path="/ahmedabad" element={<AhmedabadPage />} />
-            <Route path="/bangalore" element={<BangalorePage />} />
-            <Route path="/pune" element={<PunePage />} />
-            <Route path="/surat" element={<SuratPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/sitemap" element={<SitemapPage />} />
-          </Routes>
-        </Suspense>
-        <ContactFormModal />
-      </BrowserRouter>
-    </ContactModalProvider>
+    <HelmetProvider>
+      <ContactModalProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/case" element={<CasePage />} />
+              <Route path="/ecommerce" element={<EcommPage />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/web-design" element={<WebDesignPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/mumbai" element={<MumbaiPage />} />
+              <Route path="/ahmedabad" element={<AhmedabadPage />} />
+              <Route path="/bangalore" element={<BangalorePage />} />
+              <Route path="/pune" element={<PunePage />} />
+              <Route path="/surat" element={<SuratPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/sitemap" element={<SitemapPage />} />
+              {/* New SEO-optimized Service + Location routes */}
+              <Route path="/services/:service/:city" element={<ServiceLocationPage />} />
+            </Routes>
+          </Suspense>
+          <ContactFormModal />
+        </BrowserRouter>
+      </ContactModalProvider>
+    </HelmetProvider>
   );
 }
 

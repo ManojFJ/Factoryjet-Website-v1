@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Monitor, ShoppingBag, BookOpen, FileText } from 'lucide-react';
+import { Menu, X, ChevronDown, Monitor, ShoppingBag, BookOpen, FileText, Code, Store, Smartphone, TrendingUp, Megaphone } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
 
 interface HeaderProps {
@@ -30,8 +30,14 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
       href: '#services',
       hasDropdown: true,
       submenu: [
-        { label: 'Web Design', href: '/web-design', icon: Monitor, desc: 'Custom high-performance websites', isRoute: true },
-        { label: 'E-Commerce', href: '/ecommerce', icon: ShoppingBag, desc: 'Shopify & WooCommerce stores', isRoute: true },
+        { label: 'Web Development', href: '/services/web-development/mumbai', icon: Monitor, desc: 'Custom website development', isRoute: true },
+        { label: 'Web Design', href: '/services/web-design/mumbai', icon: Code, desc: 'Beautiful UI/UX design', isRoute: true },
+        { label: 'E-Commerce', href: '/services/ecommerce-development/mumbai', icon: ShoppingBag, desc: 'Online store solutions', isRoute: true },
+        { label: 'Shopify Development', href: '/services/shopify-development/mumbai', icon: Store, desc: 'Shopify expertise', isRoute: true },
+        { label: 'WordPress', href: '/services/wordpress-development/mumbai', icon: FileText, desc: 'WordPress solutions', isRoute: true },
+        { label: 'Mobile Apps', href: '/services/mobile-app-development/mumbai', icon: Smartphone, desc: 'iOS & Android apps', isRoute: true },
+        { label: 'SEO Services', href: '/services/seo-services/mumbai', icon: TrendingUp, desc: 'Search optimization', isRoute: true },
+        { label: 'Digital Marketing', href: '/services/digital-marketing/mumbai', icon: Megaphone, desc: 'Marketing campaigns', isRoute: true },
       ]
     },
     { label: 'About Us', href: '/about', hasDropdown: false, isRoute: true },
@@ -103,14 +109,14 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
               {/* Desktop Dropdown */}
               {item.hasDropdown && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <div className="bg-white/90 backdrop-blur-xl rounded-2xl border border-white/50 shadow-xl p-3 w-64 overflow-hidden">
+                  <div className="bg-white/90 backdrop-blur-xl rounded-2xl border border-white/50 shadow-xl p-3 w-80 max-h-[80vh] overflow-y-auto overflow-hidden">
                     {item.submenu?.map((sub) => (
                       <Link
                         key={sub.label}
                         to={sub.href}
                         className="flex items-start gap-3 p-3 rounded-xl hover:bg-blue-50/50 transition-colors group/item"
                       >
-                        <div className="bg-blue-100/50 text-jet-blue p-2 rounded-lg group-hover/item:bg-jet-blue group-hover/item:text-white transition-colors">
+                        <div className="bg-blue-100/50 text-jet-blue p-2 rounded-lg group-hover/item:bg-jet-blue group-hover/item:text-white transition-colors shrink-0">
                           <sub.icon size={18} />
                         </div>
                         <div>
