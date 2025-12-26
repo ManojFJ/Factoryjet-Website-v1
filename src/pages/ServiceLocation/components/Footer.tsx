@@ -12,6 +12,12 @@ const Footer: React.FC<FooterProps> = ({ service, city }) => {
   const currentCity = cities[city];
   const currentService = services[service];
 
+  // Safety check - return null if data not found
+  if (!currentCity || !currentService) {
+    console.error('Footer error: city or service not found', { city, service });
+    return null;
+  }
+
   return (
     <footer className="bg-jet-navy text-white pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
