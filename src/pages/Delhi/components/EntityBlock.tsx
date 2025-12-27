@@ -23,24 +23,24 @@ const EntityBlock: React.FC = () => {
   ];
 
   const differentiators = [
-    '7-day average website delivery (50% faster than Pune industry average)',
+    '7-day average website delivery (50% faster than Delhi NCR industry average)',
     'Transparent pricing starting at ₹29,999 (no hidden costs)',
     'AI-enhanced design process for faster turnaround',
-    'Dedicated Pune-based support team',
+    'Dedicated Delhi NCR support team',
     'Full-stack capabilities (design + development + marketing + ERP)',
     '500+ successful projects across 50+ industries',
   ];
 
   const industries = [
-    { name: 'IT & Software Services', location: 'Hinjewadi, Kharadi, Magarpatta, Baner', color: 'bg-blue-100 text-blue-800' },
-    { name: 'Automobile & Manufacturing', location: 'Chakan, PCMC, Talegaon, Ranjangaon', color: 'bg-orange-100 text-orange-800' },
-    { name: 'Engineering & Heavy Industries', location: 'PCMC, Bhosari, Hadapsar', color: 'bg-gray-100 text-gray-800' },
-    { name: 'Healthcare & Diagnostics', location: 'All Pune', color: 'bg-green-100 text-green-800' },
-    { name: 'E-Commerce & Retail', location: 'Pune City, FC Road, MG Road', color: 'bg-purple-100 text-purple-800' },
-    { name: 'Real Estate & Construction', location: 'Hinjewadi, Baner, Wakad', color: 'bg-indigo-100 text-indigo-800' },
-    { name: 'Education & EdTech', location: 'All Pune — "Oxford of the East"', color: 'bg-yellow-100 text-yellow-800' },
-    { name: 'Pharmaceuticals & Chemicals', location: 'MIDC areas', color: 'bg-teal-100 text-teal-800' },
-    { name: 'Export & Import', location: 'Chakan, PCMC near JNPT connectivity', color: 'bg-pink-100 text-pink-800' },
+    { name: 'Manufacturing & Industrial', location: 'Noida, Greater Noida, Faridabad, Ghaziabad', color: 'bg-orange-100 text-orange-800' },
+    { name: 'Technology & IT Services', location: 'Gurgaon, Noida, Delhi', color: 'bg-blue-100 text-blue-800' },
+    { name: 'Corporate & Professional Services', location: 'Connaught Place, Aerocity, Cyber City', color: 'bg-gray-100 text-gray-800' },
+    { name: 'Healthcare & Diagnostics', location: 'All NCR', color: 'bg-green-100 text-green-800' },
+    { name: 'E-Commerce & Retail', location: 'Delhi, Gurgaon, All NCR', color: 'bg-purple-100 text-purple-800' },
+    { name: 'Real Estate & Construction', location: 'Gurgaon, Noida, Greater Noida', color: 'bg-indigo-100 text-indigo-800' },
+    { name: 'Government & PSU', location: 'Central Delhi, Chanakya Puri', color: 'bg-yellow-100 text-yellow-800' },
+    { name: 'Education & EdTech', location: 'All NCR', color: 'bg-teal-100 text-teal-800' },
+    { name: 'Export & Import', location: 'Okhla, Noida', color: 'bg-pink-100 text-pink-800' },
   ];
 
   const certifications = [
@@ -52,7 +52,7 @@ const EntityBlock: React.FC = () => {
   ];
 
   const awards = [
-    'Top 10 Web Design Companies in Pune (2024)',
+    'Top 10 Web Design Companies in Delhi NCR (2024)',
     'Best SMB Digital Partner Award',
     'Excellence in E-Commerce Development',
   ];
@@ -68,7 +68,7 @@ const EntityBlock: React.FC = () => {
           className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-jet-navy mb-4">
-            About FactoryJet — Website Design Company in Pune
+            About FactoryJet — Website Design Company in Delhi NCR
           </h2>
         </motion.div>
 
@@ -98,7 +98,7 @@ const EntityBlock: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-gray-600 font-medium">Headquarters</div>
-                  <div className="text-jet-navy font-semibold">Pune, Maharashtra</div>
+                  <div className="text-jet-navy font-semibold">Delhi NCR, India</div>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-gray-200">
@@ -107,7 +107,7 @@ const EntityBlock: React.FC = () => {
                   Service Areas
                 </div>
                 <div className="text-sm text-gray-700">
-                  Pune, Hinjewadi, Kharadi, Magarpatta City, Baner, Viman Nagar, Aundh, Koregaon Park, PCMC (Pimpri-Chinchwad), Chakan, Talegaon, Ranjangaon, Hadapsar, Wakad, and all Pune districts
+                  Delhi, Gurgaon (Gurugram), Noida, Greater Noida, Faridabad, Ghaziabad, and all NCR districts including Connaught Place, Cyber City, Sector 62, Aerocity, and more
                 </div>
               </div>
             </motion.div>
@@ -153,7 +153,7 @@ const EntityBlock: React.FC = () => {
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-jet-green flex-shrink-0 mt-0.5" />
-                  <span><strong>Industries:</strong> B2B, B2C, D2C, IT Services, Manufacturing, Engineering, Services, Retail</span>
+                  <span><strong>Industries:</strong> B2B, B2C, D2C, Manufacturing, IT Services, Services, Retail</span>
                 </div>
               </div>
             </motion.div>
@@ -186,7 +186,7 @@ const EntityBlock: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-jet-navy mb-4">Industries Served in Pune</h3>
+              <h3 className="text-2xl font-bold text-jet-navy mb-4">Industries Served in Delhi NCR</h3>
               <div className="flex flex-wrap gap-2">
                 {industries.map((industry, index) => (
                   <div

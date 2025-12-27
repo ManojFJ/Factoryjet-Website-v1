@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, ShoppingCart, Wordpress, Code2, Layout, RefreshCw, ArrowRight } from 'lucide-react';
+import { Building2, ShoppingCart, FileText, Code2, Layout, RefreshCw, ArrowRight } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
   const services = [
@@ -43,7 +43,7 @@ const ServicesSection: React.FC = () => {
       color: 'orange',
     },
     {
-      icon: Wordpress,
+      icon: FileText,
       title: 'WordPress Development',
       for: 'Blogs, content sites, business websites, portfolios, IT service companies',
       features: [

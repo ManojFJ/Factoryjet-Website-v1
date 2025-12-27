@@ -22,11 +22,12 @@ const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose }) => {
   const [error, setError] = useState('');
 
   const services = [
-    'Corporate Website Design',
-    'E-Commerce Development',
+    'Website Design & Development',
+    'E-Commerce Development (Shopify/WooCommerce)',
     'WordPress Development',
-    'Custom Web Application',
-    'Landing Page Design',
+    'Custom Web Application Development',
+    'Digital Marketing & SEO',
+    'CRM & ERP Implementation',
     'Website Redesign',
     'Not Sure / Need Consultation',
   ];
@@ -68,9 +69,9 @@ const LeadFormModal: React.FC<LeadFormModalProps> = ({ isOpen, onClose }) => {
       const { collection, addDoc, serverTimestamp } = await import('firebase/firestore');
 
       // Add document to Firestore
-      await addDoc(collection(db, 'pune_leads'), {
+      await addDoc(collection(db, 'delhi_leads'), {
         ...formData,
-        source: 'Pune Landing Page',
+        source: 'Delhi NCR Landing Page',
         timestamp: serverTimestamp(),
         userAgent: navigator.userAgent,
         referrer: document.referrer,

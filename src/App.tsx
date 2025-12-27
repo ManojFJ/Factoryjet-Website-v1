@@ -19,6 +19,9 @@ const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const SitemapPage = lazy(() => import('./pages/Sitemap'));
 // Service + Location Pages (replaces old city pages)
 const ServiceLocationPage = lazy(() => import('./pages/ServiceLocation'));
+// Dedicated City Landing Pages
+const PunePage = lazy(() => import('./pages/Pune'));
+const DelhiPage = lazy(() => import('./pages/Delhi'));
 
 // Loading component
 const PageLoader = () => (
@@ -49,6 +52,10 @@ function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/sitemap" element={<SitemapPage />} />
+
+              {/* Dedicated City Landing Pages */}
+              <Route path="/website-design-company-pune" element={<PunePage />} />
+              <Route path="/website-design-company-delhi" element={<DelhiPage />} />
 
               {/* Service + Location routes - NEW URL STRUCTURE */}
               <Route path="/services/:service/:city" element={<ServiceLocationPage />} />

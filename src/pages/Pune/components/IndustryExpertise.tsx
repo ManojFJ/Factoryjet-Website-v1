@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Factory, ShoppingBag, Heart, Home, GraduationCap, Flask, Wrench } from 'lucide-react';
+import { Monitor, Factory, ShoppingBag, Heart, Home, GraduationCap, Beaker, Wrench } from 'lucide-react';
 
 const IndustryExpertise: React.FC = () => {
   const industries = [
@@ -59,7 +59,7 @@ const IndustryExpertise: React.FC = () => {
       color: 'teal',
     },
     {
-      icon: Flask,
+      icon: Beaker,
       title: 'Pharmaceuticals & Chemicals',
       location: 'MIDC Areas',
       experience: '25+ pharma/chemical websites',
