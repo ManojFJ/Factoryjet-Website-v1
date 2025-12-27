@@ -5,7 +5,12 @@ const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll to top immediately
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // Also ensure document.documentElement scrolls to top (for some browsers)
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [pathname]);
 
   return null;
