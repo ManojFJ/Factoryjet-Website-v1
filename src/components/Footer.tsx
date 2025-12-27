@@ -72,11 +72,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Locations</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/mumbai" className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
-              <li><Link to="/pune" className="hover:text-jet-blue transition-colors">Pune</Link></li>
-              <li><Link to="/bangalore" className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
-              <li><Link to="/ahmedabad" className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
-              <li><Link to="/surat" className="hover:text-jet-blue transition-colors">Surat</Link></li>
+              <li><Link to="/services/web-development/mumbai" className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
+              <li><Link to="/services/web-development/pune" className="hover:text-jet-blue transition-colors">Pune</Link></li>
+              <li><Link to="/services/web-development/bangalore" className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
+              <li><Link to="/services/web-development/ahmedabad" className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
+              <li><Link to="/services/web-development/surat" className="hover:text-jet-blue transition-colors">Surat</Link></li>
             </ul>
           </div>
 

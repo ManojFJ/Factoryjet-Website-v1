@@ -26,7 +26,7 @@ const cities = [
   'surat'
 ];
 
-// Static pages
+// Static pages (removed old /mumbai, /pune, etc. - now using /services/:service/:city structure)
 const staticPages = [
   { url: '/', priority: '1.0', changefreq: 'daily' },
   { url: '/about', priority: '0.8', changefreq: 'monthly' },
@@ -36,11 +36,6 @@ const staticPages = [
   { url: '/case', priority: '0.7', changefreq: 'weekly' },
   { url: '/web-design', priority: '0.8', changefreq: 'weekly' },
   { url: '/ecommerce', priority: '0.8', changefreq: 'weekly' },
-  { url: '/mumbai', priority: '0.9', changefreq: 'weekly' },
-  { url: '/pune', priority: '0.9', changefreq: 'weekly' },
-  { url: '/bangalore', priority: '0.9', changefreq: 'weekly' },
-  { url: '/ahmedabad', priority: '0.9', changefreq: 'weekly' },
-  { url: '/surat', priority: '0.9', changefreq: 'weekly' },
   { url: '/terms', priority: '0.3', changefreq: 'yearly' },
   { url: '/privacy', priority: '0.3', changefreq: 'yearly' },
   { url: '/sitemap', priority: '0.3', changefreq: 'monthly' }

@@ -14,15 +14,10 @@ const EcommPage = lazy(() => import('./pages/Ecomm'));
 const PricingPage = lazy(() => import('./pages/Pricing'));
 const WebDesignPage = lazy(() => import('./pages/WebDesign'));
 const ContactPage = lazy(() => import('./pages/Contact'));
-const MumbaiPage = lazy(() => import('./pages/Mumbai'));
-const AhmedabadPage = lazy(() => import('./pages/Ahmedabad'));
-const BangalorePage = lazy(() => import('./pages/Bangalore'));
-const PunePage = lazy(() => import('./pages/Pune'));
-const SuratPage = lazy(() => import('./pages/Surat'));
 const TermsPage = lazy(() => import('./pages/Terms'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const SitemapPage = lazy(() => import('./pages/Sitemap'));
-// New Service + Location Page
+// Service + Location Pages (replaces old city pages)
 const ServiceLocationPage = lazy(() => import('./pages/ServiceLocation'));
 
 // Loading component
@@ -51,15 +46,11 @@ function App() {
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/web-design" element={<WebDesignPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/mumbai" element={<MumbaiPage />} />
-              <Route path="/ahmedabad" element={<AhmedabadPage />} />
-              <Route path="/bangalore" element={<BangalorePage />} />
-              <Route path="/pune" element={<PunePage />} />
-              <Route path="/surat" element={<SuratPage />} />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/sitemap" element={<SitemapPage />} />
-              {/* New SEO-optimized Service + Location routes */}
+
+              {/* Service + Location routes - NEW URL STRUCTURE */}
               <Route path="/services/:service/:city" element={<ServiceLocationPage />} />
             </Routes>
           </Suspense>
