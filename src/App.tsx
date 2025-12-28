@@ -22,6 +22,10 @@ const ServiceLocationPage = lazy(() => import('./pages/ServiceLocation'));
 // Dedicated City Landing Pages
 const PunePage = lazy(() => import('./pages/Pune'));
 const DelhiPage = lazy(() => import('./pages/Delhi'));
+const MumbaiPage = lazy(() => import('./pages/Mumbai'));
+const BangalorePage = lazy(() => import('./pages/Bangalore'));
+const AhmedabadPage = lazy(() => import('./pages/Ahmedabad'));
+const SuratPage = lazy(() => import('./pages/Surat'));
 
 // Loading component
 const PageLoader = () => (
@@ -56,6 +60,10 @@ function App() {
               {/* Dedicated City Landing Pages */}
               <Route path="/website-design-company-pune" element={<PunePage />} />
               <Route path="/website-design-company-delhi" element={<DelhiPage />} />
+              <Route path="/website-design-company-mumbai" element={<MumbaiPage />} />
+              <Route path="/website-design-company-bangalore" element={<BangalorePage />} />
+              <Route path="/website-design-company-ahmedabad" element={<AhmedabadPage />} />
+              <Route path="/website-design-company-surat" element={<SuratPage />} />
 
               {/* Service + Location routes - NEW URL STRUCTURE */}
               <Route path="/services/:service/:city" element={<ServiceLocationPage />} />

@@ -30,14 +30,8 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
       href: '#services',
       hasDropdown: true,
       submenu: [
-        { label: 'Web Development', href: '/services/web-development/mumbai', icon: Monitor, desc: 'Custom website development', isRoute: true },
-        { label: 'Web Design', href: '/services/web-design/mumbai', icon: Code, desc: 'Beautiful UI/UX design', isRoute: true },
-        { label: 'E-Commerce', href: '/services/ecommerce-development/mumbai', icon: ShoppingBag, desc: 'Online store solutions', isRoute: true },
-        { label: 'Shopify Development', href: '/services/shopify-development/mumbai', icon: Store, desc: 'Shopify expertise', isRoute: true },
-        { label: 'WordPress', href: '/services/wordpress-development/mumbai', icon: FileText, desc: 'WordPress solutions', isRoute: true },
-        { label: 'Mobile Apps', href: '/services/mobile-app-development/mumbai', icon: Smartphone, desc: 'iOS & Android apps', isRoute: true },
-        { label: 'SEO Services', href: '/services/seo-services/mumbai', icon: TrendingUp, desc: 'Search optimization', isRoute: true },
-        { label: 'Digital Marketing', href: '/services/digital-marketing/mumbai', icon: Megaphone, desc: 'Marketing campaigns', isRoute: true },
+        { label: 'Web Design', href: '/web-design', icon: Code, desc: 'Beautiful UI/UX design', isRoute: true },
+        { label: 'E-Commerce Development', href: '/ecommerce', icon: ShoppingBag, desc: 'Online store solutions', isRoute: true },
       ]
     },
     { label: 'About Us', href: '/about', hasDropdown: false, isRoute: true },
