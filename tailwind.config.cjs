@@ -9,6 +9,14 @@ module.exports = {
         body: ['Inter', 'sans-serif'],
       },
       colors: {
+        primary: '#0052CC', // Jet Blue
+        secondary: '#FF6B35', // Jet Orange
+        accent: '#10B981', // Jet Green
+        navy: '#0F172A',
+        slate: '#334155',
+        light: '#E2E8F0',
+        bgLight: '#F8FAFC',
+        bgBlueTint: '#EFF6FF',
         jetBlue: '#0052CC',
         jetOrange: '#FF6B35',
         jetGreen: '#10B981',
@@ -31,6 +39,7 @@ module.exports = {
         },
       },
       backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, #0052CC 0%, #003D99 50%, #0052CC 100%)',
         'hero-pattern':
           "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
       },

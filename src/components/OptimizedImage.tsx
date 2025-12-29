@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 
 interface OptimizedImageProps {
   src: string;
@@ -16,10 +16,10 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   alt,
   width,
   height,
-  className = '',
+  className = "",
   priority = false,
-  sizes = '100vw',
-  quality = 80,
+  sizes = "100vw",
+  quality = 70, // Default to 70 for better compression while maintaining visual quality
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
@@ -39,7 +39,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         }
       },
       {
-        rootMargin: '200px',
+        rootMargin: "200px",
         threshold: 0,
       }
     );
@@ -51,23 +51,29 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     return () => observer.disconnect();
   }, [priority]);
 
-  const isUnsplash = src.includes('unsplash.com');
+  const isUnsplash = src.includes("unsplash.com");
 
   const generateSrcSet = () => {
     if (!isUnsplash) return undefined;
 
     const widths = [400, 600, 800, 1000, 1200];
-    const baseUrl = src.split('?')[0];
-
+    const baseUrl = src.split("?")[0];
+    // Use WebP format for better compression, adjust quality based on image size
     return widths
-      .map((w) => `${baseUrl}?auto=format&fit=crop&w=${w}&q=${quality} ${w}w`)
-      .join(', ');
+      .map((w) => {
+        const q = w <= 400 ? Math.max(quality - 10, 60) : quality;
+        return `${baseUrl}?auto=format&fit=crop&w=${w}&q=${q}&fm=webp ${w}w`;
+      })
+      .join(", ");
   };
 
   const getOptimizedSrc = (targetWidth: number) => {
     if (!isUnsplash) return src;
-    const baseUrl = src.split('?')[0];
-    return `${baseUrl}?auto=format&fit=crop&w=${targetWidth}&q=${quality}`;
+    const baseUrl = src.split("?")[0];
+    // Use WebP format and adjust quality for smaller images
+    const optimizedQuality =
+      targetWidth <= 400 ? Math.max(quality - 10, 60) : quality;
+    return `${baseUrl}?auto=format&fit=crop&w=${targetWidth}&q=${optimizedQuality}&fm=webp`;
   };
 
   const aspectRatio = (height / width) * 100;
@@ -93,12 +99,12 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         alt={alt}
         width={width}
         height={height}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding={priority ? 'sync' : 'async'}
-        fetchPriority={priority ? 'high' : 'auto'}
+        loading={priority ? "eager" : "lazy"}
+        decoding={priority ? "sync" : "async"}
+        fetchPriority={priority ? "high" : "auto"}
         onLoad={() => setIsLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
+          isLoaded ? "opacity-100" : "opacity-0"
         } ${className}`}
       />
     </div>
