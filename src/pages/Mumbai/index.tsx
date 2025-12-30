@@ -30,14 +30,14 @@ const schemaMarkup = {
   name: "FactoryJet - Industrial Web Design Company Mumbai",
   image: "https://www.factoryjet.com/images/factoryjet-mumbai.jpg",
   url: "https://www.factoryjet.com/website-design-company-mumbai",
-  telephone: "+91-022-XXX-XXXX",
-  email: "mumbai@factoryjet.com",
+  telephone: "+91 96999 77699",
+  email: "connect@factoryjet.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Unit 501, Trade Centre, BKC",
+    streetAddress: "Building #20, 10, Ajit Glass Garden Rd, opp. Amrutnagar, Somani Gram, Goregaon West, ",
     addressLocality: "Mumbai",
     addressRegion: "Maharashtra",
-    postalCode: "400051",
+    postalCode: "400063",
     addressCountry: "IN",
   },
   geo: {

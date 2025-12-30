@@ -54,19 +54,19 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex gap-3">
                 <span>📍</span>
-                <span>Unit 501, Trade Centre, BKC, Mumbai, Maharashtra 400051</span>
+                <span>Building #20, 10, Ajit Glass Garden Rd, opp. Amrutnagar, Somani Gram, Goregaon West, Mumbai, Maharashtra 400063</span>
               </li>
               <li className="flex gap-3">
                 <span>📞</span>
-                <span>+91-022-XXX-XXXX</span>
+                <span>+91 96999 77699</span>
               </li>
               <li className="flex gap-3">
                 <span>💬</span>
-                <span>WhatsApp: +91-XXX-XXX-XXXX</span>
+                <span>WhatsApp: +91 96999 77699</span>
               </li>
               <li className="flex gap-3">
                 <span>✉️</span>
-                <span>mumbai@factoryjet.com</span>
+                <span>connect@factoryjet.com</span>
               </li>
             </ul>
           </div>

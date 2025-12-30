@@ -6,6 +6,8 @@ import {
   useContactModal,
 } from "./context/ContactModalContext";
 import ScrollToTop from "./components/ScrollToTop";
+import ChennaiPage from "./pages/chennai";
+import HyderabadPage from "./pages/Hyderabad";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -74,7 +76,9 @@ function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/sitemap" element={<SitemapPage />} />
-              <Route path="/locations/india/mumbai" element={<MumbaiPage />} />
+              <Route path="/locations/mumbai/web-design" element={<MumbaiPage />} />
+              <Route path="/locations/chennai/web-design" element={<ChennaiPage />} />
+              <Route path="/locations/hyderabad/web-design" element={<HyderabadPage />} />
 
               {/* Dedicated City Landing Pages */}
               <Route
