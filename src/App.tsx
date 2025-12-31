@@ -6,8 +6,6 @@ import {
   useContactModal,
 } from "./context/ContactModalContext";
 import ScrollToTop from "./components/ScrollToTop";
-import ChennaiPage from "./pages/chennai";
-import HyderabadPage from "./pages/Hyderabad";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -39,11 +37,14 @@ const PrivacyPage = lazy(() => import("./pages/Privacy"));
 const SitemapPage = lazy(() => import("./pages/Sitemap"));
 // Service + Location Pages (replaces old city pages)
 const ServiceLocationPage = lazy(() => import("./pages/ServiceLocation"));
-// Dedicated City Landing Pages
-const PunePage = lazy(() => import("./pages/Pune"));
-const DelhiPage = lazy(() => import("./pages/Delhi"));
-const MumbaiPage = lazy(() => import("./pages/Mumbai"));
-const BangalorePage = lazy(() => import("./pages/Bangalore"));
+// Location Landing Pages - New Structure
+const BangaloreNewPage = lazy(() => import("./pages/BangaloreNew"));
+const DelhiNewPage = lazy(() => import("./pages/DelhiNew"));
+const MumbaiNewPage = lazy(() => import("./pages/MumbaiNew"));
+const PuneNewPage = lazy(() => import("./pages/PuneNew"));
+const MaduraiNewPage = lazy(() => import("./pages/MaduraiNew"));
+const ChennaiPage = lazy(() => import("./pages/chennai"));
+const HyderabadPage = lazy(() => import("./pages/Hyderabad"));
 const AhmedabadPage = lazy(() => import("./pages/Ahmedabad"));
 const SuratPage = lazy(() => import("./pages/Surat"));
 
@@ -76,37 +77,19 @@ function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/sitemap" element={<SitemapPage />} />
-              <Route path="/locations/mumbai/web-design" element={<MumbaiPage />} />
+
+              {/* Location Landing Pages - New URL Pattern */}
+              <Route path="/locations/bangalore/web-design" element={<BangaloreNewPage />} />
+              <Route path="/locations/delhi/web-design" element={<DelhiNewPage />} />
+              <Route path="/locations/mumbai/web-design" element={<MumbaiNewPage />} />
+              <Route path="/locations/pune/web-design" element={<PuneNewPage />} />
+              <Route path="/locations/madurai/web-design" element={<MaduraiNewPage />} />
               <Route path="/locations/chennai/web-design" element={<ChennaiPage />} />
               <Route path="/locations/hyderabad/web-design" element={<HyderabadPage />} />
+              <Route path="/locations/ahmedabad/web-design" element={<AhmedabadPage />} />
+              <Route path="/locations/surat/web-design" element={<SuratPage />} />
 
-              {/* Dedicated City Landing Pages */}
-              <Route
-                path="/website-design-company-pune"
-                element={<PunePage />}
-              />
-              <Route
-                path="/website-design-company-delhi"
-                element={<DelhiPage />}
-              />
-              <Route
-                path="/website-design-company-mumbai"
-                element={<MumbaiPage />}
-              />
-              <Route
-                path="/website-design-company-bangalore"
-                element={<BangalorePage />}
-              />
-              <Route
-                path="/website-design-company-ahmedabad"
-                element={<AhmedabadPage />}
-              />
-              <Route
-                path="/website-design-company-surat"
-                element={<SuratPage />}
-              />
-
-              {/* Service + Location routes - NEW URL STRUCTURE */}
+              {/* Service + Location routes */}
               <Route
                 path="/services/:service/:city"
                 element={<ServiceLocationPage />}
