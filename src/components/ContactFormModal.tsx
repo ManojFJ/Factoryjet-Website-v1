@@ -1,35 +1,67 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, CheckCircle, Loader2, Monitor, ShoppingBag, Wrench, Rocket } from 'lucide-react';
-import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase';
-import { useContactModal } from '../context/ContactModalContext';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  X,
+  Send,
+  CheckCircle,
+  Loader2,
+  Monitor,
+  ShoppingBag,
+  Wrench,
+  Rocket,
+} from "lucide-react";
+import { useContactModal } from "../context/ContactModalContext";
 
-type ServiceType = 'website' | 'ecommerce' | 'maintenance' | 'other';
-type BudgetRange = 'starter' | 'business' | 'enterprise' | 'not-sure';
+type ServiceType = "website" | "ecommerce" | "maintenance" | "other";
+type BudgetRange = "starter" | "business" | "enterprise" | "not-sure";
 
 interface FormData {
   name: string;
   email: string;
   phone: string;
   company: string;
-  service: ServiceType | '';
-  budget: BudgetRange | '';
+  service: ServiceType | "";
+  budget: BudgetRange | "";
   message: string;
 }
 
-const services: { id: ServiceType; label: string; icon: React.ElementType; description: string }[] = [
-  { id: 'website', label: 'Website Design', icon: Monitor, description: 'Custom high-performance websites' },
-  { id: 'ecommerce', label: 'E-Commerce', icon: ShoppingBag, description: 'Shopify & WooCommerce stores' },
-  { id: 'maintenance', label: 'AMC / Maintenance', icon: Wrench, description: 'Ongoing support & updates' },
-  { id: 'other', label: 'Other / Custom', icon: Rocket, description: 'Custom development needs' },
+const services: {
+  id: ServiceType;
+  label: string;
+  icon: React.ElementType;
+  description: string;
+}[] = [
+  {
+    id: "website",
+    label: "Website Design",
+    icon: Monitor,
+    description: "Custom high-performance websites",
+  },
+  {
+    id: "ecommerce",
+    label: "E-Commerce",
+    icon: ShoppingBag,
+    description: "Shopify & WooCommerce stores",
+  },
+  {
+    id: "maintenance",
+    label: "AMC / Maintenance",
+    icon: Wrench,
+    description: "Ongoing support & updates",
+  },
+  {
+    id: "other",
+    label: "Other / Custom",
+    icon: Rocket,
+    description: "Custom development needs",
+  },
 ];
 
 const budgets: { id: BudgetRange; label: string; range: string }[] = [
-  { id: 'starter', label: 'Starter', range: '₹25K - ₹50K' },
-  { id: 'business', label: 'Business', range: '₹50K - ₹1.2L' },
-  { id: 'enterprise', label: 'Enterprise', range: '₹1.2L+' },
-  { id: 'not-sure', label: 'Not Sure', range: 'Need guidance' },
+  { id: "starter", label: "Starter", range: "₹25K - ₹50K" },
+  { id: "business", label: "Business", range: "₹50K - ₹1.2L" },
+  { id: "enterprise", label: "Enterprise", range: "₹1.2L+" },
+  { id: "not-sure", label: "Not Sure", range: "Need guidance" },
 ];
 
 const ContactFormModal: React.FC = () => {
@@ -39,49 +71,65 @@ const ContactFormModal: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Pre-load Firebase when modal opens (non-blocking)
+  useEffect(() => {
+    if (isOpen) {
+      // Pre-initialize Firebase in the background when modal opens
+      import("../firebase").then(({ initFirebase }) => {
+        initFirebase().catch(() => {
+          // Silently fail - will retry on submit if needed
+        });
+      });
+    }
+  }, [isOpen]);
+
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    budget: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    budget: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleServiceSelect = (serviceId: ServiceType) => {
-    setFormData(prev => ({ ...prev, service: serviceId }));
+    setFormData((prev) => ({ ...prev, service: serviceId }));
   };
 
   const handleBudgetSelect = (budgetId: BudgetRange) => {
-    setFormData(prev => ({ ...prev, budget: budgetId }));
+    setFormData((prev) => ({ ...prev, budget: budgetId }));
   };
 
   const validateStep = (currentStep: number): boolean => {
     if (currentStep === 1) {
-      return formData.service !== '';
+      return formData.service !== "";
     }
     if (currentStep === 2) {
-      return formData.name.trim() !== '' &&
-             formData.email.trim() !== '' &&
-             /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+      return (
+        formData.name.trim() !== "" &&
+        formData.email.trim() !== "" &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+      );
     }
     return true;
   };
 
   const handleNext = () => {
     if (validateStep(step)) {
-      setStep(prev => Math.min(prev + 1, 3) as 1 | 2 | 3);
+      setStep((prev) => Math.min(prev + 1, 3) as 1 | 2 | 3);
     }
   };
 
   const handleBack = () => {
-    setStep(prev => Math.max(prev - 1, 1) as 1 | 2 | 3);
+    setStep((prev) => Math.max(prev - 1, 1) as 1 | 2 | 3);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -90,22 +138,35 @@ const ContactFormModal: React.FC = () => {
     setError(null);
 
     try {
+      // Dynamically import Firebase functions only when submitting
+      const { doc, setDoc, serverTimestamp } = await import(
+        "firebase/firestore"
+      );
+
+      // Ensure Firebase is initialized and get db instance
+      const { initFirebase } = await import("../firebase");
+      const { db } = await initFirebase();
+
+      if (!db) {
+        throw new Error("Firebase not initialized");
+      }
+
       // Generate readable document ID: 2025-12-18_13-30-45_BhaveshB
       const now = new Date();
-      const dateStr = now.toISOString().split('T')[0]; // 2025-12-18
-      const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-'); // 13-30-45
-      const namePart = formData.name.replace(/\s+/g, '').slice(0, 15); // BhaveshB (no spaces, max 15 chars)
+      const dateStr = now.toISOString().split("T")[0]; // 2025-12-18
+      const timeStr = now.toTimeString().split(" ")[0].replace(/:/g, "-"); // 13-30-45
+      const namePart = formData.name.replace(/\s+/g, "").slice(0, 15); // BhaveshB (no spaces, max 15 chars)
       const docId = `${dateStr}_${timeStr}_${namePart}`;
 
-      await setDoc(doc(db, 'contactus', docId), {
+      await setDoc(doc(db, "contactus", docId), {
         ...formData,
         createdAt: serverTimestamp(),
-        status: 'new',
+        status: "new",
       });
       setIsSuccess(true);
     } catch (err) {
-      console.error('Error submitting form:', err);
-      setError('Something went wrong. Please try again.');
+      console.error("Error submitting form:", err);
+      setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -118,13 +179,13 @@ const ContactFormModal: React.FC = () => {
       setIsSuccess(false);
       setError(null);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        budget: '',
-        message: '',
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        budget: "",
+        message: "",
       });
     }, 300);
   };
@@ -136,10 +197,10 @@ const ContactFormModal: React.FC = () => {
           <div
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
               s === step
-                ? 'bg-jet-blue text-white scale-110'
+                ? "bg-jet-blue text-white scale-110"
                 : s < step
-                ? 'bg-jet-green text-white'
-                : 'bg-slate-200 text-slate-500'
+                ? "bg-jet-green text-white"
+                : "bg-slate-200 text-slate-500"
             }`}
           >
             {s < step ? <CheckCircle size={16} /> : s}
@@ -147,7 +208,7 @@ const ContactFormModal: React.FC = () => {
           {s < 3 && (
             <div
               className={`w-12 h-1 mx-1 rounded transition-colors duration-300 ${
-                s < step ? 'bg-jet-green' : 'bg-slate-200'
+                s < step ? "bg-jet-green" : "bg-slate-200"
               }`}
             />
           )}
@@ -164,8 +225,12 @@ const ContactFormModal: React.FC = () => {
       className="space-y-6"
     >
       <div className="text-center mb-6">
-        <h3 className="text-xl font-bold text-jet-navy mb-2">What can we help you with?</h3>
-        <p className="text-slate-500 text-sm">Select the service that best fits your needs</p>
+        <h3 className="text-xl font-bold text-jet-navy mb-2">
+          What can we help you with?
+        </h3>
+        <p className="text-slate-500 text-sm">
+          Select the service that best fits your needs
+        </p>
       </div>
 
       <div className="grid grid-cols-2 gap-4">
@@ -179,16 +244,22 @@ const ContactFormModal: React.FC = () => {
               onClick={() => handleServiceSelect(service.id)}
               className={`p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                 isSelected
-                  ? 'border-jet-blue bg-blue-50 shadow-md'
-                  : 'border-slate-200 hover:border-jet-blue/50 hover:bg-slate-50'
+                  ? "border-jet-blue bg-blue-50 shadow-md"
+                  : "border-slate-200 hover:border-jet-blue/50 hover:bg-slate-50"
               }`}
             >
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                isSelected ? 'bg-jet-blue text-white' : 'bg-slate-100 text-jet-blue'
-              }`}>
+              <div
+                className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
+                  isSelected
+                    ? "bg-jet-blue text-white"
+                    : "bg-slate-100 text-jet-blue"
+                }`}
+              >
                 <Icon size={20} />
               </div>
-              <h4 className="font-bold text-jet-navy text-sm mb-1">{service.label}</h4>
+              <h4 className="font-bold text-jet-navy text-sm mb-1">
+                {service.label}
+              </h4>
               <p className="text-xs text-slate-500">{service.description}</p>
             </button>
           );
@@ -216,13 +287,19 @@ const ContactFormModal: React.FC = () => {
       className="space-y-5"
     >
       <div className="text-center mb-6">
-        <h3 className="text-xl font-bold text-jet-navy mb-2">Tell us about yourself</h3>
-        <p className="text-slate-500 text-sm">We'll use this to get in touch with you</p>
+        <h3 className="text-xl font-bold text-jet-navy mb-2">
+          Tell us about yourself
+        </h3>
+        <p className="text-slate-500 text-sm">
+          We'll use this to get in touch with you
+        </p>
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div className="col-span-2 sm:col-span-1">
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Full Name *</label>
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+            Full Name *
+          </label>
           <input
             type="text"
             name="name"
@@ -234,7 +311,9 @@ const ContactFormModal: React.FC = () => {
           />
         </div>
         <div className="col-span-2 sm:col-span-1">
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Email Address *</label>
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+            Email Address *
+          </label>
           <input
             type="email"
             name="email"
@@ -246,7 +325,9 @@ const ContactFormModal: React.FC = () => {
           />
         </div>
         <div className="col-span-2 sm:col-span-1">
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Phone Number</label>
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+            Phone Number
+          </label>
           <input
             type="tel"
             name="phone"
@@ -257,7 +338,9 @@ const ContactFormModal: React.FC = () => {
           />
         </div>
         <div className="col-span-2 sm:col-span-1">
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Company Name</label>
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+            Company Name
+          </label>
           <input
             type="text"
             name="company"
@@ -298,11 +381,15 @@ const ContactFormModal: React.FC = () => {
     >
       <div className="text-center mb-6">
         <h3 className="text-xl font-bold text-jet-navy mb-2">Almost there!</h3>
-        <p className="text-slate-500 text-sm">Share your budget and any additional details</p>
+        <p className="text-slate-500 text-sm">
+          Share your budget and any additional details
+        </p>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-3">Budget Range</label>
+        <label className="block text-sm font-medium text-slate-700 mb-3">
+          Budget Range
+        </label>
         <div className="grid grid-cols-2 gap-3">
           {budgets.map((budget) => {
             const isSelected = formData.budget === budget.id;
@@ -313,11 +400,13 @@ const ContactFormModal: React.FC = () => {
                 onClick={() => handleBudgetSelect(budget.id)}
                 className={`p-3 rounded-xl border-2 text-left transition-all duration-200 ${
                   isSelected
-                    ? 'border-jet-blue bg-blue-50'
-                    : 'border-slate-200 hover:border-jet-blue/50'
+                    ? "border-jet-blue bg-blue-50"
+                    : "border-slate-200 hover:border-jet-blue/50"
                 }`}
               >
-                <span className="font-bold text-jet-navy text-sm block">{budget.label}</span>
+                <span className="font-bold text-jet-navy text-sm block">
+                  {budget.label}
+                </span>
                 <span className="text-xs text-slate-500">{budget.range}</span>
               </button>
             );
@@ -326,7 +415,9 @@ const ContactFormModal: React.FC = () => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1.5">Project Details (Optional)</label>
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          Project Details (Optional)
+        </label>
         <textarea
           name="message"
           value={formData.message}
@@ -384,7 +475,8 @@ const ContactFormModal: React.FC = () => {
       </div>
       <h3 className="text-2xl font-bold text-jet-navy mb-3">Thank You!</h3>
       <p className="text-slate-600 mb-6 max-w-sm mx-auto">
-        We've received your request. Our team will get back to you within 24 hours.
+        We've received your request. Our team will get back to you within 24
+        hours.
       </p>
       <button
         type="button"
@@ -414,7 +506,7 @@ const ContactFormModal: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
@@ -429,8 +521,12 @@ const ContactFormModal: React.FC = () => {
 
             {/* Header */}
             <div className="bg-gradient-to-r from-jet-blue to-blue-600 px-6 py-8 text-center rounded-t-2xl">
-              <h2 className="text-2xl font-bold text-white mb-1">Let's Build Something Great</h2>
-              <p className="text-blue-100 text-sm">Fill out the form below and we'll be in touch</p>
+              <h2 className="text-2xl font-bold text-white mb-1">
+                Let's Build Something Great
+              </h2>
+              <p className="text-blue-100 text-sm">
+                Fill out the form below and we'll be in touch
+              </p>
             </div>
 
             {/* Content */}

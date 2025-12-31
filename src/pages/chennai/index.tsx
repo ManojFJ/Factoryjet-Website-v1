@@ -1,0 +1,141 @@
+
+import Hero from './components/Hero';
+import SocialProof from './components/SocialProof';
+import AboutEntity from './components/AboutEntity';
+import ProblemAgitation from './components/ProblemAgitation';
+import Comparison from './components/Comparison';
+import Services from './components/Services';
+import Process from './components/Process';
+import Technologies from './components/Technologies';
+import Pricing from './components/Pricing';
+import FAQ from './components/FAQ';
+import CaseStudies from './components/CaseStudies';
+import Footer from './components/Footer';
+import FinalCTA from './components/FinalCTA';
+import GlassCard from './components/GlassCard';
+import StickyWhatsApp from './components/StickyWhatsApp';
+import ExitIntentModal from './components/ExitIntentModal';
+import { INDUSTRIES, TESTIMONIALS } from './constant.ts';
+import { Star } from 'lucide-react';
+
+// Updated Industries Component
+const Industries = () => (
+  <section className="py-20 bg-white">
+    <div className="container mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-jet-navy">Industries We Serve in Chennai</h2>
+        <p className="text-jet-slate">Chennai's economy spans IT, automobiles, manufacturing, healthcare, and more. FactoryJet brings industry-specific expertise to every sector:</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {INDUSTRIES.map((ind, i) => (
+          <GlassCard key={i} className="text-left py-8 hover:bg-slate-50 transition-transform cursor-default flex flex-col h-full">
+             <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-blue-50 text-jet-blue rounded-full flex items-center justify-center group-hover:bg-jet-blue group-hover:text-white transition-colors shrink-0">
+                    <ind.icon size={24} />
+                </div>
+                <h3 className="text-jet-navy font-bold text-lg leading-tight">{ind.name}</h3>
+             </div>
+             <p className="text-sm text-jet-slate leading-relaxed">{ind.description}</p>
+          </GlassCard>
+        ))}
+      </div>
+      <div className="text-center mt-12">
+         <p className="font-bold text-jet-navy mb-4">Don't see your industry? We serve 50+ sectors.</p>
+         <button className="text-jet-blue border border-jet-blue px-6 py-2 rounded-lg font-bold hover:bg-blue-50">Discuss Your Industry</button>
+      </div>
+    </div>
+  </section>
+);
+
+// New Testimonials Component
+const Testimonials = () => (
+   <section className="py-20 bg-jet-white">
+      <div className="container mx-auto px-4 lg:px-8">
+         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center text-jet-navy">What Chennai Clients Say About FactoryJet</h2>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {TESTIMONIALS.map((t, i) => (
+               <GlassCard key={i} className="p-8">
+                  <p className="text-slate-600 italic mb-6 text-lg">"{t.text}"</p>
+                  <div>
+                     <p className="font-bold text-jet-navy text-lg">{t.name}</p>
+                     <p className="text-sm text-slate-500 mb-2">{t.role}</p>
+                     <div className="flex text-yellow-400">
+                        {[...Array(t.rating)].map((_, r) => <Star key={r} size={16} fill="currentColor" />)}
+                     </div>
+                  </div>
+               </GlassCard>
+            ))}
+         </div>
+         <div className="text-center mt-12">
+            <h3 className="font-bold text-xl mb-4">Join 100+ satisfied Chennai clients</h3>
+            <div className="flex justify-center gap-4">
+               <button className="bg-jet-blue text-white px-6 py-2 rounded-lg font-bold">Read More Reviews</button>
+            </div>
+         </div>
+      </div>
+   </section>
+);
+
+// Locations Component
+const Locations = () => (
+  <section className="py-24 bg-jet-navy text-center relative overflow-hidden">
+     <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+     <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Serving All Chennai Locations</h2>
+        <p className="text-blue-200 mb-8 max-w-2xl mx-auto">FactoryJet provides website design services across Chennai:</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left max-w-5xl mx-auto text-blue-100 text-sm mb-12">
+            <div>
+               <h4 className="font-bold text-white mb-2">IT Corridors:</h4>
+               <p>OMR (Old Mahabalipuram Road), Tidel Park, Taramani, Perungudi, Sholinganallur, Thoraipakkam, Navalur</p>
+            </div>
+            <div>
+               <h4 className="font-bold text-white mb-2">Commercial Areas:</h4>
+               <p>T. Nagar, Anna Nagar, Guindy, Nungambakkam, Egmore, Mount Road, Kodambakkam</p>
+            </div>
+            <div>
+               <h4 className="font-bold text-white mb-2">Residential & Mixed:</h4>
+               <p>Adyar, Velachery, Mylapore, Porur, Chromepet, Tambaram, Pallavaram</p>
+            </div>
+            <div>
+               <h4 className="font-bold text-white mb-2">Industrial Zones:</h4>
+               <p>Ambattur, Guindy Industrial Estate, Oragadam, Sriperumbudur</p>
+            </div>
+        </div>
+        
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
+            <span className="bg-white/10 px-3 py-1 rounded text-xs text-white">City: Chennai</span>
+            <span className="bg-white/10 px-3 py-1 rounded text-xs text-white">Region: Tamil Nadu</span>
+            <span className="bg-white/10 px-3 py-1 rounded text-xs text-white">Office: Tidel Park, OMR</span>
+        </div>
+     </div>
+  </section>
+);
+
+function ChennaiPage() {
+  return (
+    <div className="bg-white text-jet-navy font-sans selection:bg-jet-orange selection:text-white">
+      <StickyWhatsApp />
+      <ExitIntentModal />
+      
+      <Hero />
+      <SocialProof />
+      <AboutEntity />
+      <ProblemAgitation />
+      <Comparison />
+      <Services />
+      <Process />
+      <Technologies />
+      <Pricing />
+      <Industries />
+      <CaseStudies />
+      <Testimonials />
+      <FAQ />
+      <Locations />
+      <FinalCTA />
+      <Footer />
+    </div>
+  );
+}
+
+export default ChennaiPage;

@@ -6,7 +6,7 @@ const firebaseConfig = {
   storageBucket: "factoryjet-c5f8a.firebasestorage.app",
   messagingSenderId: "687943384982",
   appId: "1:687943384982:web:2bf9fb0e4c2c977e8b27b7",
-  measurementId: "G-ZZ03T8W2VR"
+  measurementId: "G-ZZ03T8W2VR",
 };
 
 // Lazy initialize Firebase after page load for better LCP
@@ -28,15 +28,7 @@ const initFirebase = async () => {
   return { app, analytics, db };
 };
 
-// Initialize Firebase after page becomes interactive
-if (typeof window !== 'undefined') {
-  if (document.readyState === 'complete') {
-    initFirebase();
-  } else {
-    window.addEventListener('load', () => {
-      requestIdleCallback ? requestIdleCallback(() => initFirebase()) : setTimeout(initFirebase, 100);
-    });
-  }
-}
+// Firebase initialization is now deferred and only happens when explicitly called
+// This prevents blocking the critical rendering path
 
 export { app, analytics, db, initFirebase };
