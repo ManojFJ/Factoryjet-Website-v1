@@ -46,13 +46,13 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/services/web-development/mumbai" className="hover:text-jet-blue transition-colors">Web Development</Link></li>
-              <li><Link to="/services/web-design/mumbai" className="hover:text-jet-blue transition-colors">Web Design</Link></li>
-              <li><Link to="/services/ecommerce-development/mumbai" className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
-              <li><Link to="/services/shopify-development/mumbai" className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
-              <li><Link to="/services/wordpress-development/mumbai" className="hover:text-jet-blue transition-colors">WordPress</Link></li>
-              <li><Link to="/services/mobile-app-development/mumbai" className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
-              <li><Link to="/services/seo-services/mumbai" className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
+              <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Web Development</Link></li>
+              <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Web Design</Link></li>
+              <li><Link to="/ecommerce" className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
+              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
+              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">WordPress</Link></li>
+              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
+              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
             </ul>
           </div>
 
@@ -72,11 +72,15 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Locations</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/services/web-development/mumbai" className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
-              <li><Link to="/services/web-development/pune" className="hover:text-jet-blue transition-colors">Pune</Link></li>
-              <li><Link to="/services/web-development/bangalore" className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
-              <li><Link to="/services/web-development/ahmedabad" className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
-              <li><Link to="/services/web-development/surat" className="hover:text-jet-blue transition-colors">Surat</Link></li>
+              <li><Link to="/locations/mumbai/web-design" className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
+              <li><Link to="/locations/pune/web-design" className="hover:text-jet-blue transition-colors">Pune</Link></li>
+              <li><Link to="/locations/bangalore/web-design" className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
+              <li><Link to="/locations/delhi/web-design" className="hover:text-jet-blue transition-colors">Delhi NCR</Link></li>
+              <li><Link to="/locations/chennai/web-design" className="hover:text-jet-blue transition-colors">Chennai</Link></li>
+              <li><Link to="/locations/hyderabad/web-design" className="hover:text-jet-blue transition-colors">Hyderabad</Link></li>
+              <li><Link to="/locations/ahmedabad/web-design" className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
+              <li><Link to="/locations/surat/web-design" className="hover:text-jet-blue transition-colors">Surat</Link></li>
+              <li><Link to="/locations/madurai/web-design" className="hover:text-jet-blue transition-colors">Madurai</Link></li>
             </ul>
           </div>
 
