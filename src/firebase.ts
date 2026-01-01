@@ -1,3 +1,7 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC1EBwPNqicJfuygSKfpy4te8CajzSFvL4",
@@ -9,26 +13,14 @@ const firebaseConfig = {
   measurementId: "G-ZZ03T8W2VR",
 };
 
-// Lazy initialize Firebase after page load for better LCP
-let app: any = null;
-let analytics: any = null;
-let db: any = null;
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+const db = getFirestore(app);
 
+// Keep the async function for backwards compatibility
 const initFirebase = async () => {
-  if (app) return { app, analytics, db };
-
-  const { initializeApp } = await import("firebase/app");
-  const { getAnalytics } = await import("firebase/analytics");
-  const { getFirestore } = await import("firebase/firestore");
-
-  app = initializeApp(firebaseConfig);
-  analytics = getAnalytics(app);
-  db = getFirestore(app);
-
   return { app, analytics, db };
 };
-
-// Firebase initialization is now deferred and only happens when explicitly called
-// This prevents blocking the critical rendering path
 
 export { app, analytics, db, initFirebase };

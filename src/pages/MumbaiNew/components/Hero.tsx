@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
 
                {/* Secondary WhatsApp CTA */}
                <a
-                 href="https://wa.me/919196997799?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20web%20design%20services"
+                 href="https://wa.me/919699977699?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20web%20design%20services"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:-translate-y-1 w-full sm:w-auto text-lg"
