@@ -6,8 +6,8 @@ import {
   Factory, Beaker, Shirt, Zap, Container, Download, BarChart2, TrendingUp,
   DollarSign
 } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 interface SectionProps {
   onOpenModal?: () => void;
@@ -139,10 +139,10 @@ const ROICalculator = () => {
     setSubmitError(false);
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
+      // Using direct db import
+      // Direct db usage
 
-      await addDoc(collection(firestore, 'mumbai_leads'), {
+      await addDoc(collection(db, 'mumbai_leads'), {
         ...formData,
         businessType,
         traffic,

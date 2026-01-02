@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { Star, ChevronDown, Rocket, Phone, MapPin, Mail } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 import { TESTIMONIALS, FAQS, CONTACT } from '../constants';
 
 const SectionTitle = ({ title, subtitle }: { title: string; subtitle?: string }) => (
@@ -120,10 +120,10 @@ export const FinalCTA = () => {
     setSubmitStatus('idle');
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
+      // Using direct db import
+      // Direct db usage
 
-      await addDoc(collection(firestore, 'madurai_leads'), {
+      await addDoc(collection(db, 'madurai_leads'), {
         ...formData,
         source: 'Final CTA',
         timestamp: serverTimestamp(),

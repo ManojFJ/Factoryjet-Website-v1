@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { Clock, Check, Search, Layout, Code, Rocket } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 import { SERVICES, PRICING_TABS } from '../constants';
 
 const SectionTitle = ({ title, subtitle }: { title: string; subtitle?: string }) => (
@@ -33,10 +33,10 @@ export const Services = () => {
     setSubmitStatus('idle');
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
+      // Using direct db import
+      // Direct db usage
 
-      await addDoc(collection(firestore, 'madurai_leads'), {
+      await addDoc(collection(db, 'madurai_leads'), {
         ...formData,
         source: 'Services Section',
         timestamp: serverTimestamp(),

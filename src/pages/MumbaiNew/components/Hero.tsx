@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 const Hero: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,10 +20,7 @@ const Hero: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
-
-      await addDoc(collection(firestore, 'mumbai_leads'), {
+      await addDoc(collection(db, 'mumbai_leads'), {
         ...formData,
         source: 'Hero Form',
         timestamp: serverTimestamp(),

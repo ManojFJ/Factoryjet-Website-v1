@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { Check, MapPin, TrendingUp, Users, ShieldCheck, Zap } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 export const Hero = () => {
   const [formData, setFormData] = useState({
@@ -20,10 +20,10 @@ export const Hero = () => {
     setSubmitStatus('idle');
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
+      // Using direct db import
+      // Direct db usage
 
-      await addDoc(collection(firestore, 'bangalore_leads'), {
+      await addDoc(collection(db, 'bangalore_leads'), {
         ...formData,
         source: 'Hero Form',
         timestamp: serverTimestamp(),

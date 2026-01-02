@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { X, CheckCircle, ShieldCheck, Lock, ArrowRight, Star } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -40,10 +40,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     setSubmitError(false);
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
+      // Using direct db import
+      const firestore = db;
 
-      await addDoc(collection(firestore, 'mumbai_leads'), {
+      await addDoc(collection(db, 'mumbai_leads'), {
         ...formData,
         source: 'Contact Modal',
         timestamp: serverTimestamp(),

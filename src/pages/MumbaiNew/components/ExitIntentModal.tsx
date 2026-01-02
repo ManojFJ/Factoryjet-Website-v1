@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { X, Gift, CheckCircle } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 const ExitIntentModal: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,10 +40,7 @@ const ExitIntentModal: React.FC = () => {
     setSubmitError(false);
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
-
-      await addDoc(collection(firestore, 'mumbai_leads'), {
+      await addDoc(collection(db, 'mumbai_leads'), {
         ...formData,
         source: 'Exit Intent Modal',
         timestamp: serverTimestamp(),

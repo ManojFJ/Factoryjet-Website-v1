@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { Star, MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { initFirebase } from '../../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 const FAQ_DATA = [
   { q: "How much does website design cost in Pune?", a: "Website costs in Pune range from ₹15,000 to ₹5,00,000+ depending on complexity. Basic business websites cost ₹15,000-35,000. E-commerce stores range from ₹50,000-1,50,000. Custom web applications cost ₹1,50,000-5,00,000. FactoryJet offers transparent, competitive pricing starting at just ₹15,000 for starter packages, ₹35,000 for professional websites, and ₹49,999 for Shopify stores. We're among the most affordable website design company in Pune without compromising quality." },
@@ -184,10 +184,10 @@ export const FinalCTA = () => {
     setSubmitStatus('idle');
 
     try {
-      const { db } = await initFirebase();
-      const firestore = db || getFirestore();
+      // Using direct db import
+      // Direct db usage
 
-      await addDoc(collection(firestore, 'pune_leads'), {
+      await addDoc(collection(db, 'pune_leads'), {
         ...formData,
         source: 'Final CTA Form',
         timestamp: serverTimestamp(),
