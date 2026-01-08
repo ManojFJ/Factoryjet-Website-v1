@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContactModal } from '../../../context/ContactModalContext';
 import { ArrowRight, Star, CheckCircle2 } from 'lucide-react';
+import { trackCTAClick } from '../../../utils/gtm';
 
 interface HeroProps {
   h1: string;
@@ -61,7 +62,10 @@ const Hero: React.FC<HeroProps> = ({ h1, h2, city, service }) => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
-                onClick={openModal}
+                onClick={() => {
+                  trackCTAClick('get_free_consultation', `service_location_hero_${city.toLowerCase()}`, 'primary');
+                  openModal();
+                }}
                 className="group bg-jetOrange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
               >
                 Get Free Consultation
@@ -69,6 +73,7 @@ const Hero: React.FC<HeroProps> = ({ h1, h2, city, service }) => {
               </button>
               <a
                 href="#pricing"
+                onClick={() => trackCTAClick('view_pricing', `service_location_hero_${city.toLowerCase()}`, 'secondary')}
                 className="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 flex items-center justify-center"
               >
                 View Pricing

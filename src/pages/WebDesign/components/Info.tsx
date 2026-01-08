@@ -4,6 +4,7 @@ import { FAQS, TRENDS } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
 import { useContactModal } from '../../../context/ContactModalContext';
+import { trackCTAClick, trackContactClick } from '../../../utils/gtm';
 
 // Track WhatsApp click conversion for Google Ads
 const trackWhatsAppConversion = () => {
@@ -151,7 +152,10 @@ export const Info = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
               <button
-                onClick={openModal}
+                onClick={() => {
+                  trackCTAClick('get_free_consultation', 'webdesign_cta', 'primary');
+                  openModal();
+                }}
                 className="group relative w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white text-jet-blue rounded-xl md:rounded-2xl font-bold text-base md:text-lg shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
@@ -159,7 +163,10 @@ export const Info = () => {
                 </span>
               </button>
 
-              <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={trackWhatsAppConversion} className="group w-full sm:w-auto flex items-center justify-center gap-2 md:gap-3 px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl border border-white/30 hover:bg-white/10 text-white font-bold text-base md:text-lg backdrop-blur-sm transition-all">
+              <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={() => {
+                trackContactClick('whatsapp', '+919699977699', 'webdesign_cta');
+                trackWhatsAppConversion();
+              }} className="group w-full sm:w-auto flex items-center justify-center gap-2 md:gap-3 px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl border border-white/30 hover:bg-white/10 text-white font-bold text-base md:text-lg backdrop-blur-sm transition-all">
                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
                 <span>Chat on WhatsApp</span>
               </a>

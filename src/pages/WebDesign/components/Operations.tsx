@@ -4,6 +4,7 @@ import { HOSTING_AMC } from '../data';
 import { Check, Server, ShieldCheck, Clock, Zap, Globe, Cpu, Activity, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useContactModal } from '../../../context/ContactModalContext';
+import { trackCTAClick } from '../../../utils/gtm';
 
 export const Operations = () => {
   const { openModal } = useContactModal();
@@ -199,7 +200,10 @@ export const Operations = () => {
 
                   <div className="p-6 md:p-8 pt-0 mt-auto">
                     <button
-                      onClick={openModal}
+                      onClick={() => {
+                        trackCTAClick(`amc_${plan.name.toLowerCase().replace(/\s+/g, '_')}`, 'webdesign_amc_pricing', plan.popular ? 'primary' : 'secondary');
+                        openModal();
+                      }}
                       className={`w-full py-3 md:py-4 rounded-lg md:rounded-xl font-bold text-xs md:text-sm tracking-wide transition-all duration-300 ${
                       plan.popular
                         ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:shadow-lg hover:shadow-blue-500/25'

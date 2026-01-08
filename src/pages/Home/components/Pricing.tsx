@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { PricingTier } from "../types";
 import { useContactModal } from "../../../context/ContactModalContext";
+import { trackCTAClick, trackContactClick, trackButtonClick } from "../../../utils/gtm";
 
 // Track WhatsApp click conversion for Google Ads
 const trackWhatsAppConversion = () => {
@@ -596,7 +597,11 @@ const Pricing: React.FC = () => {
                 {/* Card Footer / CTA */}
                 <div className="p-5 md:p-8 pt-0 mt-auto">
                   <button
-                    onClick={openModal}
+                    onClick={() => {
+                      trackCTAClick(`pricing_${tier.name.toLowerCase().replace(/\s+/g, '_')}`, 'home_pricing', tier.isPopular ? 'primary' : 'secondary');
+                      trackButtonClick(tier.buttonText, `pricing_card_${activeTab}`);
+                      openModal();
+                    }}
                     className={`
                       w-full py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm transition-all duration-300 flex items-center justify-center gap-2 group
                       ${
@@ -633,7 +638,10 @@ const Pricing: React.FC = () => {
             href="https://wa.me/91969977699"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackWhatsAppConversion}
+            onClick={() => {
+              trackContactClick('whatsapp', '+919699977699', 'home_pricing_cta');
+              trackWhatsAppConversion();
+            }}
             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-all shadow-lg shadow-green-500/20 hover:shadow-xl hover:-translate-y-0.5"
           >
             <svg viewBox="0 0 24 24" width={18} height={18} fill="currentColor">

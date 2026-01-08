@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 import { useContactModal } from '../../../context/ContactModalContext';
+import { trackCTAClick, trackContactClick } from '../../../utils/gtm';
 
 const CTA: React.FC = () => {
   const { openModal } = useContactModal();
@@ -23,13 +24,17 @@ const CTA: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <button
-                onClick={openModal}
+                onClick={() => {
+                  trackCTAClick('schedule_free_call', 'home_cta_section', 'primary');
+                  openModal();
+                }}
                 className="bg-white text-jet-blue hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 Schedule Free Call <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </button>
               <a
                 href="tel:+919699977699"
+                onClick={() => trackContactClick('phone', '+919699977699', 'home_cta_section')}
                 className="bg-blue-800/50 hover:bg-blue-800 text-white border border-blue-400/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-sm md:text-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
               >
                 <Phone className="w-4 h-4 md:w-5 md:h-5" /> +91 96999 77699

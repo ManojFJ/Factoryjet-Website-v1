@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { HERO_CONTENT } from '../data';
 import { ArrowRight, Globe, Code2, TrendingUp, Users, Activity } from 'lucide-react';
 import { useContactModal } from '../../../context/ContactModalContext';
+import { trackCTAClick } from '../../../utils/gtm';
 
 export const Hero = () => {
   const { openModal } = useContactModal();
@@ -95,7 +96,10 @@ export const Hero = () => {
           {HERO_CONTENT.ctas.slice(0, 2).map((cta, idx) => (
             <button
               key={idx}
-              onClick={openModal}
+              onClick={() => {
+                trackCTAClick(cta.text.toLowerCase().replace(/\s+/g, '_'), 'webdesign_hero', cta.primary ? 'primary' : 'secondary');
+                openModal();
+              }}
               className={`w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:-translate-y-1 active:scale-95 ${
                 cta.primary
                   ? 'bg-slate-900 text-white shadow-xl shadow-slate-900/20 hover:bg-slate-800 hover:shadow-2xl'

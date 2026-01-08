@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContactModal } from '../../../context/ContactModalContext';
 import { ArrowRight, Phone } from 'lucide-react';
+import { trackCTAClick, trackContactClick } from '../../../utils/gtm';
 
 interface CTAProps {
   service: string;
@@ -22,7 +23,10 @@ const CTA: React.FC<CTAProps> = ({ service, city }) => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
-            onClick={openModal}
+            onClick={() => {
+              trackCTAClick('get_free_consultation', `service_location_cta_${city.toLowerCase()}`, 'primary');
+              openModal();
+            }}
             className="group bg-jetOrange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
           >
             Get Free Consultation
@@ -31,6 +35,7 @@ const CTA: React.FC<CTAProps> = ({ service, city }) => {
 
           <a
             href="tel:+919699977699"
+            onClick={() => trackContactClick('phone', '+919699977699', `service_location_cta_${city.toLowerCase()}`)}
             className="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
           >
             <Phone className="w-5 h-5" />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useContactModal } from '../../../context/ContactModalContext';
+import { trackCTAClick } from '../../../utils/gtm';
 
 const CTA = () => {
   const { openModal } = useContactModal();
@@ -17,13 +18,19 @@ const CTA = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4 md:px-0">
           <button
-            onClick={openModal}
+            onClick={() => {
+              trackCTAClick('schedule_free_consultation', 'about_cta', 'primary');
+              openModal();
+            }}
             className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-jetBlue text-white font-bold text-sm md:text-base rounded-lg shadow-xl shadow-jetBlue/30 hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
           >
             Schedule Free Consultation <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
           <button
-            onClick={openModal}
+            onClick={() => {
+              trackCTAClick('contact_us', 'about_cta', 'secondary');
+              openModal();
+            }}
             className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-700 font-bold text-sm md:text-base rounded-lg border border-slate-200 hover:border-jetBlue hover:text-jetBlue transition-colors"
           >
             Contact Us

@@ -7,6 +7,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { useContactModal } from "../../../context/ContactModalContext";
+import { trackCTAClick, trackContactClick } from "../../../utils/gtm";
 
 // WhatsApp icon component
 const WhatsAppIcon: React.FC<{ size?: number; className?: string }> = ({
@@ -100,7 +101,10 @@ const Hero: React.FC = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-10">
               <button
-                onClick={openModal}
+                onClick={() => {
+                  trackCTAClick('start_your_project', 'home_hero', 'primary');
+                  openModal();
+                }}
                 className="relative overflow-hidden bg-orange-700 hover:bg-orange-800 text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all shadow-[0_0_40px_-10px_rgba(194,65,12,0.6)] hover:shadow-[0_0_60px_-10px_rgba(194,65,12,0.8)] hover:-translate-y-1 flex items-center justify-center gap-2 group"
               >
                 <div className="absolute inset-0 bg-black/10 group-hover:translate-x-full transition-transform duration-500 ease-in-out -skew-x-12 -ml-4 w-[120%]"></div>
@@ -115,7 +119,10 @@ const Hero: React.FC = () => {
                 href="https://wa.me/919699977699"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={trackWhatsAppConversion}
+                onClick={() => {
+                  trackContactClick('whatsapp', '+919699977699', 'home_hero');
+                  trackWhatsAppConversion();
+                }}
                 className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1"
               >
                 <WhatsAppIcon size={18} className="md:w-[20px] md:h-[20px]" />

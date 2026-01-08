@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Monitor, ShoppingBag, BookOpen, FileText, Code, Store, Smartphone, TrendingUp, Megaphone } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
+import { trackButtonClick, trackNavigation, trackCTAClick } from '../utils/gtm';
 
 interface HeaderProps {
   variant?: 'transparent' | 'solid';
@@ -129,7 +130,11 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         {/* Desktop CTA */}
         <div className="hidden lg:block">
            <button
-             onClick={openModal}
+             onClick={() => {
+               trackCTAClick('get_started', 'header_desktop', 'primary');
+               trackButtonClick('get_started', 'header');
+               openModal();
+             }}
              className={`
              px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0
              ${showSolidStyle
@@ -145,7 +150,10 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         <div className="lg:hidden">
           <button
             type="button"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              trackButtonClick(isMobileMenuOpen ? 'close_menu' : 'open_menu', 'header_mobile');
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
@@ -177,7 +185,10 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
                           key={sub.label}
                           to={sub.href}
                           className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-all text-jet-slate hover:text-jet-blue"
-                          onClick={() => setIsMobileMenuOpen(false)}
+                          onClick={() => {
+                            trackNavigation(sub.label, sub.href, 'mobile_menu');
+                            setIsMobileMenuOpen(false);
+                          }}
                         >
                           <sub.icon size={16} />
                           <span className="font-medium text-sm">{sub.label}</span>
@@ -191,7 +202,10 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
                   <Link
                     to={item.href}
                     className="block text-jet-navy font-bold py-3 px-4 hover:bg-gray-50 rounded-xl transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      trackNavigation(item.label, item.href, 'mobile_menu');
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -199,7 +213,10 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
                   <a
                     href={item.href}
                     className="block text-jet-navy font-bold py-3 px-4 hover:bg-gray-50 rounded-xl transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      trackNavigation(item.label, item.href, 'mobile_menu');
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </a>
@@ -210,6 +227,8 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
           <div className="pt-2">
             <button
               onClick={() => {
+                trackCTAClick('get_free_consultation', 'header_mobile', 'primary');
+                trackButtonClick('get_free_consultation', 'mobile_menu');
                 setIsMobileMenuOpen(false);
                 openModal();
               }}

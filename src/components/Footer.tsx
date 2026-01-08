@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { trackNavigation, trackSocialClick, trackContactClick } from '../utils/gtm';
 
 const Footer: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const Footer: React.FC = () => {
                   href={href}
                   aria-label={label}
                   title={label}
+                  onClick={() => trackSocialClick(label.toLowerCase(), 'footer')}
                   className="w-9 h-9 md:w-10 md:h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-jet-blue hover:text-white transition-all"
                 >
                   <Icon size={16} className="md:w-[18px] md:h-[18px]" />
@@ -46,13 +48,13 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Web Development</Link></li>
-              <li><Link to="/web-design" className="hover:text-jet-blue transition-colors">Web Design</Link></li>
-              <li><Link to="/ecommerce" className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
-              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
-              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">WordPress</Link></li>
-              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
-              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
+              <li><Link to="/web-design" onClick={() => trackNavigation('Web Development', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Development</Link></li>
+              <li><Link to="/web-design" onClick={() => trackNavigation('Web Design', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
+              <li><Link to="/ecommerce" onClick={() => trackNavigation('E-Commerce', '/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
+              <li><Link to="/pricing" onClick={() => trackNavigation('Shopify Development', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
+              <li><Link to="/pricing" onClick={() => trackNavigation('WordPress', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">WordPress</Link></li>
+              <li><Link to="/pricing" onClick={() => trackNavigation('Mobile Apps', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
+              <li><Link to="/pricing" onClick={() => trackNavigation('SEO Services', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
             </ul>
           </div>
 
@@ -60,11 +62,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Company</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/about" className="hover:text-jet-blue transition-colors">About Us</Link></li>
-              <li><Link to="/case" className="hover:text-jet-blue transition-colors">Our Portfolio</Link></li>
-              <li><Link to="/pricing" className="hover:text-jet-blue transition-colors">Pricing Packages</Link></li>
-              <li><Link to="/case" className="hover:text-jet-blue transition-colors">Case Studies</Link></li>
-              <li><Link to="/blog" className="hover:text-jet-blue transition-colors">Blog</Link></li>
+              <li><Link to="/about" onClick={() => trackNavigation('About Us', '/about', 'footer')} className="hover:text-jet-blue transition-colors">About Us</Link></li>
+              <li><Link to="/case" onClick={() => trackNavigation('Our Portfolio', '/case', 'footer')} className="hover:text-jet-blue transition-colors">Our Portfolio</Link></li>
+              <li><Link to="/pricing" onClick={() => trackNavigation('Pricing Packages', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Pricing Packages</Link></li>
+              <li><Link to="/case" onClick={() => trackNavigation('Case Studies', '/case', 'footer')} className="hover:text-jet-blue transition-colors">Case Studies</Link></li>
+              <li><Link to="/blog" onClick={() => trackNavigation('Blog', '/blog', 'footer')} className="hover:text-jet-blue transition-colors">Blog</Link></li>
             </ul>
           </div>
 
@@ -72,15 +74,15 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Locations</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/locations/mumbai/web-design" className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
-              <li><Link to="/locations/pune/web-design" className="hover:text-jet-blue transition-colors">Pune</Link></li>
-              <li><Link to="/locations/bangalore/web-design" className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
-              <li><Link to="/locations/delhi/web-design" className="hover:text-jet-blue transition-colors">Delhi NCR</Link></li>
-              <li><Link to="/locations/chennai/web-design" className="hover:text-jet-blue transition-colors">Chennai</Link></li>
-              <li><Link to="/locations/hyderabad/web-design" className="hover:text-jet-blue transition-colors">Hyderabad</Link></li>
-              <li><Link to="/locations/ahmedabad/web-design" className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
-              <li><Link to="/locations/surat/web-design" className="hover:text-jet-blue transition-colors">Surat</Link></li>
-              <li><Link to="/locations/madurai/web-design" className="hover:text-jet-blue transition-colors">Madurai</Link></li>
+              <li><Link to="/locations/mumbai/web-design" onClick={() => trackNavigation('Mumbai', '/locations/mumbai/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
+              <li><Link to="/locations/pune/web-design" onClick={() => trackNavigation('Pune', '/locations/pune/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Pune</Link></li>
+              <li><Link to="/locations/bangalore/web-design" onClick={() => trackNavigation('Bangalore', '/locations/bangalore/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
+              <li><Link to="/locations/delhi/web-design" onClick={() => trackNavigation('Delhi NCR', '/locations/delhi/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Delhi NCR</Link></li>
+              <li><Link to="/locations/chennai/web-design" onClick={() => trackNavigation('Chennai', '/locations/chennai/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Chennai</Link></li>
+              <li><Link to="/locations/hyderabad/web-design" onClick={() => trackNavigation('Hyderabad', '/locations/hyderabad/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Hyderabad</Link></li>
+              <li><Link to="/locations/ahmedabad/web-design" onClick={() => trackNavigation('Ahmedabad', '/locations/ahmedabad/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
+              <li><Link to="/locations/surat/web-design" onClick={() => trackNavigation('Surat', '/locations/surat/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Surat</Link></li>
+              <li><Link to="/locations/madurai/web-design" onClick={() => trackNavigation('Madurai', '/locations/madurai/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Madurai</Link></li>
             </ul>
           </div>
 
@@ -107,9 +109,9 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
           <p>© 2025 FactoryJet Digital Solutions. All rights reserved.</p>
           <div className="flex gap-4 md:gap-6">
-            <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link>
-            <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link>
-            <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors">Sitemap</Link>
+            <Link to="/terms" onClick={() => trackNavigation('Terms', '/terms', 'footer')} className="text-gray-400 hover:text-white transition-colors">Terms</Link>
+            <Link to="/privacy" onClick={() => trackNavigation('Privacy', '/privacy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Privacy</Link>
+            <Link to="/sitemap" onClick={() => trackNavigation('Sitemap', '/sitemap', 'footer')} className="text-gray-400 hover:text-white transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

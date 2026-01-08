@@ -4,6 +4,7 @@ import { Check, ChevronRight, Send } from 'lucide-react';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../firebase';
 import { ContactFormData, INITIAL_FORM_STATE } from '../types';
+import { trackFormStart, trackFormSubmit, trackFormSuccess, trackFormError, trackButtonClick } from '../../../utils/gtm';
 
 const SERVICES = [
   "Website Design & Development", "E-Commerce Platform", "Digital Marketing (SEO, Social, Ads)", 
@@ -88,6 +89,14 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
     setError(null);
 
+    // Track form submission
+    trackFormSubmit('contact_page_form', {
+      services: formData.services,
+      goal: formData.goal,
+      budget: formData.budget,
+      timeline: formData.timeline,
+    });
+
     try {
       // Generate readable document ID: 2025-12-18_13-30-45_JohnDoe
       const now = new Date();
@@ -102,10 +111,15 @@ const ContactForm: React.FC = () => {
         status: 'new',
         source: 'contact_page',
       });
+
+      // Track successful submission
+      trackFormSuccess('contact_page_form');
       setIsSuccess(true);
     } catch (err) {
       console.error('Error submitting contact form:', err);
-      setError('Something went wrong. Please try again.');
+      const errorMessage = 'Something went wrong. Please try again.';
+      trackFormError('contact_page_form', errorMessage);
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }

@@ -11,6 +11,7 @@ import { CASE_STUDIES } from './constants';
 import { CategoryFilter } from './types';
 import { ArrowRight } from 'lucide-react';
 import { useContactModal } from '../../context/ContactModalContext';
+import { trackCTAClick } from '../../utils/gtm';
 
 const App: React.FC = () => {
   const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
@@ -117,7 +118,10 @@ const App: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
                 <button
-                  onClick={openModal}
+                  onClick={() => {
+                    trackCTAClick('start_a_project', 'case_cta', 'primary');
+                    openModal();
+                  }}
                   className="w-full sm:w-auto bg-secondary hover:bg-orange-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2 text-sm md:text-base"
                 >
                   Start a Project <ArrowRight size={18} className="md:w-5 md:h-5" />

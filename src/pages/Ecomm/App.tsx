@@ -24,6 +24,7 @@ import {
   CASE_STUDIES, FAQS
 } from './constants';
 import { useContactModal } from '../../context/ContactModalContext';
+import { trackCTAClick } from '../../utils/gtm';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -200,7 +201,10 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
-            <Button primary icon onClick={openModal}>Launch Your Store</Button>
+            <Button primary icon onClick={() => {
+              trackCTAClick('launch_your_store', 'ecomm_hero', 'primary');
+              openModal();
+            }}>Launch Your Store</Button>
             <Button>View Portfolio</Button>
           </div>
 
@@ -865,7 +869,10 @@ const CTA = () => {
 
            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
              <button
-               onClick={openModal}
+               onClick={() => {
+                 trackCTAClick('start_your_project', 'ecomm_cta', 'primary');
+                 openModal();
+               }}
                className="px-6 md:px-8 py-4 md:py-5 rounded-xl md:rounded-2xl bg-white text-jetBlue font-bold text-base md:text-lg shadow-2xl hover:scale-105 transition-transform"
              >
                Start Your Project

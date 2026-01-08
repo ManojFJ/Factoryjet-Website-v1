@@ -11,6 +11,17 @@ import {
   Rocket,
 } from "lucide-react";
 import { useContactModal } from "../context/ContactModalContext";
+import {
+  trackModalOpen,
+  trackModalClose,
+  trackFormStep,
+  trackFormSubmit,
+  trackFormSuccess,
+  trackFormError,
+  trackServiceSelection,
+  trackBudgetSelection,
+  trackButtonClick,
+} from "../utils/gtm";
 
 type ServiceType = "website" | "ecommerce" | "maintenance" | "other";
 type BudgetRange = "starter" | "business" | "enterprise" | "not-sure";
@@ -71,9 +82,13 @@ const ContactFormModal: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Pre-load Firebase when modal opens (non-blocking)
+  // Pre-load Firebase when modal opens (non-blocking) and track modal open
   useEffect(() => {
     if (isOpen) {
+      // Track modal open in GTM
+      trackModalOpen("contact_form", "cta_button");
+      trackFormStep("contact_form", 1, "service_selection");
+
       // Pre-initialize Firebase in the background when modal opens
       import("../firebase").then(({ initFirebase }) => {
         initFirebase().catch(() => {
@@ -101,10 +116,14 @@ const ContactFormModal: React.FC = () => {
   };
 
   const handleServiceSelect = (serviceId: ServiceType) => {
+    const serviceName = services.find((s) => s.id === serviceId)?.label || serviceId;
+    trackServiceSelection(serviceId, serviceName);
     setFormData((prev) => ({ ...prev, service: serviceId }));
   };
 
   const handleBudgetSelect = (budgetId: BudgetRange) => {
+    const budgetInfo = budgets.find((b) => b.id === budgetId);
+    trackBudgetSelection(budgetId, budgetInfo?.range || budgetId);
     setFormData((prev) => ({ ...prev, budget: budgetId }));
   };
 
@@ -124,11 +143,16 @@ const ContactFormModal: React.FC = () => {
 
   const handleNext = () => {
     if (validateStep(step)) {
-      setStep((prev) => Math.min(prev + 1, 3) as 1 | 2 | 3);
+      const nextStep = Math.min(step + 1, 3) as 1 | 2 | 3;
+      const stepNames = ["", "service_selection", "contact_details", "budget_and_message"];
+      trackFormStep("contact_form", nextStep, stepNames[nextStep]);
+      trackButtonClick("continue", `form_step_${step}`);
+      setStep(nextStep);
     }
   };
 
   const handleBack = () => {
+    trackButtonClick("back", `form_step_${step}`);
     setStep((prev) => Math.max(prev - 1, 1) as 1 | 2 | 3);
   };
 
@@ -136,6 +160,12 @@ const ContactFormModal: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
+
+    // Track form submission attempt
+    trackFormSubmit("contact_form", {
+      service: formData.service,
+      budget: formData.budget,
+    });
 
     try {
       // Dynamically import Firebase functions only when submitting
@@ -163,16 +193,23 @@ const ContactFormModal: React.FC = () => {
         createdAt: serverTimestamp(),
         status: "new",
       });
+
+      // Track successful form submission
+      trackFormSuccess("contact_form");
       setIsSuccess(true);
     } catch (err) {
       console.error("Error submitting form:", err);
-      setError("Something went wrong. Please try again.");
+      const errorMessage = "Something went wrong. Please try again.";
+      trackFormError("contact_form", errorMessage);
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleClose = () => {
+    trackModalClose("contact_form");
+    trackButtonClick("close_modal", isSuccess ? "success_screen" : `form_step_${step}`);
     closeModal();
     setTimeout(() => {
       setStep(1);

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { HERO_CONTENT } from '../constants';
 import { useContactModal } from '../../../context/ContactModalContext';
+import { trackCTAClick } from '../../../utils/gtm';
 
 const Hero = () => {
   const { openModal } = useContactModal();
@@ -55,7 +56,10 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4 md:px-0"
         >
           <button
-            onClick={openModal}
+            onClick={() => {
+              trackCTAClick('get_started', 'about_hero', 'primary');
+              openModal();
+            }}
             className="w-full sm:w-auto group relative px-6 md:px-8 py-3 md:py-4 bg-jetOrange text-white font-semibold text-sm md:text-base rounded-lg overflow-hidden shadow-lg shadow-jetOrange/25 hover:shadow-xl hover:shadow-jetOrange/40 transition-all"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
@@ -65,7 +69,10 @@ const Hero = () => {
           </button>
 
           <button
-            onClick={openModal}
+            onClick={() => {
+              trackCTAClick('contact_us', 'about_hero', 'secondary');
+              openModal();
+            }}
             className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-900 border border-slate-200 font-semibold text-sm md:text-base rounded-lg hover:border-jetBlue hover:text-jetBlue transition-colors flex items-center justify-center gap-2"
           >
             Contact Us

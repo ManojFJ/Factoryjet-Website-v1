@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useContactModal } from "../../../context/ContactModalContext";
+import { trackCTAClick } from "../../../utils/gtm";
 
 // --- TYPES ---
 type PricingCategory = "website" | "ecommerce" | "amc";
@@ -890,7 +891,10 @@ const FactoryJetPricing = () => {
               audit your current digital footprint for free.
             </p>
             <button
-              onClick={openModal}
+              onClick={() => {
+                trackCTAClick('book_free_consultation', 'pricing_cta', 'primary');
+                openModal();
+              }}
               className="bg-jet-orange text-white hover:bg-orange-600 font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 flex items-center mx-auto text-sm md:text-base"
             >
               Book a Free Consultation
