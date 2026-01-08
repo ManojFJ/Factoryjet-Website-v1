@@ -50,7 +50,7 @@ const MumbaiPage = () => {
             "@type": "LocalBusiness",
             "name": "FactoryJet - Industrial Web Design Company Mumbai",
             "image": "https://www.factoryjet.com/images/factoryjet-mumbai.jpg",
-            "url": "https://www.factoryjet.com/locations/mumbai/web-design",
+            "url": "https://factoryjet.com/locations/mumbai/web-design/",
             "telephone": "+91-022-XXX-XXXX",
             "email": "mumbai@factoryjet.com",
             "address": {
@@ -78,6 +78,59 @@ const MumbaiPage = () => {
               "https://www.facebook.com/factoryjet",
               "https://www.linkedin.com/company/factoryjet",
               "https://twitter.com/factoryjet"
+            ]
+          })
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How much does website design cost in Mumbai?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Website design costs vary based on complexity. At FactoryJet, we offer packages starting at ₹15,000 for basic websites to ₹5,00,000+ for enterprise solutions."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to build a website?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our streamlined process typically delivers a website in 7 days. More complex projects may take 2-4 weeks."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Do you provide e-commerce solutions?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Can you integrate payment gateways?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe for secure transactions."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Will my website be mobile responsive?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely. All websites are fully responsive and optimized for all devices."
+                }
+              }
             ]
           })
         }}

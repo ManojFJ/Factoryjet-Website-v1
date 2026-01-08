@@ -29,7 +29,7 @@ const schemaMarkup = {
   "@type": "LocalBusiness",
   name: "FactoryJet - Industrial Web Design Company Mumbai",
   image: "https://www.factoryjet.com/images/factoryjet-mumbai.jpg",
-  url: "https://www.factoryjet.com/website-design-company-mumbai",
+  url: "https://factoryjet.com/locations/mumbai",
   telephone: "+91 96999 77699",
   email: "connect@factoryjet.com",
   address: {

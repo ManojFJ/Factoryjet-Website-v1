@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../../components/Header';
 import SEOHead from '../../components/SEOHead';
 import Hero from './components/Hero';
 import ContactMethods from './components/ContactMethods';
@@ -12,6 +13,7 @@ import { trackContactClick, trackCTAClick } from '../../utils/gtm';
 const ContactPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-0">
+      <Header variant="transparent" />
       <SEOHead
         title="Contact Us - Get Your Free Web Development Consultation"
         description="Contact FactoryJet for web and e-commerce development services. Get a free consultation, quick response in 24 hours. Call +91 96999 77699 or fill our contact form."

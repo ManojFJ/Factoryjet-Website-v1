@@ -1,6 +1,7 @@
 
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
@@ -30,6 +31,89 @@ const LoadingSpinner = () => (
 const SuratPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FactoryJet - Website Design Company Surat",
+    "image": "https://www.factoryjet.com/images/factoryjet-surat.jpg",
+    "url": "https://factoryjet.com/locations/surat",
+    "telephone": "+91 96999 77699",
+    "email": "surat@factoryjet.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Surat",
+      "addressLocality": "Surat",
+      "addressRegion": "Gujarat",
+      "postalCode": "395001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "21.1707",
+      "longitude": "72.8311"
+    },
+    "priceRange": "₹15,000 - ₹5,00,000+",
+    "openingHours": ["Mo-Fr 09:00-19:00", "Sa 10:00-16:00"],
+    "areaServed": ["Surat", "South Gujarat", "Vadodara", "Daman"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150"
+    },
+    "sameAs": [
+      "https://www.facebook.com/factoryjet",
+      "https://www.linkedin.com/company/factoryjet",
+      "https://twitter.com/factoryjet"
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does website design cost in Surat?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Website design costs vary based on complexity. At FactoryJet, we offer packages starting at ₹15,000 for basic websites to ₹5,00,000+ for enterprise solutions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take to build a website?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our streamlined process typically delivers a website in 7 days. More complex projects may take 2-4 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide e-commerce solutions?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can you integrate payment gateways?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe for secure transactions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Will my website be mobile responsive?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. All websites are fully responsive and optimized for all devices."
+        }
+      }
+    ]
+  };
+
   useEffect(() => {
     document.title = 'Best Website Design Company in Surat | FactoryJet';
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -48,6 +132,13 @@ const SuratPage: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white"
     >
+      <Helmet>
+        <title>Best Website Design Company in Surat | FactoryJet</title>
+        <meta name="description" content="Professional website design & e-commerce development in Surat. Trusted by 200+ South Gujarat businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
+        <link rel="canonical" href="https://factoryjet.com/locations/surat/web-design/" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      </Helmet>
       <Header variant="solid" />
       <Hero onOpenModal={openModal} />
       <SocialProof />

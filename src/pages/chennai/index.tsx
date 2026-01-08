@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet-async';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 import AboutEntity from './components/AboutEntity';
@@ -113,8 +114,97 @@ const Locations = () => (
 );
 
 function ChennaiPage() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FactoryJet - Website Design Company Chennai",
+    "image": "https://www.factoryjet.com/images/factoryjet-chennai.jpg",
+    "url": "https://factoryjet.com/locations/chennai/web-design/",
+    "telephone": "+91 96999 77699",
+    "email": "chennai@factoryjet.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tidel Park, OMR, Chennai",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "600113",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "12.8854",
+      "longitude": "80.2356"
+    },
+    "priceRange": "₹15,000 - ₹5,00,000+",
+    "openingHours": ["Mo-Fr 09:00-19:00", "Sa 10:00-16:00"],
+    "areaServed": ["Chennai", "OMR", "T. Nagar", "Anna Nagar", "Adyar", "Velachery", "Tambaram"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150"
+    },
+    "sameAs": [
+      "https://www.facebook.com/factoryjet",
+      "https://www.linkedin.com/company/factoryjet",
+      "https://twitter.com/factoryjet"
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does website design cost in Chennai?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Website design costs vary based on complexity. At FactoryJet, we offer packages starting at ₹15,000 for basic websites to ₹5,00,000+ for enterprise solutions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take to build a website?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our streamlined process typically delivers a website in 7 days. More complex projects may take 2-4 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide e-commerce solutions?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can you integrate payment gateways?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe for secure transactions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Will my website be mobile responsive?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. All websites are fully responsive and optimized for all devices."
+        }
+      }
+    ]
+  };
   return (
     <div className="bg-white text-jet-navy font-sans selection:bg-jet-orange selection:text-white">
+      <Helmet>
+        <title>Best Website Design Company in Chennai | FactoryJet</title>
+        <meta name="description" content="Professional website design & e-commerce development in Chennai. Trusted by 200+ Tamil Nadu businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
+        <link rel="canonical" href="https://factoryjet.com/locations/chennai" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      </Helmet>
       <StickyWhatsApp />
       <ExitIntentModal />
       

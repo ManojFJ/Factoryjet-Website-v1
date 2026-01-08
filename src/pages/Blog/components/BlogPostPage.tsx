@@ -88,9 +88,17 @@ const FAQAccordion = ({ faqs }: { faqs: FAQItem[] }) => {
 };
 
 export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
+  const [imageError, setImageError] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  const imageUrl = imageError ? '/blog_placeholder.jpeg' : post.imageUrl;
 
   return (
     <div className="min-h-screen bg-slate-50 relative pt-16 md:pt-20">
@@ -172,8 +180,9 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
           className="rounded-xl md:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5 aspect-[16/9] md:aspect-[21/9] bg-gray-100"
         >
           <img
-            src={post.imageUrl}
+            src={imageUrl}
             alt={post.title}
+            onError={handleImageError}
             className="w-full h-full object-cover"
           />
         </motion.div>

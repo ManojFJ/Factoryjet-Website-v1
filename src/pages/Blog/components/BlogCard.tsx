@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BlogPost } from '../types';
 import { ArrowUpRight, Clock, Calendar } from 'lucide-react';
@@ -10,7 +10,13 @@ interface BlogCardProps {
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({ post, index, onClick }) => {
-  const isFeatured = post.isFeatured;
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  const imageUrl = imageError ? '/blog_placeholder.jpeg' : post.imageUrl;
 
   return (
     <motion.article
@@ -18,27 +24,24 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post, index, onClick }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onClick={() => onClick(post)}
-      className={`
-        group relative overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer
-        ${isFeatured ? 'col-span-1 md:col-span-2 md:row-span-2' : 'col-span-1'}
-      `}
+      className="group relative overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer h-full flex flex-col"
     >
-      {/* Image Container */}
-      <div className={`relative overflow-hidden ${isFeatured ? 'h-48 md:h-64 lg:h-full md:absolute md:inset-0 md:w-1/2' : 'h-40 md:h-48'}`}>
+      {/* Image Container - Fixed Height */}
+      <div className="relative overflow-hidden flex-shrink-0 h-40 md:h-48">
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.6 }}
-          src={post.imageUrl}
+          src={imageUrl}
           alt={post.title}
+          onError={handleImageError}
           className="h-full w-full object-cover transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 md:hidden" />
       </div>
 
-      {/* Content Container */}
+      {/* Content Container - Uniform Height */}
       <div className={`
-        relative flex flex-col justify-between p-4 md:p-6 bg-white
-        ${isFeatured ? 'md:w-1/2 md:ml-auto md:h-full md:p-8 lg:p-10' : 'h-[calc(100%-10rem)] md:h-[calc(100%-12rem)]'}
+        relative flex flex-col justify-between p-4 md:p-6 bg-white flex-grow
       `}>
         <div>
           <div className="flex items-center gap-2 mb-2 md:mb-3">
@@ -51,17 +54,11 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post, index, onClick }) => {
             </span>
           </div>
 
-          <h3 className={`
-            font-display font-bold text-gray-900 group-hover:text-jetBlue transition-colors duration-300
-            ${isFeatured ? 'text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 md:mb-4' : 'text-base md:text-lg lg:text-xl mb-2'}
-          `}>
+          <h3 className="font-display font-bold text-gray-900 group-hover:text-jetBlue transition-colors duration-300 text-base md:text-lg lg:text-xl mb-2">
             {post.title}
           </h3>
 
-          <p className={`
-            text-gray-600 line-clamp-2 md:line-clamp-3
-            ${isFeatured ? 'text-sm md:text-base lg:text-lg mb-4 md:mb-6' : 'text-xs md:text-sm mb-3 md:mb-4'}
-          `}>
+          <p className="text-gray-600 line-clamp-2 md:line-clamp-3 text-xs md:text-sm mb-3 md:mb-4">
             {post.excerpt}
           </p>
         </div>

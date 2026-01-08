@@ -35,7 +35,7 @@ const PunePage: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Pune",
     "image": "https://www.factoryjet.com/images/factoryjet-pune.jpg",
-    "url": "https://www.factoryjet.com/website-design-company-pune",
+    "url": "https://factoryjet.com/locations/pune",
     "telephone": "+91-9730775468",
     "email": "pune@factoryjet.com",
     "address": {
@@ -169,13 +169,13 @@ const PunePage: React.FC = () => {
           name="keywords"
           content="website design company in pune, web design company in pune, web development company in pune, ecommerce development company in pune, website design services pune, shopify development pune, wordpress development pune"
         />
-        <link rel="canonical" href="https://www.factoryjet.com/website-design-company-pune" />
+        <link rel="canonical" href="https://factoryjet.com/locations/pune" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Website Design Company in Pune | FactoryJet" />
         <meta property="og:description" content="Professional web design & e-commerce development for Pune businesses. Hinjewadi, Kharadi, Magarpatta, PCMC, Chakan. Starting ₹29,999. 7-day delivery." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.factoryjet.com/website-design-company-pune" />
+        <meta property="og:url" content="https://factoryjet.com/locations/pune" />
         <meta property="og:image" content="https://www.factoryjet.com/images/factoryjet-pune.jpg" />
 
         {/* Twitter Card */}
