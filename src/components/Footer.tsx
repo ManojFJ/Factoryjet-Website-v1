@@ -48,9 +48,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/web-design" onClick={() => trackNavigation('Web Development', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Development</Link></li>
-              <li><Link to="/web-design" onClick={() => trackNavigation('Web Design', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
-              <li><Link to="/ecommerce" onClick={() => trackNavigation('E-Commerce', '/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
+              <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Development', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Development</Link></li>
+              <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Design', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
+              <li><Link to="/services/ecommerce" onClick={() => trackNavigation('E-Commerce', '/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
               <li><Link to="/pricing" onClick={() => trackNavigation('Shopify Development', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
               <li><Link to="/pricing" onClick={() => trackNavigation('WordPress', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">WordPress</Link></li>
               <li><Link to="/pricing" onClick={() => trackNavigation('Mobile Apps', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
