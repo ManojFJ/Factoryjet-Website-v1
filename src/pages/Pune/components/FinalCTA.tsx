@@ -8,11 +8,11 @@ interface FinalCTAProps {
 
 const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919730775468', '_blank');
+    window.open('https://wa.me/919699977699', '_blank');
   };
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+919730775468';
+    window.location.href = 'tel:+919699977699';
   };
 
   return (
@@ -149,13 +149,13 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
           <div className="flex flex-wrap justify-center gap-6 text-blue-100">
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5" />
-              <a href="tel:+919730775468" className="hover:text-white transition-colors">
-                +91-9730775468
+              <a href="tel:+919699977699" className="hover:text-white transition-colors">
+                +91 96999 77699
               </a>
             </div>
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp: +91-9730775468</span>
+              <span>WhatsApp: +91 96999 77699</span>
             </div>
           </div>
           <div className="mt-4 text-sm text-blue-200">

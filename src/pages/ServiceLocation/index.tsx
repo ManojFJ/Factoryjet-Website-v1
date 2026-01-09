@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { services, cities, externalLinks } from '../../data/seoConfig';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -12,7 +13,7 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
-import Footer from './components/Footer';
+// import Footer from './components/Footer'; // Commented out - using global Footer instead
 
 const ServiceLocationPage: React.FC = () => {
   const { service, city } = useParams<{ service: string; city: string }>();
@@ -414,7 +415,8 @@ const ServiceLocationPage: React.FC = () => {
           <CTA service={service!} city={cityName} />
         </main>
 
-        <Footer service={service!} city={cityName} />
+        {/* <Footer service={service!} city={cityName} /> */} {/* Commented out - using global Footer instead */}
+        <Footer />
       </div>
     </>
   );

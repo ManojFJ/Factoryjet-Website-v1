@@ -712,7 +712,7 @@ export const FAQS: FAQItem[] = [
   {
     question: "How do I get started with FactoryJet?",
     answer:
-      "Simple 3-step process: 1. Contact Us (Call, WhatsApp, or fill the form). 2. Consultation (Free 30-minute discussion - office, video, or phone). 3. Proposal (Receive detailed quote within 24 hours). From first contact to project start is typically 2-3 days. Launch in 7 days from kickoff. Ready to start? Phone: +91-XXXXX-XXXXX, WhatsApp: [Click to Chat], Email: chennai@factoryjet.com, Office: Tidel Park, OMR, Chennai.",
+      "Simple 3-step process: 1. Contact Us (Call, WhatsApp, or fill the form). 2. Consultation (Free 30-minute discussion - office, video, or phone). 3. Proposal (Receive detailed quote within 24 hours). From first contact to project start is typically 2-3 days. Launch in 7 days from kickoff. Ready to start? Phone: +91 96999 77699, WhatsApp: [Click to Chat], Email: connect@factoryjet.com, Office: Tidel Park, OMR, Chennai.",
   },
 ];
 

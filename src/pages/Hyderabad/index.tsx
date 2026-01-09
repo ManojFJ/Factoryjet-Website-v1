@@ -1,8 +1,11 @@
 
 import { Helmet } from 'react-helmet-async';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { Hero, SocialProof, EntityBlock, Problems, Solution } from './components/HeroAndIntro';
 import { Services, Process, TechStack, Pricing, Industries } from './components/ServicesAndOfferings';
-import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA, Footer } from './components/SocialProofAndFooter';
+import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA } from './components/SocialProofAndFooter';
+// import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA, Footer } from './components/SocialProofAndFooter'; // Commented out Footer - using global Footer instead
 import { StickyWhatsApp, ExitIntentPopup } from './components/MarketingOverlays';
 
 function HyderabadPage() {
@@ -13,7 +16,7 @@ function HyderabadPage() {
     "image": "https://www.factoryjet.com/images/factoryjet-hyderabad.jpg",
     "url": "https://factoryjet.com/locations/hyderabad/web-design/",
     "telephone": "+91 96999 77699",
-    "email": "hyderabad@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Hyderabad",
@@ -97,6 +100,7 @@ function HyderabadPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>
+      <Header variant="solid" />
       <Hero />
       <SocialProof />
       <EntityBlock />
@@ -112,6 +116,7 @@ function HyderabadPage() {
       <FAQ />
       <LocalSEO />
       <FinalCTA />
+      {/* <Footer /> */} {/* Commented out - using global Footer instead */}
       <Footer />
       <StickyWhatsApp />
       <ExitIntentPopup />

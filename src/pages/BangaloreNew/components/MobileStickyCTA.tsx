@@ -49,7 +49,7 @@ export const MobileStickyCTA = () => {
         WhatsApp Us
       </a>
       <a
-        href="tel:+91080XXXXXXX"
+        href="tel:+919699977699"
         className="flex-1 bg-[#0052CC] hover:bg-blue-700 text-white py-4 flex items-center justify-center font-bold text-lg gap-2 active:bg-blue-800 transition-colors"
         aria-label="Call Now"
       >

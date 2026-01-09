@@ -18,7 +18,7 @@ const PunePage = () => {
     "image": "https://www.factoryjet.com/images/factoryjet-pune.jpg",
     "url": "https://factoryjet.com/locations/pune/web-design/",
     "telephone": "+91 96999 77699",
-    "email": "pune@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Hinjewadi, Pune",

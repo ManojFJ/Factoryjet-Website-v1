@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import HeroSection from './components/HeroSection';
 import HeroDescription from './components/HeroDescription';
 import SocialProof from './components/SocialProof';
@@ -19,7 +20,7 @@ const TestimonialsSection = lazy(() => import('./components/TestimonialsSection'
 const FAQSection = lazy(() => import('./components/FAQSection'));
 const LocalSEOSection = lazy(() => import('./components/LocalSEOSection'));
 const FinalCTA = lazy(() => import('./components/FinalCTA'));
-const Footer = lazy(() => import('./components/Footer'));
+// const Footer = lazy(() => import('./components/Footer')); // Commented out - using global Footer instead
 const FloatingWhatsApp = lazy(() => import('./components/FloatingWhatsApp'));
 const StickyMobileCTA = lazy(() => import('./components/StickyMobileCTA'));
 
@@ -64,7 +65,7 @@ const SEOHead = () => (
         "image": "https://www.factoryjet.com/images/factoryjet-delhi.jpg",
         "url": "https://factoryjet.com/locations/delhi/web-design/",
         "telephone": "+91 96999 77699",
-        "email": "delhi@factoryjet.com",
+        "email": "connect@factoryjet.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "WeWork, Two Horizon Center, Golf Course Road, Sector 43",
@@ -172,6 +173,7 @@ const DelhiNewPage: React.FC = () => {
           <FAQSection />
           <LocalSEOSection />
           <FinalCTA />
+          {/* <Footer /> */} {/* Commented out - using global Footer instead */}
           <Footer />
           <FloatingWhatsApp />
           <StickyMobileCTA />

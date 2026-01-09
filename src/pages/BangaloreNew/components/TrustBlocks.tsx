@@ -175,7 +175,7 @@ export const FinalCTA = () => (
                             </a>
 
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <a href="tel:+91080XXXXXXX" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 py-3 px-6 rounded-lg text-white font-bold transition-colors border border-white/10">
+                                <a href="tel:+919699977699" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 py-3 px-6 rounded-lg text-white font-bold transition-colors border border-white/10">
                                     <span>Call Now</span>
                                 </a>
                                 <a href="#" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 py-3 px-6 rounded-lg text-white font-bold transition-colors shadow-lg">
@@ -228,9 +228,9 @@ export const Footer = () => (
                     <h3 className="text-white font-bold text-lg mb-4">Contact Info</h3>
                     <ul className="space-y-2">
                         <li>📍 WeWork Galaxy, 43 Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</li>
-                        <li>📞 +91-080-XXX-XXXX</li>
-                        <li>💬 WhatsApp: +91-XXX-XXX-XXXX</li>
-                        <li>✉️ bangalore@factoryjet.com</li>
+                        <li>📞 +91 96999 77699</li>
+                        <li>💬 WhatsApp: +91 96999 77699</li>
+                        <li>✉️ connect@factoryjet.com</li>
                     </ul>
                 </div>
             </div>

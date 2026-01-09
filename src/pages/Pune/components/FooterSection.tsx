@@ -164,17 +164,17 @@ const FooterSection: React.FC = () => {
         {/* Contact Info & Social */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/20">
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="tel:+919730775468" className="flex items-center gap-2 hover:text-jet-orange transition-colors">
+            <a href="tel:+919699977699" className="flex items-center gap-2 hover:text-jet-orange transition-colors">
               <Phone className="w-5 h-5" />
-              <span>+91-9730775468</span>
+              <span>+91 96999 77699</span>
             </a>
-            <a href="https://wa.me/919730775468" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-jet-orange transition-colors">
+            <a href="https://wa.me/919699977699" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-jet-orange transition-colors">
               <MessageCircle className="w-5 h-5" />
               <span>WhatsApp</span>
             </a>
-            <a href="mailto:pune@factoryjet.com" className="flex items-center gap-2 hover:text-jet-orange transition-colors">
+            <a href="mailto:connect@factoryjet.com" className="flex items-center gap-2 hover:text-jet-orange transition-colors">
               <Mail className="w-5 h-5" />
-              <span>pune@factoryjet.com</span>
+              <span>connect@factoryjet.com</span>
             </a>
           </div>
 

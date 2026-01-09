@@ -161,14 +161,14 @@ const FooterSection: React.FC = () => {
             <h4 className="text-xl font-bold mb-4">Contact Us</h4>
             <div className="space-y-3">
               <a
-                href="tel:+919730775468"
+                href="tel:+919699977699"
                 className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
               >
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <span>+91 97307 75468</span>
+                <span>+91 96999 77699</span>
               </a>
               <a
-                href="https://wa.me/919730775468"
+                href="https://wa.me/919699977699"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
@@ -177,11 +177,11 @@ const FooterSection: React.FC = () => {
                 <span>WhatsApp Us</span>
               </a>
               <a
-                href="mailto:info@factoryjet.com"
+                href="mailto:connect@factoryjet.com"
                 className="flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
               >
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span>info@factoryjet.com</span>
+                <span>connect@factoryjet.com</span>
               </a>
               <div className="flex items-start gap-2 text-blue-200">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />

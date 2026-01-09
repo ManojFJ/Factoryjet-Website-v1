@@ -18,7 +18,7 @@ const BangalorePage = () => {
     "image": "https://www.factoryjet.com/images/factoryjet-bangalore.jpg",
     "url": "https://factoryjet.com/locations/bangalore",
     "telephone": "+91 96999 77699",
-    "email": "bangalore@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Koramangala, Bangalore",

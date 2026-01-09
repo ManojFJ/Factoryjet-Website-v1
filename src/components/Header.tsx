@@ -31,8 +31,8 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
       href: '#services',
       hasDropdown: true,
       submenu: [
-        { label: 'Web Design', href: '/web-design', icon: Code, desc: 'Beautiful UI/UX design', isRoute: true },
-        { label: 'E-Commerce Development', href: '/ecommerce', icon: ShoppingBag, desc: 'Online store solutions', isRoute: true },
+        { label: 'Web Design', href: '/services/web-design', icon: Code, desc: 'Beautiful UI/UX design', isRoute: true },
+        { label: 'E-Commerce Development', href: '/services/ecommerce', icon: ShoppingBag, desc: 'Online store solutions', isRoute: true },
       ]
     },
     { label: 'About Us', href: '/about', hasDropdown: false, isRoute: true },

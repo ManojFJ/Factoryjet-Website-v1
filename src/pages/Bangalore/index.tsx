@@ -3,6 +3,7 @@ import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 
@@ -16,7 +17,7 @@ const Testimonials = lazy(() => import('./components/Testimonials'));
 const Pricing = lazy(() => import('./components/Pricing'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const CTA = lazy(() => import('./components/CTA'));
-const Footer = lazy(() => import('./components/Footer'));
+// const Footer = lazy(() => import('./components/Footer')); // Commented out - using global Footer instead
 const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
 const StickyMobileBar = lazy(() => import('./components/StickyMobileBar'));
 const LeadFormModal = lazy(() => import('./components/LeadFormModal'));
@@ -38,7 +39,7 @@ const BangalorePage: React.FC = () => {
     "image": "https://www.factoryjet.com/images/factoryjet-bangalore.jpg",
     "url": "https://factoryjet.com/locations/bangalore",
     "telephone": "+91 96999 77699",
-    "email": "bangalore@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Bangalore",
@@ -156,6 +157,7 @@ const BangalorePage: React.FC = () => {
         <Pricing onOpenModal={openModal} />
         <FAQ />
         <CTA onOpenModal={openModal} />
+        {/* <Footer /> */} {/* Commented out - using global Footer instead */}
         <Footer />
         <WhatsAppButton />
         <StickyMobileBar />

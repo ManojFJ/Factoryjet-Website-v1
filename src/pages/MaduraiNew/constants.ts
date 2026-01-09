@@ -19,9 +19,9 @@ export const COLORS = {
 };
 
 export const CONTACT = {
-  phone: "+91-0452-XXX-XXXX", // Placeholder as per PDF
-  whatsapp: "+91-XXX-XXX-XXXX",
-  email: "madurai@factoryjet.com",
+  phone: "+91 96999 77699",
+  whatsapp: "+91 96999 77699",
+  email: "connect@factoryjet.com",
   address: "2nd Floor, KK Nagar Commercial Complex, Madurai, Tamil Nadu 625020"
 };
 

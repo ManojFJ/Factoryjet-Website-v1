@@ -39,7 +39,7 @@ const ExitIntentPopup: React.FC = () => {
   };
 
   const handleCTA = () => {
-    window.open('https://wa.me/919730775468?text=Hi! I saw the special offer on your Pune website. I need help with website design.', '_blank');
+    window.open('https://wa.me/919699977699?text=Hi! I saw the special offer on your Delhi website. I need help with website design.', '_blank');
     handleClose();
   };
 

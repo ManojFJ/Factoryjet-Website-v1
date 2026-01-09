@@ -1,5 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Hero from "./components/Hero";
 import {
   SocialProof,
@@ -19,7 +21,7 @@ import {
   TestimonialsSection,
   FaqSection,
 } from "./components/DetailedSections";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer"; // Commented out - using global Footer instead
 import ExitIntentModal from "./components/ExitIntentModal";
 import { faqData } from "./data";
 import { MessageCircle, Phone } from "lucide-react";
@@ -89,13 +91,13 @@ const faqSchema = {
 const StickyMobileCTA = () => (
   <div className="fixed bottom-0 left-0 w-full z-50 md:hidden flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] font-sans">
     <a
-      href="https://wa.me/919999999999"
+      href="https://wa.me/919699977699"
       className="flex-1 bg-[#25D366] text-white py-3.5 flex items-center justify-center gap-2 font-bold text-sm active:bg-green-700"
     >
       <MessageCircle className="w-5 h-5" /> WhatsApp
     </a>
     <a
-      href="tel:+910000000000"
+      href="tel:+919699977699"
       className="flex-1 bg-primary text-white py-3.5 flex items-center justify-center gap-2 font-bold text-sm active:bg-blue-800"
     >
       <Phone className="w-5 h-5" /> Call Now
@@ -121,6 +123,8 @@ function MumbaiPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+
+      <Header variant="solid" />
 
       {/* SECTION 1: HERO */}
       <Hero />
@@ -168,6 +172,7 @@ function MumbaiPage() {
       <FinalCTA />
 
       {/* SECTION 16: FOOTER */}
+      {/* <Footer /> */} {/* Commented out - using global Footer instead */}
       <Footer />
 
       {/* MOBILE STICKY BAR */}

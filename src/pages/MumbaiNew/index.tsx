@@ -21,7 +21,7 @@ import {
   TestimonialsSection,
   FaqSection
 } from './components/DetailedSections';
-import FooterLocal from './components/FooterLocal';
+// import FooterLocal from './components/FooterLocal'; // Commented out - using global Footer instead
 import ExitIntentModal from './components/ExitIntentModal';
 import ContactModal from './components/ContactModal';
 import StickyMobileCTA from './components/StickyMobileCTA';
@@ -51,8 +51,8 @@ const MumbaiPage = () => {
             "name": "FactoryJet - Industrial Web Design Company Mumbai",
             "image": "https://www.factoryjet.com/images/factoryjet-mumbai.jpg",
             "url": "https://factoryjet.com/locations/mumbai/web-design/",
-            "telephone": "+91-022-XXX-XXXX",
-            "email": "mumbai@factoryjet.com",
+            "telephone": "+91 96999 77699",
+            "email": "connect@factoryjet.com",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Building #20, 10, Ajit Glass Garden Rd, opp. Amrutnagar, Somani Gram, Goregaon West",
@@ -156,7 +156,8 @@ const MumbaiPage = () => {
         <FinalCTA onOpenModal={openContactModal} />
       </main>
 
-      <FooterLocal />
+      {/* <FooterLocal /> */} {/* Commented out - using global Footer instead */}
+      <Footer />
       <StickyMobileCTA />
       <ExitIntentModal />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />

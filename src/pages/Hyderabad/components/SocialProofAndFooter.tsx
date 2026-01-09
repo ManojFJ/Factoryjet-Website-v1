@@ -101,7 +101,7 @@ export const LocalSEO = () => (
           <p>Telangana 500081</p>
           <div className="pt-6 space-y-3 border-t border-jet-light">
             <p className="flex items-center gap-3"><Phone size={18} className="text-jet-orange" /> 040-XXX-XXXX</p>
-            <p className="flex items-center gap-3"><Mail size={18} className="text-jet-orange" /> hyderabad@factoryjet.com</p>
+            <p className="flex items-center gap-3"><Mail size={18} className="text-jet-orange" /> connect@factoryjet.com</p>
             <p className="flex items-center gap-3"><Clock size={18} className="text-jet-orange" /> Mon-Sat: 9 AM - 7 PM</p>
           </div>
         </address>

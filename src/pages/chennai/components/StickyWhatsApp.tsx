@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const StickyWhatsApp: React.FC = () => {
   return (
     <motion.a
-      href="https://wa.me/919876543210"
+      href="https://wa.me/919699977699"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl shadow-green-600/30 flex items-center justify-center group hover:bg-[#20bd5a] transition-all"

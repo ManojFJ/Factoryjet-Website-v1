@@ -8,11 +8,11 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919730775468', '_blank');
+    window.open('https://wa.me/919699977699', '_blank');
   };
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+919730775468';
+    window.location.href = 'tel:+919699977699';
   };
 
   return (
