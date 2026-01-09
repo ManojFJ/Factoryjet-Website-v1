@@ -25,10 +25,10 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-3 md:gap-4">
               {[
-                { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { Icon: Instagram, href: '#', label: 'Instagram' },
-                { Icon: Facebook, href: '#', label: 'Facebook' },
-                { Icon: Twitter, href: '#', label: 'Twitter' }
+                { Icon: Linkedin, href: 'https://in.linkedin.com/company/factoryjet', label: 'LinkedIn' },
+                { Icon: Instagram, href: 'https://www.instagram.com/factoryjetb2b/', label: 'Instagram' },
+                { Icon: Facebook, href: 'https://www.facebook.com/factoryjetb2b/', label: 'Facebook' },
+                { Icon: Twitter, href: 'https://x.com/FactoryJet_Tech', label: 'Twitter' }
               ].map(({ Icon, href, label }, i) => (
                 <a
                   key={i}
@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
               <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Development', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Development</Link></li>
               <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Design', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
               <li><Link to="/services/ecommerce" onClick={() => trackNavigation('E-Commerce', '/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
-              <li><Link to="/pricing" onClick={() => trackNavigation('Shopify Development', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
-              <li><Link to="/pricing" onClick={() => trackNavigation('WordPress', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">WordPress</Link></li>
-              <li><Link to="/pricing" onClick={() => trackNavigation('Mobile Apps', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
-              <li><Link to="/pricing" onClick={() => trackNavigation('SEO Services', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
+              <li><Link to="/services/web-design" onClick={() => trackNavigation('Shopify Development', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
+              <li><Link to="/services/web-design" onClick={() => trackNavigation('WordPress', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">WordPress</Link></li>
+              <li><Link to="/contact" onClick={() => trackNavigation('Mobile Apps', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
+              <li><Link to="/services/web-design" onClick={() => trackNavigation('SEO Services', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
             </ul>
           </div>
 
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
-          <p>© 2025 FactoryJet Digital Solutions. All rights reserved.</p>
+          <p>© 2026 FactoryJet Digital Solutions. All rights reserved.</p>
           <div className="flex gap-4 md:gap-6">
             <Link to="/terms" onClick={() => trackNavigation('Terms', '/terms', 'footer')} className="text-gray-400 hover:text-white transition-colors">Terms</Link>
             <Link to="/privacy" onClick={() => trackNavigation('Privacy', '/privacy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Privacy</Link>
