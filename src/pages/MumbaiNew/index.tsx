@@ -21,7 +21,7 @@ import {
   TestimonialsSection,
   FaqSection
 } from './components/DetailedSections';
-import FooterLocal from './components/FooterLocal';
+// import FooterLocal from './components/FooterLocal'; // Commented out - using global Footer instead
 import ExitIntentModal from './components/ExitIntentModal';
 import ContactModal from './components/ContactModal';
 import StickyMobileCTA from './components/StickyMobileCTA';
@@ -156,7 +156,8 @@ const MumbaiPage = () => {
         <FinalCTA onOpenModal={openContactModal} />
       </main>
 
-      <FooterLocal />
+      {/* <FooterLocal /> */} {/* Commented out - using global Footer instead */}
+      <Footer />
       <StickyMobileCTA />
       <ExitIntentModal />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />

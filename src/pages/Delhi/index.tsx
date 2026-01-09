@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import HeroSection from './components/HeroSection';
 import SocialProofBand from './components/SocialProofBand';
 import EntityBlock from './components/EntityBlock';
@@ -15,7 +17,7 @@ import FAQSection from './components/FAQSection';
 import MarketDataSection from './components/MarketDataSection';
 import TechnologiesSection from './components/TechnologiesSection';
 import FinalCTA from './components/FinalCTA';
-import FooterSection from './components/FooterSection';
+// import FooterSection from './components/FooterSection'; // Commented out - using global Footer instead
 import WhatsAppButton from './components/WhatsAppButton';
 import LeadFormModal from './components/LeadFormModal';
 import ExitIntentPopup from './components/ExitIntentPopup';
@@ -153,6 +155,7 @@ const DelhiPage: React.FC = () => {
 
       {/* Page Content */}
       <div className="min-h-screen bg-white">
+        <Header variant="solid" />
         <HeroSection onOpenModal={() => setIsModalOpen(true)} />
         <SocialProofBand />
         <EntityBlock />
@@ -168,7 +171,8 @@ const DelhiPage: React.FC = () => {
         <MarketDataSection />
         <TechnologiesSection />
         <FinalCTA onOpenModal={() => setIsModalOpen(true)} />
-        <FooterSection />
+        {/* <FooterSection /> */} {/* Commented out - using global Footer instead */}
+        <Footer />
 
         {/* Floating Components */}
         <WhatsAppButton />

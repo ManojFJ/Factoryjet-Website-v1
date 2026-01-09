@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import HeroSection from './components/HeroSection';
 import HeroDescription from './components/HeroDescription';
 import SocialProof from './components/SocialProof';
@@ -19,7 +20,7 @@ const TestimonialsSection = lazy(() => import('./components/TestimonialsSection'
 const FAQSection = lazy(() => import('./components/FAQSection'));
 const LocalSEOSection = lazy(() => import('./components/LocalSEOSection'));
 const FinalCTA = lazy(() => import('./components/FinalCTA'));
-const Footer = lazy(() => import('./components/Footer'));
+// const Footer = lazy(() => import('./components/Footer')); // Commented out - using global Footer instead
 const FloatingWhatsApp = lazy(() => import('./components/FloatingWhatsApp'));
 const StickyMobileCTA = lazy(() => import('./components/StickyMobileCTA'));
 
@@ -172,6 +173,7 @@ const DelhiNewPage: React.FC = () => {
           <FAQSection />
           <LocalSEOSection />
           <FinalCTA />
+          {/* <Footer /> */} {/* Commented out - using global Footer instead */}
           <Footer />
           <FloatingWhatsApp />
           <StickyMobileCTA />

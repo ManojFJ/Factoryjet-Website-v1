@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Hero from './components/Hero';
 import StickyMobileBar from './components/StickyMobileBar';
 import SocialProof from './components/SocialProof';
@@ -14,7 +15,7 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
-import Footer from './components/Footer';
+// import Footer from './components/Footer'; // Commented out - using global Footer instead
 import WhatsAppButton from './components/WhatsAppButton';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import LeadFormModal from './components/LeadFormModal';
@@ -131,6 +132,7 @@ const AhmedabadPage: React.FC = () => {
         <FAQ />
         <CTA onCtaClick={openModal} />
       </main>
+      {/* <Footer /> */} {/* Commented out - using global Footer instead */}
       <Footer />
       <WhatsAppButton />
       <StickyMobileBar />

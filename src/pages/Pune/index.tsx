@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Hero from './components/HeroSection';
 import SocialProof from './components/SocialProofBand';
 import EntityBlock from './components/EntityBlock';
@@ -17,7 +18,7 @@ import FAQSection from './components/FAQSection';
 import MarketDataSection from './components/MarketDataSection';
 import TechnologiesSection from './components/TechnologiesSection';
 import FinalCTA from './components/FinalCTA';
-import FooterSection from './components/FooterSection';
+// import FooterSection from './components/FooterSection'; // Commented out - using global Footer instead
 import WhatsAppButton from './components/WhatsAppButton';
 import LeadFormModal from './components/LeadFormModal';
 import ExitIntentPopup from './components/ExitIntentPopup';
@@ -218,7 +219,8 @@ const PunePage: React.FC = () => {
         <MarketDataSection />
         <TechnologiesSection />
         <FinalCTA onOpenModal={openModal} />
-        <FooterSection />
+        {/* <FooterSection /> */} {/* Commented out - using global Footer instead */}
+        <Footer />
         <WhatsAppButton />
         <LeadFormModal isOpen={isModalOpen} onClose={closeModal} />
         <ExitIntentPopup />

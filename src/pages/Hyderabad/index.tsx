@@ -1,9 +1,11 @@
 
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { Hero, SocialProof, EntityBlock, Problems, Solution } from './components/HeroAndIntro';
 import { Services, Process, TechStack, Pricing, Industries } from './components/ServicesAndOfferings';
-import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA, Footer } from './components/SocialProofAndFooter';
+import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA } from './components/SocialProofAndFooter';
+// import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA, Footer } from './components/SocialProofAndFooter'; // Commented out Footer - using global Footer instead
 import { StickyWhatsApp, ExitIntentPopup } from './components/MarketingOverlays';
 
 function HyderabadPage() {
@@ -114,6 +116,7 @@ function HyderabadPage() {
       <FAQ />
       <LocalSEO />
       <FinalCTA />
+      {/* <Footer /> */} {/* Commented out - using global Footer instead */}
       <Footer />
       <StickyWhatsApp />
       <ExitIntentPopup />

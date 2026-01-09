@@ -1,6 +1,7 @@
 
 import { Helmet } from 'react-helmet-async';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 import AboutEntity from './components/AboutEntity';
@@ -12,7 +13,7 @@ import Technologies from './components/Technologies';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import CaseStudies from './components/CaseStudies';
-import Footer from './components/Footer';
+// import Footer from './components/Footer'; // Commented out - using global Footer instead
 import FinalCTA from './components/FinalCTA';
 import GlassCard from './components/GlassCard';
 import StickyWhatsApp from './components/StickyWhatsApp';
@@ -225,6 +226,7 @@ function ChennaiPage() {
       <FAQ />
       <Locations />
       <FinalCTA />
+      {/* <Footer /> */} {/* Commented out - using global Footer instead */}
       <Footer />
     </div>
   );
