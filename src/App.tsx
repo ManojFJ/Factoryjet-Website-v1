@@ -6,6 +6,7 @@ import {
   useContactModal,
 } from "./context/ContactModalContext";
 import ScrollToTop from "./components/ScrollToTop";
+import DelhiUpdatedPage from "./pages/DelhiUpdated/App";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -80,7 +81,7 @@ function App() {
 
               {/* Location Landing Pages - New URL Pattern */}
               <Route path="/locations/bangalore/web-design" element={<BangaloreNewPage />} />
-              <Route path="/locations/delhi/web-design" element={<DelhiNewPage />} />
+              <Route path="/locations/delhi/web-design" element={<DelhiUpdatedPage />} />
               <Route path="/locations/mumbai/web-design" element={<MumbaiNewPage />} />
               <Route path="/locations/pune/web-design" element={<PuneNewPage />} />
               <Route path="/locations/madurai/web-design" element={<MaduraiNewPage />} />
