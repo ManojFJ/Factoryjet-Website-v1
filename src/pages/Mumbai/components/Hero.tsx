@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               {/* Enforcing Jet Orange (#FF6B35 / bg-secondary) for Primary Mobile CTA */}
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/919699977699"
                 className="inline-flex items-center justify-center gap-3 bg-secondary hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 group w-full sm:w-auto"
               >
                 <MessageCircle className="w-6 h-6 group-hover:animate-bounce" />
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
               {/* Helper Text */}
               <div className="hidden sm:flex items-center gap-2 text-sm text-blue-200 px-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="font-mono">WhatsApp: +91-XXX-XXX-XXXX</span>
+                <span className="font-mono">WhatsApp: +91 96999 77699</span>
               </div>
             </div>
 

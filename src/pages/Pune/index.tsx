@@ -36,8 +36,8 @@ const PunePage: React.FC = () => {
     "name": "FactoryJet - Website Design Company Pune",
     "image": "https://www.factoryjet.com/images/factoryjet-pune.jpg",
     "url": "https://factoryjet.com/locations/pune",
-    "telephone": "+91-9730775468",
-    "email": "pune@factoryjet.com",
+    "telephone": "+91 96999 77699",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Pune",
@@ -150,7 +150,7 @@ const PunePage: React.FC = () => {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9730775468",
+      "telephone": "+91 96999 77699",
       "contactType": "sales",
       "areaServed": "IN",
       "availableLanguage": ["English", "Hindi", "Marathi"]

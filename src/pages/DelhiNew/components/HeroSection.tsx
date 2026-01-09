@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
                 Get Free Quote Today
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3.5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center w-full sm:w-auto min-h-[48px]">
+              <a href="https://wa.me/919699977699" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3.5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center w-full sm:w-auto min-h-[48px]">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 WhatsApp Us
               </a>

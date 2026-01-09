@@ -13,7 +13,7 @@ function HyderabadPage() {
     "image": "https://www.factoryjet.com/images/factoryjet-hyderabad.jpg",
     "url": "https://factoryjet.com/locations/hyderabad/web-design/",
     "telephone": "+91 96999 77699",
-    "email": "hyderabad@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Hyderabad",

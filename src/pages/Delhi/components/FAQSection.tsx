@@ -276,7 +276,7 @@ const FAQSection: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
-              href="https://wa.me/919730775468"
+              href="https://wa.me/919699977699"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -286,7 +286,7 @@ const FAQSection: React.FC = () => {
               💬 WhatsApp Us
             </motion.a>
             <motion.a
-              href="tel:+919730775468"
+              href="tel:+919699977699"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-jet-blue px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition-all inline-flex items-center justify-center gap-2 hover:bg-gray-100"

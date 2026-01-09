@@ -7,7 +7,7 @@ export const StickyWhatsApp = () => (
     {/* Mobile Bottom Bar (Below md) */}
     <div className="fixed bottom-0 left-0 w-full z-50 flex md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_6px_rgba(0,0,0,0.1)]">
       <a 
-        href="https://wa.me/" // Add actual number
+        href="https://wa.me/919699977699"
         target="_blank" 
         rel="noreferrer"
         className="flex-1 bg-[#25D366] text-white py-4 flex items-center justify-center gap-2 font-bold text-lg active:bg-[#128C7E] transition-colors"
@@ -16,7 +16,7 @@ export const StickyWhatsApp = () => (
         <MessageCircle size={24} fill="white" /> WhatsApp
       </a>
       <a 
-        href="tel:+910000000000" // Add actual number
+        href="tel:+919699977699"
         className="flex-1 bg-jet-blue text-white py-4 flex items-center justify-center gap-2 font-bold text-lg active:bg-blue-800 transition-colors"
         aria-label="Call Us"
       >

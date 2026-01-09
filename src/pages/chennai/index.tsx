@@ -121,7 +121,7 @@ function ChennaiPage() {
     "image": "https://www.factoryjet.com/images/factoryjet-chennai.jpg",
     "url": "https://factoryjet.com/locations/chennai/web-design/",
     "telephone": "+91 96999 77699",
-    "email": "chennai@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Tidel Park, OMR, Chennai",

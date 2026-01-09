@@ -39,7 +39,7 @@ const FinalCTA: React.FC = () => {
           <p className="text-xs text-blue-200 mb-6">30-minute call. No obligation. Custom quote in 24 hours.</p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 text-white">
-            <a href="tel:+919876543210" className="flex items-center justify-center gap-2 hover:text-jet-orange transition-colors">
+            <a href="tel:+919699977699" className="flex items-center justify-center gap-2 hover:text-jet-orange transition-colors">
               <Phone size={20} /> +91 96999 77699
             </a>
             <a href="#" className="flex items-center justify-center gap-2 hover:text-jet-orange transition-colors">

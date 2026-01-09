@@ -8,11 +8,11 @@ interface FinalCTAProps {
 
 const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919730775468?text=Hi! I need help with website design for my Delhi NCR business.', '_blank');
+    window.open('https://wa.me/919699977699?text=Hi! I need help with website design for my Delhi NCR business.', '_blank');
   };
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+919730775468';
+    window.location.href = 'tel:+919699977699';
   };
 
   const reasons = [
@@ -153,7 +153,7 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
               className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-10 py-5 rounded-lg font-bold text-xl shadow-2xl transition-all inline-flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-6 h-6" />
-              WhatsApp: +91 97307 75468
+              WhatsApp: +91 96999 77699
             </motion.button>
 
             <motion.button
@@ -163,7 +163,7 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
               className="bg-white text-jet-navy px-10 py-5 rounded-lg font-bold text-xl shadow-2xl transition-all inline-flex items-center justify-center gap-2 hover:bg-gray-100"
             >
               <Phone className="w-6 h-6" />
-              Call: +91 97307 75468
+              Call: +91 96999 77699
             </motion.button>
           </div>
         </motion.div>
@@ -179,8 +179,8 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
             <Mail className="w-8 h-8 text-jet-orange mx-auto mb-3" />
             <div className="font-semibold mb-1">Email Us</div>
-            <a href="mailto:info@factoryjet.com" className="text-blue-200 hover:text-white transition-colors">
-              info@factoryjet.com
+            <a href="mailto:connect@factoryjet.com" className="text-blue-200 hover:text-white transition-colors">
+              connect@factoryjet.com
             </a>
           </div>
 

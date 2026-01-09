@@ -51,8 +51,8 @@ const MumbaiPage = () => {
             "name": "FactoryJet - Industrial Web Design Company Mumbai",
             "image": "https://www.factoryjet.com/images/factoryjet-mumbai.jpg",
             "url": "https://factoryjet.com/locations/mumbai/web-design/",
-            "telephone": "+91-022-XXX-XXXX",
-            "email": "mumbai@factoryjet.com",
+            "telephone": "+91 96999 77699",
+            "email": "connect@factoryjet.com",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Building #20, 10, Ajit Glass Garden Rd, opp. Amrutnagar, Somani Gram, Goregaon West",

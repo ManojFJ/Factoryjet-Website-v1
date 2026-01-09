@@ -38,7 +38,7 @@ const SuratPage: React.FC = () => {
     "image": "https://www.factoryjet.com/images/factoryjet-surat.jpg",
     "url": "https://factoryjet.com/locations/surat",
     "telephone": "+91 96999 77699",
-    "email": "surat@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Surat",

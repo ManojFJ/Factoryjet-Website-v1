@@ -401,9 +401,9 @@ export const LocalSEOSection: React.FC = () => {
             <div className="bg-bgLight p-6 rounded-xl border border-light space-y-4">
                <h3 className="text-xl font-bold text-navy">FactoryJet Technologies</h3>
                <p className="text-slate text-sm flex gap-2"><MapPin className="w-4 h-4 text-primary" /> Building #20, 10, Ajit Glass Garden Rd, opp. Amrutnagar, Somani Gram, Goregaon West, Mumbai, Maharashtra 400063</p>
-               <p className="text-slate text-sm"><strong>Phone:</strong> +91-022-XXX-XXXX</p>
-               <p className="text-slate text-sm"><strong>WhatsApp:</strong> +91-XXX-XXX-XXXX</p>
-               <p className="text-slate text-sm"><strong>Email:</strong> mumbai@factoryjet.com</p>
+               <p className="text-slate text-sm"><strong>Phone:</strong> +91 96999 77699</p>
+               <p className="text-slate text-sm"><strong>WhatsApp:</strong> +91 96999 77699</p>
+               <p className="text-slate text-sm"><strong>Email:</strong> connect@factoryjet.com</p>
                <p className="text-slate text-sm"><strong>Website:</strong> www.factoryjet.com</p>
                <hr className="border-light"/>
                <h4 className="font-bold text-navy text-sm">Business Hours</h4>
@@ -441,8 +441,8 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
          <div className="flex flex-col md:flex-row gap-6 justify-center mb-12">
             <button onClick={onOpenModal} className="bg-secondary hover:bg-orange-600 text-white font-bold py-4 px-12 rounded-lg text-xl shadow-lg transition-transform hover:scale-105">Get Free Quote Today</button>
             <div className="flex flex-col text-left justify-center text-sm font-medium">
-               <span>📞 Call: +91-022-XXX-XXXX</span>
-               <span>💬 WhatsApp: +91-XXX-XXX-XXXX</span>
+               <span>📞 Call: +91 96999 77699</span>
+               <span>💬 WhatsApp: +91 96999 77699</span>
             </div>
          </div>
 

@@ -132,7 +132,7 @@ export const LocalSEO = () => {
               <Mail className="w-5 h-5 md:w-6 md:h-6 text-jet-blue shrink-0" />
               <div>
                 <h4 className="font-bold text-jet-navy font-heading text-sm md:text-base">Email</h4>
-                <p className="text-sm md:text-base">pune@factoryjet.com</p>
+                <p className="text-sm md:text-base">connect@factoryjet.com</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -286,7 +286,7 @@ export const FinalCTA = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-          <a href="tel:+910200000000" className="bg-transparent border-2 border-white hover:bg-white hover:text-jet-navy text-white px-8 py-3.5 md:px-10 md:py-5 rounded-lg font-bold text-lg md:text-xl transition-all">
+          <a href="tel:+919699977699" className="bg-transparent border-2 border-white hover:bg-white hover:text-jet-navy text-white px-8 py-3.5 md:px-10 md:py-5 rounded-lg font-bold text-lg md:text-xl transition-all">
             Call Now
           </a>
         </div>

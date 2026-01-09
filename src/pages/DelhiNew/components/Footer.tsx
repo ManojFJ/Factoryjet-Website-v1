@@ -55,11 +55,11 @@ const Footer: React.FC = () => (
             </li>
             <li className="flex items-center">
               <Phone className="h-5 w-5 mr-3 text-jet-orange flex-shrink-0" />
-              +91-999-999-9999
+              +91 96999 77699
             </li>
             <li className="flex items-center">
               <div className="h-5 w-5 mr-3 text-jet-orange flex-shrink-0">@</div>
-              delhi@factoryjet.com
+              connect@factoryjet.com
             </li>
           </ul>
         </div>

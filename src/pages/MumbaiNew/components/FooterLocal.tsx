@@ -58,15 +58,15 @@ const FooterLocal: React.FC = () => {
               </li>
               <li className="flex gap-3">
                 <span>📞</span>
-                <span>+91-022-XXX-XXXX</span>
+                <span>+91 96999 77699</span>
               </li>
               <li className="flex gap-3">
                 <span>💬</span>
-                <span>WhatsApp: +91-XXX-XXX-XXXX</span>
+                <span>WhatsApp: +91 96999 77699</span>
               </li>
               <li className="flex gap-3">
                 <span>✉️</span>
-                <span>mumbai@factoryjet.com</span>
+                <span>connect@factoryjet.com</span>
               </li>
             </ul>
           </div>

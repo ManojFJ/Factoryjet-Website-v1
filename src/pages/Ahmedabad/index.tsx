@@ -29,7 +29,7 @@ const AhmedabadPage: React.FC = () => {
     "image": "https://www.factoryjet.com/images/factoryjet-ahmedabad.jpg",
     "url": "https://factoryjet.com/locations/ahmedabad",
     "telephone": "+91 96999 77699",
-    "email": "ahmedabad@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Ahmedabad",

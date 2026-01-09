@@ -18,7 +18,7 @@ const MaduraiPage = () => {
     "image": "https://www.factoryjet.com/images/factoryjet-madurai.jpg",
     "url": "https://factoryjet.com/locations/madurai/web-design/",
     "telephone": "+91 96999 77699",
-    "email": "madurai@factoryjet.com",
+    "email": "connect@factoryjet.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Madurai",

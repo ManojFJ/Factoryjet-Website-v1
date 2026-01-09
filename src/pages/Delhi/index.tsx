@@ -31,7 +31,7 @@ const DelhiPage: React.FC = () => {
     'image': 'https://www.factoryjet.com/images/factoryjet-delhi.jpg',
     'url': 'https://factoryjet.com/locations/delhi',
     'telephone': '+91 96999 77699',
-    'email': 'delhi@factoryjet.com',
+    'email': 'connect@factoryjet.com',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': 'Delhi NCR',
