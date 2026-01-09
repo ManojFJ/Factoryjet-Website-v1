@@ -1,5 +1,6 @@
 
 import { Helmet } from 'react-helmet-async';
+import Header from '../../components/Header';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 import AboutEntity from './components/AboutEntity';
@@ -205,6 +206,7 @@ function ChennaiPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>
+      <Header variant="solid" />
       <StickyWhatsApp />
       <ExitIntentModal />
       

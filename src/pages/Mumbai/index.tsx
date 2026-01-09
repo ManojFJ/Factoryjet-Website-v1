@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import Header from "../../components/Header";
 import Hero from "./components/Hero";
 import {
   SocialProof,
@@ -121,6 +122,8 @@ function MumbaiPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+
+      <Header variant="solid" />
 
       {/* SECTION 1: HERO */}
       <Hero />

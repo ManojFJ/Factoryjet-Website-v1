@@ -1,5 +1,6 @@
 
 import { Helmet } from 'react-helmet-async';
+import Header from '../../components/Header';
 import { Hero, SocialProof, EntityBlock, Problems, Solution } from './components/HeroAndIntro';
 import { Services, Process, TechStack, Pricing, Industries } from './components/ServicesAndOfferings';
 import { CaseStudies, Testimonials, FAQ, LocalSEO, FinalCTA, Footer } from './components/SocialProofAndFooter';
@@ -97,6 +98,7 @@ function HyderabadPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>
+      <Header variant="solid" />
       <Hero />
       <SocialProof />
       <EntityBlock />
