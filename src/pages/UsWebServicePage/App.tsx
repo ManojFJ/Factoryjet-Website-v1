@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, CheckCircle, Check, Code2, Layers, Smartphone, Globe, Plus, Minus, ArrowRight, Zap, Shield, Cpu, ShieldCheck, TrendingUp, Sparkles, Layout, Settings, ShoppingBag, FileText, Star, Clock, Lock, Database, Flag, AlertCircle, Rocket } from 'lucide-react';
 import { JumpNav } from './components/Layout/JumpNav';

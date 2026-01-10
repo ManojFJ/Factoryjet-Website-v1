@@ -925,7 +925,7 @@ const ProblemSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
           variants={fadeInUp}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4 leading-tight" style={{ fontFamily: "'Poppins', Arial, sans-serif" }}>
             The Website Industry Has a Dirty Secret: <br className="hidden md:block" />
             They're Designed to Drain Your Budget
           </h2>
@@ -949,7 +949,7 @@ const ProblemSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
                 <div className="w-14 h-14 bg-red-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <DollarSign className="text-red-500" size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>The "Premium" Trap</h3>
+                <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Poppins', Arial, sans-serif" }}>The "Premium" Trap</h3>
                 
                 <div className="space-y-4">
                     <div className="border-l-2 border-slate-700 pl-4">
@@ -988,7 +988,7 @@ const ProblemSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
                 <div className="w-14 h-14 bg-amber-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <AlertTriangle className="text-amber-500" size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>The Budget Gamble</h3>
+                <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Poppins', Arial, sans-serif" }}>The Budget Gamble</h3>
                 
                 <div className="space-y-4">
                     <div className="border-l-2 border-slate-700 pl-4">
@@ -1029,7 +1029,7 @@ const ProblemSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
                 <div className="w-14 h-14 bg-[#10B981]/20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-900/20">
                     <Zap className="text-[#10B981]" size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>The FactoryJet Way</h3>
+                <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>The FactoryJet Way</h3>
                 
                 <div className="space-y-4">
                      <div className="border-l-2 border-white/20 pl-4">
@@ -1069,6 +1069,8 @@ const ProblemSection = ({ onCtaClick }: { onCtaClick: () => void }) => {
     </section>
   );
 };
+
+  
 
 const Methodology = ({ onCtaClick }: { onCtaClick: () => void }) => {
   const containerRef = useRef<HTMLDivElement>(null);
