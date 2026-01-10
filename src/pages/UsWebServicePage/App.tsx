@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   const { openForm } = useForm();
   
   return (
-    <footer className="bg-navy text-white py-12 border-t border-white/10 bg-slate-900">
+    <footer className="bg-navy text-white py-12 border-t border-white/10 ">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
