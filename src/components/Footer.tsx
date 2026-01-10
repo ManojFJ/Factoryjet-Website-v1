@@ -109,8 +109,9 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
           <p>© 2026 FactoryJet Digital Solutions. All rights reserved.</p>
           <div className="flex gap-4 md:gap-6">
-            <Link to="/terms" onClick={() => trackNavigation('Terms', '/terms', 'footer')} className="text-gray-400 hover:text-white transition-colors">Terms</Link>
-            <Link to="/privacy" onClick={() => trackNavigation('Privacy', '/privacy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Privacy</Link>
+            <Link to="/terms" onClick={() => trackNavigation('Terms', '/terms', 'footer')} className="text-gray-400 hover:text-white transition-colors">Terms </Link>
+            <Link to="/privacy" onClick={() => trackNavigation('Privacy Policy', '/privacy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/refund-policy" onClick={() => trackNavigation('Refund Policy', '/refund-policy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Refund Policy</Link>
             <Link to="/sitemap" onClick={() => trackNavigation('Sitemap', '/sitemap', 'footer')} className="text-gray-400 hover:text-white transition-colors">Sitemap</Link>
           </div>
         </div>

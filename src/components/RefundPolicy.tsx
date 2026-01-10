@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
+import Header from "./Header"
+import Footer from './Footer';
 export default function RefundPolicy() {
   const [activeSection, setActiveSection] = useState<number | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -133,18 +134,20 @@ export default function RefundPolicy() {
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+  return (<>
+    <Header variant="solid" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 mt-9">
       {/* Decorative background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
-
+   
       <div className="relative">
         {/* Header */}
-        <header className={`border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+      
+        {/* <header className={`border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
           <div className="max-w-5xl mx-auto px-6 py-8">
             <div className="flex items-center justify-between">
               <div>
@@ -160,7 +163,7 @@ export default function RefundPolicy() {
               </div>
             </div>
           </div>
-        </header>
+        </header> */}
 
         {/* Main content */}
         <main className="max-w-5xl mx-auto px-6 py-12">
@@ -269,7 +272,7 @@ export default function RefundPolicy() {
           </div>
 
           {/* Footer notice */}
-          <div className={`mt-12 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200 transition-all duration-1000 ${
+          {/* <div className={`mt-12 p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200 transition-all duration-1000 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <p className="text-center text-slate-600 text-sm leading-relaxed">
@@ -277,7 +280,7 @@ export default function RefundPolicy() {
               <br />
               <span className="text-slate-500">© 2026 FactoryJet Private Limited. All rights reserved.</span>
             </p>
-          </div>
+          </div> */}
         </main>
       </div>
 
@@ -315,5 +318,7 @@ export default function RefundPolicy() {
         }
       `}</style>
     </div>
+    <Footer/>
+    </>
   );
 }

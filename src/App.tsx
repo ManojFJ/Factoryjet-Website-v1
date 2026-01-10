@@ -78,11 +78,11 @@ function App() {
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/services/web-design" element={<WebDesignPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="/privacy" element={<PrivacyPage />} />
+              {/* <Route path="/terms" element={<TermsPage />} /> */}
+              {/* <Route path="/privacy" element={<PrivacyPage />} /> */}
               <Route path="/refund-policy" element={<RefundPolicy />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/sitemap" element={<SitemapPage />} />
 
               {/* Location Landing Pages - New URL Pattern */}
