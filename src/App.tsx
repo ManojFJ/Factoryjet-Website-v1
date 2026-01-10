@@ -7,6 +7,9 @@ import {
 } from "./context/ContactModalContext";
 import ScrollToTop from "./components/ScrollToTop";
 import DelhiUpdatedPage from "./pages/DelhiUpdated/App";
+import RefundPolicy from "./components/RefundPolicy";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsAndConditions from "./components/TermsAndConditions";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -75,8 +78,11 @@ function App() {
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/services/web-design" element={<WebDesignPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="/privacy" element={<PrivacyPage />} />
+              {/* <Route path="/terms" element={<TermsPage />} /> */}
+              {/* <Route path="/privacy" element={<PrivacyPage />} /> */}
+              <Route path="/refund-policy" element={<RefundPolicy />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/sitemap" element={<SitemapPage />} />
 
               {/* Location Landing Pages - New URL Pattern */}
