@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default function App() {
+export default function UsEcommercePage() {
   return (
     <LeadCaptureProvider>
       <div className="min-h-screen font-sans selection:bg-jet-orange/20 selection:text-jet-orange">

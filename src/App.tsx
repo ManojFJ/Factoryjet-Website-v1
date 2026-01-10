@@ -11,6 +11,8 @@ import RefundPolicy from "./components/RefundPolicy";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsAndConditions from "./components/TermsAndConditions";
 import UsHomePage from "./pages/UsHomePage/App";
+import UsWebServicePage from "./pages/UsWebServicePage/App";
+import UsEcommercePage from "./pages/UsEcommercePage/App";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -72,6 +74,8 @@ function App() {
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/us" element={<UsHomePage />} />
+              <Route path="/us/services/web-design" element={<UsWebServicePage />} />
+              <Route path="/us/services/ecommerce" element={<UsEcommercePage />} />
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/blog" element={<BlogPage />} />
