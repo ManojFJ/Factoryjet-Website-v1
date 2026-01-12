@@ -91,7 +91,7 @@ const About: React.FC = () => {
                 FactoryJet is a specialized web design and e-commerce development agency serving small and medium-sized businesses across India and emerging markets.
               </p>
               <p className="leading-relaxed">
-                We're not a large agency with enterprise price tags—we're SMB specialists who understand your unique challenges. <strong className="text-jet-navy font-semibold">Founded on a simple principle:</strong> Every business deserves a world-class website that drives results.
+                We're not a large agency with enterprise price tags-we're SMB specialists who understand your unique challenges. <strong className="text-jet-navy font-semibold">Founded on a simple principle:</strong> Every business deserves a world-class website that drives results.
               </p>
             </div>
 
