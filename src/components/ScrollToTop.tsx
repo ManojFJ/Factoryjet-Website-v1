@@ -3,19 +3,34 @@ import { useLocation } from 'react-router-dom';
 import { trackPageView } from '../utils/gtm';
 
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Scroll to top immediately
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-
-    // Also ensure document.documentElement scrolls to top (for some browsers)
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    // If there's a hash, scroll to that element
+    if (hash) {
+      // Retry function to handle lazy-loaded components
+      const scrollToHash = (retries = 0) => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (retries < 10) {
+          // Retry up to 10 times (1 second total)
+          setTimeout(() => scrollToHash(retries + 1), 100);
+        }
+      };
+      
+      // Initial delay to let page render
+      setTimeout(() => scrollToHash(), 300);
+    } else {
+      // Otherwise scroll to top
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
 
     // Track page view in GTM
     trackPageView(pathname);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };
