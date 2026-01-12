@@ -43,6 +43,14 @@ const Services: React.FC = () => {
                 <span className="px-2.5 md:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-[10px] md:text-xs font-semibold">Webflow</span>
                 <span className="px-2.5 md:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-[10px] md:text-xs font-semibold">Framer</span>
             </div>
+            <div className="mt-8">
+              <a
+                href="/services/web-design"
+                className="inline-flex items-center justify-center w-full py-3 px-6 rounded-xl bg-jet-blue text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20"
+              >
+                Learn More
+              </a>
+            </div>
           </div>
 
           {/* E-Commerce Card */}
@@ -71,6 +79,14 @@ const Services: React.FC = () => {
                 <span className="px-2.5 md:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-[10px] md:text-xs font-semibold">Shopify</span>
                 <span className="px-2.5 md:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-[10px] md:text-xs font-semibold">WooCommerce</span>
                 <span className="px-2.5 md:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-[10px] md:text-xs font-semibold">Magento</span>
+            </div>
+            <div className="mt-8">
+              <a
+                href="/services/ecommerce"
+                className="inline-flex items-center justify-center w-full py-3 px-6 rounded-xl bg-jetOrange text-white font-bold hover:bg-orange-700 transition-all shadow-lg shadow-orange-900/20"
+              >
+                Learn More
+              </a>
             </div>
           </div>
         </div>
