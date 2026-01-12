@@ -11,7 +11,7 @@ const Services: React.FC = () => {
             Everything you need to grow online
           </h3>
           <p className="text-jet-slate text-sm md:text-lg">
-            We specialize in two core areas: high-performance websites and revenue-generating e-commerce stores.
+            We specialize in two core areas: high-performance websites and revenue-generating Ecommerce stores.
           </p>
         </div>
 
