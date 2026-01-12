@@ -27,7 +27,9 @@ function App() {
       <Services />
       <Features />
       <Operations />
+      <section id="process">
       <Process />
+      </section>
       <Showcase />
       <Analysis />
       <Info />
