@@ -26,15 +26,16 @@ const CTA = () => {
           >
             Schedule Free Consultation <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
+          <a href="/contact">
           <button
             onClick={() => {
-              trackCTAClick('contact_us', 'about_cta', 'secondary');
-              openModal();
+              
             }}
             className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-slate-700 font-bold text-sm md:text-base rounded-lg border border-slate-200 hover:border-jetBlue hover:text-jetBlue transition-colors"
           >
             Contact Us
           </button>
+          </a>
         </div>
       </div>
     </section>
