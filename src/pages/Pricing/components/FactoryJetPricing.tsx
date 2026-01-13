@@ -666,7 +666,7 @@ const FactoryJetPricing = () => {
     FAQ_DATA.find((cat) => cat.id === faqCategory)?.items || [];
 
   return (
-    <div className="min-h-screen pb-12 md:pb-20 font-sans">
+    <div className="min-h-screen pb-12 md:pb-20 font-sans pt-18 md:pt-20">
       {/* --- HERO SECTION --- */}
       <header className="relative pt-28 md:pt-24 pb-12 md:pb-16 px-4 text-center bg-gradient-to-b from-white via-blue-50/30 to-slate-50">
         <div className="max-w-4xl mx-auto">
