@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-jet-navy text-white pt-16 md:pt-20 pb-8 md:pb-10 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 mb-12 md:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
 
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
@@ -48,13 +48,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Development', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Development</Link></li>
-              <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Design', '/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
-              <li><Link to="/services/ecommerce" onClick={() => trackNavigation('E-Commerce', '/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
-              <li><Link to="/services/web-design" onClick={() => trackNavigation('Shopify Development', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Shopify Development</Link></li>
-              <li><Link to="/services/web-design" onClick={() => trackNavigation('WordPress', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">WordPress</Link></li>
-              <li><Link to="/contact" onClick={() => trackNavigation('Mobile Apps', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Mobile Apps</Link></li>
-              <li><Link to="/services/web-design" onClick={() => trackNavigation('SEO Services', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">SEO Services</Link></li>
+              <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Design', '/services/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
+              <li><Link to="/services/ecommerce" onClick={() => trackNavigation('E-Commerce', '/services/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
             </ul>
           </div>
 
@@ -63,26 +58,9 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Company</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
               <li><Link to="/about" onClick={() => trackNavigation('About Us', '/about', 'footer')} className="hover:text-jet-blue transition-colors">About Us</Link></li>
-              <li><Link to="/case" onClick={() => trackNavigation('Our Portfolio', '/case', 'footer')} className="hover:text-jet-blue transition-colors">Our Portfolio</Link></li>
               <li><Link to="/pricing" onClick={() => trackNavigation('Pricing Packages', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Pricing Packages</Link></li>
               <li><Link to="/case" onClick={() => trackNavigation('Case Studies', '/case', 'footer')} className="hover:text-jet-blue transition-colors">Case Studies</Link></li>
               <li><Link to="/blog" onClick={() => trackNavigation('Blog', '/blog', 'footer')} className="hover:text-jet-blue transition-colors">Blog</Link></li>
-            </ul>
-          </div>
-
-          {/* Locations */}
-          <div>
-            <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Locations</h3>
-            <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/services/web-design/mumbai" onClick={() => trackNavigation('Mumbai', '/services/web-design/mumbai', 'footer')} className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
-              <li><Link to="/services/web-design/pune" onClick={() => trackNavigation('Pune', '/services/web-design/pune', 'footer')} className="hover:text-jet-blue transition-colors">Pune</Link></li>
-              <li><Link to="/services/web-design/bangalore" onClick={() => trackNavigation('Bangalore', '/services/web-design/bangalore', 'footer')} className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
-              <li><Link to="/services/web-design/delhi" onClick={() => trackNavigation('Delhi NCR', '/services/web-design/delhi', 'footer')} className="hover:text-jet-blue transition-colors">Delhi NCR</Link></li>
-              <li><Link to="/services/web-design/chennai" onClick={() => trackNavigation('Chennai', '/services/web-design/chennai', 'footer')} className="hover:text-jet-blue transition-colors">Chennai</Link></li>
-              <li><Link to="/services/web-design/hyderabad" onClick={() => trackNavigation('Hyderabad', '/services/web-design/hyderabad', 'footer')} className="hover:text-jet-blue transition-colors">Hyderabad</Link></li>
-              <li><Link to="/services/web-design/ahmedabad" onClick={() => trackNavigation('Ahmedabad', '/services/web-design/ahmedabad', 'footer')} className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
-              <li><Link to="/services/web-design/surat" onClick={() => trackNavigation('Surat', '/services/web-design/surat', 'footer')} className="hover:text-jet-blue transition-colors">Surat</Link></li>
-              <li><Link to="/services/web-design/madurai" onClick={() => trackNavigation('Madurai', '/services/web-design/madurai', 'footer')} className="hover:text-jet-blue transition-colors">Madurai</Link></li>
             </ul>
           </div>
 
