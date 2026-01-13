@@ -164,7 +164,7 @@ const Hero: React.FC = () => {
                 </div>
                 <div className="flex-1 bg-black/40 rounded-sm h-5 ml-3 flex items-center px-2 text-[9px] text-gray-400 font-mono border border-white/5">
                   <span className="text-gray-500 mr-1">https://</span>
-                  factoryjet-client.com
+                  factoryjet.com
                 </div>
               </div>
 
@@ -289,7 +289,7 @@ const Hero: React.FC = () => {
 
               {/* Floating Badges - Analytics - GPU-accelerated CSS animation */}
               <div
-                className="absolute -right-4 top-16 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 max-w-[120px] animate-[floatUp_4s_ease-in-out_infinite]"
+                className="absolute -right-4 top-16 bg-white/90 backdrop-blur-md mr-5 p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 max-w-[120px] animate-[floatUp_4s_ease-in-out_infinite]"
                 style={{ willChange: "transform" }} // GPU acceleration hint
               >
                 <div className="flex items-center gap-2 mb-1.5">
@@ -297,7 +297,7 @@ const Hero: React.FC = () => {
                     <BarChart3 size={12} />
                   </div>
                   <div>
-                    <p className="text-[8px] text-gray-500 font-bold uppercase">
+                    <p className="text-[8px]  text-gray-500 font-bold uppercase">
                       Revenue
                     </p>
                     <p className="text-gray-900 font-bold text-xs">
@@ -317,7 +317,7 @@ const Hero: React.FC = () => {
 
               {/* Floating Badges - Rating - GPU-accelerated CSS animation */}
               <div
-                className="absolute -left-4 bottom-12 bg-white/90 backdrop-blur-md p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 animate-[floatDown_5s_ease-in-out_1s_infinite]"
+                className="absolute -left-4 bottom-12 bg-white/90 backdrop-blur-md ml-5 p-2 rounded-lg shadow-xl shadow-blue-900/20 hidden md:block z-30 border border-white/50 animate-[floatDown_5s_ease-in-out_1s_infinite]"
                 style={{ willChange: "transform" }} // GPU acceleration hint
               >
                 <div className="flex items-center gap-2">
