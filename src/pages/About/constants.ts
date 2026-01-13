@@ -137,21 +137,21 @@ export const TEAM: TeamMember[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     text: "FactoryJet completely transformed our digital presence. Their team understood our business challenges and delivered solutions that actually moved the needle. Within 6 months, our online inquiries increased by 200%.",
-    author: "Rajesh Kumar",
-    role: "CEO",
-    company: "TechnoGrow Industries"
+    author: "Bhoop Singh",
+    role: "Operations Director",
+    company: "GroFresh Agro Food Pvt. Ltd."
   },
   {
     text: "The ERPNext implementation was seamless. We were skeptical about moving from our legacy system, but FactoryJet's team made it easy. Now we have real-time visibility into our operations.",
-    author: "Priya Sharma",
-    role: "Director",
-    company: "Sharma Manufacturing Co."
+    author: "Tejas Bramhbhatt",
+    role: "Founder",
+    company: "Fliying Pixel"
   },
   {
     text: "We started with a simple website project and now we're using FactoryJet for our CRM, digital marketing, and e-commerce store. They've become an extension of our team.",
-    author: "Amit Patel",
+    author: "Rajkumar",
     role: "Founder",
-    company: "StyleCraft Fashion"
+    company: " Rukman Transport Pvt. Ltd."
   }
 ];
 
