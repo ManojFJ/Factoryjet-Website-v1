@@ -82,7 +82,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/case" element={<CaseApp />} />
-              <Route path="/case/:id" element={<Detail />} />
+              <Route path="/case/:slug" element={<Detail />} />
               <Route path="/services/ecommerce" element={<EcommPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/services/web-design" element={<WebDesignPage />} />

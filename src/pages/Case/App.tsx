@@ -18,8 +18,8 @@ const CaseApp: React.FC = () => {
   const { openModal } = useContactModal();
   const navigate = useNavigate();
 
-  const handleCardClick = (id: string) => {
-    navigate(`/case/${id}`);  // ← CHANGE: Navigate to detail page
+  const handleCardClick = (slug: string) => {
+    navigate(`/case/${slug}`);  // ← CHANGE: Navigate to detail page
   };
 
   const filteredCases = useMemo(() => {
@@ -67,7 +67,7 @@ const CaseApp: React.FC = () => {
                  <div key={caseStudy.id} className="break-inside-avoid">
                    <CaseCard 
                       data={caseStudy} 
-                      onClick={() => handleCardClick(caseStudy.id)}
+                      onClick={() => handleCardClick(caseStudy.slug)}
                    />
                  </div>
                ))}

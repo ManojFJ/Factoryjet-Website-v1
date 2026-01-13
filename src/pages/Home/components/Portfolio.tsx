@@ -15,7 +15,7 @@ const Portfolio: React.FC = () => {
       icon: TrendingUp,
       width: 662,
       height: 372,
-      slug: "impulse-branding"
+      slug: "impulse-branding-migration"
     },
     {
       category: "MEP & BIM Consulting",
@@ -28,7 +28,7 @@ const Portfolio: React.FC = () => {
       icon: Globe,
       width: 662,
       height: 372,
-      slug: "formative-concepts"
+      slug: "formative-concepts-bim"
     },
     {
       category: "DTC + B2B E-Commerce",

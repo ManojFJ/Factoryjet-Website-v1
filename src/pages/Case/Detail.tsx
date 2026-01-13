@@ -4,10 +4,10 @@ import { CaseStudyPage } from './components/CaseStudyPage';
 import { CASE_STUDIES } from './constants';
 
 const Detail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
 
-  const caseStudy = CASE_STUDIES.find(c => c.id === id);
+  const caseStudy = CASE_STUDIES.find(c => c.slug === slug);
 
   useEffect(() => {
     if (!caseStudy) {
