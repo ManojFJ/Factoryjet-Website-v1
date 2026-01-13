@@ -5,6 +5,7 @@ import {
   ContactModalProvider,
   useContactModal,
 } from "./context/ContactModalContext";
+import CaseApp from "./pages/Case/App";     
 import ScrollToTop from "./components/ScrollToTop";
 import DelhiUpdatedPage from "./pages/DelhiUpdated/App";
 import RefundPolicy from "./components/RefundPolicy";
@@ -13,6 +14,7 @@ import TermsAndConditions from "./components/TermsAndConditions";
 import UsHomePage from "./pages/UsHomePage/App";
 import UsWebServicePage from "./pages/UsWebServicePage/App";
 import UsEcommercePage from "./pages/UsEcommercePage/App";
+import Detail from "./pages/Case/Detail";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -79,7 +81,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/blog" element={<BlogPage />} />
-              <Route path="/case" element={<CasePage />} />
+              <Route path="/case" element={<CaseApp />} />
+              <Route path="/case/:id" element={<Detail />} />
               <Route path="/services/ecommerce" element={<EcommPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/services/web-design" element={<WebDesignPage />} />
