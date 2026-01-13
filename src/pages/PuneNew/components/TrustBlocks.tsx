@@ -125,7 +125,7 @@ export const LocalSEO = () => {
               <Phone className="w-5 h-5 md:w-6 md:h-6 text-jet-blue shrink-0" />
               <div>
                 <h4 className="font-bold text-jet-navy font-heading text-sm md:text-base">Phone & WhatsApp</h4>
-                <p className="text-sm md:text-base">+91-020-XXX-XXXX</p>
+                <p className="text-sm md:text-base">+91 96999 77699</p>
               </div>
             </div>
             <div className="flex gap-4">

@@ -91,15 +91,7 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-               {/* Primary CTA */}
-               <button
-                 onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
-                 className="inline-flex items-center justify-center bg-primary hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg hover:-translate-y-1 w-full sm:w-auto text-lg border border-white/10"
-               >
-                 Get Free Quote Today
-               </button>
-
-               {/* Secondary WhatsApp CTA */}
+               {/* WhatsApp CTA */}
                <a
                  href="https://wa.me/919699977699?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20web%20design%20services"
                  target="_blank"
@@ -261,12 +253,12 @@ const Hero: React.FC = () => {
 
               {/* Internal Links for SEO */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-2">
-                 <button className="text-accent font-bold hover:text-white transition-colors flex items-center gap-2 group">
+                 <a href="/case" className="text-accent font-bold hover:text-white transition-colors flex items-center gap-2 group">
                    View Case Studies <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
-                 </button>
-                 <button className="text-white font-bold hover:text-secondary transition-colors flex items-center gap-2 group">
+                 </a>
+                 <a href="/pricing" className="text-white font-bold hover:text-secondary transition-colors flex items-center gap-2 group">
                    Check Pricing <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
-                 </button>
+                 </a>
               </div>
             </div>
 
