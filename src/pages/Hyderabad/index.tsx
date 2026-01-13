@@ -14,7 +14,7 @@ function HyderabadPage() {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Hyderabad",
     "image": "https://www.factoryjet.com/images/factoryjet-hyderabad.jpg",
-    "url": "https://factoryjet.com/locations/hyderabad/web-design/",
+    "url": "https://factoryjet.com/services/web-design/hyderabad",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -96,7 +96,7 @@ function HyderabadPage() {
       <Helmet>
         <title>Best Website Design Company in Hyderabad | FactoryJet</title>
         <meta name="description" content="Professional website design & e-commerce development in Hyderabad. Trusted by 200+ Telangana businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/locations/hyderabad" />
+        <link rel="canonical" href="https://factoryjet.com/services/web-design/hyderabad" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>

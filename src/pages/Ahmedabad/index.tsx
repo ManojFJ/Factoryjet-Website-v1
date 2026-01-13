@@ -28,7 +28,7 @@ const AhmedabadPage: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Ahmedabad",
     "image": "https://www.factoryjet.com/images/factoryjet-ahmedabad.jpg",
-    "url": "https://factoryjet.com/locations/ahmedabad",
+    "url": "https://factoryjet.com/services/web-design/ahmedabad",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -114,7 +114,7 @@ const AhmedabadPage: React.FC = () => {
       <Helmet>
         <title>Best Website Design Company in Ahmedabad | FactoryJet</title>
         <meta name="description" content="Professional website design & e-commerce development in Ahmedabad. Trusted by 200+ Gujarat businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/locations/ahmedabad" />
+        <link rel="canonical" href="https://factoryjet.com/services/web-design/ahmedabad" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>

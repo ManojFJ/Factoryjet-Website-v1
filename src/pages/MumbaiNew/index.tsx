@@ -38,7 +38,7 @@ const MumbaiPage = () => {
       <SEOHead
         title="Best Website Design Company in Mumbai | FactoryJet"
         description="FactoryJet is Mumbai's premier industrial web design company. Professional B2B websites, manufacturer catalogs, and e-commerce solutions starting at ₹29,000. Serving Mumbai, Thane, Navi Mumbai, Vasai-Virar & MIDC areas."
-        canonical="/locations/mumbai/web-design"
+        canonical="/services/web-design/mumbai"
       />
 
       {/* Schema Markup */}
@@ -50,7 +50,7 @@ const MumbaiPage = () => {
             "@type": "LocalBusiness",
             "name": "FactoryJet - Industrial Web Design Company Mumbai",
             "image": "https://www.factoryjet.com/images/factoryjet-mumbai.jpg",
-            "url": "https://factoryjet.com/locations/mumbai/web-design/",
+            "url": "https://factoryjet.com/services/web-design/mumbai",
             "telephone": "+91 96999 77699",
             "email": "connect@factoryjet.com",
             "address": {

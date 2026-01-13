@@ -23,8 +23,8 @@ const sitemapData: SitemapSection[] = [
     title: 'Services',
     icon: ShoppingBag,
     links: [
-      { name: 'Web Design', path: '/web-design', description: 'Custom website design and development' },
-      { name: 'E-Commerce', path: '/ecommerce', description: 'Shopify & WooCommerce store development' },
+      { name: 'Web Design', path: '/services/web-design', description: 'Custom website design and development' },
+      { name: 'E-Commerce', path: '/services/ecommerce', description: 'Shopify & WooCommerce store development' },
     ],
   },
   {
@@ -46,7 +46,15 @@ const sitemapData: SitemapSection[] = [
     title: 'Locations',
     icon: MapPin,
     links: [
-      { name: 'Mumbai', path: '/mumbai', description: 'Web development services in Mumbai' },
+      { name: 'Mumbai', path: '/services/web-design/mumbai', description: 'Web design services in Mumbai' },
+      { name: 'Pune', path: '/services/web-design/pune', description: 'Web design services in Pune' },
+      { name: 'Bangalore', path: '/services/web-design/bangalore', description: 'Web design services in Bangalore' },
+      { name: 'Delhi NCR', path: '/services/web-design/delhi', description: 'Web design services in Delhi NCR' },
+      { name: 'Chennai', path: '/services/web-design/chennai', description: 'Web design services in Chennai' },
+      { name: 'Hyderabad', path: '/services/web-design/hyderabad', description: 'Web design services in Hyderabad' },
+      { name: 'Ahmedabad', path: '/services/web-design/ahmedabad', description: 'Web design services in Ahmedabad' },
+      { name: 'Surat', path: '/services/web-design/surat', description: 'Web design services in Surat' },
+      { name: 'Madurai', path: '/services/web-design/madurai', description: 'Web design services in Madurai' },
     ],
   },
   {

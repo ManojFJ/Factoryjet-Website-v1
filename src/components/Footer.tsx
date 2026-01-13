@@ -74,15 +74,15 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Locations</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/locations/mumbai/web-design" onClick={() => trackNavigation('Mumbai', '/locations/mumbai/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
-              <li><Link to="/locations/pune/web-design" onClick={() => trackNavigation('Pune', '/locations/pune/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Pune</Link></li>
-              <li><Link to="/locations/bangalore/web-design" onClick={() => trackNavigation('Bangalore', '/locations/bangalore/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
-              <li><Link to="/locations/delhi/web-design" onClick={() => trackNavigation('Delhi NCR', '/locations/delhi/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Delhi NCR</Link></li>
-              <li><Link to="/locations/chennai/web-design" onClick={() => trackNavigation('Chennai', '/locations/chennai/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Chennai</Link></li>
-              <li><Link to="/locations/hyderabad/web-design" onClick={() => trackNavigation('Hyderabad', '/locations/hyderabad/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Hyderabad</Link></li>
-              <li><Link to="/locations/ahmedabad/web-design" onClick={() => trackNavigation('Ahmedabad', '/locations/ahmedabad/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
-              <li><Link to="/locations/surat/web-design" onClick={() => trackNavigation('Surat', '/locations/surat/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Surat</Link></li>
-              <li><Link to="/locations/madurai/web-design" onClick={() => trackNavigation('Madurai', '/locations/madurai/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Madurai</Link></li>
+              <li><Link to="/services/web-design/mumbai" onClick={() => trackNavigation('Mumbai', '/services/web-design/mumbai', 'footer')} className="hover:text-jet-blue transition-colors">Mumbai</Link></li>
+              <li><Link to="/services/web-design/pune" onClick={() => trackNavigation('Pune', '/services/web-design/pune', 'footer')} className="hover:text-jet-blue transition-colors">Pune</Link></li>
+              <li><Link to="/services/web-design/bangalore" onClick={() => trackNavigation('Bangalore', '/services/web-design/bangalore', 'footer')} className="hover:text-jet-blue transition-colors">Bangalore</Link></li>
+              <li><Link to="/services/web-design/delhi" onClick={() => trackNavigation('Delhi NCR', '/services/web-design/delhi', 'footer')} className="hover:text-jet-blue transition-colors">Delhi NCR</Link></li>
+              <li><Link to="/services/web-design/chennai" onClick={() => trackNavigation('Chennai', '/services/web-design/chennai', 'footer')} className="hover:text-jet-blue transition-colors">Chennai</Link></li>
+              <li><Link to="/services/web-design/hyderabad" onClick={() => trackNavigation('Hyderabad', '/services/web-design/hyderabad', 'footer')} className="hover:text-jet-blue transition-colors">Hyderabad</Link></li>
+              <li><Link to="/services/web-design/ahmedabad" onClick={() => trackNavigation('Ahmedabad', '/services/web-design/ahmedabad', 'footer')} className="hover:text-jet-blue transition-colors">Ahmedabad</Link></li>
+              <li><Link to="/services/web-design/surat" onClick={() => trackNavigation('Surat', '/services/web-design/surat', 'footer')} className="hover:text-jet-blue transition-colors">Surat</Link></li>
+              <li><Link to="/services/web-design/madurai" onClick={() => trackNavigation('Madurai', '/services/web-design/madurai', 'footer')} className="hover:text-jet-blue transition-colors">Madurai</Link></li>
             </ul>
           </div>
 

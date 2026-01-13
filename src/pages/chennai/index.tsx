@@ -121,7 +121,7 @@ function ChennaiPage() {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Chennai",
     "image": "https://www.factoryjet.com/images/factoryjet-chennai.jpg",
-    "url": "https://factoryjet.com/locations/chennai/web-design/",
+    "url": "https://factoryjet.com/services/web-design/chennai",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -203,7 +203,7 @@ function ChennaiPage() {
       <Helmet>
         <title>Best Website Design Company in Chennai | FactoryJet</title>
         <meta name="description" content="Professional website design & e-commerce development in Chennai. Trusted by 200+ Tamil Nadu businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/locations/chennai" />
+        <link rel="canonical" href="https://factoryjet.com/services/web-design/chennai" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>

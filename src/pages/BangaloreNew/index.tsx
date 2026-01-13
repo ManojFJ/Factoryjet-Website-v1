@@ -16,7 +16,7 @@ const BangalorePage = () => {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Bangalore",
     "image": "https://www.factoryjet.com/images/factoryjet-bangalore.jpg",
-    "url": "https://factoryjet.com/locations/bangalore",
+    "url": "https://factoryjet.com/services/web-design/bangalore",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -99,7 +99,7 @@ const BangalorePage = () => {
       <SEOHead
         title="Best Website Design Company in Bangalore | FactoryJet"
         description="FactoryJet is Bangalore's premier website design company. Professional website development, WordPress, Shopify, and e-commerce solutions starting at ₹29,999. Powering Bengaluru's startups, enterprises & D2C brands."
-        canonical="/locations/bangalore/web-design"
+        canonical="/services/web-design/bangalore"
       />
       <Helmet>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
