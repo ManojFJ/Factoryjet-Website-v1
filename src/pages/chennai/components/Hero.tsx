@@ -34,11 +34,8 @@ const Hero: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-12">
           
-          {/* 1. Badge & Breadcrumb (Mobile Order 1 & 2) */}
+          {/* 1. Badge (Mobile Order 1) */}
           <div className="lg:col-span-12 text-center lg:text-left">
-            <p className="text-xs font-mono text-jet-slate mb-2 tracking-wide uppercase">
-              Home &gt; Website Design Chennai
-            </p>
             <div className="inline-flex items-center gap-1 bg-blue-50 border border-blue-100 text-jet-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                <MapPinIcon size={12} /> Serving All Chennai Locations
             </div>

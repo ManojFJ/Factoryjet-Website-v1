@@ -42,13 +42,13 @@ const SEOHead = () => (
       name="keywords"
       content="website design company delhi ncr, website development company delhi ncr, web design agency delhi, shopify store development delhi, wordpress development delhi, e-commerce development delhi ncr, website designer gurgaon, web developer noida"
     />
-    <link rel="canonical" href="https://factoryjet.com/locations/delhi" />
+    <link rel="canonical" href="https://factoryjet.com/services/web-design/delhi" />
 
     {/* Open Graph */}
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Best Website Design Company in Delhi NCR | FactoryJet" />
     <meta property="og:description" content="Professional website design & e-commerce development in Delhi NCR. Trusted by 500+ businesses. 7-day delivery. Starting ₹29,999." />
-        <meta property="og:url" content="https://factoryjet.com/locations/delhi" />
+        <meta property="og:url" content="https://factoryjet.com/services/web-design/delhi" />
     <meta property="og:image" content="https://factoryjet.com/og-delhi.jpg" />
 
     {/* Twitter Card */}
@@ -63,7 +63,7 @@ const SEOHead = () => (
         "@type": "LocalBusiness",
         "name": "FactoryJet - Website Design Company Delhi NCR",
         "image": "https://www.factoryjet.com/images/factoryjet-delhi.jpg",
-        "url": "https://factoryjet.com/locations/delhi/web-design/",
+        "url": "https://factoryjet.com/services/web-design/delhi",
         "telephone": "+91 96999 77699",
         "email": "connect@factoryjet.com",
         "address": {

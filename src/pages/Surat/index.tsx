@@ -37,7 +37,7 @@ const SuratPage: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Surat",
     "image": "https://www.factoryjet.com/images/factoryjet-surat.jpg",
-    "url": "https://factoryjet.com/locations/surat",
+    "url": "https://factoryjet.com/services/web-design/surat",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -136,7 +136,7 @@ const SuratPage: React.FC = () => {
       <Helmet>
         <title>Best Website Design Company in Surat | FactoryJet</title>
         <meta name="description" content="Professional website design & e-commerce development in Surat. Trusted by 200+ South Gujarat businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/locations/surat/web-design/" />
+        <link rel="canonical" href="https://factoryjet.com/services/web-design/surat" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Helmet>

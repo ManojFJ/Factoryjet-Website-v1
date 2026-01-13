@@ -42,7 +42,7 @@ const FinalCTA: React.FC = () => {
             <a href="tel:+919699977699" className="flex items-center justify-center gap-2 hover:text-jet-orange transition-colors">
               <Phone size={20} /> +91 96999 77699
             </a>
-            <a href="#" className="flex items-center justify-center gap-2 hover:text-jet-orange transition-colors">
+            <a href="https://wa.me/919699977699?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20web%20design%20services%20in%20Chennai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:text-jet-orange transition-colors">
               <MessageCircle size={20} /> WhatsApp: +91 96999 77699
             </a>
           </div>

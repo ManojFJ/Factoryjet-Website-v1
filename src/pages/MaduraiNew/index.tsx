@@ -16,7 +16,7 @@ const MaduraiPage = () => {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Madurai",
     "image": "https://www.factoryjet.com/images/factoryjet-madurai.jpg",
-    "url": "https://factoryjet.com/locations/madurai/web-design/",
+    "url": "https://factoryjet.com/services/web-design/madurai",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -101,7 +101,7 @@ const MaduraiPage = () => {
       <SEOHead
         title="Best Website Design Company in Madurai | FactoryJet"
         description="FactoryJet is Madurai's leading website design company. Professional website development, WordPress, Shopify, and e-commerce solutions starting at ₹15,000. Top website design company in Madurai with 25+ years of combined expertise."
-        canonical="/locations/madurai/web-design"
+        canonical="/services/web-design/madurai"
       />
       <Header variant="solid" />
       <main className="min-h-screen w-full overflow-x-hidden font-sans">

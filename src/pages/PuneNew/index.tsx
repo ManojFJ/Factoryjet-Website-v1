@@ -16,7 +16,7 @@ const PunePage = () => {
     "@type": "LocalBusiness",
     "name": "FactoryJet - Website Design Company Pune",
     "image": "https://www.factoryjet.com/images/factoryjet-pune.jpg",
-    "url": "https://factoryjet.com/locations/pune/web-design/",
+    "url": "https://factoryjet.com/services/web-design/pune",
     "telephone": "+91 96999 77699",
     "email": "connect@factoryjet.com",
     "address": {
@@ -101,7 +101,7 @@ const PunePage = () => {
       <SEOHead
         title="Best Website Design Company in Pune | FactoryJet"
         description="FactoryJet is Pune's premier website design company. Professional website development, WordPress, Shopify, and e-commerce solutions starting at ₹15,000. Powering Pune's IT companies, startups & manufacturers in Hinjewadi, Kharadi, Chakan."
-        canonical="/locations/pune/web-design"
+        canonical="/services/web-design/pune"
       />
       <Header variant="solid" />
       <main className="min-h-screen w-full overflow-x-hidden font-sans">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Check } from 'lucide-react';
+import { ChevronDown, Check, Star, MapPin, Phone, MessageCircle, Mail } from 'lucide-react';
 
 export const Testimonials = () => {
     const reviews = [
@@ -18,7 +18,14 @@ export const Testimonials = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {reviews.map((r, i) => (
                         <div key={i} className="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm">
-                            <div className="text-[#FF6B35] text-xl mb-4">⭐⭐⭐⭐⭐ (5/5)</div>
+                            <div className="flex items-center gap-1 text-[#FF6B35] mb-4">
+                                <Star className="w-5 h-5 fill-current" />
+                                <Star className="w-5 h-5 fill-current" />
+                                <Star className="w-5 h-5 fill-current" />
+                                <Star className="w-5 h-5 fill-current" />
+                                <Star className="w-5 h-5 fill-current" />
+                                <span className="ml-2 text-sm font-bold">(5/5)</span>
+                            </div>
                             <p className="text-slate-700 mb-4 italic text-base">"{r.text}"</p>
                             <p className="font-bold text-[#0F172A] text-sm border-t pt-4 border-slate-200">{r.author}</p>
                         </div>
@@ -96,10 +103,19 @@ export const LocalSEO = () => (
                 <div><h4 className="font-bold text-[#0F172A] mb-2">West Bangalore</h4>Rajajinagar, Malleshwaram, Sadashivanagar, Basavanagudi, Vijayanagar, Peenya, Yeshwanthpur, Nagarbhavi, Kengeri</div>
             </div>
 
-            <div className="bg-slate-100 h-64 rounded-xl flex items-center justify-center mb-8 border border-slate-200">
-                <p className="text-slate-500">[Embedded Google Map]</p>
+            <div className="h-64 rounded-xl overflow-hidden mb-8 border border-slate-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0096039182056!2d77.59468!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sWeWork%20Galaxy!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="FactoryJet Bangalore Office Location"
+                ></iframe>
             </div>
-             <p className="text-center text-slate-700 text-base">📍 Office: WeWork Galaxy, 43 Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</p>
+             <p className="text-center text-slate-700 text-base flex items-center justify-center gap-2"><MapPin className="w-4 h-4 text-[#0052CC]" /> Office: WeWork Galaxy, 43 Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</p>
              <p className="text-center text-slate-700 mt-4 italic max-w-3xl mx-auto text-base">FactoryJet is headquartered in Bangalore with team members across the city. We offer: In-person meetings in Central, East, and South Bangalore, virtual consultations for all locations, same-day visits for enterprise clients, and local market understanding that remote agencies lack. Being Bengaluru-based means we understand the startup culture, tech ecosystem, business landscape, and regional preferences — translating to better results for your website.</p>
         </div>
     </section>
@@ -178,7 +194,7 @@ export const FinalCTA = () => (
                                 <a href="tel:+919699977699" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 py-3 px-6 rounded-lg text-white font-bold transition-colors border border-white/10">
                                     <span>Call Now</span>
                                 </a>
-                                <a href="#" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 py-3 px-6 rounded-lg text-white font-bold transition-colors shadow-lg">
+                                <a href="https://wa.me/919699977699?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20web%20design%20services%20in%20Bangalore" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-600 py-3 px-6 rounded-lg text-white font-bold transition-colors shadow-lg">
                                     <span>WhatsApp</span>
                                 </a>
                             </div>
@@ -226,11 +242,11 @@ export const Footer = () => (
                 </div>
                 <div>
                     <h3 className="text-white font-bold text-lg mb-4">Contact Info</h3>
-                    <ul className="space-y-2">
-                        <li>📍 WeWork Galaxy, 43 Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</li>
-                        <li>📞 +91 96999 77699</li>
-                        <li>💬 WhatsApp: +91 96999 77699</li>
-                        <li>✉️ connect@factoryjet.com</li>
+                    <ul className="space-y-3">
+                        <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[#0052CC] shrink-0" /> WeWork Galaxy, 43 Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025</li>
+                        <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#0052CC]" /> +91 96999 77699</li>
+                        <li className="flex items-center gap-2"><MessageCircle className="w-4 h-4 text-[#25D366]" /> WhatsApp: +91 96999 77699</li>
+                        <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-[#0052CC]" /> connect@factoryjet.com</li>
                     </ul>
                 </div>
             </div>

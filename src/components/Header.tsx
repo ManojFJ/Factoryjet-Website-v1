@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Monitor, ShoppingBag, BookOpen, FileText, Code, Store, Smartphone, TrendingUp, Megaphone } from 'lucide-react';
+import { Menu, X, ChevronDown, BookOpen, FileText, MapPin } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
 import { trackButtonClick, trackNavigation, trackCTAClick } from '../utils/gtm';
 
@@ -27,12 +27,19 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
 
   const navItems = [
     {
-      label: 'Services',
-      href: '#services',
+      label: 'Locations',
+      href: '#locations',
       hasDropdown: true,
       submenu: [
-        { label: 'Web Design', href: '/services/web-design', icon: Code, desc: 'Beautiful UI/UX design', isRoute: true },
-        { label: 'E-Commerce Development', href: '/services/ecommerce', icon: ShoppingBag, desc: 'Online store solutions', isRoute: true },
+        { label: 'Mumbai', href: '/services/web-design/mumbai', icon: MapPin, desc: 'Web design in Mumbai', isRoute: true },
+        { label: 'Pune', href: '/services/web-design/pune', icon: MapPin, desc: 'Web design in Pune', isRoute: true },
+        { label: 'Bangalore', href: '/services/web-design/bangalore', icon: MapPin, desc: 'Web design in Bangalore', isRoute: true },
+        { label: 'Delhi NCR', href: '/services/web-design/delhi', icon: MapPin, desc: 'Web design in Delhi NCR', isRoute: true },
+        { label: 'Chennai', href: '/services/web-design/chennai', icon: MapPin, desc: 'Web design in Chennai', isRoute: true },
+        { label: 'Hyderabad', href: '/services/web-design/hyderabad', icon: MapPin, desc: 'Web design in Hyderabad', isRoute: true },
+        { label: 'Ahmedabad', href: '/services/web-design/ahmedabad', icon: MapPin, desc: 'Web design in Ahmedabad', isRoute: true },
+        { label: 'Surat', href: '/services/web-design/surat', icon: MapPin, desc: 'Web design in Surat', isRoute: true },
+        { label: 'Madurai', href: '/services/web-design/madurai', icon: MapPin, desc: 'Web design in Madurai', isRoute: true },
       ]
     },
     { label: 'About Us', href: '/about', hasDropdown: false, isRoute: true },

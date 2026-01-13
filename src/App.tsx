@@ -91,18 +91,18 @@ function App() {
               <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/sitemap" element={<SitemapPage />} />
 
-              {/* Location Landing Pages - New URL Pattern */}
-              <Route path="/locations/bangalore/web-design" element={<BangaloreNewPage />} />
-              <Route path="/locations/delhi/web-design" element={<DelhiUpdatedPage />} />
-              <Route path="/locations/mumbai/web-design" element={<MumbaiNewPage />} />
-              <Route path="/locations/pune/web-design" element={<PuneNewPage />} />
-              <Route path="/locations/madurai/web-design" element={<MaduraiNewPage />} />
-              <Route path="/locations/chennai/web-design" element={<ChennaiPage />} />
-              <Route path="/locations/hyderabad/web-design" element={<HyderabadPage />} />
-              <Route path="/locations/ahmedabad/web-design" element={<AhmedabadPage />} />
-              <Route path="/locations/surat/web-design" element={<SuratPage />} />
+              {/* Service + Location Pages - SEO Optimized URL Pattern */}
+              <Route path="/services/web-design/bangalore" element={<BangaloreNewPage />} />
+              <Route path="/services/web-design/delhi" element={<DelhiUpdatedPage />} />
+              <Route path="/services/web-design/mumbai" element={<MumbaiNewPage />} />
+              <Route path="/services/web-design/pune" element={<PuneNewPage />} />
+              <Route path="/services/web-design/madurai" element={<MaduraiNewPage />} />
+              <Route path="/services/web-design/chennai" element={<ChennaiPage />} />
+              <Route path="/services/web-design/hyderabad" element={<HyderabadPage />} />
+              <Route path="/services/web-design/ahmedabad" element={<AhmedabadPage />} />
+              <Route path="/services/web-design/surat" element={<SuratPage />} />
 
-              {/* Service + Location routes */}
+              {/* Dynamic Service + Location routes for other services */}
               <Route
                 path="/services/:service/:city"
                 element={<ServiceLocationPage />}

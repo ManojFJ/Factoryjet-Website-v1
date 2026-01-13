@@ -418,8 +418,17 @@ export const LocalSEOSection: React.FC = () => {
               <p>We serve industrial businesses across: Mumbai City, Thane, Navi Mumbai (Vashi, CBD Belapur, Airoli, Turbhe), Vasai-Virar, Boisar, Palghar, Bhiwandi, Kalyan-Dombivli, Ulhasnagar, Panvel, Kharghar, MIDC Andheri, MIDC Taloja, MIDC Ambernath, Thane-Belapur Industrial Belt, and all Maharashtra industrial districts.</p>
             </div>
           </div>
-          <div className="h-full min-h-[400px] bg-slate/10 rounded-xl overflow-hidden flex items-center justify-center text-slate">
-             [Embed Google Maps showing BKC, Mumbai location]
+          <div className="h-full min-h-[400px] rounded-xl overflow-hidden">
+             <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.0089037095047!2d72.84677!3d19.16460!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7c7f5f9f1f7%3A0x9b9b9b9b9b9b9b9b!2sBuilding%20%2320%2C%20Ajit%20Glass%20Garden%20Rd%2C%20Goregaon%20West%2C%20Mumbai%2C%20Maharashtra%20400063!5e0!3m2!1sen!2sin!4v1234567890"
+               width="100%"
+               height="100%"
+               style={{ border: 0, minHeight: '400px' }}
+               allowFullScreen
+               loading="lazy"
+               referrerPolicy="no-referrer-when-downgrade"
+               title="FactoryJet Mumbai Office Location"
+             ></iframe>
           </div>
        </div>
     </section>

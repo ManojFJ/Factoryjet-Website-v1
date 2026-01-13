@@ -38,14 +38,17 @@ const LocalSEOSection: React.FC = () => (
             Office: WeWork, Two Horizon Center, Golf Course Road, Sector 43, Gurugram
           </div>
         </div>
-        <div className="h-64 sm:h-80 lg:h-96 bg-gray-200 rounded-xl overflow-hidden relative shadow-inner">
-          {/* Simulated Map */}
-          <div className="absolute inset-0 flex items-center justify-center bg-slate-100 text-slate-400">
-            <div className="text-center">
-              <MapPin size={48} className="mx-auto mb-2 text-gray-300" />
-              <p>Google Map Embed: Delhi NCR Region</p>
-            </div>
-          </div>
+        <div className="h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden shadow-inner">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.0195836706996!2d77.0266!3d28.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18e9b4e61c9b%3A0x9c0c6e7e8e8e8e8e!2sWeWork%20Two%20Horizon%20Center!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="FactoryJet Delhi NCR Office Location"
+          ></iframe>
         </div>
       </div>
     </div>
