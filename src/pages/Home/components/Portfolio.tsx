@@ -41,7 +41,7 @@ const Portfolio: React.FC = () => {
       icon: ShoppingBag,
       width: 662,
       height: 372,
-      slug: "belle-maison"
+      slug: "belle-maison-ecommerce-success"
     },
     {
       category: "AI-Native SaaS",
@@ -54,7 +54,7 @@ const Portfolio: React.FC = () => {
       icon: Zap,
       width: 662,
       height: 372,
-      slug: "commerceflo"
+      slug: "commerceflo-ai-saas"
     }
   ];
 
