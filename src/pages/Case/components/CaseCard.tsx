@@ -1,5 +1,5 @@
-
-import React, { useRef } from 'react';
+'use client'
+import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight, TrendingUp, TrendingDown, ChevronRight, MapPin } from 'lucide-react';
 import { CaseStudy } from '../types';
@@ -11,6 +11,8 @@ interface CaseCardProps {
 
 export const CaseCard: React.FC<CaseCardProps> = ({ data, onClick }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [imageError, setImageError] = useState(false);
+  const placeholderImage = "../../../../../../public/case_study_placeholder.jpg";
   
   // 3D Tilt Logic
   const x = useMotionValue(0);
@@ -77,11 +79,16 @@ export const CaseCard: React.FC<CaseCardProps> = ({ data, onClick }) => {
           </div>
           
           <motion.img
-            src={`${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75`}
-            srcSet={`${data.image.split('?')[0]}?auto=format&fit=crop&w=300&q=75 300w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=450&q=75 450w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            src={imageError ? placeholderImage : `${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75`}
+             srcSet={imageError ? undefined : `${data.image.split('?')[0]}?auto=format&fit=crop&w=300&q=75 300w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=450&q=75 450w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w`}
+            sizes={imageError ? undefined : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"}
+            // srcSet={`${data.image.split('?')[0]}?auto=format&fit=crop&w=300&q=75 300w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=450&q=75 450w, ${data.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w`}
+            // sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt={data.client}
             width={600}
+            //  src={imageError ? placeholderImage : data.image}
+          // alt={data.title}
+            onError={() => setImageError(true)}
             height={400}
             loading="lazy"
             decoding="async"

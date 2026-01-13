@@ -138,7 +138,8 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, label }) => {
 export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack }) => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
-  
+  const [imageError , setImageError] = useState(false)
+    const placeholderImage = "../../../../../../public/case_study_placeholder.jpg";
   // Parallax Animations
   const heroY = useTransform(scrollY, [0, 1000], [0, 200]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
@@ -248,11 +249,12 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
                {/* Reflection Glare */}
                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent z-20 pointer-events-none"></div>
 
-               <img
-                 src={`${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=1200&q=75`}
-                 srcSet={`${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w, ${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=900&q=75 900w, ${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=1200&q=75 1200w`}
+               <motion.img
+                 src={ imageError ? placeholderImage : `${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=1200&q=75`}
+                 srcSet={ imageError ? undefined : `${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=600&q=75 600w, ${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=900&q=75 900w, ${caseStudy.image.split('?')[0]}?auto=format&fit=crop&w=1200&q=75 1200w`}
                  sizes="(max-width: 768px) 100vw, 80vw"
                  alt={caseStudy.client}
+                     onError={() => setImageError(true)}
                  width={1200}
                  height={750}
                  loading="eager"
