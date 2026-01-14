@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Headline - SEO Optimized H1 with visual enhancement */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.15] md:leading-[1.1] mb-4 md:mb-5 drop-shadow-lg tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-[1.15] md:leading-[1.1] mb-4 md:mb-5 drop-shadow-lg tracking-tight">
               FactoryJet - Professional{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-100">
                 Website Design
