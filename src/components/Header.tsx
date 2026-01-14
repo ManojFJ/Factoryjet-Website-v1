@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, BookOpen, FileText, MapPin } from 'lucide-react';
+import { Menu, X, ChevronDown, BookOpen, FileText, MapPin, Monitor, ShoppingBag } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
 import { trackButtonClick, trackNavigation, trackCTAClick } from '../utils/gtm';
 
@@ -26,6 +26,15 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
   }, []);
 
   const navItems = [
+    {
+      label: 'Services',
+      href: '#services',
+      hasDropdown: true,
+      submenu: [
+        { label: 'Web Design', href: '/services/web-design', icon: Monitor, desc: 'Custom high-performance websites', isRoute: true },
+        { label: 'E-Commerce', href: '/services/ecommerce', icon: ShoppingBag, desc: 'Shopify & WooCommerce stores', isRoute: true },
+      ]
+    },
     {
       label: 'Locations',
       href: '#locations',

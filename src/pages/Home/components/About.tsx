@@ -76,31 +76,41 @@ const About: React.FC = () => {
           {/* Right Column: Content */}
           <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-2.5 md:px-3 py-1 rounded-full bg-jet-blue/5 border border-jet-blue/10 text-jet-blue font-semibold text-[10px] md:text-xs uppercase tracking-wider mb-4 md:mb-6">
-              Who We Are
+              WHO WE ARE
             </div>
 
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy mb-4 md:mb-6 leading-tight">
-              We help businesses <span className="relative whitespace-nowrap">
-                <span className="relative z-10 text-jet-blue">grow online</span>
-                <span className="absolute bottom-1 md:bottom-2 left-0 w-full h-2 md:h-3 bg-blue-100 -z-0"></span>
-              </span> without the enterprise price tag.
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy mb-3 md:mb-4 leading-tight">
+              About FactoryJet - Web Design & E-Commerce Development Company for SMBs
             </h2>
+            <h3 className="text-lg md:text-2xl font-display font-semibold text-jet-slate mb-4 md:mb-6">
+              Helping small and medium businesses grow online across India
+            </h3>
 
             <div className="space-y-4 md:space-y-6 text-sm md:text-lg text-jet-slate mb-6 md:mb-8">
               <p className="leading-relaxed">
-                FactoryJet is a specialized web design and e-commerce development agency serving small and medium-sized businesses across India and emerging markets.
+                FactoryJet is a specialized web design and e-commerce development company helping small and medium-sized businesses (SMBs) build high-performing websites and online stores without enterprise-level pricing.
               </p>
               <p className="leading-relaxed">
-                We're not a large agency with enterprise price tags—we're SMB specialists who understand your unique challenges. <strong className="text-jet-navy font-semibold">Founded on a simple principle:</strong> Every business deserves a world-class website that drives results.
+                We design and develop conversion-focused business websites, Shopify and WooCommerce e-commerce stores, and scalable digital platforms for companies across India and emerging global markets.
+              </p>
+              <p className="leading-relaxed">
+                Unlike large agencies built for enterprise clients, FactoryJet is purpose-built for SMBs. Our approach combines modern design, SEO-ready architecture, mobile-first development, and fast delivery so businesses can launch faster, rank better, and convert more customers online.
+              </p>
+              <p className="leading-relaxed">
+                Our core belief is simple: every business deserves a world-class website and e-commerce experience that drives measurable growth.
+              </p>
+              <p className="leading-relaxed">
+                FactoryJet is an India-based AI-Native Web Design and E-Commerce Development Services Company specializing in affordable, high-performance digital solutions for SMEs.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
               {[
-                "Custom Design on WordPress, Webflow, Framer",
-                "Mobile-First & Conversion Focused",
-                "7-Day Delivery Guarantee",
-                "Full E-Commerce Support (Shopify/Woo)"
+                "Custom Website Design & Development on WordPress, Webflow, and Framer",
+                "E-Commerce Store Development with Shopify and WooCommerce",
+                "Mobile-First & Conversion-Focused UX/UI Design",
+                "7-Day Website Delivery Guarantee for select projects",
+                "SEO-Ready, AI-Optimized Website Architecture"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 md:gap-3">
                   <CheckCircle2 className="text-jetGreen shrink-0 w-4 h-4 md:w-5 md:h-5" />
