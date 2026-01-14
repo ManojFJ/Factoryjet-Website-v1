@@ -80,23 +80,21 @@ const Hero: React.FC = () => {
 
             {/* Headline - SEO Optimized H1 with visual enhancement */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.15] md:leading-[1.1] mb-4 md:mb-5 drop-shadow-lg tracking-tight">
-              World-Class{" "}
+              FactoryJet - Professional{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-cyan-100">
-                Web
+                Website Design
               </span>{" "}
               &{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">
                 E-Commerce
               </span>{" "}
               <br className="hidden lg:block" />
-              Development Services
+              Development Company (7-Day Delivery)
             </h1>
 
-            <p className="text-sm md:text-lg text-blue-100/90 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
-              FactoryJet is India's trusted partner for SMBs. We build
-              high-converting digital storefronts that attract customers and
-              drive real results.
-            </p>
+            <h2 className="text-sm md:text-lg text-blue-100/90 mb-6 md:mb-8 leading-relaxed max-w-lg font-medium">
+              High-Performance Web Development & E-Commerce Development Services for Growing Indian Businesses
+            </h2>
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-10">
