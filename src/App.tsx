@@ -15,6 +15,7 @@ import UsHomePage from "./pages/UsHomePage/App";
 import UsWebServicePage from "./pages/UsWebServicePage/App";
 import UsEcommercePage from "./pages/UsEcommercePage/App";
 import Detail from "./pages/Case/Detail";
+import BlogPostDetail from "./pages/Blog/BlogPostDetails";
 
 // Lazy load ContactFormModal - only loads when modal is opened
 const ContactFormModal = lazy(() => import("./components/ContactFormModal"));
@@ -81,6 +82,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostDetail />} />
               <Route path="/case" element={<CaseApp />} />
               <Route path="/case/:slug" element={<Detail />} />
               <Route path="/services/ecommerce" element={<EcommPage />} />
