@@ -22,11 +22,11 @@ const Process: React.FC = () => {
               We've streamlined our workflow to deliver high-quality results without the typical agency delays.
               Our 7-step process ensures transparency and speed.
             </p>
-            <Link to="/services/web-design#process">
+            <a href="/services/web-design#process">
             <button  className="text-jet-blue font-bold hover:text-blue-700 flex items-center gap-2 group justify-center lg:justify-start mx-auto lg:mx-0 text-sm md:text-base">
               See detailed timeline <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
-            </Link>
+            </a>
           
           </div>
 
