@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-xs text-center">
-         © 2025 FactoryJet. All rights reserved.
+         © 2026 FactoryJet. All rights reserved.
       </div>
     </footer>
   );
