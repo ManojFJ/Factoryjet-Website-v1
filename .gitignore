@@ -3,6 +3,8 @@ node_modules/
 
 # Build output
 dist/
+.next/
+out/
 
 # Environment files
 .env
@@ -23,3 +25,7 @@ npm-debug.log*
 
 # Firebase
 .firebase/
+
+# Next.js
+next-env.d.ts
+.vercel

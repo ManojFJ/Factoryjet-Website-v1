@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Mail, MapPin, Phone, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { trackNavigation, trackSocialClick, trackContactClick } from '../utils/gtm';
 
@@ -11,7 +13,7 @@ const Footer: React.FC = () => {
 
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="inline-block mb-4 md:mb-6">
+            <Link href="/" className="inline-block mb-4 md:mb-6">
               <img
                 src="/FinalLogoWhite.svg"
                 alt="FactoryJet"
@@ -48,8 +50,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Our Services</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/services/web-design" onClick={() => trackNavigation('Web Design', '/services/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
-              <li><Link to="/services/ecommerce" onClick={() => trackNavigation('E-Commerce', '/services/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
+              <li><Link href="/services/web-design" onClick={() => trackNavigation('Web Design', '/services/web-design', 'footer')} className="hover:text-jet-blue transition-colors">Web Design</Link></li>
+              <li><Link href="/services/ecommerce" onClick={() => trackNavigation('E-Commerce', '/services/ecommerce', 'footer')} className="hover:text-jet-blue transition-colors">E-Commerce</Link></li>
             </ul>
           </div>
 
@@ -57,10 +59,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-4 md:mb-6">Company</h3>
             <ul className="space-y-2 md:space-y-3 text-gray-400 text-sm md:text-base">
-              <li><Link to="/about" onClick={() => trackNavigation('About Us', '/about', 'footer')} className="hover:text-jet-blue transition-colors">About Us</Link></li>
-              <li><Link to="/pricing" onClick={() => trackNavigation('Pricing Packages', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Pricing Packages</Link></li>
-              <li><Link to="/case" onClick={() => trackNavigation('Case Studies', '/case', 'footer')} className="hover:text-jet-blue transition-colors">Case Studies</Link></li>
-              <li><Link to="/blog" onClick={() => trackNavigation('Blog', '/blog', 'footer')} className="hover:text-jet-blue transition-colors">Blog</Link></li>
+              <li><Link href="/about" onClick={() => trackNavigation('About Us', '/about', 'footer')} className="hover:text-jet-blue transition-colors">About Us</Link></li>
+              <li><Link href="/pricing" onClick={() => trackNavigation('Pricing Packages', '/pricing', 'footer')} className="hover:text-jet-blue transition-colors">Pricing Packages</Link></li>
+              <li><Link href="/case" onClick={() => trackNavigation('Case Studies', '/case', 'footer')} className="hover:text-jet-blue transition-colors">Case Studies</Link></li>
+              <li><Link href="/blog" onClick={() => trackNavigation('Blog', '/blog', 'footer')} className="hover:text-jet-blue transition-colors">Blog</Link></li>
             </ul>
           </div>
 
@@ -87,10 +89,10 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
           <p>© 2026 FactoryJet Digital Solutions. All rights reserved.</p>
           <div className="flex gap-4 md:gap-6">
-            <Link to="/terms" onClick={() => trackNavigation('Terms', '/terms', 'footer')} className="text-gray-400 hover:text-white transition-colors">Terms </Link>
-            <Link to="/privacy" onClick={() => trackNavigation('Privacy Policy', '/privacy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/refund-policy" onClick={() => trackNavigation('Refund Policy', '/refund-policy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Refund Policy</Link>
-            <Link to="/sitemap" onClick={() => trackNavigation('Sitemap', '/sitemap', 'footer')} className="text-gray-400 hover:text-white transition-colors">Sitemap</Link>
+            <Link href="/terms" onClick={() => trackNavigation('Terms', '/terms', 'footer')} className="text-gray-400 hover:text-white transition-colors">Terms </Link>
+            <Link href="/privacy" onClick={() => trackNavigation('Privacy Policy', '/privacy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/refund-policy" onClick={() => trackNavigation('Refund Policy', '/refund-policy', 'footer')} className="text-gray-400 hover:text-white transition-colors">Refund Policy</Link>
+            <Link href="/sitemap" onClick={() => trackNavigation('Sitemap', '/sitemap', 'footer')} className="text-gray-400 hover:text-white transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

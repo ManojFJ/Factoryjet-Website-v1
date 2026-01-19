@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Menu, X, ChevronDown, BookOpen, FileText, MapPin, Monitor, ShoppingBag } from 'lucide-react';
 import { useContactModal } from '../context/ContactModalContext';
 import { trackButtonClick, trackNavigation, trackCTAClick } from '../utils/gtm';
@@ -71,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
 
   const renderLink = (href: string, isRoute: boolean | undefined, children: React.ReactNode, className: string, onClick?: () => void) => {
     if (isRoute) {
-      return <Link to={href} className={className} onClick={onClick}>{children}</Link>;
+      return <Link href={href} className={className} onClick={onClick}>{children}</Link>;
     }
     return <a href={href} className={className} onClick={onClick}>{children}</a>;
   };
@@ -91,7 +93,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         `}
       >
         {/* Logo - White version on dark hero, regular on scrolled/solid */}
-        <Link to="/" className="flex items-center cursor-pointer group">
+        <Link href="/" className="flex items-center cursor-pointer group">
           <img
             src={showSolidStyle ? "/FinalLogo.svg" : "/FinalLogoWhite.svg"}
             alt="FactoryJet"
@@ -124,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
                     {item.submenu?.map((sub) => (
                       <Link
                         key={sub.label}
-                        to={sub.href}
+                        href={sub.href}
                         className="flex items-start gap-3 p-3 rounded-xl hover:bg-blue-50/50 transition-colors group/item"
                       >
                         <div className="bg-blue-100/50 text-jet-blue p-2 rounded-lg group-hover/item:bg-jet-blue group-hover/item:text-white transition-colors shrink-0">
@@ -199,7 +201,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
                       {item.submenu?.map((sub) => (
                         <Link
                           key={sub.label}
-                          to={sub.href}
+                          href={sub.href}
                           className="flex items-center gap-3 p-3 rounded-lg hover:bg-white transition-all text-jet-slate hover:text-jet-blue"
                           onClick={() => {
                             trackNavigation(sub.label, sub.href, 'mobile_menu');
@@ -216,7 +218,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
               ) : (
                 item.isRoute ? (
                   <Link
-                    to={item.href}
+                    href={item.href}
                     className="block text-jet-navy font-bold py-3 px-4 hover:bg-gray-50 rounded-xl transition-colors"
                     onClick={() => {
                       trackNavigation(item.label, item.href, 'mobile_menu');
