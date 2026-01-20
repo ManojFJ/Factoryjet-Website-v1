@@ -152,7 +152,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-slate-50 text-slate-900 antialiased">
+      <body className="bg-white text-slate-900 antialiased">
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

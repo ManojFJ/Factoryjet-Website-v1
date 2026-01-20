@@ -1,3 +1,5 @@
+"use client"
+
 import MumbaiNewPage from '@/pages/MumbaiNew'
 
 export default function Page() {

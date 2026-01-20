@@ -25,7 +25,10 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // Fix for watchpack path issues on Windows
+  // Turbopack configuration (Next.js 16+)
+  turbopack: {},
+
+  // Legacy webpack config (for non-Turbopack builds)
   webpack: (config, { dev }) => {
     if (dev) {
       // Comprehensive fix for Windows watchpack issues

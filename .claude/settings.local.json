@@ -12,7 +12,14 @@
       "Bash(tee:*)",
       "Bash(test:*)",
       "Bash(node:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm show:*)",
+      "Bash(npm view:*)",
+      "Bash(npm info:*)",
+      "Bash(npm cache clean:*)",
+      "Bash(curl:*)",
+      "Bash(timeout 15 ./node_modules/.bin/next dev:*)"
     ]
   }
 }
