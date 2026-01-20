@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import SEOHead from '@/components/SEOHead';
 import Hero from './components/Hero';
 import { SocialProof, About, ProblemSection, SolutionSection } from './components/ContentBlocks';
 import { Services, Process, Technologies, Pricing } from './components/ServiceBlocks';
@@ -98,11 +97,6 @@ const MaduraiPage = () => {
           ]
         }) }} />
       </Helmet>
-      <SEOHead
-        title="Best Website Design Company in Madurai | FactoryJet"
-        description="FactoryJet is Madurai's leading website design company. Professional website development, WordPress, Shopify, and e-commerce solutions starting at ₹15,000. Top website design company in Madurai with 25+ years of combined expertise."
-        canonical="/services/web-design/madurai"
-      />
       <Header variant="solid" />
       <main className="min-h-screen w-full overflow-x-hidden font-sans">
         <Hero />

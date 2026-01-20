@@ -55,6 +55,11 @@ export default {
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'marquee': 'marquee 60s linear infinite',
+      },
+      perspective: {
+        '1000': '1000px',
+        '1500': '1500px',
       },
       keyframes: {
         fadeInUp: {
@@ -77,6 +82,18 @@ export default {
           '0%, 100%': { transform: 'translate(60%, 60%)', opacity: '1' },
           '50%': { transform: 'translate(70%, 40%)', opacity: '1' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        dash: {
+          '0%': { strokeDashoffset: '100' },
+          '100%': { strokeDashoffset: '0' },
+        },
+      },
+      transitionDelay: {
+        '1000': '1000ms',
+        '2000': '2000ms',
       },
     },
   },

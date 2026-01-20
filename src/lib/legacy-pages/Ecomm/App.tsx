@@ -1,3 +1,4 @@
+'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
@@ -893,20 +894,82 @@ const CTA = () => {
 };
 
 export default function App() {
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "E-Commerce Development Services",
+    "description": "Professional e-commerce development services including Shopify, WooCommerce, and custom online store solutions. AI-powered, mobile-first, SEO-optimized stores.",
+    "provider": {
+      "@type": "Organization",
+      "name": "FactoryJet",
+      "url": "https://factoryjet.com",
+      "logo": "https://factoryjet.com/FinalLogo.svg",
+      "telephone": "+919699977699",
+      "email": "connect@factoryjet.com"
+    },
+    "serviceType": "E-Commerce Development",
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "E-Commerce Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shopify Development",
+            "description": "Custom Shopify store development with theme customization, app integration, and performance optimization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "WooCommerce Development",
+            "description": "WordPress WooCommerce store setup, customization, and payment gateway integration"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom E-Commerce Solutions",
+            "description": "Fully custom online stores built with modern technologies and conversion optimization"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 font-sans selection:bg-jetOrange selection:text-white">
-      <MeshGradientBackground />
-      <Header variant="solid" />
-      <Hero />
-      <MarketReality />
-      <BusinessModels />
-      <Platforms />
-      <FeatureGrid />
-      <ProcessTimeline />
-      <CaseStudies />
-      <FAQAccordion />
-      <CTA />
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <div className="min-h-screen bg-slate-50 font-sans selection:bg-jetOrange selection:text-white">
+        <MeshGradientBackground />
+        <Header variant="solid" />
+        <Hero />
+        <MarketReality />
+        <BusinessModels />
+        <Platforms />
+        <FeatureGrid />
+        <ProcessTimeline />
+        <CaseStudies />
+        <FAQAccordion />
+        <CTA />
+        <Footer />
+      </div>
+    </>
   );
 }

@@ -92,6 +92,24 @@ html {
   }
 }
 
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .shimmer {
   position: relative;
   overflow: hidden;

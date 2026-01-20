@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     siteName: 'FactoryJet',
     title: 'World-Class Web & E-Commerce Development Company | FactoryJet',
     description: 'FactoryJet delivers scalable web and eCommerce solutions for global businesses. Fast delivery, affordable pricing, 150+ successful projects.',
-    url: 'https://factoryjet.com/',
+    url: 'https://factoryjet.com',
     images: [
       {
-        url: 'https://factoryjet.com/og-image.jpg',
+        url: 'https://factoryjet.com/logo.png',
         width: 1200,
         height: 630,
         alt: 'FactoryJet - Web & E-Commerce Development Company',
@@ -56,7 +56,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'World-Class Web & E-Commerce Development Company | FactoryJet',
     description: 'High-performance web and eCommerce solutions built for growth. Fast delivery, affordable pricing, 150+ successful projects.',
-    images: ['https://factoryjet.com/og-image.jpg'],
+    images: ['https://factoryjet.com/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://factoryjet.com',
   },
   icons: {
     icon: '/favicon.svg',

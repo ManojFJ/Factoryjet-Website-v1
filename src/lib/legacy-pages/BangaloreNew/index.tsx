@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import SEOHead from '@/components/SEOHead';
 import Hero, { HeroDetailedText } from './components/Hero';
 import { SocialProof, About, ProblemSection, SolutionSection } from './components/ContentBlocks';
 import { Services, Process, Technologies, Pricing } from './components/ServiceBlocks';
@@ -96,11 +95,6 @@ const BangalorePage = () => {
 
   return (
     <>
-      <SEOHead
-        title="Best Website Design Company in Bangalore | FactoryJet"
-        description="FactoryJet is Bangalore's premier website design company. Professional website development, WordPress, Shopify, and e-commerce solutions starting at ₹29,999. Powering Bengaluru's startups, enterprises & D2C brands."
-        canonical="/services/web-design/bangalore"
-      />
       <Helmet>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

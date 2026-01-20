@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import SEOHead from '@/components/SEOHead';
 import Hero from './components/Hero';
 import {
   SocialProof,
@@ -35,11 +34,6 @@ const MumbaiPage = () => {
 
   return (
     <>
-      <SEOHead
-        title="Best Website Design Company in Mumbai | FactoryJet"
-        description="FactoryJet is Mumbai's premier industrial web design company. Professional B2B websites, manufacturer catalogs, and e-commerce solutions starting at ₹29,000. Serving Mumbai, Thane, Navi Mumbai, Vasai-Virar & MIDC areas."
-        canonical="/services/web-design/mumbai"
-      />
 
       {/* Schema Markup */}
       <script
