@@ -1,13 +1,13 @@
 import React, { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import { POSTS } from './posts';
 import { Category, BlogPost } from './data.types';
 import { CategoryFilter } from './components/CategoryFilter';
 import { BlogCard } from './components/BlogCard';
-import { BlogPostPage } from './components/BlogPostPage';
 
 const App: React.FC = () => {
+  const router = useRouter();
   const [activeCategory, setActiveCategory] = useState<Category>('All');
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   const filteredPosts = useMemo(() => {
     if (activeCategory === 'All') return POSTS;
@@ -15,16 +15,8 @@ const App: React.FC = () => {
   }, [activeCategory]);
 
   const handlePostClick = (post: BlogPost) => {
-    setSelectedPost(post);
+    router.push(`/blog/${post.slug}`);
   };
-
-  const handleBackToListing = () => {
-    setSelectedPost(null);
-  };
-
-  if (selectedPost) {
-    return <BlogPostPage post={selectedPost} onBack={handleBackToListing} />;
-  }
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-jetBlue selection:text-white pt-20 md:pt-24">

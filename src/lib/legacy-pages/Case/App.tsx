@@ -1,12 +1,13 @@
+'use client';
 
 import React, { useState, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FilterTabs } from './components/FilterTabs';
 import { CaseCard } from './components/CaseCard';
-import { CaseStudyPage } from './components/CaseStudyPage';
 import { CASE_STUDIES } from './data.constants';
 import { CategoryFilter } from './data.types';
 import { ArrowRight } from 'lucide-react';
@@ -14,29 +15,18 @@ import { useContactModal } from '@/context/ContactModalContext';
 import { trackCTAClick } from '@/utils/gtm';
 
 const App: React.FC = () => {
-  const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('All');
   const { openModal } = useContactModal();
 
-  const handleCardClick = (id: string) => {
-    setSelectedCaseId(id);
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  };
-
-  const handleBack = () => {
-    setSelectedCaseId(null);
+  const handleCardClick = (slug: string) => {
+    router.push(`/case/${slug}`);
   };
 
   const filteredCases = useMemo(() => {
     if (selectedCategory === 'All') return CASE_STUDIES;
     return CASE_STUDIES.filter(c => c.category === selectedCategory);
   }, [selectedCategory]);
-
-  const activeCaseStudy = CASE_STUDIES.find(c => c.id === selectedCaseId);
-
-  if (selectedCaseId && activeCaseStudy) {
-    return <CaseStudyPage caseStudy={activeCaseStudy} onBack={handleBack} />;
-  }
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex flex-col font-sans">
@@ -76,9 +66,9 @@ const App: React.FC = () => {
              <AnimatePresence mode='popLayout'>
                {filteredCases.map((caseStudy) => (
                  <div key={caseStudy.id} className="break-inside-avoid">
-                   <CaseCard 
-                      data={caseStudy} 
-                      onClick={() => handleCardClick(caseStudy.id)}
+                   <CaseCard
+                      data={caseStudy}
+                      onClick={() => handleCardClick(caseStudy.slug)}
                    />
                  </div>
                ))}

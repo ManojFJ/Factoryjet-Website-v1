@@ -1,18 +1,20 @@
+'use client';
 
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
-import { 
-  motion, 
-  useScroll, 
-  useTransform, 
-  useInView, 
-  AnimatePresence, 
+import Link from 'next/link';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useInView,
+  AnimatePresence,
   useMotionValueEvent,
   animate
 } from 'framer-motion';
-import { 
-  ArrowLeft, 
-  CheckCircle, 
-  TrendingUp, 
+import {
+  ArrowLeft,
+  CheckCircle,
+  TrendingUp,
   Layers,
   MapPin,
   Quote,
@@ -26,7 +28,7 @@ import { CaseStudy } from '../data.types';
 
 interface CaseStudyPageProps {
   caseStudy: CaseStudy;
-  onBack: () => void;
+  onBack?: () => void;
 }
 
 // --- SUB-COMPONENTS ---
@@ -165,7 +167,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
       {/* BACK BUTTON */}
       <div className="fixed top-4 md:top-8 left-3 md:left-4 lg:left-8 z-[50]">
         <button
-          onClick={onBack}
+          onClick={() => window.history.back()}
           className="bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white p-2.5 md:p-3.5 rounded-full transition-all border border-white/10 shadow-2xl group ring-1 ring-white/10"
         >
           <ArrowLeft size={18} className="md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
@@ -504,7 +506,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ caseStudy, onBack 
                Start Your Transformation
              </button>
              <button
-                onClick={onBack}
+                onClick={() => window.history.back()}
                 className="bg-transparent border border-slate-700 text-white hover:bg-white/5 px-6 md:px-10 py-3 md:py-5 rounded-full font-bold text-base md:text-lg transition-all"
              >
                View More Case Studies

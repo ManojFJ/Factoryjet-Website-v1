@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { BlogPost, FAQItem } from '../data.types';
 import { ReadingProgress } from './ReadingProgress';
 import { 
@@ -19,7 +22,7 @@ import {
 
 interface BlogPostPageProps {
   post: BlogPost;
-  onBack: () => void;
+  onBack?: () => void;
 }
 
 const KeyTakeaways = ({ items }: { items: string[] }) => (
@@ -107,13 +110,13 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 md:h-16 flex items-center justify-between">
-          <button
-            onClick={onBack}
+          <Link
+            href="/blog"
             className="flex items-center text-gray-600 hover:text-jetBlue transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium text-sm md:text-base">Back to Articles</span>
-          </button>
+          </Link>
 
           <div className="hidden sm:flex items-center gap-3 md:gap-4">
              <span className="text-xs md:text-sm text-gray-500">Share:</span>
