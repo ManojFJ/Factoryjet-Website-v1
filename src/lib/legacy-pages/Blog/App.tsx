@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { POSTS } from './posts';
