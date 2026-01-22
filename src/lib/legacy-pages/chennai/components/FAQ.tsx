@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FAQS } from '../constant.ts';
+import { FAQS } from '../constant';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 

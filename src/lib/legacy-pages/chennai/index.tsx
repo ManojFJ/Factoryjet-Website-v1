@@ -18,7 +18,7 @@ import FinalCTA from './components/FinalCTA';
 import GlassCard from './components/GlassCard';
 import StickyWhatsApp from './components/StickyWhatsApp';
 import ExitIntentModal from './components/ExitIntentModal';
-import { INDUSTRIES, TESTIMONIALS } from './constant.ts';
+import { INDUSTRIES, TESTIMONIALS } from './constant';
 import { Star } from 'lucide-react';
 
 // Updated Industries Component

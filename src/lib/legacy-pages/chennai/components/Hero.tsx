@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
 import { Check, ArrowRight, Star, ShieldCheck, CreditCard, Lock, MessageCircle } from 'lucide-react';
-import { TRUST_BADGES } from '../constant.ts';
+import { TRUST_BADGES } from '../constant';
 
 const Hero: React.FC = () => {
   return (

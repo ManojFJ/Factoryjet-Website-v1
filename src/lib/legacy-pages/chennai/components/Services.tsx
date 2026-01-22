@@ -1,6 +1,6 @@
 import React from 'react';
 import GlassCard from './GlassCard';
-import { SERVICES } from '../constant.ts';
+import { SERVICES } from '../constant';
 import { motion } from 'framer-motion';
 
 const Services: React.FC = () => {

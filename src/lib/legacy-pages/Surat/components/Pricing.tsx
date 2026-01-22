@@ -7,6 +7,17 @@ interface PricingProps {
   onOpenModal: () => void;
 }
 
+interface Plan {
+  name: string;
+  price: string;
+  features: string[];
+  popular?: boolean;
+  description?: string;
+  delivery?: string;
+  cta?: string;
+  note?: string;
+}
+
 const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
   const [activeTab, setActiveTab] = useState('website');
 
@@ -156,7 +167,7 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
     },
   ];
 
-  const currentPlans = activeTab === 'website' ? websitePlans : activeTab === 'ecommerce' ? ecommercePlans : amcPlans;
+  const currentPlans: Plan[] = activeTab === 'website' ? websitePlans : activeTab === 'ecommerce' ? ecommercePlans : amcPlans;
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">

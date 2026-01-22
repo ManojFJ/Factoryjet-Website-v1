@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GlassCard from './GlassCard';
-import { PRICING_TABS } from '../constant.ts';
+import { PRICING_TABS } from '../constant';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 

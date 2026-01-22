@@ -150,9 +150,9 @@ export const trackSocialClick = (platform: string, location: string) => {
   });
 };
 
-// Track phone/email clicks
+// Track phone/email/whatsapp clicks
 export const trackContactClick = (
-  contactType: 'phone' | 'email',
+  contactType: 'phone' | 'email' | 'whatsapp',
   contactValue: string,
   location: string
 ) => {

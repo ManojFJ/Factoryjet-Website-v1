@@ -1,5 +1,5 @@
 import React from 'react';
-import { CASE_STUDIES } from '../constant.ts';
+import { CASE_STUDIES } from '../constant';
 import GlassCard from './GlassCard';
 import { ArrowRight } from 'lucide-react';
 

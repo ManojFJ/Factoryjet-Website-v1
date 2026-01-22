@@ -1,5 +1,5 @@
 import React from 'react';
-import { SOCIAL_PROOF_METRICS } from '../constant.ts';
+import { SOCIAL_PROOF_METRICS } from '../constant';
 
 const SocialProof: React.FC = () => {
   return (
