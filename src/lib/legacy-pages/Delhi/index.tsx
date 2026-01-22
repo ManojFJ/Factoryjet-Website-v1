@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from './components/HeroSection';
@@ -62,96 +62,65 @@ const DelhiPage: React.FC = () => {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does website design cost in Delhi NCR?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Website design costs vary based on complexity and features. At FactoryJet, we offer packages starting at ₹15,000 for a basic 5-page website to ₹5,00,000+ for enterprise custom solutions. We provide transparent pricing with no hidden costs."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take to build a website in Delhi?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our streamlined process typically delivers a website in 7 days. More complex projects with custom features may take 2-4 weeks. We prioritize speed without compromising quality."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide e-commerce solutions in Gurgaon and Noida?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms. We serve businesses across Delhi NCR including Gurgaon, Noida, Faridabad, and Ghaziabad."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can you integrate payment gateways on my website?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe, and others for secure transactions on your website or e-commerce platform."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Will my website be mobile responsive?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. All websites built by FactoryJet are fully responsive and optimized for mobile, tablet, and desktop devices to provide the best user experience across all platforms."
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Best Website Design Company in Delhi NCR | FactoryJet</title>
-        <meta
-          name="description"
-          content="FactoryJet is the leading website design company in Delhi NCR. Professional website development for Delhi, Gurgaon, Noida businesses. Starting ₹15,000. Get your free website audit today!"
-        />
-        <link rel="canonical" href="https://factoryjet.com/locations/delhi" />
-
-        {/* Open Graph Tags */}
-        <meta
-          property="og:title"
-          content="Best Website Design Company in Delhi NCR | FactoryJet"
-        />
-        <meta
-          property="og:description"
-          content="Professional website design & development for Delhi NCR businesses. Starting ₹15,000. Serving Delhi, Gurgaon, Noida, Faridabad, Ghaziabad."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://factoryjet.com/locations/delhi"
-        />
-        <meta property="og:image" content="https://www.factoryjet.com/images/factoryjet-delhi.jpg" />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Best Website Design Company in Delhi NCR | FactoryJet"
-        />
-        <meta
-          name="twitter:description"
-          content="Professional website design & development for Delhi NCR businesses."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.factoryjet.com/images/factoryjet-delhi.jpg"
-        />
-
-        {/* Schema.org JSON-LD */}
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "How much does website design cost in Delhi NCR?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Website design costs vary based on complexity and features. At FactoryJet, we offer packages starting at ₹15,000 for a basic 5-page website to ₹5,00,000+ for enterprise custom solutions. We provide transparent pricing with no hidden costs."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "How long does it take to build a website in Delhi?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Our streamlined process typically delivers a website in 7 days. More complex projects with custom features may take 2-4 weeks. We prioritize speed without compromising quality."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "Do you provide e-commerce solutions in Gurgaon and Noida?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms. We serve businesses across Delhi NCR including Gurgaon, Noida, Faridabad, and Ghaziabad."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "Can you integrate payment gateways on my website?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe, and others for secure transactions on your website or e-commerce platform."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "Will my website be mobile responsive?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Absolutely. All websites built by FactoryJet are fully responsive and optimized for mobile, tablet, and desktop devices to provide the best user experience across all platforms."
-              }
-            }
-          ]
-        })}</script>
-      </Helmet>
+      <Script
+        id="delhi-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="delhi-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* Page Content */}
       <div className="min-h-screen bg-white">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero, { HeroDetailedText } from './components/Hero';
@@ -95,10 +95,16 @@ const BangalorePage = () => {
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Helmet>
+      <Script
+        id="bangalore-new-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="bangalore-new-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header variant="solid" />
       <main className="min-h-screen w-full overflow-x-hidden font-sans">
         <Hero />

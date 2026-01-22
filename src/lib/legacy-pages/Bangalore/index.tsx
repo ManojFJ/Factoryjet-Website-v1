@@ -1,7 +1,7 @@
 
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from './components/Hero';
@@ -136,13 +136,16 @@ const BangalorePage: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white"
     >
-      <Helmet>
-        <title>Best Website Design Company in Bangalore | FactoryJet</title>
-        <meta name="description" content="Professional website design & e-commerce development in Bangalore. Trusted by 200+ Karnataka businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/locations/bangalore" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Helmet>
+      <Script
+        id="bangalore-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="bangalore-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header variant="solid" />
       <Hero onOpenModal={openModal} />
       <SocialProof />

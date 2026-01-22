@@ -1,7 +1,7 @@
 
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from './components/Hero';
@@ -133,13 +133,16 @@ const SuratPage: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white"
     >
-      <Helmet>
-        <title>Best Website Design Company in Surat | FactoryJet</title>
-        <meta name="description" content="Professional website design & e-commerce development in Surat. Trusted by 200+ South Gujarat businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/services/web-design/surat" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Helmet>
+      <Script
+        id="surat-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="surat-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header variant="solid" />
       <Hero onOpenModal={openModal} />
       <SocialProof />

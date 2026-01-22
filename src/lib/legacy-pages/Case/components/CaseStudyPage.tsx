@@ -127,7 +127,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, label }) => {
         )}
       </div>
       <p className="text-slate-500 font-semibold uppercase tracking-wider text-[10px] md:text-xs flex items-center gap-1.5 md:gap-2">
-        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-emerald-400"></div>
+        <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-emerald-400 inline-block"></span>
         {label}
       </p>
     </div>

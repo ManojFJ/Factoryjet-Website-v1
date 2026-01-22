@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from './components/HeroSection';
@@ -160,42 +160,21 @@ const PunePage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Website Design Company in Pune | ₹29,999 | 7-Day Delivery</title>
-        <meta
-          name="description"
-          content="Top website design company in Pune. Web development, Shopify, WooCommerce, WordPress. Serving Hinjewadi, Kharadi, PCMC, Chakan. ₹29,999 starter. 500+ projects."
-        />
-        <meta
-          name="keywords"
-          content="website design company in pune, web design company in pune, web development company in pune, ecommerce development company in pune, website design services pune, shopify development pune, wordpress development pune"
-        />
-        <link rel="canonical" href="https://factoryjet.com/locations/pune" />
-
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Website Design Company in Pune | FactoryJet" />
-        <meta property="og:description" content="Professional web design & e-commerce development for Pune businesses. Hinjewadi, Kharadi, Magarpatta, PCMC, Chakan. Starting ₹29,999. 7-day delivery." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://factoryjet.com/locations/pune" />
-        <meta property="og:image" content="https://www.factoryjet.com/images/factoryjet-pune.jpg" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Website Design Company in Pune | FactoryJet" />
-        <meta name="twitter:description" content="Professional web design for Pune businesses. Starting ₹29,999." />
-        <meta name="twitter:image" content="https://www.factoryjet.com/images/factoryjet-pune.jpg" />
-
-        {/* Schema.org JSON-LD */}
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqPageSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
-        </script>
-      </Helmet>
+      <Script
+        id="pune-local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="pune-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
+      <Script
+        id="pune-organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
 
       <motion.div
         initial={{ opacity: 0 }}

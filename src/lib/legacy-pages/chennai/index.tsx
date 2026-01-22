@@ -1,5 +1,5 @@
 
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from './components/Hero';
@@ -200,13 +200,16 @@ function ChennaiPage() {
   };
   return (
     <div className="bg-white text-jet-navy font-sans selection:bg-jet-orange selection:text-white">
-      <Helmet>
-        <title>Best Website Design Company in Chennai | FactoryJet</title>
-        <meta name="description" content="Professional website design & e-commerce development in Chennai. Trusted by 200+ Tamil Nadu businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/services/web-design/chennai" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Helmet>
+      <Script
+        id="chennai-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="chennai-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header variant="solid" />
       <StickyWhatsApp />
       <ExitIntentModal />

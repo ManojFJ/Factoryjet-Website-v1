@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from './components/Hero';
@@ -46,57 +46,65 @@ const MaduraiPage = () => {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does website design cost in Madurai?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Website design costs vary based on complexity. At FactoryJet, we offer packages starting at ₹15,000 for basic websites to ₹5,00,000+ for enterprise solutions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take to build a website?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our streamlined process typically delivers a website in 7 days. More complex projects may take 2-4 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide e-commerce solutions?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Can you integrate payment gateways?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe for secure transactions."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Will my website be mobile responsive?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. All websites are fully responsive and optimized for all devices."
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "How much does website design cost in Madurai?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Website design costs vary based on complexity. At FactoryJet, we offer packages starting at ₹15,000 for basic websites to ₹5,00,000+ for enterprise solutions."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "How long does it take to build a website?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Our streamlined process typically delivers a website in 7 days. More complex projects may take 2-4 weeks."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "Do you provide e-commerce solutions?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, we specialize in e-commerce development with Shopify, WooCommerce, and custom platforms."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "Can you integrate payment gateways?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, we integrate all major payment gateways including Razorpay, PayPal, Stripe for secure transactions."
-              }
-            },
-            {
-              "@type": "Question",
-              name: "Will my website be mobile responsive?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Absolutely. All websites are fully responsive and optimized for all devices."
-              }
-            }
-          ]
-        }) }} />
-      </Helmet>
+      <Script
+        id="madurai-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="madurai-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header variant="solid" />
       <main className="min-h-screen w-full overflow-x-hidden font-sans">
         <Hero />

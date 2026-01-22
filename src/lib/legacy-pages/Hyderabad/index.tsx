@@ -1,5 +1,5 @@
 
-import { Helmet } from 'react-helmet-async';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Hero, SocialProof, EntityBlock, Problems, Solution } from './components/HeroAndIntro';
@@ -93,13 +93,16 @@ function HyderabadPage() {
   };
   return (
     <main className="font-sans antialiased text-jet-navy bg-white w-full overflow-x-hidden">
-      <Helmet>
-        <title>Best Website Design Company in Hyderabad | FactoryJet</title>
-        <meta name="description" content="Professional website design & e-commerce development in Hyderabad. Trusted by 200+ Telangana businesses. 4-week delivery. Starting ₹29,999. Get free audit!" />
-        <link rel="canonical" href="https://factoryjet.com/services/web-design/hyderabad" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Helmet>
+      <Script
+        id="hyderabad-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <Script
+        id="hyderabad-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header variant="solid" />
       <Hero />
       <SocialProof />
