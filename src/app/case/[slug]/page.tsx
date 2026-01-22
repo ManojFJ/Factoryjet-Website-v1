@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${caseStudy.title} - Case Study | FactoryJet`,
-    description: caseStudy.description,
+    description: caseStudy.snippet,
     keywords: [
       'case study',
       caseStudy.category.toLowerCase(),
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       siteName: 'FactoryJet',
       title: `${caseStudy.title} - Case Study`,
-      description: caseStudy.description,
+      description: caseStudy.snippet,
       url: `https://factoryjet.com/case/${resolvedParams.slug}`,
       images: [
         {
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: `${caseStudy.title} - Case Study`,
-      description: caseStudy.description,
+      description: caseStudy.snippet,
       images: [caseStudy.image || 'https://factoryjet.com/logo.png'],
     },
     alternates: {
