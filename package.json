@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "preview": "next start",
+    "pages:build": "npx @cloudflare/next-on-pages",
     "generate-sitemap": "node scripts/generateSitemap.cjs"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "react-helmet-async": "^2.0.5"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
