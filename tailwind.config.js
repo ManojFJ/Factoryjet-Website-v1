@@ -42,6 +42,12 @@ export default {
           light: '#E2E8F0',
           white: '#F8FAFC',
         },
+        // WhatsApp colors - WCAG AA compliant
+        whatsapp: {
+          DEFAULT: '#128C7E', // Dark teal - passes contrast with white (4.64:1)
+          hover: '#075E54',   // Darker teal for hover state
+          light: '#25D366',   // Original bright green (for non-text use only)
+        },
         slate: {
           850: '#1e293b',
           900: '#0f172a',

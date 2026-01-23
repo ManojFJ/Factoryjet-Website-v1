@@ -8,9 +8,10 @@ import { trackButtonClick, trackNavigation, trackCTAClick } from '../utils/gtm';
 
 interface HeaderProps {
   variant?: 'transparent' | 'solid';
+  basePath?: string; // For region-specific routes (e.g., '/us' for US pages)
 }
 
-const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
+const Header: React.FC<HeaderProps> = ({ variant = 'transparent', basePath = '' }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
@@ -27,7 +28,25 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  // Helper to prefix routes with basePath (for region-specific pages like /us)
+  const prefixRoute = (route: string) => basePath ? `${basePath}${route}` : route;
+
+  // Different navigation for US pages vs main site
+  const navItems = basePath ? [
+    // US pages navigation - Services dropdown + hash links to page sections
+    {
+      label: 'Services',
+      href: '#services',
+      hasDropdown: true,
+      submenu: [
+        { label: 'Web Design', href: prefixRoute('/services/web-design'), icon: Monitor, desc: 'Custom high-performance websites', isRoute: true },
+        { label: 'E-Commerce', href: prefixRoute('/services/ecommerce'), icon: ShoppingBag, desc: 'Shopify & WooCommerce stores', isRoute: true },
+      ]
+    },
+    { label: 'About Us', href: '#about', hasDropdown: false, isRoute: false },
+    { label: 'Pricing', href: '#pricing', hasDropdown: false, isRoute: false },
+  ] : [
+    // Main site navigation
     {
       label: 'Services',
       href: '#services',
@@ -93,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent' }) => {
         `}
       >
         {/* Logo - White version on dark hero, regular on scrolled/solid */}
-        <Link href="/" className="flex items-center cursor-pointer group">
+        <Link href={basePath || "/"} className="flex items-center cursor-pointer group">
           <img
             src={showSolidStyle ? "/FinalLogo.svg" : "/FinalLogoWhite.svg"}
             alt="FactoryJet"

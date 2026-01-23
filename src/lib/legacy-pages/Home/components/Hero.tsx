@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
                   trackContactClick('whatsapp', '+919699977699', 'home_hero');
                   trackWhatsAppConversion();
                 }}
-                className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1"
+                className="bg-whatsapp hover:bg-whatsapp-hover text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1"
               >
                 <WhatsAppIcon size={18} className="md:w-[20px] md:h-[20px]" />
                 WhatsApp Us

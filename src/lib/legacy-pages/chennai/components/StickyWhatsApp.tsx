@@ -8,7 +8,7 @@ const StickyWhatsApp: React.FC = () => {
       href="https://wa.me/919699977699"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl shadow-green-600/30 flex items-center justify-center group hover:bg-[#20bd5a] transition-all"
+      className="fixed bottom-6 right-6 z-50 bg-whatsapp text-white p-4 rounded-full shadow-2xl shadow-green-600/30 flex items-center justify-center group hover:bg-whatsapp-hover transition-all"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       whileHover={{ scale: 1.1 }}
@@ -19,7 +19,7 @@ const StickyWhatsApp: React.FC = () => {
         Chat with us
       </span>
       {/* Pulse effect */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75 -z-10"></span>
+      <span className="absolute inset-0 rounded-full bg-whatsapp animate-ping opacity-75 -z-10"></span>
     </motion.a>
   );
 };

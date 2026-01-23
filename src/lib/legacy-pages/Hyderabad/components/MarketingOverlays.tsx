@@ -10,7 +10,7 @@ export const StickyWhatsApp = () => (
         href="https://wa.me/919699977699"
         target="_blank" 
         rel="noreferrer"
-        className="flex-1 bg-[#25D366] text-white py-4 flex items-center justify-center gap-2 font-bold text-lg active:bg-[#128C7E] transition-colors"
+        className="flex-1 bg-whatsapp text-white py-4 flex items-center justify-center gap-2 font-bold text-lg active:bg-[#128C7E] transition-colors"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={24} fill="white" /> WhatsApp
@@ -29,7 +29,7 @@ export const StickyWhatsApp = () => (
       href="https://wa.me/" // Add actual number
       target="_blank" 
       rel="noreferrer"
-      className="hidden md:flex fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#128C7E] transition-all hover:scale-110 items-center justify-center group"
+      className="hidden md:flex fixed bottom-6 right-6 z-50 bg-whatsapp text-white p-4 rounded-full shadow-2xl hover:bg-[#128C7E] transition-all hover:scale-110 items-center justify-center group"
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle size={28} fill="white" />

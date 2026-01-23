@@ -1,3 +1,4 @@
+'use client';
 
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';

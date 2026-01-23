@@ -51,7 +51,7 @@ const StickyMobileCTA: React.FC = () => {
         href="https://wa.me/919999999999?text=Hi%20FactoryJet,%20I'm%20interested%20in%20website%20design%20services." 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="flex-1 bg-[#25D366] hover:bg-green-600 text-white flex items-center justify-center font-bold text-lg active:scale-95 transition-transform"
+        className="flex-1 bg-whatsapp hover:bg-whatsapp-hover text-white flex items-center justify-center font-bold text-lg active:scale-95 transition-transform"
         aria-label="WhatsApp Us"
       >
         <MessageCircle className="mr-2 fill-current" size={24} /> WhatsApp

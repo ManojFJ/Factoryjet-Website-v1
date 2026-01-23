@@ -15,7 +15,7 @@ const WhatsAppButton: React.FC = () => {
   return (
     <a
       href="https://wa.me/919699977699?text=Hi%20FactoryJet%20Bangalore"
-      className="hidden md:flex fixed bottom-8 right-8 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all group"
+      className="hidden md:flex fixed bottom-8 right-8 z-40 bg-whatsapp text-white p-4 rounded-full shadow-2xl hover:scale-110 hover:bg-whatsapp-hover active:scale-95 transition-all group"
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackWhatsAppConversion}

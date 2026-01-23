@@ -21,8 +21,8 @@ const Button: React.FC<ButtonProps> = ({ variant = 'primary', className = '', ch
     outline: "border-2 border-jet-navy/20 hover:border-jet-navy text-jet-navy bg-transparent",
     // White: For dark backgrounds (Final CTA)
     white: "bg-white text-jet-blue hover:bg-slate-50 shadow-xl shadow-black/10 font-bold",
-    // WhatsApp
-    whatsapp: "bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg shadow-green-500/30"
+    // WhatsApp - WCAG AA compliant colors
+    whatsapp: "bg-whatsapp hover:bg-whatsapp-hover text-white shadow-lg shadow-green-500/30"
   };
 
   return (

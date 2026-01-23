@@ -1,11 +1,13 @@
+'use client';
+
 import './App.css';
 import React, { useState, useRef, useEffect } from 'react';
-import { Menu, CheckCircle, Check, Code2, Layers, Smartphone, Globe, Plus, Minus, ArrowRight, Zap, Shield, Cpu, ShieldCheck, TrendingUp, Sparkles, Layout, Settings, ShoppingBag, FileText, Star, Clock, Lock, Database, Flag, AlertCircle, Rocket } from 'lucide-react';
+import { CheckCircle, Check, Code2, Layers, Smartphone, Globe, Plus, Minus, ArrowRight, Zap, Shield, Cpu, ShieldCheck, TrendingUp, Sparkles, Layout, Settings, ShoppingBag, FileText, Star, Clock, Lock, Database, Flag, AlertCircle, Rocket } from 'lucide-react';
+import Header from '@/components/Header';
 import { JumpNav } from './components/Layout/JumpNav';
 import { QuickAnswer, Button, CtaSection, SectionHeader } from './components/UI/Common';
 import { B2BSection, StartupSection, LocalSection, ComparisonsSection, CaseStudiesSection, MigrationSection, PricingSection, IndustriesSection, ROISection, ExpandedFAQ } from './components/Sections/EnhancedContent';
 import { LeadForm } from './components/UI/LeadForm';
-import { MobileMenu } from './components/UI/MobileMenu';
 import { FormProvider, useForm } from './components/UI/FormContext';
 
 // --- Footer Component ---
@@ -632,7 +634,6 @@ const Platforms = () => {
 
 const MainContent: React.FC = () => {
   const { isFormOpen, openForm, closeForm } = useForm();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showFloatingCTA, setShowFloatingCTA] = useState(false);
 
   useEffect(() => {
@@ -648,28 +649,10 @@ const MainContent: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-
   return (
     <>
-      {/* Main Sticky Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 h-[60px] md:h-[72px] flex items-center transition-all">
-        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          <div className="text-xl md:text-2xl font-heading font-extrabold text-jet-blue tracking-tighter">FACTORYJET</div>
-          <div className="hidden md:flex gap-8 font-medium text-sm text-slate-700">
-            <a href="#overview" className="hover:text-jet-blue transition-colors">Services</a>
-            <a href="#case-studies" className="hover:text-jet-blue transition-colors">Case Studies</a>
-            <a href="#method" className="hover:text-jet-blue transition-colors">Process</a>
-            <a href="#pricing" className="hover:text-jet-blue transition-colors">Pricing</a>
-          </div>
-          <div className="flex items-center gap-4">
-            <Button variant="primary" onClick={() => openForm('Header CTA')} className="hidden md:flex py-2 px-5 text-sm rounded-lg shadow-none hover:shadow-lg">Get Started</Button>
-            <button onClick={toggleMobileMenu} className="md:hidden text-navy p-2 -mr-2" aria-label="Open menu">
-              <Menu className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </nav>
+      {/* Shared Header */}
+      <Header basePath="/us" variant="solid" />
 
       {/* Jump Nav */}
       <JumpNav />
@@ -762,13 +745,6 @@ const MainContent: React.FC = () => {
       </main>
 
       <Footer />
-
-      {/* Mobile Menu */}
-      <MobileMenu 
-        isOpen={isMobileMenuOpen} 
-        onClose={() => setIsMobileMenuOpen(false)} 
-        onOpenForm={() => openForm('Mobile Menu')}
-      />
 
       {/* Lead Form Modal */}
       <LeadForm 

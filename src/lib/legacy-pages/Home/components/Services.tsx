@@ -50,7 +50,7 @@ const Services: React.FC = () => {
                 href="/services/web-design"
                 className="inline-flex items-center justify-center w-full py-3 px-6 rounded-xl bg-jet-blue text-white font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20"
               >
-                Learn More
+                Explore Web Design Services
               </a>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Services: React.FC = () => {
                 href="/services/ecommerce"
                 className="inline-flex items-center justify-center w-full py-3 px-6 rounded-xl bg-jetOrange text-white font-bold hover:bg-orange-700 transition-all shadow-lg shadow-orange-900/20"
               >
-                Learn More
+                Explore E-Commerce Services
               </a>
             </div>
           </div>

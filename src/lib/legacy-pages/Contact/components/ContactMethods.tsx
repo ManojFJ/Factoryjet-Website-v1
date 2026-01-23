@@ -89,7 +89,7 @@ const ContactMethods: React.FC = () => {
                <p className="text-xs">Share screenshots & docs easily</p>
             </div>
 
-            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={trackWhatsAppConversion} className="w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2">
+            <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={trackWhatsAppConversion} className="w-full py-3 bg-whatsapp text-white font-semibold rounded-lg hover:bg-whatsapp-hover transition-colors flex items-center justify-center gap-2">
               <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
             </a>
           </motion.div>
