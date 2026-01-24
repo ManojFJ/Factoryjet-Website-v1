@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { TEAM } from '../data.constants';
-import { UserCircle2 } from 'lucide-react';
+import { UserCircle2, LinkedinIcon } from 'lucide-react';
 
 const Team = () => {
   return (
@@ -12,27 +14,74 @@ const Team = () => {
           <p className="max-w-2xl mx-auto text-slate-600 text-sm md:text-base px-4 md:px-0">A remote-first, global team of 60+ experts passionate about SMB success.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
           {TEAM.map((member, index) => (
-            <div key={index} className="group text-center">
-              <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden bg-slate-100 ring-2 md:ring-4 ring-white shadow-lg">
-                 {/* Placeholder for team image */}
-                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 group-hover:scale-110 transition-transform duration-500">
-                    <UserCircle2 className="w-16 h-16 md:w-20 md:h-20 text-slate-400" />
-                 </div>
-              </div>
-
-              <h4 className="text-lg md:text-xl font-bold text-slate-900">{member.role}</h4>
-              <p className="text-jetBlue font-medium text-xs md:text-sm mb-2 md:mb-3">{member.experience} Experience</p>
-
-              <div className="inline-block bg-slate-50 px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-[11px] md:text-xs text-slate-600 max-w-xs mx-auto">
-                {member.specialization}
-              </div>
-            </div>
+            <TeamMemberCard key={index} member={member} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+interface TeamMemberCardProps {
+  member: {
+    role: string;
+    experience: string;
+    specialization: string;
+    image?: string;
+    LinkedInUrl?: string;
+  };
+}
+
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  return (
+    <div className="group text-center">
+      {/* Profile Image */}
+      <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden bg-slate-100 ring-2 md:ring-4 ring-white shadow-lg">
+        {member.image && !imageError ? (
+          <img
+            src={member.image}
+            alt={member.role}
+            onError={handleImageError}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 group-hover:scale-110 transition-transform duration-500">
+            <UserCircle2 className="w-16 h-16 md:w-20 md:h-20 text-slate-400" />
+          </div>
+        )}
+      </div>
+
+      {/* Member Info */}
+      <h4 className="text-lg md:text-xl font-bold text-slate-900">{member.role}</h4>
+      <p className="text-jetBlue font-medium text-xs md:text-sm mb-2 md:mb-3">{member.experience} Experience</p>
+
+      <div className="inline-block bg-slate-50 px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-[11px] md:text-xs text-slate-600 max-w-xs mx-auto mb-4">
+        {member.specialization}
+      </div>
+
+      {/* LinkedIn Button */}
+      {member.LinkedInUrl && (
+        <div className="mt-3">
+          <a
+            href={member.LinkedInUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white text-xs md:text-sm font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <LinkedinIcon className="w-4 h-4" />
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      )}
+    </div>
   );
 };
 

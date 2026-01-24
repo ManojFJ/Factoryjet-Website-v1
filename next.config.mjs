@@ -12,18 +12,45 @@ const nextConfig = {
   // Output as static site (for SSG) - only for production builds
   ...(process.env.NODE_ENV === 'production' && { output: 'export' }),
 
-  // Disable image optimization for static export
+  // Image optimization settings
   images: {
-    unoptimized: true,
+    unoptimized: process.env.NODE_ENV === 'production', // Only disable for static export
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'factoryjet.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+      },
+    ],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000, // 1 year cache
   },
 
   // Configure trailing slashes to match current setup
   trailingSlash: false,
 
-  // Remove console logs and debugger in production
+  // Optimize production builds
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+
+  // Experimental optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'firebase', 'firebase/firestore', 'firebase/app'],
+  },
+
+  // Enable gzip compression
+  compress: true,
+
+  // Optimize power consumption (better performance)
+  poweredByHeader: false,
 
   // Turbopack configuration (Next.js 16+)
   turbopack: {},

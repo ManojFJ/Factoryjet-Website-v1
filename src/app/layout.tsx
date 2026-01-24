@@ -11,13 +11,17 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
   weight: ['400', '500', '600', '700'],
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 })
 
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
   display: 'swap',
-  weight: ['500', '600', '700', '800'],
+  weight: ['600', '700'],
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 })
 
 export const metadata: Metadata = {
@@ -80,8 +84,6 @@ export default function RootLayout({
         {/* Preconnect to critical origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://grainy-gradients.vercel.app" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
@@ -156,8 +158,8 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white text-slate-900 antialiased">
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        {/* Google Tag Manager - load after user interaction for better performance */}
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -175,7 +177,7 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* Google Analytics - deferred */}
+        {/* Google Analytics - deferred to improve initial load */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11127037244"
           strategy="lazyOnload"
@@ -185,7 +187,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-11127037244');
+            gtag('config', 'AW-11127037244', { 'send_page_view': false });
           `}
         </Script>
 

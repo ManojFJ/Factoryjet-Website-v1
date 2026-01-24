@@ -32,6 +32,8 @@ export interface TeamMember {
   role: string;
   experience: string;
   specialization: string;
+  image?: string;
+  LinkedInUrl?: string;
 }
 
 export interface Testimonial {

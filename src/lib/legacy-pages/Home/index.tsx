@@ -1,23 +1,31 @@
 'use client';
 
-import { lazy, Suspense } from "react";
-import Header from "./../../../components/Header";
-import Footer from "./../../../components/Footer";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+// Critical above-the-fold components - load immediately
 import Hero from "./components/Hero";
-import About from "./components/About";
-import WhyUs from "./components/WhyUs";
-import Services from "./components/Services";
-import Process from "./components/Process";
 
-// Lazy load below-the-fold components for better initial load performance
-const Portfolio = lazy(() => import("./components/Portfolio"));
-const Pricing = lazy(() => import("./components/Pricing"));
-const Testimonials = lazy(() => import("./components/Testimonials"));
-const FAQ = lazy(() => import("./components/FAQ"));
-const CTA = lazy(() => import("./components/CTA"));
+// Dynamically import Header with SSR for SEO
+const Header = dynamic(() => import("./../../../components/Header"), {
+  ssr: true,
+  loading: () => <div className="h-16 md:h-20" />,
+});
 
-// Simple loading placeholder for lazy components
-const ComponentLoader = () => <div className="min-h-[200px]" />;
+// Lazy load all below-the-fold components with dynamic imports for better code splitting
+const About = dynamic(() => import("./components/About"), { ssr: false });
+const Services = dynamic(() => import("./components/Services"), { ssr: false });
+const WhyUs = dynamic(() => import("./components/WhyUs"), { ssr: false });
+const Process = dynamic(() => import("./components/Process"), { ssr: false });
+const Portfolio = dynamic(() => import("./components/Portfolio"), { ssr: false });
+const Pricing = dynamic(() => import("./components/Pricing"), { ssr: false });
+const Testimonials = dynamic(() => import("./components/Testimonials"), { ssr: false });
+const FAQ = dynamic(() => import("./components/FAQ"), { ssr: false });
+const CTA = dynamic(() => import("./components/CTA"), { ssr: false });
+const Footer = dynamic(() => import("./../../../components/Footer"), { ssr: false });
+
+// Minimal loading placeholder
+const SectionLoader = () => <div className="min-h-[100px]" aria-hidden="true" />;
 
 export default function HomePage() {
   return (
@@ -25,27 +33,37 @@ export default function HomePage() {
       <Header variant="transparent" />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <WhyUs />
-        <Process />
-        <Suspense fallback={<ComponentLoader />}>
+        <Suspense fallback={<SectionLoader />}>
+          <About />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <Services />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <WhyUs />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <Process />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
           <Portfolio />
         </Suspense>
-        <Suspense fallback={<ComponentLoader />}>
+        <Suspense fallback={<SectionLoader />}>
           <Pricing />
         </Suspense>
-        <Suspense fallback={<ComponentLoader />}>
+        <Suspense fallback={<SectionLoader />}>
           <Testimonials />
         </Suspense>
-        <Suspense fallback={<ComponentLoader />}>
+        <Suspense fallback={<SectionLoader />}>
           <FAQ />
         </Suspense>
-        <Suspense fallback={<ComponentLoader />}>
+        <Suspense fallback={<SectionLoader />}>
           <CTA />
         </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<SectionLoader />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
