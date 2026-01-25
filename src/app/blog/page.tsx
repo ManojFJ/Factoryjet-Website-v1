@@ -1,5 +1,43 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import BlogPage from '@/pages/Blog'
+
+// Breadcrumb structured data for SEO
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://factoryjet.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://factoryjet.com/blog',
+    },
+  ],
+}
+
+// Blog listing page structured data
+const blogListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'FactoryJet Blog',
+  description: 'Expert insights on web development, e-commerce, and digital marketing for growing businesses.',
+  url: 'https://factoryjet.com/blog',
+  publisher: {
+    '@type': 'Organization',
+    name: 'FactoryJet',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://factoryjet.com/FinalLogo.svg',
+    },
+  },
+}
 
 export const metadata: Metadata = {
   title: 'Web Development & E-Commerce Blog | Expert Tips & Insights | FactoryJet',
@@ -61,5 +99,23 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <BlogPage />
+  return (
+    <>
+      {/* Breadcrumb Structured Data */}
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      {/* Blog Listing Structured Data */}
+      <Script
+        id="blog-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListJsonLd) }}
+      />
+
+      <BlogPage />
+    </>
+  )
 }

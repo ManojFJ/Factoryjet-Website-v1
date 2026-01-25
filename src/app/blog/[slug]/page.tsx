@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { BlogPostPage } from '@/pages/Blog/components/BlogPostPage'
@@ -75,6 +76,51 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+// Generate Article JSON-LD structured data for SEO
+function generateArticleJsonLd(post: typeof POSTS[0], slug: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.imageUrl || 'https://factoryjet.com/logo.png',
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FactoryJet',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://factoryjet.com/FinalLogo.svg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://factoryjet.com/blog/${slug}`,
+    },
+  }
+}
+
+// Generate FAQ JSON-LD structured data for SEO (AEO optimization)
+function generateFaqJsonLd(faqs: Array<{ q: string; a: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  }
+}
+
 export default async function Page({ params }: Props) {
   const resolvedParams = await params
   const post = POSTS.find((p) => p.slug === resolvedParams.slug)
@@ -83,8 +129,27 @@ export default async function Page({ params }: Props) {
     notFound()
   }
 
+  const articleJsonLd = generateArticleJsonLd(post, resolvedParams.slug)
+  const faqJsonLd = post.faqs ? generateFaqJsonLd(post.faqs) : null
+
   return (
     <>
+      {/* Article Structured Data */}
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
+      {/* FAQ Structured Data (if FAQs exist) */}
+      {faqJsonLd && (
+        <Script
+          id="faq-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+
       <Header variant="solid" />
       <BlogPostPage post={post} />
       <Footer />

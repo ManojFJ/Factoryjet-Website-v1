@@ -108,7 +108,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
       <ReadingProgress />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all">
+      {/* <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 md:h-16 flex items-center justify-between">
           <Link
             href="/blog"
@@ -130,7 +130,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
              </div>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       {/* Hero Header */}
       <header className="bg-white border-b border-gray-100 pt-8 pb-10 md:pt-16 md:pb-20">
@@ -160,11 +160,15 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
           <div className="flex items-center justify-center gap-3 md:gap-4">
             <div className="relative">
               <img
-                src={`https://ui-avatars.com/api/?name=${post.author}&background=0052CC&color=fff`}
-                alt={post.author}
+                src={`https://ui-avatars.com/api/?name=${encodeURIComponent(post.author)}&background=0052CC&color=fff`}
+                alt={`${post.author} - Author`}
+                width={48}
+                height={48}
+                loading="lazy"
+                decoding="async"
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white shadow-[0_0_30px_-5px_rgba(0,82,204,0.3)]"
               />
-              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 md:w-3 md:h-3 bg-green-500 border-2 border-white rounded-full"></div>
+              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 md:w-3 md:h-3 bg-green-500 border-2 border-white rounded-full" aria-hidden="true"></div>
             </div>
             <div className="text-left">
               <p className="font-semibold text-gray-900 text-sm md:text-lg leading-tight">{post.author}</p>
@@ -186,6 +190,10 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
             src={imageUrl}
             alt={post.title}
             onError={handleImageError}
+            width={1200}
+            height={514}
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -302,16 +310,31 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onBack }) => {
       <footer className="bg-white border-t border-gray-200 py-8 md:py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
             <div className="flex items-center justify-center gap-4 md:gap-6 mb-5 md:mb-6">
-                <div className="p-2 md:p-3 bg-gray-50 rounded-full hover:bg-blue-50 hover:text-jetBlue transition-colors cursor-pointer">
-                  <Share2 className="w-4 h-4 md:w-5 md:h-5" />
-                </div>
-                <div className="h-6 md:h-8 w-px bg-gray-200"></div>
-                <div className="p-2 md:p-3 bg-gray-50 rounded-full hover:bg-blue-50 hover:text-jetBlue transition-colors cursor-pointer">
-                  <Twitter className="w-4 h-4 md:w-5 md:h-5" />
-                </div>
-                <div className="p-2 md:p-3 bg-gray-50 rounded-full hover:bg-blue-50 hover:text-jetBlue transition-colors cursor-pointer">
-                  <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-                </div>
+                <button
+                  aria-label="Share this article"
+                  className="p-2 md:p-3 bg-gray-50 rounded-full hover:bg-blue-50 hover:text-jetBlue transition-colors cursor-pointer"
+                >
+                  <Share2 className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
+                </button>
+                <div className="h-6 md:h-8 w-px bg-gray-200" aria-hidden="true"></div>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://factoryjet.com/blog/${post.slug}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on Twitter"
+                  className="p-2 md:p-3 bg-gray-50 rounded-full hover:bg-blue-50 hover:text-jetBlue transition-colors cursor-pointer"
+                >
+                  <Twitter className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://factoryjet.com/blog/${post.slug}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on LinkedIn"
+                  className="p-2 md:p-3 bg-gray-50 rounded-full hover:bg-blue-50 hover:text-jetBlue transition-colors cursor-pointer"
+                >
+                  <Linkedin className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
+                </a>
             </div>
             <p className="text-gray-500 text-xs md:text-sm font-medium">&copy; 2025 FactoryJet. Designed for Growth.</p>
         </div>
