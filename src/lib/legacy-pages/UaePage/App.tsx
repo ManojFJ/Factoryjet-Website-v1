@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -23,15 +24,15 @@ function App() {
     <div className="font-sans antialiased text-navy bg-offwhite min-h-screen relative selection:bg-primary/30">
       <Navbar onOpenModal={() => setIsModalOpen(true)} />
       <main>
-        <Hero />
+        <Hero onOpenModal={() => setIsModalOpen(true)} />
         <AgencyInfo />
         <WhyDubai />
-        <Services />
+        <Services onOpenModal={() => setIsModalOpen(true)} />
         <Comparison onOpenModal={() => setIsModalOpen(true)} />
-        <Industries />
+        <Industries onOpenModal={() => setIsModalOpen(true)} />
         <Process />
-        <Features />
-        <SuccessStories />
+        <Features onOpenModal={() => setIsModalOpen(true)} />
+        <SuccessStories onOpenModal={() => setIsModalOpen(true)} />
         <Pricing onOpenModal={() => setIsModalOpen(true)} />
         <FAQ />
       </main>

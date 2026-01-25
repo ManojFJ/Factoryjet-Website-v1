@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ChevronDown, ChevronUp, Star } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp, Star, Zap } from 'lucide-react';
 
 type PricingCategory = 'website' | 'ecommerce' | 'amc';
 
@@ -20,8 +20,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
   website: [
     {
       name: "Essential",
-      price: "AED 9,999",
-      subtitle: "~$2,720 USD",
+      price: "AED 1,999",
+      subtitle: "Starting at (~$545 USD)",
       features: [
         "Up to 7 Custom Pages",
         "Mobile-First Responsive Design",
@@ -37,8 +37,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Professional",
-      price: "AED 24,999",
-      subtitle: "~$6,800 USD",
+      price: "AED 5,999",
+      subtitle: "Starting at (~$1,635 USD)",
       isPopular: true,
       features: [
         "Up to 15 Custom Pages",
@@ -56,8 +56,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Premium",
-      price: "AED 49,999",
-      subtitle: "~$13,600 USD",
+      price: "AED 15,999",
+      subtitle: "Starting at (~$4,360 USD)",
       features: [
         "Up to 25 Custom Pages",
         "Fully Custom Brand-Unique Design",
@@ -74,8 +74,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Enterprise",
-      price: "AED 89,999+",
-      subtitle: "Starting Price",
+      price: "Contact Us",
+      subtitle: "Get a custom quote",
       features: [
         "Unlimited Custom Pages",
         "Custom Web App Development",
@@ -93,8 +93,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
   ecommerce: [
     {
       name: "Starter",
-      price: "AED 14,999",
-      subtitle: "~$4,080 USD",
+      price: "AED 4,999",
+      subtitle: "~$1,360 USD",
       features: [
         "Up to 50 Products",
         "10 Custom Pages",
@@ -110,8 +110,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Professional",
-      price: "AED 39,999",
-      subtitle: "~$10,900 USD",
+      price: "AED 14,999",
+      subtitle: "~$4,085 USD",
       isPopular: true,
       features: [
         "Up to 500 Products",
@@ -128,8 +128,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Premium",
-      price: "AED 69,999",
-      subtitle: "~$19,000 USD",
+      price: "AED 49,999",
+      subtitle: "~$13,600 USD",
       features: [
         "Up to 5,000 Products",
         "Unlimited Pages",
@@ -145,8 +145,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Enterprise",
-      price: "AED 149,999+",
-      subtitle: "Starting Price",
+      price: "Contact Us",
+      subtitle: "Get a custom quote",
       features: [
         "Multi-Vendor Marketplace",
         "Unlimited Vendors & Products",
@@ -164,7 +164,7 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
   amc: [
     {
       name: "Essential",
-      price: "AED 1,499",
+      price: "AED 999",
       subtitle: "Per Month (Billed Annually)",
       features: [
         "2 Development Hours/Month",
@@ -177,7 +177,7 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Professional",
-      price: "AED 2,999",
+      price: "AED 2,499",
       subtitle: "Per Month (Billed Annually)",
       isPopular: true,
       features: [
@@ -212,8 +212,8 @@ const pricingData: Record<PricingCategory, PricingTier[]> = {
     },
     {
       name: "Enterprise",
-      price: "AED 11,999",
-      subtitle: "Per Month (Billed Annually)",
+      price: "Contact Us",
+      subtitle: "Get a custom quote",
       features: [
         "25 Development Hours/Month",
         "24/7 SOC Security",
@@ -241,31 +241,36 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-navy text-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+    <section id="pricing" className="py-24 bg-[#0F172A] relative overflow-hidden">
+      {/* === BACKGROUND === */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b_0%,_#0F172A_70%)] pointer-events-none"></div>
+      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+      
+      {/* Floating Shapes */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-[clamp(28px,4vw,48px)] font-extrabold text-white mb-4 tracking-tight">
-            Transparent Pricing for <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-gold">Dubai Businesses</span>
+        {/* === HEADER === */}
+        <div className="text-center mb-16 relative z-10">
+          <h2 className="text-[clamp(28px,4vw,48px)] font-bold text-white mb-4">
+            Transparent Pricing for <span className="text-[#FF6B35]">Dubai Businesses</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Aggressive pricing with AI-powered efficiency. Save 50-70% compared to traditional UAE agencies without compromising quality.
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        {/* === TABS === */}
+        <div className="flex flex-wrap justify-center gap-4 mb-20 relative z-10">
           {(['website', 'ecommerce', 'amc'] as const).map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 ${
+              className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 border ${
                 activeCategory === cat
-                  ? 'bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg shadow-primary/40 ring-2 ring-white/20'
-                  : 'bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/10'
+                  ? 'bg-[#0052CC] border-[#0052CC] text-white shadow-[0_0_20px_rgba(0,82,204,0.4)] transform scale-105'
+                  : 'bg-transparent border-white/10 text-gray-400 hover:text-white hover:border-white/30'
               }`}
             >
               {cat === 'website' && 'Website Design'}
@@ -275,38 +280,67 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
           ))}
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* === PRICING CARDS === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start relative z-10">
           {pricingData[activeCategory].map((tier, idx) => (
             <div 
               key={idx} 
-              className={`relative flex flex-col p-6 rounded-2xl transition-all duration-300 group ${
+              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl transition-all duration-300 group ${
                 tier.isPopular 
-                  ? 'bg-gradient-to-b from-primary/20 to-navy border-2 border-secondary/80 shadow-2xl shadow-primary/20 transform lg:-translate-y-4' 
-                  : 'bg-white/5 border border-white/10 hover:border-primary/40 hover:bg-white/10'
+                  ? 'bg-[#1a2332] border-[3px] border-[#FF6B35] shadow-[0_0_40px_-10px_rgba(255,107,53,0.3)] transform scale-[1.02] lg:-translate-y-6 z-20' 
+                  : 'bg-[#1a2332] border border-white/10 hover:border-white/30 hover:-translate-y-2 hover:shadow-xl z-10'
               }`}
             >
+              {/* Popular Badge */}
               {tier.isPopular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-secondary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-full flex justify-center">
+                  <span className="bg-[#FF6B35] text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1 animate-pulse">
                     <Star size={12} fill="currentColor" /> Most Popular
                   </span>
                 </div>
               )}
 
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-white mb-2">{tier.name}</h3>
-                <div className="flex flex-col">
-                   <span className="text-2xl lg:text-3xl font-extrabold text-gold">{tier.price}</span>
-                   {tier.subtitle && <span className="text-xs text-gray-400 mt-1">{tier.subtitle}</span>}
+              {/* Spotlight Effect for Popular Card */}
+              {tier.isPopular && (
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#FF6B35]/5 to-transparent rounded-2xl pointer-events-none"></div>
+              )}
+
+              <div className="mb-8 relative z-10">
+                <h3 className="text-xl font-bold text-white mb-4">{tier.name}</h3>
+                
+                <div className="flex flex-col items-start leading-none">
+                    {tier.price.match(/\d/) ? (
+                        <>
+                             <span className="text-sm font-bold text-gray-400 mb-1">
+                              {tier.price.match(/^[^\d]*/)?.[0]?.replace(/\s+/g, '') || "AED"}
+                            </span>
+                            <div className="flex items-baseline gap-1">
+                              <span className="text-[40px] lg:text-[44px] font-bold text-white tracking-tight">
+                                {tier.price.replace(/^[^\d]*/, '').replace(/[^\d]*$/, '')}
+                              </span>
+                              <span className="text-2xl font-bold text-white/80">
+                                {tier.price.match(/[^\d]*$/)?.[0] || ""}
+                              </span>
+                            </div>
+                        </>
+                    ) : (
+                         <span className="text-[32px] font-bold text-white tracking-tight mt-2 mb-1">
+                            {tier.price}
+                        </span>
+                    )}
                 </div>
+
+                {tier.subtitle && <p className="text-xs text-gray-500 font-medium mt-2">{tier.subtitle}</p>}
               </div>
 
-              <div className="flex-grow space-y-4 mb-8">
+              {/* Features List */}
+              <div className="flex-grow space-y-4 mb-8 relative z-10">
                 {tier.features.map((feat, fIdx) => (
                   <div key={fIdx} className="flex items-start gap-3">
-                    <div className={`mt-1 p-0.5 rounded-full ${tier.isPopular ? 'bg-secondary' : 'bg-primary/40'}`}>
-                      <Check size={10} className="text-white" strokeWidth={3} />
+                    <div className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
+                        tier.isPopular ? 'bg-[#FF6B35]/20 text-[#FF6B35]' : 'bg-white/10 text-white'
+                    }`}>
+                      <Check size={12} strokeWidth={3} />
                     </div>
                     <span className="text-sm text-gray-300 leading-snug">{feat}</span>
                   </div>
@@ -315,10 +349,10 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
                 {/* Collapsible Details */}
                 {tier.detailedFeatures && (
                   <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedTiers[tier.name] ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                    <div className="pt-4 border-t border-white/10 space-y-4">
+                    <div className="pt-4 border-t border-white/10 space-y-5">
                       {tier.detailedFeatures.map((group, gIdx) => (
                         <div key={gIdx}>
-                          <p className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">{group.category}</p>
+                          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">{group.category}</p>
                           <ul className="space-y-2">
                             {group.items.map((item, iIdx) => (
                               <li key={iIdx} className="text-xs text-gray-400 flex items-center gap-2">
@@ -334,24 +368,27 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
                 )}
               </div>
 
-              <div className="mt-auto space-y-3">
+              {/* Actions */}
+              <div className="mt-auto space-y-4 relative z-10">
                 {tier.detailedFeatures && (
                   <button 
                     onClick={() => toggleExpand(tier.name)}
-                    className="w-full text-xs font-medium text-gray-400 hover:text-white flex items-center justify-center gap-1 transition-colors py-2"
+                    className="w-full text-xs font-bold text-gray-500 hover:text-white flex items-center justify-center gap-1 transition-colors py-1 uppercase tracking-wide"
                   >
                     {expandedTiers[tier.name] ? 'Show Less' : 'View Detailed Features'}
                     {expandedTiers[tier.name] ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                   </button>
                 )}
+                
                 <button 
                   onClick={onOpenModal}
-                  className={`w-full py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${
+                  className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2 ${
                   tier.isPopular 
-                    ? 'bg-gradient-to-r from-secondary to-[#F05522] text-white hover:brightness-110' 
-                    : 'bg-white text-primary hover:bg-gray-100'
+                    ? 'bg-[#FF6B35] hover:bg-[#e55a28] text-white shadow-[0_4px_20px_rgba(255,107,53,0.3)]' 
+                    : 'bg-white text-[#0052CC] hover:bg-gray-100'
                 }`}>
-                  Get Started
+                  <Zap size={16} fill={tier.isPopular ? "white" : "#0052CC"} /> 
+                  {tier.name === "Enterprise" ? "Contact Sales" : "Get Started"}
                 </button>
               </div>
             </div>
