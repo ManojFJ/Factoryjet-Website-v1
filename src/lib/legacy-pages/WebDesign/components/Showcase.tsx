@@ -31,7 +31,7 @@ export const Showcase = () => {
                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10"></div>
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} - ${item.tech} project showcase`}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
 

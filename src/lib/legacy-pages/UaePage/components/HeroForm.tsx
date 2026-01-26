@@ -123,9 +123,9 @@ const HeroForm: React.FC = () => {
           </ul>
         </div>
 
-        <button className="w-full bg-[#0052CC] hover:bg-[#003D99] text-white font-bold py-3.5 rounded-lg shadow-lg transition-all" onClick={() => window.location.href='#services'}>
+        <a href="#services" className="w-full bg-[#0052CC] hover:bg-[#003D99] text-white font-bold py-3.5 rounded-lg shadow-lg transition-all block text-center">
           Browse Our Services
-        </button>
+        </a>
       </div>
     );
   }
@@ -163,12 +163,15 @@ const HeroForm: React.FC = () => {
 
           {/* STEP 1: Services */}
           {step === 1 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fade-up">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fade-up" role="radiogroup" aria-label="Select a service">
               {services.map((service) => (
-                <div
+                <button
                   key={service}
+                  type="button"
                   onClick={() => handleServiceSelect(service)}
-                  className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-3 ${
+                  role="radio"
+                  aria-checked={formData.service === service}
+                  className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-3 text-left ${
                     formData.service === service
                       ? 'border-[#0052CC] bg-[#F0F7FF]'
                       : 'border-[#E2E8F0] hover:border-[#0052CC]/50 hover:bg-gray-50'
@@ -176,13 +179,13 @@ const HeroForm: React.FC = () => {
                 >
                   <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                      formData.service === service ? 'border-[#0052CC]' : 'border-gray-300'
-                  }`}>
+                  }`} aria-hidden="true">
                     {formData.service === service && <div className="w-2 h-2 rounded-full bg-[#0052CC]"></div>}
                   </div>
                   <span className={`text-sm font-semibold ${
                     formData.service === service ? 'text-[#0052CC]' : 'text-[#334155]'
                   }`}>{service}</span>
-                </div>
+                </button>
               ))}
             </div>
           )}

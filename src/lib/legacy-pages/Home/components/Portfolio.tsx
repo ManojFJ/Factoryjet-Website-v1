@@ -96,7 +96,7 @@ const Portfolio: React.FC = () => {
                             src={getOptimizedImageUrl(project.image, project.width)}
                             srcSet={generateSrcSet(project.image)}
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            alt={project.client}
+                            alt={`${project.client} - ${project.category} case study`}
                             width={project.width}
                             height={project.height}
                             loading="lazy"

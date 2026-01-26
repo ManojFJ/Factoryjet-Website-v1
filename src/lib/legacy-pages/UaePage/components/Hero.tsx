@@ -82,6 +82,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                             href="https://wa.me/919699977699?text=Hi%20FactoryJet%20Dubai"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="Contact us via WhatsApp"
                             className="bg-transparent hover:bg-[#10B981] text-[#10B981] hover:text-white border-2 border-[#10B981] px-6 py-3 rounded-lg font-semibold text-[15px] backdrop-blur-sm transition-all duration-300 flex items-center gap-2 h-[48px]"
                         >
                              <WhatsAppIcon size={18} /> WhatsApp Us

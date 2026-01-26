@@ -295,8 +295,11 @@ const FAQ: React.FC = () => {
                       `}
                     >
                       <button
+                        id={`faq-question-${activeCategory}-${index}`}
                         onClick={() => toggleQuestion(index)}
                         className="w-full flex items-start justify-between p-4 md:p-6 text-left cursor-pointer"
+                        aria-expanded={openIndex === index}
+                        aria-controls={`faq-answer-${activeCategory}-${index}`}
                       >
                         <span className={`font-display font-bold text-sm md:text-lg pr-4 md:pr-8 leading-snug ${openIndex === index ? 'text-jet-blue' : 'text-jet-navy'}`}>
                           {item.q}
@@ -310,10 +313,13 @@ const FAQ: React.FC = () => {
                       </button>
 
                       <motion.div
+                        id={`faq-answer-${activeCategory}-${index}`}
                         initial={false}
                         animate={{ height: openIndex === index ? 'auto' : 0, opacity: openIndex === index ? 1 : 0 }}
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
+                        role="region"
+                        aria-labelledby={`faq-question-${activeCategory}-${index}`}
                       >
                         <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
                           <div className="h-px w-full bg-slate-100 mb-3 md:mb-4" />
@@ -335,10 +341,11 @@ const FAQ: React.FC = () => {
             <div className="mt-6 md:mt-8 text-center p-4 md:p-6 bg-blue-50 rounded-xl md:rounded-2xl border border-blue-100">
                <p className="text-jet-navy font-medium mb-3 text-sm md:text-base">Can't find the answer you're looking for?</p>
                <a
-                 href="https://wa.me/91969977699"
+                 href="https://wa.me/919699977699"
                  target="_blank"
                  rel="noopener noreferrer"
                  onClick={trackWhatsAppConversion}
+                 aria-label="Chat with our team on WhatsApp"
                  className="inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-md hover:shadow-lg"
                >
                  <svg viewBox="0 0 24 24" width={16} height={16} fill="currentColor">

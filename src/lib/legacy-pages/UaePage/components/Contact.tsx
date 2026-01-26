@@ -59,9 +59,9 @@ const Contact: React.FC = () => {
                         <div>
                             <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-0.5">Office</p>
                             <span className="text-xl font-bold text-white tracking-tight block">Dubai Internet City</span>
-                            <a href="#" className="flex items-center gap-1.5 mt-1 text-xs text-[#0052CC] hover:text-white transition-colors font-medium">
+                            <button type="button" className="flex items-center gap-1.5 mt-1 text-xs text-[#0052CC] hover:text-white transition-colors font-medium">
                                 <Calendar size={12} /> Schedule a visit
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -189,14 +189,19 @@ const Contact: React.FC = () => {
             <a href="#industries" className="hover:text-white transition-colors">Industries</a>
             <a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a>
             <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
 
           <div className="flex gap-4">
-            {[Linkedin, Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
-                    <Icon size={18} />
+            {[
+              { Icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
+              { Icon: Instagram, label: 'Instagram', href: 'https://instagram.com' },
+              { Icon: Facebook, label: 'Facebook', href: 'https://facebook.com' },
+              { Icon: Twitter, label: 'Twitter', href: 'https://twitter.com' }
+            ].map(({ Icon, label, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noopener noreferrer" aria-label={`Follow us on ${label}`} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                    <Icon size={18} aria-hidden="true" />
                 </a>
             ))}
           </div>

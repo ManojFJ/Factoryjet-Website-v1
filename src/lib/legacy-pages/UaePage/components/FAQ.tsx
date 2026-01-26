@@ -60,24 +60,27 @@ interface FAQItemProps {
 
 const FAQItem: React.FC<FAQItemProps> = ({ item, isOpen, onClick }) => {
   return (
-    <div 
-      className={`bg-white border rounded-lg overflow-hidden transition-all duration-300 cursor-pointer ${
-        isOpen 
-          ? 'border-[#0052CC] shadow-md' 
+    <div
+      className={`bg-white border rounded-lg overflow-hidden transition-all duration-300 ${
+        isOpen
+          ? 'border-[#0052CC] shadow-md'
           : 'border-[#E2E8F0] hover:bg-[#F8FAFC] hover:border-[#0052CC]'
       }`}
-      onClick={onClick}
     >
-      <div className="p-5 flex justify-between items-center gap-4">
-        <h3 className={`font-semibold text-[16px] leading-snug transition-colors duration-300 ${
+      <button
+        onClick={onClick}
+        aria-expanded={isOpen}
+        className="w-full p-5 flex justify-between items-center gap-4 cursor-pointer text-left"
+      >
+        <span className={`font-semibold text-[16px] leading-snug transition-colors duration-300 ${
           isOpen ? 'text-[#0052CC]' : 'text-[#0F172A]'
         }`}>
           {item.question}
-        </h3>
+        </span>
         <div className={`flex-shrink-0 text-[#0052CC] transition-transform duration-300 ${isOpen ? 'rotate-45' : 'rotate-0'}`}>
-          <Plus size={20} />
+          <Plus size={20} aria-hidden="true" />
         </div>
-      </div>
+      </button>
       
       <div 
         className={`overflow-hidden transition-all duration-300 ease-in-out ${

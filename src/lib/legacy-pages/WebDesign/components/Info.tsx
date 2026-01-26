@@ -28,6 +28,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ q, a }) => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-4 md:px-6 py-4 md:py-5 flex justify-between items-start text-left focus:outline-none"
+        aria-expanded={isOpen}
       >
         <span className={`text-sm md:text-base font-semibold leading-relaxed transition-colors pr-3 md:pr-4 ${isOpen ? 'text-jet-blue' : 'text-slate-800'}`}>{q}</span>
         <div className={`mt-0.5 md:mt-1 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-jet-blue text-white' : 'bg-slate-200 text-slate-500'}`}>
@@ -163,7 +164,7 @@ export const Info = () => {
                 </span>
               </button>
 
-              <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" onClick={() => {
+              <a href="https://wa.me/919699977699?text=Hi%20FactoryJet" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" onClick={() => {
                 trackContactClick('whatsapp', '+919699977699', 'webdesign_cta');
                 trackWhatsAppConversion();
               }} className="group w-full sm:w-auto flex items-center justify-center gap-2 md:gap-3 px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl border border-white/30 hover:bg-white/10 text-white font-bold text-base md:text-lg backdrop-blur-sm transition-all">

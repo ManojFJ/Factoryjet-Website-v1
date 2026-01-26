@@ -474,9 +474,9 @@ const TestimonialSection = () => {
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-t border-slate-100 pt-8">
                         <div className="flex items-center gap-4">
                             <div className="relative group/avatar cursor-pointer">
-                                <img 
-                                    src={testimonials[currentIndex].image} 
-                                    alt={testimonials[currentIndex].name} 
+                                <img
+                                    src={testimonials[currentIndex].image}
+                                    alt={`${testimonials[currentIndex].name}, ${testimonials[currentIndex].title}`}
                                     className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md"
                                     width={64}
                                     height={64}
@@ -1262,9 +1262,9 @@ const CaseStudies = () => {
               >
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors z-10" />
-                  <img 
-                    src={project.image} 
-                    alt={project.company} 
+                  <img
+                    src={project.image}
+                    alt={`${project.company} - ${project.category} case study`}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     width={800}
                     height={600}
@@ -1819,9 +1819,13 @@ const Footer = ({ onCtaClick }: { onCtaClick: () => void }) => {
               The AI-native web design agency for B2B companies. We build enterprise-grade websites in weeks, not months.
             </p>
             <div className="flex gap-4">
-              {[Twitter, Linkedin, Mail].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF6B35] transition-colors text-slate-400 hover:text-white">
-                  <Icon size={20} />
+              {[
+                { Icon: Twitter, label: 'Twitter' },
+                { Icon: Linkedin, label: 'LinkedIn' },
+                { Icon: Mail, label: 'Email' }
+              ].map(({ Icon, label }, i) => (
+                <a key={i} href="#" aria-label={`Connect with us on ${label}`} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF6B35] transition-colors text-slate-400 hover:text-white">
+                  <Icon size={20} aria-hidden="true" />
                 </a>
               ))}
             </div>

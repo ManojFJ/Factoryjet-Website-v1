@@ -197,9 +197,9 @@ const AgencyInfo: React.FC = () => {
                  <p className="text-[15px] leading-relaxed text-gray-600 max-w-4xl">
                     {tabs[activeTab].content}
                  </p>
-                 <div className="mt-4 flex items-center text-primary text-sm font-bold cursor-pointer hover:underline gap-1">
-                    Learn more <ChevronRight size={16} />
-                 </div>
+                 <span className="mt-4 flex items-center text-primary text-sm font-bold gap-1">
+                    Learn more <ChevronRight size={16} aria-hidden="true" />
+                 </span>
               </div>
            </div>
         </div>

@@ -108,10 +108,12 @@ const Industries: React.FC<IndustriesProps> = ({ onOpenModal }) => {
             const gradientClass = gradients[item.color as keyof typeof gradients];
             
             return (
-              <div 
-                key={idx} 
+              <button
+                type="button"
+                key={idx}
                 onClick={onOpenModal}
-                className="group relative bg-white/[0.05] backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-white/20 hover:scale-[1.05] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col h-full animate-fade-up cursor-pointer"
+                aria-label={`Learn more about ${item.name} industry solutions`}
+                className="group relative bg-white/[0.05] backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-white/20 hover:scale-[1.05] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col h-full animate-fade-up cursor-pointer text-left"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 {/* GDP Pill */}
@@ -129,10 +131,10 @@ const Industries: React.FC<IndustriesProps> = ({ onOpenModal }) => {
                 <p className="text-[14px] text-white/70 leading-relaxed mb-6 flex-grow">{item.desc}</p>
                 
                 {/* Hover Interaction Element */}
-                <div className="flex items-center text-[#FF6B35] text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    Explore Solutions <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
+                <span className="flex items-center text-[#FF6B35] text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    Explore Solutions <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </span>
+              </button>
             );
           })}
         </div>

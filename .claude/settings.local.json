@@ -19,7 +19,8 @@
       "Bash(npm info:*)",
       "Bash(npm cache clean:*)",
       "Bash(curl:*)",
-      "Bash(timeout 15 ./node_modules/.bin/next dev:*)"
+      "Bash(timeout 15 ./node_modules/.bin/next dev:*)",
+      "Bash(dir:*)"
     ]
   }
 }
