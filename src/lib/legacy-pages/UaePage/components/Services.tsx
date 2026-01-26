@@ -1,9 +1,5 @@
 import React from 'react';
-import { Smartphone, BarChart, ShoppingCart, Settings, Globe, Layers, Code, Check, ArrowRight } from 'lucide-react';
-
-interface ServicesProps {
-  onOpenModal: () => void;
-}
+import { Smartphone, BarChart, ShoppingCart, Settings, Globe, Layers, Code, Check } from 'lucide-react';
 
 const services = [
   {
@@ -52,7 +48,7 @@ const services = [
   }
 ];
 
-const Services: React.FC<ServicesProps> = ({ onOpenModal }) => {
+const Services: React.FC = () => {
   return (
     <section id="services" className="py-24 bg-offwhite relative overflow-hidden">
       {/* Background decoration */}
@@ -70,10 +66,10 @@ const Services: React.FC<ServicesProps> = ({ onOpenModal }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {services.map((service, idx) => (
-            <div 
-              key={idx} 
-              className="group relative bg-white rounded-2xl shadow-sm hover:shadow-[0_25px_50px_rgba(0,0,0,0.15)] transition-all duration-500 overflow-hidden flex flex-col h-full animate-fade-up border border-gray-100 hover:-translate-y-2"
-              style={{ 
+            <div
+              key={idx}
+              className="relative bg-white rounded-2xl shadow-sm transition-all duration-500 overflow-hidden flex flex-col h-full animate-fade-up border border-gray-100"
+              style={{
                 animationDelay: `${idx * 0.1}s`,
               }}
             >
@@ -81,13 +77,13 @@ const Services: React.FC<ServicesProps> = ({ onOpenModal }) => {
               <div className="h-2 w-full" style={{ backgroundColor: service.accentColor }}></div>
 
               {/* Tech Watermark */}
-              <div className="absolute top-6 right-6 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none text-navy">
-                 <service.Icon size={140} /> 
+              <div className="absolute top-6 right-6 opacity-[0.03] pointer-events-none text-navy">
+                 <service.Icon size={140} />
               </div>
 
               <div className="p-8 flex-grow flex flex-col relative z-10">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-navy mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <h3 className="text-2xl font-bold text-navy mb-3">{service.title}</h3>
                   <p className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary mb-5">
                     {service.priceRange}
                   </p>
@@ -125,15 +121,6 @@ const Services: React.FC<ServicesProps> = ({ onOpenModal }) => {
                     </div>
                 </div>
 
-                {/* Hover Overlay Button */}
-                <div className="absolute inset-0 bg-white/95 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-20">
-                    <button 
-                      onClick={onOpenModal}
-                      className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-bold shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2"
-                    >
-                        Learn More <ArrowRight size={18} />
-                    </button>
-                </div>
               </div>
             </div>
           ))}

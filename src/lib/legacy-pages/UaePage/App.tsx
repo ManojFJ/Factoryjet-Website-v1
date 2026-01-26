@@ -27,7 +27,7 @@ function App() {
         <Hero onOpenModal={() => setIsModalOpen(true)} />
         <AgencyInfo />
         <WhyDubai />
-        <Services onOpenModal={() => setIsModalOpen(true)} />
+        <Services />
         <Comparison onOpenModal={() => setIsModalOpen(true)} />
         <Industries onOpenModal={() => setIsModalOpen(true)} />
         <Process />
