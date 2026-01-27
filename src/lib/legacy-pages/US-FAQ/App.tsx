@@ -1,19 +1,21 @@
+'use client';
+
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { 
-  Search, 
-  ChevronDown, 
-  ChevronRight, 
-  MessageCircle, 
-  Phone, 
-  Mail, 
-  Menu,
-  X,
+import {
+  Search,
+  ChevronDown,
+  ChevronRight,
+  MessageCircle,
+  Phone,
+  Mail,
   Sparkles,
   Zap,
   CheckCircle2
 } from 'lucide-react';
 import { faqData } from './data';
 import { FAQItem, SearchResult } from './types';
+import Header from '@/components/Header';
+import Link from 'next/link';
 
 // --- Helper Components ---
 
@@ -124,36 +126,6 @@ const useSearch = (query: string) => {
 
 // --- Components ---
 
-const Header = React.memo(({ onMobileNavToggle }: { onMobileNavToggle: () => void }) => (
-  <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <div className="bg-jet-blue w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xl" aria-hidden="true">
-          F
-        </div>
-        <span className="text-xl font-bold text-jet-navy tracking-tight">FactoryJet</span>
-      </div>
-      <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-        <a href="#" className="hover:text-jet-blue transition-colors">Services</a>
-        <a href="#" className="hover:text-jet-blue transition-colors">Process</a>
-        <a href="#" className="hover:text-jet-blue transition-colors">Portfolio</a>
-        <a href="#" className="text-jet-blue">FAQ</a>
-      </nav>
-      <div className="flex items-center gap-4">
-        <button className="hidden md:block bg-jet-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20">
-          Get Started
-        </button>
-        <button 
-          onClick={onMobileNavToggle} 
-          className="md:hidden p-2 text-slate-600 rounded-md hover:bg-slate-100"
-          aria-label="Open main menu"
-        >
-          <Menu size={24} />
-        </button>
-      </div>
-    </div>
-  </header>
-));
 
 const Hero = React.memo(({ 
   searchValue, 
@@ -444,42 +416,41 @@ const Footer = React.memo(() => (
   <footer className="bg-slate-900 text-slate-300 py-12 px-4 border-t border-slate-800">
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
       <div className="col-span-1 md:col-span-1">
-        <div className="flex items-center gap-2 mb-4 text-white">
-          <div className="bg-jet-blue w-8 h-8 rounded-lg flex items-center justify-center font-bold" aria-hidden="true">F</div>
-          <span className="font-bold text-xl">FactoryJet</span>
-        </div>
+        <Link href="/us" className="flex items-center gap-2 mb-4 text-white">
+          <img src="/FinalLogo.svg" alt="FactoryJet" className="h-8 w-auto" />
+        </Link>
         <p className="text-sm text-slate-400 mb-4">
           Enterprise-grade digital solutions with startup-friendly pricing.
         </p>
         <div className="flex gap-4">
-          <button aria-label="Twitter" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors">X</button>
-          <button aria-label="LinkedIn" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors">in</button>
+          <a href="https://twitter.com/factoryjet" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors">X</a>
+          <a href="https://linkedin.com/company/factoryjet" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors">in</a>
         </div>
       </div>
       <div>
         <h4 className="font-bold text-white mb-4">Services</h4>
         <ul className="space-y-2 text-sm">
-          <li className="hover:text-white cursor-pointer"><a href="#">Website Design</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">E-Commerce</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">SEO/GEO/AIO</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">CRM Implementation</a></li>
+          <li className="hover:text-white"><Link href="/us/services/web-design">Website Design</Link></li>
+          <li className="hover:text-white"><Link href="/us/services/ecommerce">E-Commerce</Link></li>
+          <li className="hover:text-white"><Link href="/us#services">SEO/GEO/AIO</Link></li>
+          <li className="hover:text-white"><Link href="/us#services">CRM Implementation</Link></li>
         </ul>
       </div>
       <div>
         <h4 className="font-bold text-white mb-4">Company</h4>
         <ul className="space-y-2 text-sm">
-          <li className="hover:text-white cursor-pointer"><a href="#">About Us</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">Process</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">Careers</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">Contact</a></li>
+          <li className="hover:text-white"><Link href="/about">About Us</Link></li>
+          <li className="hover:text-white"><Link href="/us#process">Process</Link></li>
+          <li className="hover:text-white"><Link href="/contact">Contact</Link></li>
+          <li className="hover:text-white"><Link href="/us/faq">FAQ</Link></li>
         </ul>
       </div>
       <div>
         <h4 className="font-bold text-white mb-4">Legal</h4>
         <ul className="space-y-2 text-sm">
-          <li className="hover:text-white cursor-pointer"><a href="#">Privacy Policy</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">Terms of Service</a></li>
-          <li className="hover:text-white cursor-pointer"><a href="#">Sitemap</a></li>
+          <li className="hover:text-white"><Link href="/privacy">Privacy Policy</Link></li>
+          <li className="hover:text-white"><Link href="/terms">Terms of Service</Link></li>
+          <li className="hover:text-white"><Link href="/sitemap">Sitemap</Link></li>
         </ul>
       </div>
     </div>
@@ -495,8 +466,7 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState(faqData[0].id);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   const searchResults = useSearch(searchQuery);
   const isSearching = searchQuery.length >= 2;
 
@@ -589,25 +559,9 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      <Header onMobileNavToggle={() => setMobileMenuOpen(!mobileMenuOpen)} />
-      
-      {/* Mobile Nav Drawer */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white md:hidden p-4">
-           <div className="flex justify-between items-center mb-8">
-              <span className="font-bold text-xl">Menu</span>
-              <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu"><X /></button>
-           </div>
-           <nav className="flex flex-col gap-4 text-lg">
-             <a href="#" className="py-2 border-b border-gray-100">Services</a>
-             <a href="#" className="py-2 border-b border-gray-100">Process</a>
-             <a href="#" className="py-2 border-b border-gray-100">Portfolio</a>
-             <a href="#" className="py-2 font-bold text-jet-blue">FAQ</a>
-           </nav>
-        </div>
-      )}
+      <Header basePath="/us" variant="solid" />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-16">
         <Hero searchValue={searchQuery} onSearchChange={setSearchQuery} />
         
         {!isSearching && <QuickLinks onSelectQuestion={handleSelectSearchResult} />}

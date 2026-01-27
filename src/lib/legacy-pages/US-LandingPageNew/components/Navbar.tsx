@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
     { label: 'Portfolio', href: '#portfolio', isRoute: false },
     { label: 'Reviews', href: '#testimonials', isRoute: false },
     { label: 'Pricing', href: '/us/pricing', isRoute: true },
-    { label: 'FAQ', href: '#faq', isRoute: false },
+    { label: 'FAQ', href: '/us/faq', isRoute: true },
     { label: 'Contact', href: '#cta', isRoute: false },
   ];
 

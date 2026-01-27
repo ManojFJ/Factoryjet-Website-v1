@@ -398,7 +398,7 @@ export const faqData: FAQCategory[] = [
         question: "When do I need a fully Custom E-Commerce Solution?",
         answer: (
           <div className="space-y-3">
-             <p>You need a custom solution when your business model breaks the mold of "Add to Cart -> Checkout."</p>
+             <p>You need a custom solution when your business model breaks the mold of &quot;Add to Cart → Checkout.&quot;</p>
              <p className="text-sm text-slate-600">Examples of when we build fully custom (MERN stack or Python/Django) solutions:</p>
              <ul className="list-disc pl-5 text-sm space-y-1 text-slate-600">
                 <li><strong>Rental Marketplaces:</strong> Complex calendar availability and deposit logic.</li>
