@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import UsHomePage from '@/pages/UsHomePage/App'
+import UsLandingPage from '@/pages/US-LandingPageNew'
 
 export const metadata: Metadata = {
   title: 'Web Development Company USA | E-Commerce Solutions | FactoryJet',
@@ -51,5 +51,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <UsHomePage />
+  return <UsLandingPage />
 }

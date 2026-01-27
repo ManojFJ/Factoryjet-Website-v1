@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FactoryJet AI-Native Solutions FAQ - Startup-friendly pricing for enterprise-grade digital transformation. Search our help center for answers on SEO, Web Design, and E-Commerce." />
+    <meta name="theme-color" content="#0052CC" />
+    <title>FactoryJet - AI-Native Solutions FAQ</title>
+    
+    <!-- Performance: Preconnect to font providers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              jet: {
+                blue: '#0052CC',
+                orange: '#FF6B35',
+                green: '#10B981',
+                navy: '#0F172A',
+                slate: '#334155',
+                gray: '#64748B',
+                light: '#E2E8F0',
+                bg: '#F8FAFC'
+              }
+            },
+            boxShadow: {
+              'glow': '0 0 20px rgba(0, 82, 204, 0.15)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for sidebar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #CBD5E1;
+        border-radius: 20px;
+      }
+      /* Hide scrollbar for horizontal nav */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Accessibility focus ring */
+      *:focus-visible {
+        outline: 2px solid #0052CC;
+        outline-offset: 2px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-jet-bg text-jet-navy antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

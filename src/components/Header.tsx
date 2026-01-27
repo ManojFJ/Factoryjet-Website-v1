@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent', basePath = '' 
       ]
     },
     { label: 'About Us', href: '#about', hasDropdown: false, isRoute: false },
-    { label: 'Pricing', href: '#pricing', hasDropdown: false, isRoute: false },
+    { label: 'Pricing', href: prefixRoute('/pricing'), hasDropdown: false, isRoute: true },
   ] : [
     // Main site navigation
     {

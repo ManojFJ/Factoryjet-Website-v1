@@ -20,7 +20,10 @@
       "Bash(npm cache clean:*)",
       "Bash(curl:*)",
       "Bash(timeout 15 ./node_modules/.bin/next dev:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(npx tsc:*)",
+      "Bash(echo:*)",
+      "Bash(buildcode=$?)"
     ]
   }
 }
