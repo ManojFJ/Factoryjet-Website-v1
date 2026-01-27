@@ -1590,8 +1590,8 @@ export const Home: React.FC = () => {
                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">F</div>
                  <span className="text-2xl font-bold text-white tracking-tight">FactoryJet</span>
               </div>
-              <p className="text-sm font-medium text-slate-500 mb-4">Cleveland's Premier Website Design & Digital Solutions Partner</p>
-              <p className="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
+              <p className="text-sm font-medium text-slate-300 mb-4">Cleveland&apos;s Premier Website Design & Digital Solutions Partner</p>
+              <p className="text-sm leading-relaxed text-slate-300 mb-6 max-w-sm">
                 Empowering small and medium businesses across Cleveland and Northeast Ohio with cutting-edge web design, e-commerce, and digital marketing solutions since 1999.
               </p>
               
@@ -1611,19 +1611,19 @@ export const Home: React.FC = () => {
               </div>
 
               <div className="flex gap-4 mt-auto">
-                 <a href="#" aria-label="LinkedIn" className="text-slate-500 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
+                 <a href="#" aria-label="LinkedIn" className="text-slate-400 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
                     <Linkedin size={20} />
                  </a>
-                 <a href="#" aria-label="Facebook" className="text-slate-500 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
+                 <a href="#" aria-label="Facebook" className="text-slate-400 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
                     <Facebook size={20} />
                  </a>
-                 <a href="#" aria-label="Twitter" className="text-slate-500 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
+                 <a href="#" aria-label="Twitter" className="text-slate-400 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
                     <Twitter size={20} />
                  </a>
-                 <a href="#" aria-label="Instagram" className="text-slate-500 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
+                 <a href="#" aria-label="Instagram" className="text-slate-400 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
                     <Instagram size={20} />
                  </a>
-                 <a href="#" aria-label="YouTube" className="text-slate-500 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
+                 <a href="#" aria-label="YouTube" className="text-slate-400 hover:text-secondary hover:scale-110 transition-all duration-300 p-2 -m-2">
                     <Youtube size={20} />
                  </a>
               </div>
@@ -1710,7 +1710,7 @@ export const Home: React.FC = () => {
         
         {/* Bottom Bar */}
         <div className="bg-[#0A0F1E] border-t border-slate-800">
-           <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+           <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
               <div>
                  &copy; {new Date().getFullYear()} FactoryJet. All rights reserved.
               </div>

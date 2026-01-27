@@ -381,7 +381,7 @@ const ContactCTA = React.memo(() => (
   <section className="bg-jet-blue text-white py-16 px-4">
     <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-3xl font-display font-bold mb-4">Can't find what you're looking for?</h2>
-      <p className="text-blue-100 mb-10 text-lg">Our AI-native experts are ready to help you navigate your digital transformation.</p>
+      <p className="text-blue-50 mb-10 text-lg">Our AI-native experts are ready to help you navigate your digital transformation.</p>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <button className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-xl hover:bg-white hover:text-jet-blue transition-all group text-left">
@@ -423,8 +423,8 @@ const Footer = React.memo(() => (
           Enterprise-grade digital solutions with startup-friendly pricing.
         </p>
         <div className="flex gap-4">
-          <a href="https://twitter.com/factoryjet" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors">X</a>
-          <a href="https://linkedin.com/company/factoryjet" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors">in</a>
+          <a href="https://twitter.com/factoryjet" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors text-slate-300 hover:text-white">X</a>
+          <a href="https://linkedin.com/company/factoryjet" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-jet-blue cursor-pointer transition-colors text-slate-300 hover:text-white">in</a>
         </div>
       </div>
       <div>
@@ -454,7 +454,7 @@ const Footer = React.memo(() => (
         </ul>
       </div>
     </div>
-    <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+    <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-400">
       &copy; {new Date().getFullYear()} FactoryJet. All rights reserved.
     </div>
   </footer>

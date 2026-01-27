@@ -209,7 +209,7 @@ const CTABottom = ({ onOpenContact }: { onOpenContact: () => void }) => (
     <section className="py-20 bg-jet-navy-900 text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Not sure which stack fits your scale?</h2>
-            <p className="text-slate-300 mb-10 text-lg">Talk to a Senior Solutions Architect, not a salesperson. We'll audit your current digital footprint for free.</p>
+            <p className="text-slate-200 mb-10 text-lg">Talk to a Senior Solutions Architect, not a salesperson. We&apos;ll audit your current digital footprint for free.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button 
                     onClick={onOpenContact}
