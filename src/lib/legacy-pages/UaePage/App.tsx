@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
+import Header from '@/components/Header';
 import Hero from './components/Hero';
 import AgencyInfo from './components/AgencyInfo';
 import WhyDubai from './components/WhyDubai';
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="font-sans antialiased text-navy bg-offwhite min-h-screen relative selection:bg-primary/30">
-      <Navbar onOpenModal={() => setIsModalOpen(true)} />
+      <Header basePath="/uae" variant="transparent" />
       <main>
         <Hero onOpenModal={() => setIsModalOpen(true)} />
         <AgencyInfo />

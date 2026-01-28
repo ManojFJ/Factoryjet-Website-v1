@@ -31,8 +31,21 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent', basePath = '' 
   // Helper to prefix routes with basePath (for region-specific pages like /us)
   const prefixRoute = (route: string) => basePath ? `${basePath}${route}` : route;
 
-  // Different navigation for US pages vs main site
-  const navItems = basePath ? [
+  // Different navigation for regional pages vs main site
+  const navItems = basePath === '/uae' ? [
+    // UAE page navigation - hash links to page sections
+    { label: 'Services', href: '#services', hasDropdown: false, isRoute: false },
+    { label: 'Industries', href: '#industries', hasDropdown: false, isRoute: false },
+    { label: 'Process', href: '#process', hasDropdown: false, isRoute: false },
+    { label: 'Portfolio', href: '#portfolio', hasDropdown: false, isRoute: false },
+    { label: 'Pricing', href: '#pricing', hasDropdown: false, isRoute: false },
+  ] : basePath === '/new-york' ? [
+    // New York page navigation - hash links to page sections
+    { label: 'Services', href: '#services', hasDropdown: false, isRoute: false },
+    { label: 'Why NYC', href: '#why-nyc', hasDropdown: false, isRoute: false },
+    { label: 'Pricing', href: '#pricing', hasDropdown: false, isRoute: false },
+    { label: 'Contact', href: '#contact', hasDropdown: false, isRoute: false },
+  ] : basePath ? [
     // US pages navigation - Services dropdown + hash links to page sections
     {
       label: 'Services',
