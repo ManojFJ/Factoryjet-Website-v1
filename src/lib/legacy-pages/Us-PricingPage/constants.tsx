@@ -13,7 +13,7 @@ export const WEB_PACKAGES = [
     delivery: '10-14 Business Days',
     idealFor: ['Professional Service Providers', 'Solopreneurs', 'Seed Startups'],
     icon: <Rocket className="w-5 h-5" />,
-    color: 'border-slate-200 hover:border-jet-blue-300',
+    color: 'border-slate-200 hover:border-blue-300',
     btnColor: 'bg-slate-900 hover:bg-slate-800',
     popular: false,
     features: [
@@ -34,8 +34,8 @@ export const WEB_PACKAGES = [
     delivery: '14-21 Business Days',
     idealFor: ['Growing B2B Companies', 'Lead Gen Businesses', 'Service Firms'],
     icon: <TrendingUp className="w-5 h-5" />,
-    color: 'border-jet-blue-600 ring-2 ring-jet-blue-600 shadow-2xl shadow-jet-blue-900/10',
-    btnColor: 'bg-jet-blue-600 hover:bg-jet-blue-700',
+    color: 'border-jet-blue ring-2 ring-jet-blue shadow-2xl shadow-navy/10',
+    btnColor: 'bg-jet-blue hover:bg-[#003D99]',
     popular: true,
     tag: 'Most Popular',
     features: [
@@ -57,8 +57,8 @@ export const WEB_PACKAGES = [
     delivery: '21-35 Business Days',
     idealFor: ['Mid-Market Companies', 'High-Growth Startups', 'Enterprise B2B'],
     icon: <Zap className="w-5 h-5" />,
-    color: 'border-slate-200 hover:border-jet-orange-500',
-    btnColor: 'bg-jet-orange-500 hover:bg-jet-orange-600',
+    color: 'border-slate-200 hover:border-jet-orange',
+    btnColor: 'bg-jet-orange hover:bg-[#E55A28]',
     popular: false,
     features: [
       { category: 'CORE', items: ['25+ Total Pages', '100% Custom Design', 'Brand Identity Refresh', 'Custom Illustrations (25+)', 'Micro-Interactions', 'Video Production (2)'] },
@@ -84,7 +84,7 @@ export const ECOM_PACKAGES = [
     delivery: '14-21 Business Days',
     idealFor: ['New E-Com Brands', 'Fashion', 'Home Decor', 'Dropshipping'],
     icon: <ShoppingCart className="w-5 h-5" />,
-    color: 'border-slate-200 hover:border-jet-blue-300',
+    color: 'border-slate-200 hover:border-blue-300',
     btnColor: 'bg-slate-900 hover:bg-slate-800',
     features: [
         { category: 'STRATEGY', items: ['90-Min Strategy Session', 'Competitive Analysis', 'Shopify/Woo Design', 'Mobile-First UI'] },
@@ -104,8 +104,8 @@ export const ECOM_PACKAGES = [
     delivery: '21-28 Business Days',
     idealFor: ['Growing Brands', '50-150 Products', 'Subscription Boxes'],
     icon: <TrendingUp className="w-5 h-5" />,
-    color: 'border-jet-blue-600 ring-2 ring-jet-blue-600 shadow-2xl shadow-jet-blue-900/10',
-    btnColor: 'bg-jet-blue-600 hover:bg-jet-blue-700',
+    color: 'border-jet-blue ring-2 ring-jet-blue shadow-2xl shadow-navy/10',
+    btnColor: 'bg-jet-blue hover:bg-[#003D99]',
     popular: true,
     tag: 'Best Value',
     features: [
@@ -126,8 +126,8 @@ export const ECOM_PACKAGES = [
     delivery: '28-42 Business Days',
     idealFor: ['Established Brands', '200+ Products', 'International', 'B2B'],
     icon: <Globe className="w-5 h-5" />,
-    color: 'border-slate-200 hover:border-jet-orange-500',
-    btnColor: 'bg-jet-orange-500 hover:bg-jet-orange-600',
+    color: 'border-slate-200 hover:border-jet-orange',
+    btnColor: 'bg-jet-orange hover:bg-[#E55A28]',
     features: [
         { category: 'CORE', items: ['Up to 500 Products', 'Complex Variants', 'Ultra-Premium Design', '360° Product Views', 'Configurators'] },
         { category: 'ENTERPRISE AI', items: ['AI Descriptions (500)', 'Image Enhancement', 'Inventory Forecasting', 'Pricing Optimization'] },
@@ -150,7 +150,7 @@ export const SEO_PACKAGES = [
         delivery: 'Monthly',
         idealFor: ['Local Biz', 'Startups'],
         icon: <Search className="w-5 h-5" />,
-        color: 'border-slate-200 hover:border-jet-blue-300',
+        color: 'border-slate-200 hover:border-blue-300',
         btnColor: 'bg-slate-900 hover:bg-slate-800',
         features: [
             { category: 'TRADITIONAL SEO', items: ['20 Target Keywords', 'On-Page Opt (10 pages)', 'Tech Monitoring', 'Monthly Report', '5 Backlinks'] },
@@ -169,8 +169,8 @@ export const SEO_PACKAGES = [
         delivery: 'Monthly',
         idealFor: ['Growing B2B', 'Scale-Ups'],
         icon: <TrendingUp className="w-5 h-5" />,
-        color: 'border-jet-blue-600 ring-2 ring-jet-blue-600 shadow-2xl shadow-jet-blue-900/10',
-        btnColor: 'bg-jet-blue-600 hover:bg-jet-blue-700',
+        color: 'border-jet-blue ring-2 ring-jet-blue shadow-2xl shadow-navy/10',
+        btnColor: 'bg-jet-blue hover:bg-[#003D99]',
         popular: true,
         tag: 'Recommended',
         features: [
@@ -191,8 +191,8 @@ export const SEO_PACKAGES = [
         delivery: 'Monthly',
         idealFor: ['Enterprise', 'Global Brands'],
         icon: <Globe className="w-5 h-5" />,
-        color: 'border-slate-200 hover:border-jet-orange-500',
-        btnColor: 'bg-jet-orange-500 hover:bg-jet-orange-600',
+        color: 'border-slate-200 hover:border-jet-orange',
+        btnColor: 'bg-jet-orange hover:bg-[#E55A28]',
         features: [
             { category: 'TRADITIONAL SEO', items: ['100+ Keywords', 'On-Page (50 pages)', '30 Authority Links', 'Intl SEO', 'Daily Rankings'] },
             { category: 'ENTERPRISE GEO', items: ['15+ AI Platforms', 'Custom AI Strategy', 'Multi-Language AI'] },
@@ -214,7 +214,7 @@ export const AMC_PACKAGES = [
         save: 'Save 90%',
         delivery: 'Monthly',
         icon: <Shield className="w-5 h-5" />,
-        color: 'border-slate-200 hover:border-jet-blue-300',
+        color: 'border-slate-200 hover:border-blue-300',
         btnColor: 'bg-slate-900 hover:bg-slate-800',
         features: [
             { category: 'PROTECTION', items: ['Daily Malware Scan', 'Weekly Security Scan', 'Firewall', 'DDoS Protection'] },
@@ -231,8 +231,8 @@ export const AMC_PACKAGES = [
         save: 'Save 94%',
         delivery: 'Monthly',
         icon: <Server className="w-5 h-5" />,
-        color: 'border-jet-blue-600 ring-2 ring-jet-blue-600 shadow-2xl shadow-jet-blue-900/10',
-        btnColor: 'bg-jet-blue-600 hover:bg-jet-blue-700',
+        color: 'border-jet-blue ring-2 ring-jet-blue shadow-2xl shadow-navy/10',
+        btnColor: 'bg-jet-blue hover:bg-[#003D99]',
         popular: true,
         tag: 'Popular',
         features: [
@@ -250,8 +250,8 @@ export const AMC_PACKAGES = [
         save: 'Save 96%',
         delivery: 'Monthly',
         icon: <Cpu className="w-5 h-5" />,
-        color: 'border-slate-200 hover:border-jet-orange-500',
-        btnColor: 'bg-jet-orange-500 hover:bg-jet-orange-600',
+        color: 'border-slate-200 hover:border-jet-orange',
+        btnColor: 'bg-jet-orange hover:bg-[#E55A28]',
         features: [
             { category: 'PROTECTION', items: ['Real-Time Monitor', 'Pen Testing', 'Hourly Backups', '1-Year Retention', 'Load Testing'] },
             { category: 'STRATEGY', items: ['Advanced Analytics', 'CRO', 'Heatmaps', 'Monthly Strategy'] },

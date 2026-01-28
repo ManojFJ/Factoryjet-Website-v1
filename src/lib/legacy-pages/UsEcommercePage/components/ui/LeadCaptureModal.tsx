@@ -99,10 +99,40 @@ export const LeadCaptureModal: React.FC = () => {
     setTouched({ requirements: true, message: true });
     if (validateStep2()) {
       setIsSubmitting(true);
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setIsSubmitting(false);
-      setStep(3); // Success state
+
+      try {
+        // Dynamically import Firebase to reduce bundle size
+        const { doc, setDoc, serverTimestamp } = await import('firebase/firestore');
+        const { db } = await import('@/firebase');
+
+        // Generate readable document ID
+        const now = new Date();
+        const dateStr = now.toISOString().split('T')[0];
+        const timeStr = now.toTimeString().split(' ')[0].replace(/:/g, '-');
+        const namePart = formData.fullName.replace(/\s+/g, '').slice(0, 15);
+        const docId = `us_ecom_${dateStr}_${timeStr}_${namePart}`;
+
+        await setDoc(doc(db, 'us_leads', docId), {
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          requirements: formData.requirements,
+          message: formData.message,
+          createdAt: serverTimestamp(),
+          status: 'new',
+          source: 'us_ecommerce_lead_form',
+          region: 'US',
+        });
+
+        setStep(3); // Success state
+      } catch (err) {
+        console.error('Error submitting form:', err);
+        // Still show success to user, log error for debugging
+        setStep(3);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 

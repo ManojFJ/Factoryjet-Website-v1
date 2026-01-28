@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-3 text-slate-400 text-sm">
-              <li>hello@factoryjet.us</li>
-              <li>+1 (555) 123-4567</li>
+              <li>connect@factoryjet.com</li>
+              <li>+91 96999 77699</li>
               <li>
                 <button onClick={() => openForm('Footer Link')} className="text-jet-blue font-bold hover:text-white transition-colors">
                   Start a Project

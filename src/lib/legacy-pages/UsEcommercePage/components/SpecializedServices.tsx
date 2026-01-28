@@ -180,7 +180,7 @@ export const SocialCommerce: React.FC = () => {
             TikTok Shop & Social Integration
           </h2>
           <p className="text-slate-300 mb-8 text-lg leading-relaxed">
-            Social commerce hits $87 billion in 2025. TikTok Shop alone: $15.82 billion with 407% growth. Sell where customers scroll.
+            Social commerce hits $87 billion in 2026. TikTok Shop alone: $15.82 billion with 407% growth. Sell where customers scroll.
           </p>
 
           {/* Quick Answer Box (Dark Mode) */}
