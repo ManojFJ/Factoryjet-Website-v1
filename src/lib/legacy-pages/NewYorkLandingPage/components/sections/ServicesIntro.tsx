@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '../ui/FadeIn';
 
 export const ServicesIntro: React.FC = () => {
@@ -9,6 +11,14 @@ export const ServicesIntro: React.FC = () => {
                 Comprehensive Web Development Services for New York Businesses
             </h2>
             <div className="w-24 h-1 bg-secondary mx-auto mt-8 rounded-full"></div>
+            <div className="mt-10 text-center">
+              <Link
+                href="/new-york/services"
+                className="inline-flex items-center gap-2 bg-[#0052CC] hover:bg-[#003d99] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+              >
+                View All Services & Pricing <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
         </FadeIn>
     </div>
   );
