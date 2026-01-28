@@ -65,19 +65,24 @@ const PlanCard: React.FC<{ plan: PricingPlan; onCtaClick?: () => void }> = ({
           {plan.tagline}
         </p>
 
-        <div className="flex items-baseline gap-1 mb-6 md:mb-8">
-          <span className="text-4xl sm:text-5xl font-black text-jet-navy tracking-tighter">
-            &#8377;{plan.price}
+        <div className="mb-6 md:mb-8">
+          <span className="text-[10px] sm:text-xs font-semibold text-jet-orange uppercase tracking-wider">
+            Starting At
           </span>
-          <div className="flex flex-col">
-            <span className="text-[10px] text-jet-gray font-black uppercase">
-              + GST
+          <div className="flex items-baseline gap-1 mt-1">
+            <span className="text-4xl sm:text-5xl font-black text-jet-navy tracking-tighter">
+              &#8377;{plan.price}
             </span>
-            {plan.suffix && (
-              <span className="text-xs text-jet-blue font-bold">
-                {plan.suffix}
+            <div className="flex flex-col">
+              <span className="text-[10px] text-jet-gray font-black uppercase">
+                + GST
               </span>
-            )}
+              {plan.suffix && (
+                <span className="text-xs text-jet-blue font-bold">
+                  {plan.suffix}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 

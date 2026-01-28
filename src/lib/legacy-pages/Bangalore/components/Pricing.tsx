@@ -245,7 +245,12 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
 
                 {/* Plan Name & Price */}
                 <h3 className="text-lg font-bold text-jet-navy font-heading mb-1">{plan.name}</h3>
-                <div className="text-3xl font-bold text-jet-navy mb-2">{plan.price}</div>
+                <div className="mb-2">
+                  <span className="text-[10px] sm:text-xs font-semibold text-jet-orange uppercase tracking-wider">
+                    Starting At
+                  </span>
+                  <div className="text-3xl font-bold text-jet-navy mt-1">{plan.price}</div>
+                </div>
 
                 {/* Description */}
                 {'description' in plan && plan.description && (

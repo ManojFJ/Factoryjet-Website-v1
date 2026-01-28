@@ -29,9 +29,14 @@ export const PricingCard: React.FC<PricingCardProps> = ({ pkg, onCtaClick }) => 
           <p className="text-sm text-slate-600 font-medium h-5">{pkg.subtitle}</p>
         </div>
 
-        <div className="mb-6 flex items-baseline gap-1">
-            <span className="text-4xl md:text-5xl font-bold text-jet-navy tracking-tight">{pkg.price}</span>
-            <span className="text-slate-500 text-sm font-medium">{pkg.period.includes('Month') ? '/mo' : ''}</span>
+        <div className="mb-6">
+            <span className="text-[10px] md:text-xs font-semibold text-jet-orange uppercase tracking-wider">
+              Starting At
+            </span>
+            <div className="flex items-baseline gap-1 mt-1">
+                <span className="text-4xl md:text-5xl font-bold text-jet-navy tracking-tight">{pkg.price}</span>
+                <span className="text-slate-500 text-sm font-medium">{pkg.period.includes('Month') ? '/mo' : ''}</span>
+            </div>
         </div>
 
         <div className="mb-8">

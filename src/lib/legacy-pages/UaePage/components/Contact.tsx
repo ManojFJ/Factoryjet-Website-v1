@@ -179,9 +179,13 @@ const Contact: React.FC = () => {
       {/* Footer Links Section */}
       <div className="border-t border-white/10 pt-10 pb-10 px-4 relative z-10 bg-[#0F172A]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#0052CC] to-[#FF6B35] rounded-xl flex items-center justify-center font-bold text-white text-xl">F</div>
-            <span className="text-xl font-bold tracking-tight">FactoryJet <span className="text-gray-400 font-normal text-base">UAE</span></span>
+          <div className="flex items-center gap-3">
+            <img
+              src="/FinalLogoWhite.svg"
+              alt="FactoryJet Logo"
+              className="h-10 w-auto"
+            />
+            <span className="text-gray-400 font-medium text-base">UAE</span>
           </div>
           
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-gray-400">

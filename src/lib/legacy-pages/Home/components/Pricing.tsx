@@ -533,13 +533,18 @@ const Pricing: React.FC = () => {
                   <h4 className="text-jet-navy font-bold tracking-wide uppercase text-xs md:text-sm mb-3 md:mb-4">
                     {tier.name}
                   </h4>
-                  <div className="flex items-baseline gap-1 mb-3 md:mb-4">
-                    <span className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy">
-                      {tier.price}
+                  <div className="mb-3 md:mb-4">
+                    <span className="text-[10px] md:text-xs font-semibold text-jet-orange uppercase tracking-wider">
+                      Starting At
                     </span>
-                    <span className="text-slate-500 text-xs md:text-sm font-medium">
-                      {tier.price.includes("/Year") ? "" : "+ GST"}
-                    </span>
+                    <div className="flex items-baseline gap-1 mt-1">
+                      <span className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-jet-navy">
+                        {tier.price}
+                      </span>
+                      <span className="text-slate-500 text-xs md:text-sm font-medium">
+                        {tier.price.includes("/Year") ? "" : "+ GST"}
+                      </span>
+                    </div>
                   </div>
                   <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
                     {tier.description}

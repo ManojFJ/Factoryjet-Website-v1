@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   }, []);
 
   return (
-    <section className="relative mt-6 w-full bg-[#0052CC] overflow-hidden hero-section font-sans lg:h-[720px] flex items-center">
+    <section className="relative pt-12 w-full bg-[#0052CC] overflow-hidden hero-section font-sans lg:h-[720px] flex items-center">
         {/* Background Layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0052CC] to-[#0041a8] z-0"></div>
         {/* Diagonal Stripe Pattern */}

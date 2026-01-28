@@ -580,13 +580,18 @@ const PricingCard: React.FC<{
           {tier.tagline}
         </p>
 
-        <div className="flex items-baseline mb-4 md:mb-6">
-          <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-jet-navy tracking-tight">
-            {tier.price}
+        <div className="mb-4 md:mb-6">
+          <span className="text-[10px] md:text-xs font-semibold text-jet-orange uppercase tracking-wider">
+            Starting At
           </span>
-          <span className="text-slate-400 font-medium ml-2 text-xs md:text-sm">
-            {tier.period ? tier.period : "+ GST"}
-          </span>
+          <div className="flex items-baseline mt-1">
+            <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-jet-navy tracking-tight">
+              {tier.price}
+            </span>
+            <span className="text-slate-400 font-medium ml-2 text-xs md:text-sm">
+              {tier.period ? tier.period : "+ GST"}
+            </span>
+          </div>
         </div>
 
         <button

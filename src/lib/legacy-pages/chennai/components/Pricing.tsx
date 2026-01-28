@@ -20,7 +20,7 @@ const PricingCard: React.FC<{ plan: any }> = ({ plan }) => {
                 <h3 className="text-xl font-bold text-jet-navy mb-1 uppercase tracking-wider">{plan.name}</h3>
                 <p className="text-xs text-jet-slate mb-4 font-semibold">{plan.tagline}</p>
                 <div className="flex flex-col items-center justify-center">
-                    <span className="text-[10px] text-jet-slate lowercase mb-0.5">starting at</span>
+                    <span className="text-[10px] sm:text-xs font-semibold text-jet-orange uppercase tracking-wider mb-1">Starting At</span>
                     <div className="text-3xl font-bold text-jet-navy leading-none">
                         {plan.price}
                         <span className="text-xs font-normal text-jet-slate ml-1">{plan.suffix}</span>

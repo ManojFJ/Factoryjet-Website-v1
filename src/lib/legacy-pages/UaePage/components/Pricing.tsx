@@ -307,30 +307,33 @@ const Pricing: React.FC<PricingProps> = ({ onOpenModal }) => {
 
               <div className="mb-8 relative z-10">
                 <h3 className="text-xl font-bold text-white mb-4">{tier.name}</h3>
-                
+
                 <div className="flex flex-col items-start leading-none">
                     {tier.price.match(/\d/) ? (
                         <>
-                             <span className="text-sm font-bold text-gray-400 mb-1">
+                            <span className="text-[10px] sm:text-xs font-semibold text-[#FF6B35] uppercase tracking-wider mb-2">
+                              Starting At
+                            </span>
+                            <span className="text-sm font-bold text-gray-400 mb-1">
                               {tier.price.match(/^[^\d]*/)?.[0]?.replace(/\s+/g, '') || "AED"}
                             </span>
                             <div className="flex items-baseline gap-1">
-                              <span className="text-[40px] lg:text-[44px] font-bold text-white tracking-tight">
+                              <span className="text-[36px] sm:text-[40px] lg:text-[44px] font-bold text-white tracking-tight">
                                 {tier.price.replace(/^[^\d]*/, '').replace(/[^\d]*$/, '')}
                               </span>
-                              <span className="text-2xl font-bold text-white/80">
+                              <span className="text-xl sm:text-2xl font-bold text-white/80">
                                 {tier.price.match(/[^\d]*$/)?.[0] || ""}
                               </span>
                             </div>
                         </>
                     ) : (
-                         <span className="text-[32px] font-bold text-white tracking-tight mt-2 mb-1">
+                         <span className="text-[28px] sm:text-[32px] font-bold text-white tracking-tight mt-2 mb-1">
                             {tier.price}
                         </span>
                     )}
                 </div>
 
-                {tier.subtitle && <p className="text-xs text-gray-500 font-medium mt-2">{tier.subtitle}</p>}
+                {tier.subtitle && <p className="text-[10px] sm:text-xs text-gray-500 font-medium mt-2">{tier.subtitle}</p>}
               </div>
 
               {/* Features List */}
