@@ -1,0 +1,121 @@
+import type { Metadata } from 'next'
+import Script from 'next/script'
+import ClevelandLandingPage from '@/pages/US-CleavlandLandingPage/App'
+
+export const metadata: Metadata = {
+  title: 'Professional Web Design Company in Cleveland, Ohio | FactoryJet',
+  description: 'FactoryJet is the leading AI-native web development company in Cleveland, Ohio. Enterprise-quality websites delivered in 7 days at 60-70% lower cost. Custom web design, SEO optimization, and e-commerce solutions for Cleveland businesses.',
+  keywords: [
+    'Web Design Company Cleveland',
+    'Web Development Cleveland Ohio',
+    'Cleveland Web Designer',
+    'Professional Website Development Cleveland',
+    'Custom Web Design Ohio',
+    'E-commerce Development Cleveland',
+    'SEO Services Cleveland',
+    'AI Web Development Cleveland',
+    'Small Business Website Cleveland',
+    'Web Design Agency Cleveland Ohio'
+  ],
+  openGraph: {
+    type: 'website',
+    siteName: 'FactoryJet',
+    title: 'Professional Web Design Company in Cleveland, Ohio | FactoryJet',
+    description: 'AI-native web development company in Cleveland. Enterprise-quality websites delivered in 7 days at 60-70% lower cost.',
+    url: 'https://factoryjet.com/us/services/web-design/cleveland',
+    images: [
+      {
+        url: 'https://factoryjet.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'FactoryJet - Professional Web Design Company Cleveland',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Professional Web Design Company Cleveland | FactoryJet',
+    description: 'Enterprise-quality websites delivered in 7 days at 60-70% lower cost. AI-native web development for Cleveland businesses.',
+    images: ['https://factoryjet.com/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://factoryjet.com/us/services/web-design/cleveland',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
+
+export default function Page() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'FactoryJet - Web Design Company Cleveland',
+    description: 'AI-native web development company delivering enterprise-quality websites for Cleveland, Ohio businesses in 7 days at 60-70% lower cost.',
+    url: 'https://factoryjet.com/us/services/web-design/cleveland',
+    logo: 'https://factoryjet.com/logo.png',
+    image: 'https://factoryjet.com/logo.png',
+    telephone: '+1-919-699-977-699',
+    email: 'connect@factoryjet.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Cleveland',
+      addressRegion: 'OH',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 41.4993,
+      longitude: -81.6944,
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Cleveland',
+      },
+      {
+        '@type': 'State',
+        name: 'Ohio',
+      },
+    ],
+    serviceType: [
+      'Web Design',
+      'Web Development',
+      'E-commerce Development',
+      'SEO Services',
+      'Custom Website Development',
+      'AI-Optimized Websites',
+    ],
+    priceRange: '$$',
+    openingHours: 'Mo-Fr 09:00-18:00',
+    sameAs: [
+      'https://www.linkedin.com/company/factoryjet',
+      'https://twitter.com/factoryjet',
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '500',
+    },
+  }
+
+  return (
+    <>
+      <Script
+        id="json-ld-cleveland"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ClevelandLandingPage />
+    </>
+  )
+}

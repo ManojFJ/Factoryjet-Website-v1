@@ -39,11 +39,11 @@ const Header: React.FC<HeaderProps> = ({ variant = 'transparent', basePath = '' 
     { label: 'Process', href: '#process', hasDropdown: false, isRoute: false },
     { label: 'Portfolio', href: '#portfolio', hasDropdown: false, isRoute: false },
     { label: 'Pricing', href: '#pricing', hasDropdown: false, isRoute: false },
-  ] : basePath === '/new-york' ? [
-    // New York page navigation - hash links to page sections
-    { label: 'Services', href: '#services', hasDropdown: false, isRoute: false },
-    { label: 'Why NYC', href: '#why-nyc', hasDropdown: false, isRoute: false },
-    { label: 'Pricing', href: '#pricing', hasDropdown: false, isRoute: false },
+  ] : basePath?.startsWith('/us/services/web-design/') ? [
+    // US city-specific page navigation (New York, Cleveland, etc.)
+    { label: 'Services & Pricing', href: `${basePath}/services`, hasDropdown: false, isRoute: true },
+    { label: 'Why Us', href: '#why-nyc', hasDropdown: false, isRoute: false },
+    { label: 'FAQ', href: `${basePath}/faq`, hasDropdown: false, isRoute: true },
     { label: 'Contact', href: '#contact', hasDropdown: false, isRoute: false },
   ] : basePath ? [
     // US pages navigation - Services dropdown + hash links to page sections
