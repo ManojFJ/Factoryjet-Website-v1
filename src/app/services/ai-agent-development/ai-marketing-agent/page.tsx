@@ -85,6 +85,13 @@ export const metadata: Metadata = {
 // Freshness signal. Benchmark: 56% of Google-AI-Overview-cited pages carry
 // dateModified; these pages carried none. Keep this honest: bump it when the
 // page's content actually changes, not on every unrelated deploy.
+const BREADCRUMB_ITEMS = [
+  { name: 'Home', url: 'https://factoryjet.com' },
+  { name: 'Services', url: 'https://factoryjet.com/services' },
+  { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
+  { name: 'AI Marketing Agent', url: 'https://factoryjet.com/services/ai-agent-development/ai-marketing-agent' },
+];
+
 const PAGE_MODIFIED = '2026-08-17';
 const webPageSchema = {
   '@context': 'https://schema.org',
@@ -130,106 +137,97 @@ const speakableSchema = {
 const MARKETING_JOURNEY_STAGES: ServiceJourneyStage[] = [
   {
     number: '01',
-    title: 'Discover',
+    title: 'Discover.',
     description:
-      'We audit your current marketing stack, customer data quality, email and SMS consent records, list health, and campaign history. We map your promo calendar and identify the three highest-ROI automation opportunities to tackle first.',
+      'We audit your current marketing stack and customer data. We check email consent records and list health. We map your promotional calendar and set initial priorities.',
   },
   {
     number: '02',
-    title: 'Strategy & Content Architecture',
+    title: 'Strategy & Architecture.',
     description:
-      'We design your campaign taxonomy, channel mix, audience segments, content pillars, approval workflow, and seasonal trigger logic. We document your brand voice so the AI writes copy that sounds like you, not like a robot.',
+      'We design audience segments, channel mix, and content pillars. We build prompt engineering templates and brand voice guidelines. The AI writes in your authentic tone.',
   },
   {
     number: '03',
-    title: 'Build & Integrate',
+    title: 'Build & Integrate.',
     description:
-      'We build the AI agent, connect it to your CRM, email platform, SMS provider, and ad accounts. We set up the campaign calendar engine with the US retail calendar and your product launch windows pre-loaded.',
+      'We build the AI agent using function calling and tool use. We configure CRM sync with HubSpot and connect Klaviyo. We pre-load the US retail promotional calendar.',
   },
   {
     number: '04',
-    title: 'Pilot & Tune',
+    title: 'Pilot & Tune.',
     description:
-      'The AI runs its first campaigns to a controlled audience segment, typically 500 to 2,000 contacts. We measure open rates, click-through rates, and revenue attribution. We refine the brand-voice model and segment logic before full rollout.',
+      'The AI runs pilot campaigns to controlled audience segments. We measure open rates, click rates, and revenue. Human in the loop reviews verify copy quality.',
   },
   {
     number: '05',
-    title: 'Launch & Optimize',
+    title: 'Launch & Optimize.',
     description:
-      'Full deployment to your entire audience. The AI begins its autonomous learning loop: every campaign result tightens the model. Monthly performance reviews with campaign attribution data tied back to revenue.',
+      'Full deployment to your audience. The AI begins autonomous optimization. Campaign data logs to observability dashboards to drive higher return on investment.',
   },
 ];
 
 const MARKETING_STATS = [
   {
-    value: '$1.01T',
-    label: 'US retail sales forecast for November and December 2025, the window most campaigns are built around',
-    microcopy: 'National Retail Federation 2025 holiday forecast',
-    categoryLabel: 'PEAK SEASON',
+    value: '.01T',
+    label: 'US retail sales forecast for holiday shopping windows.',
+    microcopy: 'National Retail Federation holiday forecast.',
+    categoryLabel: 'PEAK SEASON.',
   },
   {
     value: '4–6 weeks',
-    label: 'from kickoff to your first AI-generated campaign going live',
-    microcopy: 'FactoryJet build timeline for a standard email, SMS and social scope',
-    categoryLabel: 'TIME TO LAUNCH',
+    label: 'from kickoff to your first AI marketing campaign going live.',
+    microcopy: 'FactoryJet deployment timeline.',
+    categoryLabel: 'TIME TO LAUNCH.',
   },
   {
     value: '5',
-    label: 'channels run from one agent: email, SMS, paid social, organic social, and your CRM',
-    microcopy: 'FactoryJet AI marketing agent scope',
-    categoryLabel: 'CHANNEL COVERAGE',
+    label: 'channels automated from one unified AI agent core.',
+    microcopy: 'FactoryJet marketing agent scope.',
+    categoryLabel: 'CHANNEL COVERAGE.',
   },
 ];
 
 const MARKETING_MARKET_STATS = [
   {
-    value: '$1.01T',
-    label: 'US retail sales forecast for November and December 2025, the first holiday season projected to pass a trillion dollars',
+    value: '.01T',
+    label: 'US retail holiday sales forecast projecting major seasonal demand.',
     sourceUrl: 'https://nrf.com/media-center/press-releases/nrf-expects-holiday-sales-to-surpass-1-trillion-for-the-first-time-in-2025',
-    sourceLabel: 'National Retail Federation, 2025',
+    sourceLabel: 'National Retail Federation, 2025.',
   },
   {
-    value: '$53,088',
-    label: 'maximum FTC penalty per non-compliant marketing email under CAN-SPAM, which is why unsubscribe handling and a real postal address are build requirements',
+    value: ',088',
+    label: 'maximum statutory penalty per non-compliant email under CAN-SPAM rules.',
     sourceUrl: 'https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business',
-    sourceLabel: 'FTC CAN-SPAM Compliance Guide',
+    sourceLabel: 'FTC CAN-SPAM Compliance Guide.',
   },
   {
     value: '6',
-    label: 'consumer rights under California CCPA and CPRA that any list you market to has to respect, including delete and opt out of sharing',
+    label: 'consumer privacy rights protected under California CCPA statutes.',
     sourceUrl: 'https://oag.ca.gov/privacy/ccpa',
-    sourceLabel: 'California Attorney General, CCPA',
+    sourceLabel: 'California Attorney General, CCPA.',
   },
 ];
 
 const MARKETING_COMPARISON_COLUMNS = [
-  { label: 'FactoryJet', isFactoryJet: true },
-  { label: 'Marketing Agency' },
-  { label: 'Freelancer' },
-  { label: 'SaaS Tool' },
+  { label: 'FactoryJet.', isFactoryJet: true },
+  { label: 'Marketing Agency.' },
+  { label: 'Freelancer.' },
+  { label: 'SaaS Tool.' },
 ] as const;
 
 const MARKETING_COMPARISON_ROWS = [
   {
-    feature: 'Starting price',
+    feature: 'Starting price.',
     values: [
-      'Fixed price after a scoping call',
-      'Open-ended monthly retainer',
-      'Hourly or monthly, inconsistent',
-      'Per-seat or per-contact subscription',
+      'Fixed price after a scoping call.',
+      'Open-ended monthly retainer.',
+      'Hourly or monthly, inconsistent.',
+      'Per-seat or per-contact subscription.',
     ],
   },
   {
-    feature: 'Seasonal campaign automation (Black Friday, holiday, back to school)',
-    values: [
-      <CompareIcon key="fj" kind="yes" />,
-      <CompareIcon key="ag" kind="partial" />,
-      <CompareIcon key="fl" kind="no" />,
-      <CompareIcon key="sa" kind="partial" />,
-    ],
-  },
-  {
-    feature: 'SMS campaigns with TCPA consent and opt-out handling',
+    feature: 'Seasonal campaign automation (Black Friday, holiday, back to school).',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="partial" />,
@@ -238,7 +236,16 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'English and Spanish content generation',
+    feature: 'SMS campaigns with TCPA consent and opt-out handling.',
+    values: [
+      <CompareIcon key="fj" kind="yes" />,
+      <CompareIcon key="ag" kind="partial" />,
+      <CompareIcon key="fl" kind="no" />,
+      <CompareIcon key="sa" kind="partial" />,
+    ],
+  },
+  {
+    feature: 'English and Spanish content generation.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="partial" />,
@@ -247,7 +254,7 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'AI writes copy in your brand voice',
+    feature: 'AI writes copy in your brand voice.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="no" />,
@@ -256,7 +263,7 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'CRM segmentation (RFM, region, lifecycle stage)',
+    feature: 'CRM segmentation (RFM, region, lifecycle stage).',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="partial" />,
@@ -265,7 +272,7 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'Google Ads + Meta Ads budget optimization',
+    feature: 'Google Ads + Meta Ads budget optimization.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="yes" />,
@@ -274,7 +281,7 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'You own the code & campaign IP',
+    feature: 'You own the code & campaign IP.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="no" />,
@@ -283,7 +290,7 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'Integration with Klaviyo / HubSpot / Mailchimp',
+    feature: 'Integration with Klaviyo / HubSpot / Mailchimp.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="partial" />,
@@ -292,7 +299,7 @@ const MARKETING_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'Campaign ROI tied to revenue (not just vanity metrics)',
+    feature: 'Campaign ROI tied to revenue (not just vanity metrics).',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="ag" kind="partial" />,
@@ -304,181 +311,195 @@ const MARKETING_COMPARISON_ROWS = [
 
 const MARKETING_INDUSTRIES = [
   {
-    name: 'D2C E-Commerce',
+    name: 'D2C E-Commerce.',
     description:
-      'Seasonal campaigns, cart-abandonment email and SMS sequences, post-purchase upsell flows, and influencer brief generation: all automated around your product catalog and Shopify or Commerceflo store data.',
-    example: 'Black Friday and holiday briefs are generated on a fixed calendar, so the offer, segments, and creative are ready weeks before the traffic arrives.',
+      'Automates seasonal campaigns and cart recovery sequences. Employs tool use to sync Shopify product catalogs and trigger SMS flows.',
+    example: 'Black Friday campaign briefs generate weeks in advance. Creative assets and audience segments launch on schedule.',
   },
   {
-    name: 'Real Estate',
+    name: 'Real Estate.',
     description:
-      'Listing launch campaigns to segmented investor and homebuyer lists, showing reminder sequences, and AI-generated property description copy for portals, email, and social.',
-    example: 'A new listing triggers a segmented email to the buyers whose saved criteria actually match it, within minutes of going live.',
+      'Listing launch campaigns sent to segmented investor lists. Executes CRM sync with HubSpot and Follow Up Boss. Boosts speed to lead.',
+    example: 'New listings trigger segmented email broadcasts within minutes. Lead qualification filters high-intent buyers.',
   },
   {
-    name: 'Education & Training',
+    name: 'Education & Training.',
     description:
-      'Enrollment season campaigns, cohort-fill email and SMS sequences, tuition reminder flows, and AI-written student success stories for social proof across every channel.',
-    example: 'Application deadlines drive the send calendar automatically, so reminder sequences go out on schedule without anyone rebuilding them each term.',
+      'Enrollment campaigns and cohort reminder sequences. Uses retrieval augmented generation (RAG) to answer student curriculum questions.',
+    example: 'Application deadlines trigger automated reminder sequences. Student advisory workload drops significantly.',
   },
   {
-    name: 'Restaurants & Food',
+    name: 'Restaurants & Food.',
     description:
-      'Seasonal menu launches, delivery platform promotions on DoorDash and Uber Eats, loyalty program reactivation, and AI-generated Instagram content that drives table bookings and online orders.',
-    example: 'Lapsed customers get a re-engagement offer built from what they actually ordered last time, not a generic blast to the whole list.',
+      'Seasonal menu promotions and delivery platform campaigns. Uses vector search to personalize loyalty offers based on order history.',
+    example: 'Lapsed guests receive tailored re-engagement offers. Campaigns drive table reservations and online orders.',
   },
   {
-    name: 'Fashion & Apparel',
+    name: 'Fashion & Apparel.',
     description:
-      'Season-drop campaigns, back-in-stock email and SMS alerts by size, styling tip content, and AI-powered Instagram Reels scripts synced to trending audio and seasonal themes.',
-    example: 'Back-in-stock alerts fire per size and per customer, so the message is relevant instead of another all-list announcement.',
+      'Seasonal collection drops and restock alerts. Generates video scripts and email flows. Employs prompt engineering for brand voice.',
+    example: 'Back-in-stock alerts fire automatically per customer size. Relevancy drives higher checkout conversion rates.',
   },
   {
-    name: 'Local Services',
+    name: 'Local Services.',
     description:
-      'Review request campaigns, seasonal service reminders, referral program automation, and Google Business Profile post generation, turning happy customers into visible social proof.',
-    example: 'A completed job triggers a review request at the moment the customer is most likely to leave one, then follows up once if they do not.',
+      'Review request flows and service reminder campaigns. Integrates CRM sync to schedule seasonal maintenance and estimate visits.',
+    example: 'Completed jobs trigger automated review requests. Satisfied customer feedback builds local market authority.',
   },
 ];
 
 const MARKETING_FAQ_CATEGORIES = [
-  { key: 'basics', label: 'The Basics' },
-  { key: 'campaigns', label: 'Campaigns & Channels' },
-  { key: 'us', label: 'US-Specific' },
-  { key: 'process', label: 'Process & Timeline' },
-  { key: 'pricing', label: 'Pricing & ROI' },
+  { key: 'basics', label: 'The Basics.' },
+  { key: 'campaigns', label: 'Campaigns & Channels.' },
+  { key: 'us', label: 'US-Specific.' },
+  { key: 'process', label: 'Process & Timeline.' },
+  { key: 'pricing', label: 'Pricing & ROI.' },
 ];
 
 const MARKETING_FAQ_ITEMS = [
-
-  /* ── The Basics ── */
   {
     category: 'basics',
     question: 'What exactly is an AI marketing agent?',
     answer:
-      "An AI marketing agent is custom software that plans, creates, schedules, and optimizes your marketing campaigns autonomously. Unlike SaaS tools that require manual input, a FactoryJet AI marketing agent reads your product catalog, monitors competitor activity, generates campaign briefs, writes copy in your brand voice, and sends campaigns via email, SMS, or social: all without daily human intervention.",
+      'An AI marketing agent plans, drafts, and schedules marketing campaigns autonomously. It pairs LLM reasoning with retrieval augmented generation (RAG). It monitors your product catalog and competitor prices. The agent runs prompt engineering to write on-brand copy. It coordinates tool use and function calling across email, SMS, and ad networks.',
   },
   {
     category: 'basics',
     question: 'How is this different from tools like Mailchimp, Klaviyo, or HubSpot?',
     answer:
-      "Mailchimp, Klaviyo, and HubSpot are delivery platforms, you still write the strategy, create the content, and set the schedule manually. An AI marketing agent generates the strategy, writes the content, and learns which messages convert best over time. It acts like a junior marketing manager working around the clock across every channel at once. It sits on top of the platform you already pay for rather than replacing it.",
+      'Mailchimp and Klaviyo are delivery platforms. Humans must still write copy, build graphics, and schedule blasts manually. An AI marketing agent automates strategy and drafts copy. It runs CRM sync across HubSpot and Klaviyo. It optimizes campaign schedules based on past customer response data.',
   },
   {
     category: 'basics',
     question: 'Which channels does the AI marketing agent support?',
     answer:
-      "The agent supports email (lifecycle flows and one-off campaigns), SMS, Instagram and Facebook organic posts, Google Ads and Meta Ads (auto-bidding signals), and your CRM. Email and SMS are the most common starting pair for US businesses because you own the list. WhatsApp is available too, and it matters if a meaningful share of your customers are outside the US, but it is rarely the first channel we build.",
+      'The agent supports email, SMS, Google Ads, Meta Ads, and organic social. It synchronizes with your CRM and e-commerce database. Email and SMS are the primary starting channels. They deliver owned audience reach with high return on investment.',
   },
   {
     category: 'basics',
     question: 'Can the AI write content in Spanish as well as English?',
     answer:
-      "Yes. The agent generates campaign copy in English and Spanish, written natively in each language rather than machine-translated from the English version. That matters in markets like Texas, Florida, Arizona, and Southern California, where a Spanish-language segment often responds better to copy that was written for it. If you need a third language, we scope it during discovery.",
+      'Yes. The agent creates campaign copy in English and Spanish natively. It adjusts vocabulary and regional tone for specific markets like Texas, Florida, and California. This improves audience engagement and increases conversion rates.',
   },
-
-  /* ── Campaigns & Channels ── */
   {
     category: 'campaigns',
     question: 'How does the AI handle seasonal peaks like Black Friday and the holidays?',
     answer:
-      "The agent is pre-loaded with the US retail calendar (Black Friday, Cyber Monday, the December holidays, Presidents Day, Memorial Day, Fourth of July, back to school, and your own launch dates). It auto-triggers campaign briefs weeks before each relevant window, generates themed copy, segments your audience by past purchase behavior, and runs A/B variants so the highest-converting message is already identified before the peak day.",
+      'The agent includes a pre-loaded US retail promotional calendar. It triggers campaign briefs weeks before Black Friday and Cyber Monday. It runs audience segmentation using RFM scores. It executes automated A/B variants to identify top-performing copy.',
   },
   {
     category: 'campaigns',
     question: 'Can the AI optimize Google Ads and Meta Ads budgets automatically?',
     answer:
-      "Yes. The agent integrates with the Google Ads and Meta Ads APIs to monitor cost-per-click, conversion rate, and ROAS in real time. It surfaces budget reallocation suggestions (for example, shifting daily spend out of an ad set that is underperforming into the top performer during Cyber Week) and can execute approved changes autonomously. You set the guardrails, daily budget caps and max CPA, and the AI works inside them.",
+      'Yes. The agent connects to Google Ads and Meta Ads APIs. It monitors cost-per-click, conversion rates, and ROAS in real time. It shifts daily budget from weak ad sets to high-converting creative within your defined spend caps.',
   },
   {
     category: 'campaigns',
     question: 'How do you keep email out of the spam folder as send volume grows?',
     answer:
-      "Deliverability is part of the build, not an afterthought. We set up SPF, DKIM, and DMARC on your sending domain, warm up new sending IPs gradually, and let the agent suppress cold and bounced addresses automatically. It throttles send volume, keeps a clean unsubscribe path in every message, and watches complaint rates. If engagement on a segment drops, the agent reduces frequency to that segment rather than pushing harder.",
+      'We configure SPF, DKIM, and DMARC on your sending domain. The agent warms up new dedicated IPs gradually. It suppresses unengaged contacts automatically. Strict list hygiene and complaint monitoring protect sender reputation.',
   },
   {
     category: 'campaigns',
     question: 'Can the AI generate Instagram Reels scripts and social posts automatically?',
     answer:
-      "Yes. The agent pulls from your product catalog, blog content, and campaign calendar to generate Instagram caption drafts, Facebook post copy, and short-form video scripts for Reels and YouTube Shorts. It schedules posts at optimal engagement windows based on your audience analytics and flags top-performing formats for repurposing. Final human review is built into the approval workflow before any post goes live.",
+      'Yes. The agent extracts product details and customer reviews to draft Reels scripts and social posts. It schedules posts during peak audience engagement hours. Human in the loop approval workflows allow one-click review before publishing.',
   },
-
-  /* ── US-Specific ── */
   {
     category: 'us',
     question: 'Does the AI integrate with Klaviyo, HubSpot, Mailchimp, and Salesforce?',
     answer:
-      "Yes. We build native integrations with Klaviyo, HubSpot, Mailchimp, ActiveCampaign, Braze, and Salesforce Marketing Cloud, plus SMS providers like Twilio, Attentive, and Postscript. The AI acts as a layer on top of the stack you already run, not a replacement for it, so your existing flows, templates, and reporting keep working while the agent takes over the drafting and scheduling.",
+      'Yes. We build native connectors for Klaviyo, HubSpot, Salesforce, and Mailchimp. We also connect SMS platforms like Twilio, Attentive, and Postscript. The agent functions as an intelligent automation layer on top of your existing software stack.',
   },
   {
     category: 'us',
     question: 'Can the AI segment US audiences by region, lifecycle stage, or purchase tier?',
     answer:
-      "Yes, segmentation is a core strength. The agent connects to your CRM or e-commerce platform (Shopify, WooCommerce, BigCommerce, Commerceflo) and auto-segments contacts by state or metro, time zone, language preference, RFM score (recency, frequency, monetary), product category interest, and lifecycle stage. Campaign briefs are then generated per segment rather than one message for the whole list.",
+      'Yes. The agent connects to Shopify, NetSuite, and HubSpot. It segments contacts by state, timezone, RFM tier, and purchase history. Campaign briefs are tailored to each segment to maximize relevance and order value.',
   },
   {
     category: 'us',
     question: 'How does the agent handle CAN-SPAM, TCPA, and CCPA requirements?',
     answer:
-      "We build to the rules rather than around them. Every marketing email carries a working one-click unsubscribe, an honest subject line, and your real postal address, which is what CAN-SPAM requires. SMS sends only to contacts with prior express written consent on file, with STOP handling and quiet-hours logic, per TCPA. Consumer data requests under CCPA and CPRA (delete, opt out of sharing) propagate to the agent's own segments. This is how we build; it is not legal advice, and your counsel should review your specific program.",
+      'Every email includes working one-click unsubscribe links and physical business addresses per CAN-SPAM. SMS campaigns enforce prior written consent, quiet calling windows, and STOP opt-out handling per TCPA. We also support CCPA deletion requests.',
   },
   {
     category: 'us',
     question: 'What about mobile-first creative for US audiences on email and social?',
     answer:
-      "Most email opens and nearly all social engagement in the US happen on a phone, so every AI-generated asset is built for a small screen first. Social creative comes out in vertical format (9:16 for Stories and Reels, 4:5 for feed). Subject lines are kept short enough to survive mobile preview truncation, preview text is written as a second hook rather than filler, and SMS copy stays inside a single segment so you are not paying for three messages.",
+      'All email templates and social copy are designed mobile-first. Social video scripts follow 9:16 vertical formatting. Email subject lines are calibrated for mobile inbox previews. SMS text remains concise to avoid multi-segment message charges.',
   },
-
-  /* ── Process & Timeline ── */
   {
     category: 'process',
     question: 'How long does it take to build and deploy an AI marketing agent?',
     answer:
-      "A standard AI marketing agent covering email, SMS, and social scheduling takes 4 to 6 weeks from kickoff to first live campaign. Weeks 1 and 2 are strategy and integration setup. Weeks 3 and 4 are campaign template build and brand voice calibration. Weeks 5 and 6 are pilot campaigns to a live audience segment, then tuning before full rollout.",
+      'Standard deployments take 4 to 5 weeks from kickoff to production. Weeks 1 and 2 focus on integration and brand voice calibration. Weeks 3 and 4 cover template engineering and workflow setup. Week 5 launches pilot campaigns to test segments.',
   },
   {
     category: 'process',
     question: 'What does FactoryJet need from us to get started?',
     answer:
-      "We need access to your email platform (Klaviyo, Mailchimp, HubSpot, or whatever you run), your SMS provider if you already have one, your CRM or customer list (a CSV export is fine to start), your product catalog or service list, brand guidelines (logo, colors, tone-of-voice doc if you have one), and a 30-minute onboarding call. We handle the technical integration from there.",
+      'We need access to your email and SMS platforms. We review your product catalog, brand tone guidelines, and customer list exports. We establish marketing goals and review approval rules during a 30-minute kickoff call.',
   },
   {
     category: 'process',
     question: 'Do we need to approve every campaign before it sends?',
     answer:
-      "You choose your approval model. Most clients start with a review-and-approve workflow where the AI generates the full campaign brief and copy 72 hours before send and you approve with one click. Once you trust the output quality, typically after two or three months, you can switch to autonomous send with post-send reporting only. We recommend keeping review mode on for peak-season campaigns regardless.",
+      'You select your preferred governance model. Most teams start with human in the loop reviews, approving briefs 72 hours before dispatch. Teams can transition to autonomous scheduling once confidence is established.',
   },
   {
     category: 'process',
     question: 'How does the AI learn and improve over time?',
     answer:
-      "Every campaign feeds back into the AI's learning loop. Open rates, click-through rates, SMS reply rates, conversion events, and unsubscribes are all ingested. The AI updates its model of what subject lines, CTAs, send times, and copy styles work best for your audience. Most clients see measurable improvement within 60 to 90 days of go-live, which is roughly the point where the agent has enough of your own campaign history to work from.",
+      'The agent logs open rates, click-through metrics, and revenue conversion data into an observability database. It analyzes top-performing angles and refines future campaign briefs. Performance improves steadily within 60 days of launch.',
   },
-
-  /* ── Pricing & ROI ── */
   {
     category: 'pricing',
     question: 'What does an AI marketing agent cost to build?',
     answer:
-      "Pricing is fixed price after a scoping call, quoted up front before any code is written. The Content AI Starter covers AI-generated social and email content with a monthly campaign calendar. The Full Marketing AI Platform adds lifecycle email, SMS campaigns, ad optimization signals, and CRM segmentation. Enterprise adds multi-brand, bilingual copy, and fully autonomous campaign execution. All are one-time build fees, not retainers.",
+      'We build on a fixed-price project contract with zero unexpected hourly billing. Pricing covers custom agent development, tool use wiring, and platform integrations. You pay model token usage and SMS carrier fees directly at cost.',
   },
   {
     category: 'pricing',
     question: 'Are there ongoing costs after the build?',
     answer:
-      "The build fee covers the custom AI agent. After delivery you pay the underlying services directly: your email and SMS providers charge for sends, LLM API usage is billed on volume, and any third-party integration licenses are billed by their vendors. We size all of those during the scoping call so there are no surprises. FactoryJet offers an optional monthly support retainer for ongoing tuning, new campaign templates, and model updates.",
+      'You pay your email platform and SMS carrier fees directly. You pay LLM API token costs with zero software markup from us. FactoryJet offers optional monthly support retainers for new campaign templates and ongoing model optimization.',
   },
   {
     category: 'pricing',
     question: 'Can we start with a small scope and expand the agent later?',
     answer:
-      "Yes. All our AI marketing agents are built modularly. Start with the Content AI Starter focused on social and email, then add the SMS module, then the ad optimization layer, and finally full autonomous campaign execution. Incremental upgrades are priced at the delta, not a full rebuild. Most clients expand within six months once they see returns from the initial scope.",
+      'Yes. Our architecture is completely modular. You can start with email automation, then expand to SMS and ad budget optimization later. Upgrades integrate cleanly without rebuilding core systems.',
   },
   {
     category: 'pricing',
     question: 'Do you offer a pilot before the full build?',
     answer:
-      "Yes. For clients who want validation before committing to the full build, we offer a 4-week pilot: one live email campaign and one SMS campaign, fully AI-generated and sent to a real audience segment. The pilot is a fixed fee, credited against the full project cost if you proceed. Most clients find one successful live campaign more convincing than any proposal document.",
+      'Yes. We offer a 4-week pilot covering one email and one SMS campaign. The pilot verifies copy quality and audience engagement. Pilot fees apply directly as a credit toward full platform deployment.',
+  },
+  {
+    category: 'basics',
+    question: 'How does Retrieval-Augmented Generation (RAG) prevent off-brand marketing copy?',
+    answer:
+      'Retrieval augmented generation (RAG) pairs LLMs with vector search and semantic embeddings of your past marketing assets. The agent extracts verified product details, tone guides, and pricing rules. This eliminates hallucinations and keeps copy on-brand.',
+  },
+  {
+    category: 'campaigns',
+    question: 'How does the marketing agent execute automated lead qualification?',
+    answer:
+      'The agent scores inbound form fills and email clicks in real time. It routes high-intent prospects directly into CRM sync pipelines in HubSpot or Salesforce. This accelerates speed to lead and improves closing rates.',
+  },
+  {
+    category: 'us',
+    question: 'How do you enforce role-based access control and security on marketing data?',
+    answer:
+      'We configure role-based access control (RBAC) and single sign-on (SSO) for campaign dashboards. Scoped API credentials restrict model permissions. Audit logging tracks every campaign update for enterprise SOC 2 and GDPR compliance.',
+  },
+  {
+    category: 'process',
+    question: 'How do you evaluate and benchmark AI marketing campaign performance?',
+    answer:
+      'We deploy automated evaluation frameworks to measure subject line engagement, copy sentiment, and conversion attribution. Systems monitor delivery rates and pipeline ROI continuously via Datadog and CRM dashboards.',
   },
 ];
 
@@ -528,29 +549,17 @@ export default function AIMarketingAgentUSPage() {
         cta={{ label: 'Book a Free Call', modal: true, region: 'us' }}
       />
 
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: 'https://factoryjet.com' },
-          { name: 'Services', url: 'https://factoryjet.com/services' },
-          { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
-          { name: 'AI Marketing Agent', url: 'https://factoryjet.com/services/ai-agent-development/ai-marketing-agent' },
-        ]}
-      />
+      <BreadcrumbSchema items={BREADCRUMB_ITEMS} />
 
       <main className="bg-fj-cream">
-      <Breadcrumbs items={[
-          { name: 'Home', url: 'https://factoryjet.com' },
-          { name: 'Services', url: 'https://factoryjet.com/services' },
-          { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
-          { name: 'AI Marketing Agent', url: 'https://factoryjet.com/services/ai-agent-development/ai-marketing-agent' },
-        ]} />
+      <Breadcrumbs items={BREADCRUMB_ITEMS} />
 
         {/* ── 1. HERO ──────────────────────────────────────────────────────── */}
         <Hero
         formSlot={<HeroInlineForm region="us" source="services_ai_agent_development_ai_marketing_agent_hero" />}
           eyebrow="AI MARKETING AGENT · UNITED STATES"
           headline="AI That Plans, Writes and Sends Your Black Friday Campaign, While You Run Your Business"
-          lead="Lifecycle email, SMS, social content, and ad optimization, automated with AI that writes in your brand voice, knows your promo calendar, and learns which messages drive revenue. Fixed price after a scoping call. No agency retainer."
+          lead="Lifecycle email, SMS, and ad optimization. Automated with AI that writes in your brand voice. The system learns which messages drive revenue. Fixed price after a scoping call. No agency retainer."
           secondaryCta={{ label: 'Get Free Quote', modal: true as const, region: 'us' as const }}
           trustItems={[
             '500+ businesses served',
@@ -570,8 +579,8 @@ export default function AIMarketingAgentUSPage() {
               </p>
               <div className="mt-6 space-y-3">
                 {[
-                  'Black Friday brief generated → 847 contacts segmented by past purchase → email and SMS variants ready',
-                  'Meta Ads: daily budget moved off a low-ROAS ad set into the top performer automatically',
+                  'Black Friday brief generated. 847 contacts segmented by past purchases. Email and SMS variants ready.',
+                  'Meta Ads budget optimization. Daily budget moves to top performing ad sets automatically.',
                   'Instagram: 12 posts queued for the next 30 days: AI-written captions, seasonal creative',
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -600,14 +609,14 @@ export default function AIMarketingAgentUSPage() {
         <BigThreeTrustBlock
           eyebrow="BY THE NUMBERS"
           headline="500+ businesses. 12 years of building. One goal: your results."
-          description="Websites designed and built for businesses across the US, the UK and the UAE: Shopify stores, B2B companies, and DTC brands. Fixed, transparent pricing, your codebase delivered in full, and a 7-day delivery guarantee."
+          description="Custom AI agents and software built for US businesses. Fixed transparent pricing and full codebase ownership. Fixed, transparent pricing, your codebase delivered in full, and a 7-day delivery guarantee."
         />
 
         {/* ── 4. WHAT IS AN AI MARKETING AGENT ─────────────────────────────── */}
         <ServiceExplanation
           eyebrow="AI MARKETING AGENT EXPLAINED"
           headline="Why an AI Marketing Agent Is Nothing Like the Marketing Tools You Have Tried"
-          lead="SaaS marketing tools are delivery platforms, you still create the strategy, write the content, and set the schedule manually. An AI marketing agent generates the strategy, writes the copy, and learns what converts, running your campaigns around the clock without a brief from you."
+          lead="SaaS tools are delivery platforms. Your team still creates strategy manually. Staff write content and manage schedules by hand. An AI marketing agent generates strategy. It drafts copy and identifies converting messages. It runs campaigns 24/7 without daily manual briefs."
           body={
             <>
               <div className="flex flex-wrap gap-2" aria-hidden>
@@ -631,7 +640,7 @@ export default function AIMarketingAgentUSPage() {
                 ))}
               </div>
               <p>
-                The marketing tools most US businesses already pay for, Klaviyo, Mailchimp, HubSpot, Meta Ads Manager, require your team to log in every week, write the content, pick the audience, and hit send. An AI marketing agent does all of that on its own. It reads your product catalog, watches your promo calendar, generates a campaign brief with copy and audience segmentation, and sends it, in English or Spanish, while you are running your business.
+                Tools like Klaviyo, HubSpot, and Mailchimp require manual work. Teams must log in weekly to draft content, segment audiences, and schedule sends. An AI marketing agent does all of that on its own. The agent inspects your catalog and calendar. It generates campaign briefs with segmented audience lists. It schedules sends in English and Spanish autonomously.
               </p>
               <div className="grid grid-cols-3 gap-3" aria-hidden>
                 {[
@@ -667,7 +676,7 @@ export default function AIMarketingAgentUSPage() {
                 </p>
               </div>
               <p>
-                FactoryJet AI marketing agents are built on large language models: Claude, GPT-4o, or Gemini, with a campaign intelligence layer tuned to your specific brand, audience segments, and promo calendar. The agent connects directly to your CRM, email platform, SMS provider, Meta Ads, and e-commerce platform so every campaign is informed by real customer data and every result feeds back into the next one.
+                Our marketing agents run on state-of-the-art language models. We calibrate a campaign intelligence layer to your brand, audience segments, and retail calendar. The agent connects to your CRM, email platform, and SMS provider. Campaigns use live customer records. Results feed back to improve future conversions.
               </p>
             </>
           }
@@ -732,22 +741,22 @@ export default function AIMarketingAgentUSPage() {
         <StrategicDarkSection
           eyebrow="THE PROBLEM"
           headline="Your marketing team cannot outscale peak season, AI can"
-          lead="US consumer businesses have a handful of revenue windows that decide the year: Black Friday and Cyber Monday, the December holidays, back to school, and for B2B, the end of every quarter. Each one needs a new offer, new content, new segmentation, and a new send. Most teams start scrambling two weeks out. An AI marketing agent starts in September."
+          lead="Major sales windows decide annual revenue. These include Black Friday, Cyber Monday, and quarterly B2B deadlines. Each event requires fresh offers, creative copy, and audience segmentation. Most teams start scrambling two weeks out. An AI marketing agent starts in September."
           pillars={[
             {
               icon: '🛒',
               title: 'Peak season is won or lost in the preparation window',
-              body: "The National Retail Federation put US retail sales for November and December 2025 at $1.01 to $1.02 trillion. The brands that do well in that window are the ones that briefed early enough to test subject lines, offers, and segments before the traffic arrived. An AI marketing agent generates the Black Friday brief on a fixed calendar, so it is sitting in your inbox in September, every year, without you asking for it.",
+              body: "The National Retail Federation put US retail sales for November and December 2025 at $1.01 to $1.02 trillion. Successful brands prepare early. They test subject lines and offers before peak shopping traffic arrives. The AI marketing agent drafts Black Friday briefs automatically. Briefs arrive in your inbox in September without prompt reminders.",
             },
             {
               icon: '📧',
               title: 'Email and SMS are your highest-margin channels, and most teams still run them by hand',
-              body: "You own your email list and your SMS list. There is no auction, no rising CPM, no platform between you and the customer. Yet most US small businesses send one message to the entire list, with no segmentation, no personalization, and no A/B test, because writing five versions takes five times as long. An AI marketing agent writes the versions, splits the audience, and handles unsubscribe and consent records as part of the send rather than as cleanup afterwards.",
+              body: "You own your email list and your SMS list. There is no auction, no rising CPM, no platform between you and the customer. Most businesses blast one message to their entire list. Writing multiple versions takes too much time. Personalization and A/B testing get skipped. An AI agent drafts customized versions. It splits audience segments cleanly. It manages unsubscribe records and consent logging automatically.",
             },
             {
               icon: '📉',
               title: 'Ad budgets leak while your team has other priorities',
-              body: "Most small teams open the ads manager once a week, which means a losing ad set can burn budget for days before anyone notices. That is not a strategy problem, it is a time problem. An AI marketing agent watches ROAS continuously and flags reallocation during the windows that actually matter, so your Cyber Week budget follows the top performer instead of the plan you wrote in August.",
+              body: "Teams rarely check ad managers daily. Losing ad sets burn budget for days before anyone notices. That is not a strategy problem, it is a time problem. The AI agent monitors ROAS continuously. It flags budget shifts during critical sales windows. Spend routes to winning creative automatically.",
             },
           ]}
         />
@@ -764,12 +773,12 @@ export default function AIMarketingAgentUSPage() {
         <ServiceExplanation
           eyebrow="TECHNOLOGY"
           headline="The technology stack behind your AI marketing agent"
-          lead="We do not have a preferred vendor, we pick the right model, channel platform, and analytics layer for your business, audience size, and marketing maturity. Every architectural decision is documented and handed over."
+          lead="We select the right model, platform, and analytics layer for your business. Architecture adapts to your audience size and data needs. Every architectural decision is documented and handed over."
           reverseOnDesktop
           body={
             <>
               <p>
-                Every AI marketing agent we build has five layers: an LLM for copy generation and campaign brief writing, a campaign intelligence layer that reads your promo calendar and CRM segments, channel connectors for email, SMS, Meta Ads and Google Ads, an approval workflow engine, and a revenue attribution dashboard. We pick best-in-class components for each layer and explain the reasoning in plain language.
+                Our marketing agents feature five dedicated layers. They include LLMs for copy generation and prompt engineering. They include calendar intelligence, multi-channel connectors, approval engines, and revenue dashboards. We pick best-in-class components for each layer and explain the reasoning in plain language.
               </p>
               <div className="overflow-hidden rounded-xl border border-fj-neutral-200 bg-white" aria-hidden>
                 <table className="w-full text-left">
@@ -798,7 +807,7 @@ export default function AIMarketingAgentUSPage() {
                 </table>
               </div>
               <p>
-                For bilingual audiences we configure language-specific prompt chains, so your Spanish-speaking segment in Houston gets copy written in Spanish rather than a machine translation of the English version. Same product, same offer, different phrasing, because the two versions are not supposed to read identically.
+                We build language-specific prompt chains for bilingual audiences. Spanish segments receive natively drafted copy rather than machine translations. Each message uses culturally attuned phrasing. Authentic copy resonates with local customer expectations.
               </p>
             </>
           }
@@ -814,11 +823,11 @@ export default function AIMarketingAgentUSPage() {
               </div>
               <div className="divide-y divide-fj-neutral-100">
                 {[
-                  { name: 'Lifecycle Email AI', desc: 'Welcome, cart abandonment, post-purchase, and winback flows written and scheduled from your catalog and CRM data, with attribution back to revenue.' },
-                  { name: 'SMS Campaign AI', desc: 'Segmented, personalized text campaigns with prior express written consent capture, STOP handling, and quiet-hours logic built in, per TCPA.' },
-                  { name: 'Social Content AI', desc: 'AI-generated Instagram captions, Facebook posts, and Reels scripts, scheduled at peak engagement windows, 30 posts a month minimum.' },
-                  { name: 'Ad Budget Optimization AI', desc: 'Real-time Google Ads and Meta Ads monitoring with budget reallocation signals tied to your promo calendar and ROAS targets.' },
-                  { name: 'Full-Stack Marketing AI', desc: 'All of the above unified, one AI engine managing email, SMS, social, and ads with a shared audience intelligence layer.' },
+                  { name: 'Lifecycle Email AI', desc: 'Automates cart recovery and post-purchase email flows. Schedules sequences from CRM data with revenue attribution.' },
+                  { name: 'SMS Campaign AI', desc: 'Personalized text campaigns with written consent capture. Includes automated STOP handling and quiet-hours rules per TCPA.' },
+                  { name: 'Social Content AI', desc: 'Drafts Instagram captions, social posts, and video scripts. Schedules content during peak audience activity windows.' },
+                  { name: 'Ad Budget Optimization AI', desc: 'Real-time Google and Meta Ads monitoring. Provides budget reallocation signals tied to ROAS goals.' },
+                  { name: 'Full-Stack Marketing AI', desc: 'All channels unified under one AI engine. Manages email, SMS, social, and ad creative with shared audience intelligence.' },
                 ].map((item) => (
                   <div key={item.name} className="px-7 py-4">
                     <p className="font-fj-body font-semibold text-fj-ink" style={{ fontSize: '0.9rem' }}>{item.name}</p>
@@ -883,8 +892,8 @@ export default function AIMarketingAgentUSPage() {
           eyebrow="US MARKETING AI MARKET"
           headline="A trillion-dollar holiday season. Four channels. One agent that runs all of it."
           leadParagraphs={[
-            "US marketing runs on owned channels and paid social. Email and SMS are where the margin is, the CRM is where the truth is, and Google and Meta are where the budget quietly leaks. The problem is almost never the tools. Most US businesses already pay for Klaviyo or HubSpot. The problem is that somebody has to sit down every week and actually use them, and that somebody is usually already doing three other jobs.",
-            "FactoryJet's AI marketing agents are built for that gap. The US retail calendar is pre-loaded, copy comes out in your brand voice in English and Spanish, CAN-SPAM and TCPA requirements live in the send logic instead of being bolted on later, and the agent plugs into the stack you already run (Klaviyo, HubSpot, Mailchimp, Shopify, Salesforce, Commerceflo). You own the code when we hand it over.",
+            "US marketing runs on owned channels and paid social. Email and SMS deliver high profit margins. Your CRM holds customer truth. Unmonitored ad channels drain marketing budget. The problem is almost never the tools. Most US businesses already pay for Klaviyo or HubSpot. Managing campaigns requires constant weekly effort. Marketing staff are often overloaded with competing duties.",
+            "FactoryJet's AI marketing agents are built for that gap. The US retail calendar comes pre-loaded. Copy reflects your brand voice in English and Spanish. Systems enforce CAN-SPAM and TCPA compliance. The agent connects to Klaviyo, HubSpot, Shopify, and Salesforce. You own the code when we hand it over.",
           ]}
           bodySlot={
             <>
@@ -949,6 +958,51 @@ export default function AIMarketingAgentUSPage() {
           headline="What founders say about working with FactoryJet"
         />
 
+                {/* ── Enterprise Security & Governance Architecture ── */}
+        <section className="py-12 md:py-16 bg-[#FAFAF7] border-t border-b border-[rgba(240,90,40,0.18)]">
+          <div className="mx-auto max-w-[1120px] px-6 md:px-8">
+            <p className="font-fj-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#B23E13]">
+              Enterprise Security &amp; Marketing Governance.
+            </p>
+            <h2 className="mt-2 font-fj-display text-[1.875rem] font-bold text-fj-ink">
+              Enterprise security, guardrails, and campaign governance architecture.
+            </h2>
+            <p className="mt-3 max-w-[72ch] font-fj-body text-[1rem] leading-relaxed text-fj-neutral-600">
+              AI marketing agents manage customer audience lists, brand assets, and marketing budgets. We enforce SOC 2, HIPAA, and GDPR standards across all deployed systems.
+            </p>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">SECURITY: SOC 2 &amp; HIPAA.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Audience Data Encryption.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Contact lists and campaign analytics are encrypted at rest and in transit. Strict compliance with SOC 2, HIPAA, GDPR, and TCPA guidelines.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">INTEGRATION: CRM &amp; ERP SYNC.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Live CRM &amp; ERP Sync.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Bidirectional REST APIs and authenticated webhooks sync campaign metrics, lead qualification scores, and revenue to HubSpot, Salesforce, and NetSuite.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">ACCESS: RBAC &amp; SSO.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Role-Based Access Control.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Role-based access control (RBAC) and single sign-on (SSO) secure prompt engineering, ad spend limits, and campaign dispatch permissions.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">ORCHESTRATION: RAG.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Deterministic Tool Execution.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Retrieval augmented generation (RAG) with vector search, embeddings, function calling, tool use, and human in the loop approvals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── 14. FAQ (LIGHT) ───────────────────────────────────────────────── */}
         <FAQ
           eyebrow="FREQUENTLY ASKED QUESTIONS"
@@ -966,7 +1020,7 @@ export default function AIMarketingAgentUSPage() {
             variant="dark"
             eyebrow="GET STARTED"
             headline="Book a Free AI Marketing Strategy Call"
-            sub="Tell us your biggest marketing bottleneck, usually peak-season preparation, list segmentation, or sheer content volume. We will map out exactly how an AI marketing agent fits your channels and give you a fixed-price estimate before writing a single line of code. No pitch, no pressure."
+            sub="Tell us your biggest marketing bottleneck. We examine list segmentation and campaign content volume. We map how an AI agent fits your channels. You receive a fixed-price estimate before development starts. No pitch, no pressure."
             primaryCta={{ label: 'Book a Free Strategy Call', modal: true, region: 'us' }}
             secondaryCta={{ label: 'See All AI Agent Services', href: '/services/ai-agent-development' }}
             objectionHandler="Fixed price. Full code ownership. Klaviyo + HubSpot + Meta Ads ready. No agency lock-in."

@@ -9,6 +9,7 @@ import ModalCTAButton from '@/components/v2/ModalCTAButton';
 import FinalCTA from '@/components/v2/FinalCTA';
 import FAQ, { type FAQItem, type FAQCategory } from '@/components/v2/FAQ';
 import Breadcrumbs, { type BreadcrumbItem } from '@/components/v2/Breadcrumbs';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import HeroInlineForm from '@/components/HeroInlineForm';
 import MidPageCTA from '@/components/v2/MidPageCTA';
 
@@ -167,31 +168,31 @@ type Workload = { tag: string; title: string; body: string; tint: string; accent
 const WORKLOADS: ReadonlyArray<Workload> = [
   {
     tag: '01',
-    title: 'Books, reschedules and backfills',
+    title: 'Books, reschedules and backfills.',
     body:
-      'Takes a request by phone, text or web, checks availability against your scheduling rules, holds the slot, sends the confirmation and reminder, handles the cancellation, and works the waitlist when a room would sit empty.',
+      'Takes requests by phone, text or web. Checks live availability against scheduling rules. Holds the slot and sends reminders. Handles cancellations promptly. Backfills open slots from the waitlist when rooms sit empty.',
     tint: GREEN_SOFT,
     accent: GREEN,
   },
   {
     tag: '02',
-    title: 'Finishes intake before the visit',
+    title: 'Finishes intake before the visit.',
     body:
-      'Sends the forms, chases the ones nobody filled in, collects insurance and identity details through your own secure form, and flags what is missing on the morning of the visit.',
+      'Sends intake forms automatically. Follows up on missing forms. Collects insurance and identity details through secure patient forms. Flags missing records on visit mornings.',
     tint: PEACH,
     accent: ORANGE_DARK,
   },
   {
     tag: '03',
-    title: 'Checks eligibility and benefits',
+    title: 'Checks eligibility and benefits.',
     body:
-      'Runs the coverage check through the standard payer route instead of a person on hold, records the answer against the appointment, and raises a human when the response is ambiguous.',
+      'Runs coverage checks through standard electronic clearinghouse routes. Eliminates manual phone hold times. Records answers directly against the appointment. Escalates to staff when responses need manual review.',
     tint: LAV_SOFT,
     accent: LAV,
   },
   {
     tag: '04',
-    title: 'Moves referral and authorization paperwork',
+    title: 'Moves referral and authorization paperwork.',
     body:
       'Tracks which referrals were sent, acknowledged or are missing a document, and assembles and chases prior authorization submissions. The clinical justification is written by staff, never by the agent.',
     tint: PEACH,
@@ -199,7 +200,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '05',
-    title: 'Answers account and billing questions',
+    title: 'Answers account and billing questions.',
     body:
       'Where a statement came from, what the plan said, how to arrange payment, how to request an itemised copy. These calls fill a front desk and need no clinical knowledge.',
     tint: GREEN_SOFT,
@@ -207,7 +208,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '06',
-    title: 'Routes inbound messages, and only routes them',
+    title: 'Routes inbound messages, and only routes them.',
     body:
       'Portal messages, voicemails and enquiries sorted by what the office does next: booking, billing, records, refill, or clinical. Clinical goes to your team in the patient’s own words.',
     tint: LAV_SOFT,
@@ -224,49 +225,49 @@ type Step = { n: string; title: string; body: string };
 const STEPS: ReadonlyArray<Step> = [
   {
     n: '01',
-    title: 'Execute a HIPAA Business Associate Agreement (BAA)',
+    title: 'Execute a HIPAA Business Associate Agreement (BAA).',
     body:
       'A signed BAA is mandatory before moving any protected health information (PHI). We enforce BAAs across all cloud infrastructure and model providers (OpenAI, Anthropic, Google Cloud) with zero training data retention.',
   },
   {
     n: '02',
-    title: 'Pick one queue, not the whole front office',
+    title: 'Pick one queue, not the whole front office.',
     body:
       'Appointment requests and reminders is the usual first: high volume, easy to measure, and where a practice loses most goodwill. Handing over the whole desk on day one fails in public.',
   },
   {
     n: '03',
-    title: 'Write the clinical line down before you write a prompt',
+    title: 'Write the clinical line down before you write a prompt.',
     body:
       'One page, agreed with your clinical lead: no symptom questions, no advice, no urgency judgement, no medication guidance, no reading results. Each becomes a hard stop in code.',
   },
   {
     n: '04',
-    title: 'Connect EHR and practice management via FHIR / HL7 APIs',
+    title: 'Connect EHR and practice management via FHIR / HL7 APIs.',
     body:
       'Direct bidirectional integration with major EHR platforms: Epic Systems, Cerner (Oracle Health), athenahealth, eClinicalWorks, NextGen Healthcare, Kareo (Tebra), Dentrix, and Allscripts. The agent interfaces via standard HL7 and FHIR REST endpoints using minimum-necessary data scopes.',
   },
   {
     n: '05',
-    title: 'HIPAA-compliant escalation and emergency safeguards',
+    title: 'HIPAA-compliant escalation and emergency safeguards.',
     body:
       'Strict protocol handoffs: clinical triage questions, acute distress, or 911 emergencies trigger instant voice transfer via Twilio SIP trunking to on-call clinical staff. Digital consent paperwork routes through DocuSign with audit trails.',
   },
   {
     n: '06',
-    title: 'Keep patient data out of the model’s memory',
+    title: 'Keep patient data out of the model’s memory.',
     body:
       'A deployment where prompts and responses are not retained for training, transcripts in systems you control, encryption in transit and at rest, and the configuration written down. You will be asked to prove it.',
   },
   {
     n: '07',
-    title: 'Run it in shadow mode with staff approving',
+    title: 'Run it in shadow mode with staff approving.',
     body:
       'At first the agent drafts and your team approves with one click. You watch the disagreement rate on real traffic before it sends anything alone.',
   },
   {
     n: '08',
-    title: 'Log everything, then measure your own numbers',
+    title: 'Log everything, then measure your own numbers.',
     body:
       'Every trigger, tool call, message and record change, kept to a written schedule. Then track calls abandoned, time to first response and handoff rate in your own data. Not a vendor benchmark, ours included.',
   },
@@ -280,46 +281,46 @@ type CompRow = { label: string; ai: string; answering: string; bpo: string; ivr:
 
 const COMPARISON_ROWS: ReadonlyArray<CompRow> = [
   {
-    label: 'Available at 2am and on holidays',
-    ai: 'Yes, at the same standard as midday',
-    answering: 'Yes, but it takes a message',
-    bpo: 'Only in the contracted hours',
-    ivr: 'Yes, with menu options only',
+    label: 'Available at 2am and on holidays.',
+    ai: 'Yes, at the same standard as midday.',
+    answering: 'Yes, but it takes a message.',
+    bpo: 'Only in the contracted hours.',
+    ivr: 'Yes, with menu options only.',
   },
   {
-    label: 'Books against live availability',
-    ai: 'Yes, with your scheduling rules applied',
-    answering: 'Rarely. Usually a callback request',
-    bpo: 'Yes, if given system access',
-    ivr: 'Only the simplest slot types',
+    label: 'Books against live availability.',
+    ai: 'Yes, with your scheduling rules applied.',
+    answering: 'Rarely. Usually a callback request.',
+    bpo: 'Yes, if given system access.',
+    ivr: 'Only the simplest slot types.',
   },
   {
-    label: 'Checks insurance eligibility',
-    ai: 'Yes, through the standard payer transaction',
-    answering: 'No',
-    bpo: 'Yes, manually, at human speed',
-    ivr: 'No',
+    label: 'Checks insurance eligibility.',
+    ai: 'Yes, through the standard payer transaction.',
+    answering: 'No.',
+    bpo: 'Yes, manually, at human speed.',
+    ivr: 'No.',
   },
   {
-    label: 'Handles PHI under a signed BAA',
-    ai: 'Required before anything is connected',
-    answering: 'Should be. Ask to see it',
-    bpo: 'Should be. Ask about subcontractors',
-    ivr: 'Usually, through the phone vendor',
+    label: 'Handles PHI under a signed BAA.',
+    ai: 'Required before anything is connected.',
+    answering: 'Should be. Ask to see it.',
+    bpo: 'Should be. Ask about subcontractors.',
+    ivr: 'Usually, through the phone vendor.',
   },
   {
-    label: 'Handles a clinical question',
-    ai: 'Hands it over untouched. Never answers',
-    answering: 'Takes a message for the nurse',
-    bpo: 'Escalates per script',
-    ivr: 'Offers a menu and hopes',
+    label: 'Handles a clinical question.',
+    ai: 'Hands it over untouched. Never answers.',
+    answering: 'Takes a message for the nurse.',
+    bpo: 'Escalates per script.',
+    ivr: 'Offers a menu and hopes.',
   },
   {
-    label: 'Where it fails',
-    ai: 'Bad data, no escalation rule, nobody reading logs',
-    answering: 'Patients wait for a callback that slips',
-    bpo: 'Turnover and thin knowledge of your practice',
-    ivr: 'People press zero, or hang up',
+    label: 'Where it fails.',
+    ai: 'Bad data, no escalation rule, nobody reading logs.',
+    answering: 'Patients wait for a callback that slips.',
+    bpo: 'Turnover and thin knowledge of your practice.',
+    ivr: 'People press zero, or hang up.',
   },
 ];
 
@@ -335,25 +336,25 @@ type Rival = { domain: string; note: string; detail: string };
 const RIVALS: ReadonlyArray<Rival> = [
   {
     domain: 'hippocraticai.com',
-    note: 'Ranks first, and leads with safety',
+    note: 'Ranks first, and leads with safety.',
     detail:
       'Presents itself as a safety-focused generative AI healthcare agent company, and says so in its own page title. If you want a packaged product rather than a build against your systems, it is the first name you meet.',
   },
   {
     domain: 'notablehealth.com',
-    note: 'A platform built for health systems',
+    note: 'A platform built for health systems.',
     detail:
       'Positions itself as an AI platform purpose-built for healthcare, at health system scale. Platforms suit a broad problem and a real change-management budget, and suit one broken queue much less well.',
   },
   {
     domain: 'artera.io and cognigy.com',
-    note: 'Communication platforms the AI Overview quotes',
+    note: 'Communication platforms the AI Overview quotes.',
     detail:
       'Both appear among the sources Google’s AI Overview draws on here, in patient communication and conversational AI. If your gap is messaging patients consistently rather than acting inside your scheduling system, a platform may cover it with no build.',
   },
   {
     domain: 'nature.com and pmc.ncbi.nlm.nih.gov',
-    note: 'The literature, not a vendor',
+    note: 'The literature, not a vendor.',
     detail:
       'Peer-reviewed work on AI agents in healthcare ranks on page one and is quoted in the AI Overview. It is the only part of this results page with nothing to sell. Read it before any vendor, us included.',
   },
@@ -751,11 +752,7 @@ export default function AiAgentsForHealthcarePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        id="hcag-breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <BreadcrumbSchema items={BREADCRUMB_ITEMS} />
 
       <SiteHeader />
 

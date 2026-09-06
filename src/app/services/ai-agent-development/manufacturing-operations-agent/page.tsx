@@ -31,7 +31,7 @@ const PAGE_URL =
 export const metadata: Metadata = {
   title: 'AI Agents for Manufacturing Operations | FactoryJet',
   description:
-    'We build AI agents that read your ERP, CMMS, historian and shop-floor documents to answer questions, draft handovers and route issues. Information layer only, never machine control.',
+    'We build AI agents that read ERP, CMMS, historian and shop-floor data to answer questions, draft handovers and route issues. Read-only information layer.',
   keywords: [
     'manufacturing operations agent',
     'AI agent for manufacturing',
@@ -561,7 +561,7 @@ const FAQ_ITEMS = [
    JSON-LD. Every const declared here is rendered in the component below.
 ───────────────────────────────────────────────────────────────────────────── */
 
-const FAQ_SCHEMA = {
+const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: FAQ_ITEMS.map((item) => ({
@@ -571,7 +571,7 @@ const FAQ_SCHEMA = {
   })),
 };
 
-const SERVICE_SCHEMA = {
+const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: 'Manufacturing operations AI agent development',
@@ -591,7 +591,7 @@ const SERVICE_SCHEMA = {
   },
 };
 
-const WEBPAGE_SCHEMA = {
+const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   '@id': `${PAGE_URL}#webpage`,
@@ -665,17 +665,22 @@ export default function ManufacturingOperationsAgentPage() {
       <script
         id="mfg-ops-agent-webpage-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBPAGE_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <script
         id="mfg-ops-agent-service-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         id="mfg-ops-agent-faq-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        id="mfg-ops-agent-webpage-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
 
       <SiteHeader cta={{ label: 'Talk to the Founder', modal: true, region: 'us' }} />
@@ -803,11 +808,11 @@ export default function ManufacturingOperationsAgentPage() {
                   </p>
                   <ul className="mt-5 space-y-3">
                     {[
-                      { lvl: 'Level 4', txt: 'Business planning and logistics. ERP and MRP. The agent reads here.' },
-                      { lvl: 'Level 3', txt: 'Manufacturing operations management. MES, CMMS, quality records. The agent reads here.' },
-                      { lvl: 'Level 2', txt: 'Monitoring, supervisory and automated control. SCADA, HMI and PLCs. The agent may read a historian tag mirrored from here. It writes nothing.' },
+                      { lvl: 'Level 4', txt: 'Business planning and logistics. ERP integration, bill of materials (BOM) management, and MRP sync. The agent reads here.' },
+                      { lvl: 'Level 3', txt: 'Manufacturing execution system (MES), CMMS maintenance, warehouse management system (WMS), and overall equipment effectiveness (OEE) tracking. The agent reads here.' },
+                      { lvl: 'Level 2', txt: 'Supervisory control and data acquisition (SCADA), programmable logic controller (PLC) mirrors, and historian tag telemetry. The agent reads data here. It writes nothing.' },
                       { lvl: 'Level 1', txt: 'Sensing and manipulating the process. Sensors and actuators. Out of scope.' },
-                      { lvl: 'Level 0', txt: 'The production process itself. Out of scope.' },
+                      { lvl: 'Level 0', txt: 'The production process itself. Physical machinery. Out of scope.' },
                     ].map((row) => (
                       <li key={row.lvl} className="flex gap-3">
                         <span

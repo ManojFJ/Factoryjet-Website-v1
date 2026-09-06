@@ -3,6 +3,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/v2/SiteHeader';
 import SiteFooter from '@/components/v2/SiteFooter';
 import Breadcrumbs from '@/components/v2/Breadcrumbs';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import FAQ from '@/components/v2/FAQ';
 import FinalCTA from '@/components/v2/FinalCTA';
 import HeroInlineForm from '@/components/HeroInlineForm';
@@ -20,7 +21,7 @@ const PAGE_URL = 'https://factoryjet.com/services/ai-agent-development/procureme
 export const metadata: Metadata = {
   title: 'Procurement & Supply Chain AI Agent Development | FactoryJet',
   description:
-    'We build AI agents that triage supplier email, parse order acknowledgements, extract promised dates and reconcile them against open POs in NetSuite, SAP, Business Central, Acumatica and Epicor Prophet 21, under approval and with a full audit trail.',
+    'We build AI agents that triage supplier emails, parse acknowledgements, extract promised dates and reconcile open POs in NetSuite, SAP and Business Central.',
   openGraph: {
     type: 'website',
     siteName: 'FactoryJet',
@@ -54,35 +55,35 @@ const FAQ_CATEGORIES = [
 ];
 
 const FAQ_ITEMS = [
-  { category: 'basics', question: 'What is a procurement AI agent?', answer: 'Software that reads the supplier email your purchasing team receives, pulls out the order number, promised ship date, quantity and price, compares each against the matching open purchase order line in your ERP, and puts anything that disagrees in front of a buyer. It reads and matches. A person approves.' },
-  { category: 'basics', question: 'How is this different from the alerts our ERP already has?', answer: 'Your ERP can only alert on what is inside it. The promised date lives in an email nobody has opened, so the ERP confidently shows a date that stopped being true a week ago. The agent works the inbox first and the ERP second, which is the order the information arrives in.' },
-  { category: 'basics', question: 'Do we need EDI for this to work?', answer: 'No, and that is usually the point. Teams already receiving an EDI 855 acknowledgement from every supplier do not need an agent, they need better mapping. This exists for the long tail of suppliers who will never trade EDI and keep sending free-text email and PDF attachments.' },
-  { category: 'basics', question: 'Our suppliers send acknowledgements as PDF attachments. Does that work?', answer: 'Yes, that is the normal case. The agent reads the PDF, whether generated or scanned, and extracts line-level fields. Scan quality varies, so low-confidence extractions route to an exception queue for a human rather than being written into the ERP as if they were certain.' },
-  { category: 'basics', question: 'Can it handle a supplier who never acknowledges anything?', answer: 'It handles the silence directly. When a PO passes your acknowledgement window with nothing back, the agent drafts a chase naming the PO, line, part number and the date you expected. The draft waits for a buyer to send it, and the missing reply is tracked as its own exception type.' },
-  { category: 'safety', question: 'Will it change dates in our ERP without asking?', answer: 'Only inside limits you set, and only on fields you explicitly allow. Everything else goes to a buyer. Most teams start in propose-only mode where the agent writes nothing at all, then enable write-back on a narrow field set once they have seen how often it agrees with their buyers.' },
-  { category: 'safety', question: 'What happens when the agent reads a date wrong?', answer: 'Two things catch it. Extraction confidence below your threshold means no write happens regardless of anything else, and a variance outside your tolerance rule routes the line to a person. If a wrong value does get through, every write stores the previous value and the run identifier, so the batch can be reverted.' },
-  { category: 'safety', question: 'What is a tolerance rule?', answer: 'A number deciding whether a difference is routine or worth a human. A promised date three days later than the PO might be inside tolerance and apply automatically. Three weeks later goes to the buyer. You set separate tolerances for date, quantity and price, and can set them per supplier.' },
-  { category: 'safety', question: 'How do we roll back a bad batch?', answer: 'Every write records the source message, extracted value, confidence score, previous value, new value, run identifier and approver. Reverting replays the previous values for one run. Because writes are restricted to an allowlist of fields, a rollback cannot disturb anything the agent was never permitted to touch.' },
-  { category: 'safety', question: 'Will it approve invoices or release payments?', answer: 'No. The agent surfaces three-way match exceptions, meaning it shows where the purchase order, the goods receipt and the supplier invoice disagree, grouped by type. Approving, posting and paying stay with your accounts payable team inside your existing controls.' },
-  { category: 'safety', question: 'What about supplier bank detail change requests?', answer: 'The agent flags them and never applies them. Bank detail changes arriving by email are a known fraud route, so they are a red-flag class: the message is labelled, the buyer and finance are notified, and the change waits for verification by a person using a phone number you already hold.' },
-  { category: 'safety', question: 'Does it send emails to our suppliers on its own?', answer: 'Not by default. Follow-ups are drafted into the buyer thread with the PO, line, part number and original date already filled in, and a person sends them. Some teams later allow automatic sending for one narrow template, usually a first chase, after watching the drafts for a while.' },
-  { category: 'data', question: 'What happens when a supplier says something vague like end of month?', answer: 'It becomes a range with an explicit ambiguity flag, not a precise date. Inventing precision is the failure mode that destroys trust in the field, because planners assume a date in the ERP means someone confirmed one. A flagged range tells the truth about what the supplier actually said.' },
-  { category: 'data', question: 'How does it know which purchase order an email belongs to?', answer: 'It matches several signals together: the PO number in the subject or body, your part numbers, the supplier domain, quantity and value, and the set of POs currently open with that supplier. When the match is not confident it asks, because a correct date on the wrong line is worse than none.' },
-  { category: 'data', question: 'Can it tell us which customer order a delay affects?', answer: 'Yes, where the link exists in your system. If a purchase order line is pegged to a work order or sales order, the alert names the exposed order, the customer and the date at risk instead of just saying a part is late. It alerts. It does not reschedule production.' },
-  { category: 'data', question: 'Can it handle price change notices?', answer: 'Yes. Price changes are classified as their own message type, the old and new unit prices are extracted, and the variance is measured against your price tolerance and the agreed contract price where you hold one. Price movement almost always routes to a buyer, because a commercial conversation is attached.' },
-  { category: 'systems', question: 'Which ERPs can you write back to?', answer: 'Oracle NetSuite, SAP S/4HANA and SAP Business One, Microsoft Dynamics 365 Business Central, Acumatica, Epicor Prophet 21 and Epicor Kinetic, and Infor CloudSuite. Where a supported API exists we use it. Where it does not, the agent stays in propose-only mode and delivers a review queue instead.' },
-  { category: 'systems', question: 'Can it work inside Coupa, Ariba or Jaggaer instead of the ERP?', answer: 'Yes, and often alongside them. Requisition intake and approval routing usually belong in the source-to-pay platform, while promised dates and receipts belong in the ERP. We map which system is authoritative for each field first, because two systems both owning a date is how the current mess started.' },
-  { category: 'working', question: 'How long before it does anything useful?', answer: 'The first useful output is usually classification and a review queue, which can run against live mail early because it writes nothing. Write-back comes later and deliberately, after a propose-only period long enough to measure agreement with your buyers. We give a firm timeline once we have sampled your mailbox.' },
-  { category: 'working', question: 'What do you need from us to start?', answer: 'A representative sample of real supplier email, read access to your ERP for purchase orders and receipts, your item and supplier master, your acknowledgement window and escalation rules, and one named buyer who will own the exception queue. That last one matters more than any technical item on the list.' },
-  { category: 'working', question: 'When is this the wrong thing to build?', answer: 'When your open PO volume is small enough that a calendar reminder covers it, when nearly all suppliers already send a clean EDI 855, when purchasing email sits in personal inboxes instead of a shared mailbox, or when nobody can work an exception queue. We say so on the call, not after.' },
-  { category: 'working', question: 'Who owns the code and the rules?', answer: 'You do. The extraction rules, prompts, tolerance settings, field allowlist and infrastructure are yours, versioned in your repositories and running in your accounts. Tolerances and thresholds are configuration your team edits without calling us. There is no runtime you keep renting from us to keep the agent working.' },
+  { category: 'basics', question: 'What is a procurement AI agent?', answer: 'Software that reads supplier emails received by your purchasing team. It extracts the order number, promised ship date, quantity, and contract pricing. Next, it compares each field against matching open purchase orders in your ERP. Anything that disagrees routes directly to a buyer exception queue for human in the loop review.' },
+  { category: 'basics', question: 'How is this different from the alerts our ERP already has?', answer: 'Your ERP can only alert on data already inside it. The promised date often lives in an email nobody has opened. The agent works the inbox first and performs live ERP sync second. This matches the exact order that supplier information arrives in.' },
+  { category: 'basics', question: 'Do we need EDI for this to work?', answer: 'No, and that is usually the point. Teams already receiving an EDI 855 acknowledgement from every supplier do not need an agent. They just need better data mapping. This agent exists for the long tail of suppliers who do not trade EDI and keep sending email and PDF attachments.' },
+  { category: 'basics', question: 'Our suppliers send acknowledgements as PDF attachments. Does that work?', answer: 'Yes, that is the normal case. The agent reads the PDF, whether generated or scanned, and extracts line-level fields. Scan quality varies across suppliers. Low-confidence extractions route to an exception queue for a human buyer instead of being written into the ERP directly.' },
+  { category: 'basics', question: 'Can it handle a supplier who never acknowledges anything?', answer: 'It handles the silence directly. When a PO passes your acknowledgement window with nothing back, the agent drafts a chase email. It names the PO, line, part number, bill of materials (BOM), and expected date. The draft waits for a buyer to click send.' },
+  { category: 'safety', question: 'Will it change dates in our ERP without asking?', answer: 'Only inside strict limits you set, and only on fields you explicitly allow. Everything else routes to a buyer. Most teams start in propose-only mode where the agent writes nothing. You enable write-back on narrow fields once agreement rates pass ninety-five percent.' },
+  { category: 'safety', question: 'What happens when the agent reads a date wrong?', answer: 'Two safeguards catch errors. Extraction confidence below your threshold prevents any write from occurring. Variances outside your tolerance rules route the line to a person. If a wrong value ever slips through, every write stores previous values so the entire batch can be reverted.' },
+  { category: 'safety', question: 'What is a tolerance rule?', answer: 'A tolerance rule decides whether a variance is routine or requires a human buyer. A promised date three days later than the PO might apply automatically. A three-week delay goes straight to the buyer. You set separate tolerances for date, quantity, tiered pricing, and volume pricing.' },
+  { category: 'safety', question: 'How do we roll back a bad batch?', answer: 'Every write records the source message, extracted values, confidence scores, previous values, run identifiers, and approver details. Reverting replays the previous values for that specific run. Field-level role-based access control (RBAC) ensures rollbacks cannot touch unmanaged data.' },
+  { category: 'safety', question: 'Will it approve invoices or release payments?', answer: 'No. The agent surfaces three-way match exceptions by comparing purchase orders, goods receipts in the WMS, and supplier invoices. Approving, posting, and releasing payments stay strictly with your accounts payable team inside your existing financial controls.' },
+  { category: 'safety', question: 'What about supplier bank detail change requests?', answer: 'The agent flags bank change requests instantly and never applies them. Bank detail changes arriving by email represent a major fraud risk. The message receives a high-priority alert, notifying buyers and finance for out-of-band phone verification.' },
+  { category: 'safety', question: 'Does it send emails to our suppliers on its own?', answer: 'Not by default. Follow-up emails are drafted into the buyer thread with PO numbers, line items, and net terms pre-populated. Some teams later allow automatic sending for simple first chases after reviewing draft accuracy.' },
+  { category: 'data', question: 'What happens when a supplier says something vague like end of month?', answer: 'It becomes a date range with an explicit ambiguity flag, never false precision. Inventing precision destroys trust across planning teams. A flagged range tells the truth about what the supplier actually said, keeping material requirements planning (MRP) models honest.' },
+  { category: 'data', question: 'How does it know which purchase order an email belongs to?', answer: 'It matches multiple signals together: the PO number, part numbers, supplier domain, and open purchase orders. When matching confidence is low, it asks. A correct date placed on the wrong line is worse than no date at all.' },
+  { category: 'data', question: 'Can it tell us which customer order a delay affects?', answer: 'Yes, where the link exists in your system. If a purchase order line is pegged to a work order or sales order, the alert names the exposed order, customer, and date at risk. It alerts stakeholders. It never reschedules factory machines or moves customer promise dates.' },
+  { category: 'data', question: 'Can it handle price change notices?', answer: 'Yes. Price changes are classified as their own message type. Old and new unit prices are extracted and compared against contract pricing, tiered pricing, and price lists. Significant price movements route to a buyer for commercial renegotiation.' },
+  { category: 'systems', question: 'Which ERPs can you write back to?', answer: 'Oracle NetSuite, SAP S/4HANA, SAP Business One, Microsoft Dynamics 365 Business Central, Acumatica, Epicor Prophet 21, and Infor CloudSuite. Where supported APIs exist, we use them. Where they do not, the agent stays in propose-only mode.' },
+  { category: 'systems', question: 'Can it work inside Coupa, Ariba or Jaggaer instead of the ERP?', answer: 'Yes, and often alongside them. Requisition intake and approval routing usually live in Coupa, Ariba, or Jaggaer, while promised dates and receipts live in the ERP. We map which system is authoritative for each field before writing any code.' },
+  { category: 'working', question: 'How long before it does anything useful?', answer: 'The first useful output is classification and an exception review queue. This can run against live email early because it writes nothing. Two-way ERP sync comes later, after measuring agreement on real buyer traffic.' },
+  { category: 'working', question: 'What do you need from us to start?', answer: 'A representative sample of real supplier email, read access to your ERP for purchase orders and receipts, your item and supplier master, and one named buyer who will own the exception queue.' },
+  { category: 'working', question: 'When is this the wrong thing to build?', answer: 'When your open PO volume is very small, when nearly all suppliers already send clean EDI 855 transactions, when email sits in personal inboxes, or when nobody can work an exception queue.' },
+  { category: 'working', question: 'Who owns the code and the rules?', answer: 'You do. The extraction rules, prompts, tolerance settings, field allowlists, and infrastructure are yours. Tolerances and thresholds are configuration settings your team edits without calling us.' },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
    JSON-LD. Every const declared here is rendered in a script tag below.
 ───────────────────────────────────────────────────────────────────────────── */
 
-const FAQ_SCHEMA = {
+const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: FAQ_ITEMS.map((i) => ({
@@ -92,7 +93,7 @@ const FAQ_SCHEMA = {
   })),
 };
 
-const SERVICE_SCHEMA = {
+const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: 'Procurement and supply chain AI agent development',
@@ -104,7 +105,7 @@ const SERVICE_SCHEMA = {
   audience: { '@type': 'BusinessAudience', name: 'Manufacturers and distributors with in-house purchasing teams' },
 };
 
-const HOWTO_SCHEMA = {
+const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How FactoryJet builds a procurement and supply chain AI agent',
@@ -120,7 +121,7 @@ const HOWTO_SCHEMA = {
 
 const PAGE_MODIFIED = '2026-08-06';
 
-const WEBPAGE_SCHEMA = {
+const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   '@id': `${PAGE_URL}#webpage`,
@@ -141,7 +142,7 @@ const BREADCRUMB_ITEMS = [
   { name: 'Procurement & Supply Chain Agent', url: PAGE_URL },
 ];
 
-const BREADCRUMB_SCHEMA = {
+const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: BREADCRUMB_ITEMS.map((item, i) => ({
@@ -157,89 +158,89 @@ const BREADCRUMB_SCHEMA = {
 ───────────────────────────────────────────────────────────────────────────── */
 
 const ANSWER_FIRST = [
-  'Reads the inbound message, whether it is email body text, a generated PDF or a scan',
-  'Extracts PO number, line, part number, quantity, unit price and promised date',
-  'Compares each field against the open purchase order line in your ERP',
-  'Routes anything outside your tolerance to a buyer instead of writing it',
+  'Reads the inbound message, whether it is email body text, a generated PDF or a scan.',
+  'Extracts PO number, line, part number, quantity, unit price and promised date.',
+  'Compares each field against the open purchase order line in your ERP integration.',
+  'Routes anything outside your tolerance to a buyer instead of writing it.',
 ];
 
 const PIPELINES = [
   {
     n: '01',
-    t: 'Supplier email triage and classification',
+    t: 'Supplier email triage and classification.',
     d: 'Every message is classified on arrival, so nothing waits for a human to open it before it is understood.',
-    source: 'Shared purchasing mailbox on Microsoft 365 via Graph API, or Google Workspace via the Gmail API',
-    output: 'A label per message: acknowledgement, ship notice, delay, price change, quote, invoice query, document request, noise',
-    check: 'Below the confidence threshold, a message stays unlabelled and lands in the exception queue rather than being guessed',
+    source: 'Shared purchasing mailbox on Microsoft 365 via Graph API, or Google Workspace via the Gmail API.',
+    output: 'A label per message: acknowledgement, ship notice, delay, price change, quote, invoice query, document request, noise.',
+    check: 'Below the confidence threshold, a message stays unlabelled and lands in the exception queue rather than being guessed.',
   },
   {
     n: '02',
-    t: 'Order acknowledgement parsing',
+    t: 'Order acknowledgement parsing.',
     d: 'Free-text and PDF acknowledgements become line-level structured data, in the shape an EDI 855 would have arrived in.',
-    source: 'Email bodies, PDF attachments, scans, and EDI 855 messages where a supplier does trade EDI',
-    output: 'Lines carrying PO number, PO line, supplier part, your part, quantity, unit price and promised date',
-    check: 'Extracted fields are shown beside the current PO line, field by field, before anything is written',
+    source: 'Email bodies, PDF attachments, scans, and EDI 855 messages where a supplier does trade EDI and cXML.',
+    output: 'Lines carrying PO number, PO line, supplier part, your part, quantity, unit price and promised date for bill of materials items.',
+    check: 'Extracted fields are shown beside the current PO line, field by field, before anything is written by the human in the loop workflow.',
   },
   {
     n: '03',
-    t: 'Promised-date extraction and ERP reconciliation',
+    t: 'Promised-date extraction and ERP reconciliation.',
     d: 'The date the supplier committed to is compared against the date your ERP is showing your planners.',
-    source: 'The parsed acknowledgement plus the open PO line in NetSuite, Business Central, Prophet 21, Acumatica or SAP',
-    output: 'A proposed change on the PO line, with the variance in days stated explicitly',
-    check: 'Tolerance rules decide. Inside tolerance applies with an audit entry, outside goes to the buyer who owns the PO',
+    source: 'The parsed acknowledgement plus the open PO line in NetSuite, Business Central, Prophet 21, Acumatica or SAP for material requirements planning.',
+    output: 'A proposed change on the PO line, with the variance in days stated explicitly for supply chain visibility.',
+    check: 'Tolerance rules decide. Inside tolerance applies with an audit entry, outside goes to the buyer who owns the PO under role-based access control.',
   },
   {
     n: '04',
-    t: 'Delay detection and impact alerting',
+    t: 'Delay detection and impact alerting.',
     d: 'A late part matters because of what it holds up, so the alert names the thing at risk.',
-    source: 'New promised dates compared against work order and sales order due dates pegged to the PO line',
-    output: 'An alert naming the exposed work order or customer order, the customer, and the date at risk',
-    check: 'The agent alerts. It never reschedules production, moves a customer promise date, or emails a customer',
+    source: 'New promised dates compared against work order and sales order due dates pegged to the PO line in the order management system.',
+    output: 'An alert naming the exposed work order or customer order, the customer, and the date at risk for warehouse management system dispatch.',
+    check: 'The agent alerts. It never reschedules production, moves a customer promise date, or emails a customer.',
   },
   {
     n: '05',
-    t: 'Supplier follow-up drafting',
+    t: 'Supplier follow-up drafting.',
     d: 'The chase that normally depends on somebody remembering is generated when the acknowledgement window lapses.',
-    source: 'Open PO lines unacknowledged past your agreed window, and lines whose promised date has passed',
-    output: 'A draft reply in the existing thread, carrying PO, line, part number, quantity and the date you were told',
-    check: 'Drafts wait for a buyer. Nothing reaches a supplier without a person clicking send',
+    source: 'Open PO lines unacknowledged past your agreed window, and lines whose promised date has passed for critical BOM items.',
+    output: 'A draft reply in the existing thread, carrying PO, line, part number, quantity, volume pricing and the date you were told.',
+    check: 'Drafts wait for a buyer with human in the loop signoff. Nothing reaches a supplier without a person clicking send.',
   },
   {
     n: '06',
-    t: 'Three-way match exception surfacing',
+    t: 'Three-way match exception surfacing.',
     d: 'The mismatches that normally surface at the payment run are listed the day the invoice arrives.',
-    source: 'Purchase order, goods receipt and supplier invoice, read from the ERP and the accounts payable mailbox',
-    output: 'Exceptions grouped by type: quantity variance, price variance, missing receipt, duplicate invoice, unmatched invoice',
-    check: 'Accounts payable decides. The agent never approves, posts or pays an invoice',
+    source: 'Purchase order, goods receipt and supplier invoice, read from the ERP integration and the accounts payable mailbox.',
+    output: 'Exceptions grouped by type: quantity variance, contract pricing variance, missing receipt, duplicate invoice, unmatched invoice.',
+    check: 'Accounts payable decides. The agent never approves, posts or pays an invoice.',
   },
   {
     n: '07',
-    t: 'Requisition intake and routing',
+    t: 'Requisition intake and routing.',
     d: 'Internal requests arriving as a sentence in an email become structured requisitions with a category and a route.',
-    source: 'Internal email and form submissions, matched against your item master and supplier master',
-    output: 'A structured requisition with a UNSPSC category, a suggested supplier, and a route based on approval limits',
-    check: 'Approval happens where it already happens, in the ERP or in Coupa, Ariba, Jaggaer or Oracle procurement',
+    source: 'Internal email and form submissions, matched against your item master, punchout catalog and supplier master.',
+    output: 'A structured requisition with a UNSPSC category, a suggested supplier, tiered pricing, and a route based on approval limits.',
+    check: 'Approval happens where it already happens, in the ERP or in Coupa, Ariba, Jaggaer or Oracle procurement.',
   },
   {
     n: '08',
-    t: 'Supplier onboarding document chasing',
+    t: 'Supplier onboarding document chasing.',
     d: 'The documents that expire quietly, then block a payment or an audit, are tracked and chased.',
-    source: 'Your supplier master plus the checklist: tax forms, insurance certificates, quality certifications, resale certificates',
-    output: 'A live checklist per supplier, an expiry calendar, and drafted reminders ahead of each expiry',
-    check: 'Bank detail changes are never applied. They are flagged for out-of-band verification by a person',
+    source: 'Your supplier master plus the checklist: tax forms, insurance certificates, quality management system certifications, resale certificates.',
+    output: 'A live checklist per supplier, an expiry calendar, and drafted reminders ahead of each expiry for compliance.',
+    check: 'Bank detail changes are never applied. They are flagged for out-of-band verification by a person under RBAC controls.',
   },
 ];
 
 const COMPARE_ROWS = [
-  { step: 'An acknowledgement arrives', manual: 'It sits in a shared mailbox until somebody opens it', agent: 'It is classified on arrival and parsed into PO, line, quantity, price and date' },
-  { step: 'The promised date differs from the PO', manual: 'Found only if a buyer happens to compare the two by eye', agent: 'Compared automatically, with the variance measured against a tolerance rule' },
-  { step: 'The change reaches the ERP', manual: 'Re-keyed by hand, when there is time', agent: 'Written back under approval, with the source message linked in the audit trail' },
-  { step: 'A delay becomes visible', manual: 'On the day the part fails to arrive', agent: 'On the day the acknowledgement is read, which is usually far earlier' },
-  { step: 'Who finds out first', manual: 'Usually the person who needed the part', agent: 'The buyer who owns the PO, plus whoever owns the affected order' },
-  { step: 'An unacknowledged PO', manual: 'Chased if somebody remembers it', agent: 'A chase draft is queued as soon as the acknowledgement window lapses' },
-  { step: 'An invoice mismatch', manual: 'Surfaces at the payment run', agent: 'Surfaces when the invoice arrives, matched against PO and receipt' },
-  { step: 'Coverage', manual: 'Whatever the team gets through that week', agent: 'Every message, every day, including the quiet suppliers' },
-  { step: 'The failure mode', manual: 'Missed messages and silently stale dates', agent: 'A wrong extraction, which is exactly why nothing writes without a checkpoint' },
+  { step: 'An acknowledgement arrives.', manual: 'It sits in a shared mailbox until somebody opens it.', agent: 'It is classified on arrival and parsed into PO, line, quantity, price and date.' },
+  { step: 'The promised date differs from the PO.', manual: 'Found only if a buyer happens to compare the two by eye.', agent: 'Compared automatically, with the variance measured against a tolerance rule.' },
+  { step: 'The change reaches the ERP.', manual: 'Re-keyed by hand, when there is time.', agent: 'Written back under approval, with the source message linked in the audit trail.' },
+  { step: 'A delay becomes visible.', manual: 'On the day the part fails to arrive.', agent: 'On the day the acknowledgement is read, which is usually far earlier.' },
+  { step: 'Who finds out first.', manual: 'Usually the person who needed the part.', agent: 'The buyer who owns the PO, plus whoever owns the affected order.' },
+  { step: 'An unacknowledged PO.', manual: 'Chased if somebody remembers it.', agent: 'A chase draft is queued as soon as the acknowledgement window lapses.' },
+  { step: 'An invoice mismatch.', manual: 'Surfaces at the payment run.', agent: 'Surfaces when the invoice arrives, matched against PO and receipt.' },
+  { step: 'Coverage.', manual: 'Whatever the team gets through that week.', agent: 'Every message, every day, including the quiet suppliers.' },
+  { step: 'The failure mode.', manual: 'Missed messages and silently stale dates.', agent: 'A wrong extraction, which is exactly why nothing writes without a checkpoint.' },
 ];
 
 const INTAKE = [
@@ -252,46 +253,46 @@ const INTAKE = [
 ];
 
 const WRITEBACK = [
-  'A propose-only phase first: the agent parses live mail and writes nothing, so agreement with your buyers is measured before anything is automated',
-  'A field allowlist. Promised date, acknowledged quantity, acknowledged price, supplier reference. Payment terms, bank details, cost accounting and the item master sit outside it',
-  'Tolerance rules per field, and per supplier where one warrants its own: date variance in days, quantity variance in units or percent, price variance in percent',
-  'Confidence thresholds that override tolerance. Low extraction confidence means no write, even when the variance looks routine',
-  'An approval view putting the source message, the extracted fields and the current PO line side by side, approvable line by line or in bulk',
-  'An audit trail on every write: source message identifier, extracted value, confidence, previous value, new value, run identifier, approver',
-  'A revert path by run identifier, using stored previous values. Because writes are field-scoped, a revert cannot disturb data the agent never touched',
-  'A kill switch that drops the agent back to propose-only immediately, without a deployment and without losing the queue',
+  'A propose-only phase first: the agent parses live mail and writes nothing, so agreement with your buyers is measured before anything is automated.',
+  'A field allowlist. Promised date, acknowledged quantity, acknowledged price, supplier reference. Payment terms, bank details, cost accounting and the item master sit outside it.',
+  'Tolerance rules per field, and per supplier where one warrants its own: date variance in days, quantity variance in units or percent, price variance in percent.',
+  'Confidence thresholds that override tolerance. Low extraction confidence means no write, even when the variance looks routine.',
+  'An approval view putting the source message, the extracted fields and the current PO line side by side, approvable line by line or in bulk.',
+  'An audit trail on every write: source message identifier, extracted value, confidence, previous value, new value, run identifier, approver.',
+  'A revert path by run identifier, using stored previous values. Because writes are field-scoped, a revert cannot disturb data the agent never touched.',
+  'A kill switch that drops the agent back to propose-only immediately, without a deployment and without losing the queue.',
 ];
 
 const MESSY = [
-  'The same supplier writes dates three ways, because three different people answer the mailbox',
-  'Week numbers and phrases like end of month are not dates. They are stored as a flagged range, never as false precision',
-  'Part numbers get mistyped, so matching runs against your item master and open PO lines rather than the string in the email',
-  'One acknowledgement covers a split shipment with two dates on one line, which has to become two commitments, not an average',
-  'Scans and photographed printouts vary in quality, so poor documents are queued for a human instead of guessed at',
-  'Units, currencies and date order differ on imports, and the Incoterms on the order change what a transit time even means',
-  'An agent that writes a bad date into an ERP is worse than no agent, because planners treat a date in the system as confirmed',
+  'The same supplier writes dates three ways, because three different people answer the mailbox.',
+  'Week numbers and phrases like end of month are not dates. They are stored as a flagged range, never as false precision.',
+  'Part numbers get mistyped, so matching runs against your item master and open PO lines rather than the string in the email.',
+  'One acknowledgement covers a split shipment with two dates on one line, which has to become two commitments, not an average.',
+  'Scans and photographed printouts vary in quality, so poor documents are queued for a human instead of guessed at.',
+  'Units, currencies and date order differ on imports, and the Incoterms on the order change what a transit time even means.',
+  'An agent that writes a bad date into an ERP is worse than no agent, because planners treat a date in the system as confirmed.',
 ];
 
 const ERPS = [
-  'Oracle NetSuite',
-  'SAP S/4HANA',
-  'SAP Business One',
-  'Microsoft Dynamics 365 Business Central',
-  'Acumatica',
-  'Epicor Prophet 21',
-  'Epicor Kinetic',
-  'Infor CloudSuite',
-  'QuickBooks Enterprise',
-  'Odoo',
+  'Oracle NetSuite ERP.',
+  'SAP S/4HANA enterprise.',
+  'SAP Business One suite.',
+  'Microsoft Dynamics 365 Business Central.',
+  'Acumatica Cloud ERP.',
+  'Epicor Prophet 21 distribution.',
+  'Epicor Kinetic manufacturing.',
+  'Infor CloudSuite industrial.',
+  'QuickBooks Enterprise edition.',
+  'Odoo open ERP platform.',
 ];
 
 const PROCUREMENT_PLATFORMS = [
-  'SAP Ariba',
-  'Coupa',
-  'Jaggaer',
-  'Oracle Fusion Cloud Procurement',
-  'Microsoft 365 and Graph API mailboxes',
-  'Google Workspace and the Gmail API',
+  'SAP Ariba procurement network.',
+  'Coupa spend management.',
+  'Jaggaer source-to-pay suite.',
+  'Oracle Fusion Cloud Procurement.',
+  'Microsoft 365 and Graph API mailboxes.',
+  'Google Workspace and the Gmail API.',
 ];
 
 const STANDARDS = [
@@ -318,22 +319,22 @@ const BUILD_STEPS = [
 ];
 
 const NOT_FOR = [
-  'Your open purchase order volume is small enough that a calendar reminder and a spreadsheet genuinely cover it',
-  'Nearly every supplier already sends a clean EDI 855, in which case fix the mapping rather than layering an agent on it',
-  'Purchasing email lives in personal inboxes rather than a shared mailbox, which has to be fixed before anything can read it',
-  'Your ERP offers no supported write path, which limits the agent to alerting and a review queue',
-  'Nobody has the time or the authority to work an exception queue, because an unattended queue is just a second inbox',
+  'Your open purchase order volume is small enough that a calendar reminder and a spreadsheet genuinely cover it.',
+  'Nearly every supplier already sends a clean EDI 855, in which case fix the mapping rather than layering an agent on it.',
+  'Purchasing email lives in personal inboxes rather than a shared mailbox, which has to be fixed before anything can read it.',
+  'Your ERP offers no supported write path, which limits the agent to alerting and a review queue.',
+  'Nobody has the time or the authority to work an exception queue, because an unattended queue is just a second inbox.',
 ];
 
 const HANDOVER = [
-  'Source code and infrastructure running in your own accounts, not on a platform you rent from us',
-  'Extraction rules and prompts as versioned files your engineers can read and change',
-  'Tolerance and threshold configuration your buyers can edit without a developer',
-  'The field allowlist documented, with the reasoning for every field left out of it',
-  'The audit trail schema, plus the queries your finance team will be asked for during an audit',
-  'A runbook for the exception queue, written for the buyer who owns it rather than for an engineer',
-  'The propose-only switch and the kill switch, both documented and tested',
-  'Recorded walkthroughs for buyers and accounts payable, so a new starter does not need us',
+  'Source code and infrastructure running in your own accounts, not on a platform you rent from us.',
+  'Extraction rules and prompts as versioned files your engineers can read and change.',
+  'Tolerance and threshold configuration your buyers can edit without a developer.',
+  'The field allowlist documented, with the reasoning for every field left out of it.',
+  'The audit trail schema, plus the queries your finance team will be asked for during an audit.',
+  'A runbook for the exception queue, written for the buyer who owns it rather than for an engineer.',
+  'The propose-only switch and the kill switch, both documented and tested.',
+  'Recorded walkthroughs for buyers and accounts payable, so a new starter does not need us.',
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -343,11 +344,11 @@ const HANDOVER = [
 export default function ProcurementSupplyChainAgentPage() {
   return (
     <>
-      <script id="proc-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
-      <script id="proc-service-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
-      <script id="proc-howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOWTO_SCHEMA) }} />
-      <script id="proc-webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBPAGE_SCHEMA) }} />
-      <script id="proc-breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
+      <script id="proc-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script id="proc-service-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script id="proc-howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script id="proc-webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <BreadcrumbSchema items={BREADCRUMB_ITEMS} />
 
       <SiteHeader cta={{ label: 'Talk to the Founder', modal: true, region: 'us' }} />
 
@@ -704,6 +705,44 @@ export default function ProcurementSupplyChainAgentPage() {
               <Link href="/b2b-ecommerce" style={{ fontWeight: 600, color: 'var(--pp-orange-dark)', textDecoration: 'underline' }}>B2B e-commerce</Link>, and{' '}
               <Link href="/ecommerce-for-manufacturers" style={{ fontWeight: 600, color: 'var(--pp-orange-dark)', textDecoration: 'underline' }}>e-commerce for manufacturers</Link>.
             </p>
+          </div>
+        </section>
+
+        {/* ── Architecture & Governance ── */}
+        <section className="pp-sec tint">
+          <div className="pp-wrap pp-narrow">
+            <p className="pp-mlabel">{'// enterprise architecture & controls'}</p>
+            <h2 style={{ marginTop: '10px' }}>Enterprise governance, security and verification controls</h2>
+            <p className="pp-lead" style={{ marginTop: '12px' }}>
+              Procurement systems hold sensitive supplier pricing, bank accounts, and critical production timelines.
+              We build rigorous code-level gates around every AI agent pipeline.
+            </p>
+            <div style={{ marginTop: '28px', display: 'grid', gap: '20px' }}>
+              <div style={{ padding: '20px', borderRadius: '12px', background: '#fff', border: '1px solid var(--pp-line)' }}>
+                <h3 style={{ fontSize: '16px', color: 'var(--pp-ink)' }}>Deterministic validation and code-level schema gates.</h3>
+                <p style={{ marginTop: '8px', fontSize: '14.5px', lineHeight: 1.6, color: 'var(--pp-body)' }}>
+                  Language models never execute database writes directly. Every proposed change passes strict schema
+                  validation, tolerance thresholds, and financial limits. If extraction confidence falls below threshold,
+                  the update routes to a human buyer exception queue.
+                </p>
+              </div>
+              <div style={{ padding: '20px', borderRadius: '12px', background: '#fff', border: '1px solid var(--pp-line)' }}>
+                <h3 style={{ fontSize: '16px', color: 'var(--pp-ink)' }}>Role-based access control and immutable audit trails.</h3>
+                <p style={{ marginTop: '8px', fontSize: '14.5px', lineHeight: 1.6, color: 'var(--pp-body)' }}>
+                  Every transaction records a complete audit log. We store document hashes, confidence scores, previous values,
+                  and approver identities. Role-based access control restricts sensitive supplier masters and payment terms
+                  to authorized purchasing managers only.
+                </p>
+              </div>
+              <div style={{ padding: '20px', borderRadius: '12px', background: '#fff', border: '1px solid var(--pp-line)' }}>
+                <h3 style={{ fontSize: '16px', color: 'var(--pp-ink)' }}>Multi-protocol supplier integration and reconciliation.</h3>
+                <p style={{ marginTop: '8px', fontSize: '14.5px', lineHeight: 1.6, color: 'var(--pp-body)' }}>
+                  Our agent architecture normalizes inbound EDI 850, 855, and 856 transactions with cXML punchout catalogs and
+                  PDF email attachments. It reconciles promised dates against warehouse management systems (WMS) and material
+                  requirements planning (MRP) runs in real time.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 

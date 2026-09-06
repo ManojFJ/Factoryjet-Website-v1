@@ -34,7 +34,7 @@ const PAGE_URL = 'https://factoryjet.com/services/ai-agent-development/rfq-biddi
 export const metadata: Metadata = {
   title: 'RFQ Automation Agent for Quoting Teams | FactoryJet',
   description:
-    'We build AI agents that read inbound RFQs from email, PDFs, buyer portals and EDI 840, match line items to your catalogue, and draft quotes for a human to approve.',
+    'We build AI agents that read inbound RFQs from email, PDFs and EDI 840, match items to your catalogue, and draft quotes for human approval.',
   keywords: [
     'RFQ automation agent',
     'AI agent for quoting',
@@ -136,9 +136,9 @@ const PIPELINE: PipelineStep[] = [
     title: 'Intake and classification',
     body: 'Every channel lands in one queue. First the agent decides what the message is: a new request, a revision to one already open, a purchase order, or not a quote request at all.',
     points: [
-      'Mailbox, portal, EDI, and web-form channels normalised into one record, original file kept.',
+      'Mailbox, portal, EDI 840, cXML punchout catalog, and web-form channels normalised into one record, original file kept.',
       'Duplicate and revision detection, so two estimators never price the same job.',
-      'Routing by buyer account, region, and product line, using the ERP account master.',
+      'Routing by buyer account, region, and product line, using the ERP integration account master and CRM.',
     ],
   },
   {
@@ -156,7 +156,7 @@ const PIPELINE: PipelineStep[] = [
     title: 'Line-item extraction',
     body: 'The agent pulls the fields an estimator would write down, and records how sure it is about each one. An unreadable part number is a different problem from an unreadable page.',
     points: [
-      'Quantity, unit of measure, description, buyer part number, and revision, per line.',
+      'Quantity, unit of measure, description, buyer part number, bill of materials (BOM), and revision, per line.',
       'Required date, delivery point, and Incoterms where the request states them.',
       'A confidence score on every extracted field, not just on the line.',
     ],
@@ -164,10 +164,10 @@ const PIPELINE: PipelineStep[] = [
   {
     n: '04',
     title: 'Part-number matching against your catalogue',
-    body: 'This is where most quoting time goes, and where the gain is largest. The agent works down a ladder of looser matches and stops at the first one it can defend.',
+    body: 'This is where quoting time goes, and where the gain is largest. The agent uses retrieval augmented generation (RAG) and vector search over your catalogue to match parts.',
     points: [
       'Exact match on your part number, then manufacturer part number, then GTIN.',
-      'Retrieval over your catalogue for description-only lines, reading item data from the ERP or PIM.',
+      'Retrieval augmented generation (RAG) and vector search over your catalogue for description-only lines, reading item data from the ERP or PIM.',
       'Cross-reference tables for competitor and customer part numbers, plus UNSPSC codes where buyers supply them.',
     ],
   },
@@ -178,7 +178,7 @@ const PIPELINE: PipelineStep[] = [
     points: [
       'Catalogue status: active, superseded, obsolete, non-stock, or made to order.',
       'Compliance flags for country of origin, export-controlled items, and certification or material traceability.',
-      'Lead-time and capacity checks against the ERP before a date is promised.',
+      'Lead-time, credit limit, and net terms checks against the ERP before a date is promised.',
     ],
   },
   {
@@ -186,7 +186,7 @@ const PIPELINE: PipelineStep[] = [
     title: 'Pricing rules and margin floors',
     body: 'The agent applies your rules and does not invent a price. Where the rules will not produce a defensible number, it stops and hands the line to a person.',
     points: [
-      'Contract price lists, customer-specific pricing, and volume breaks read live from the ERP.',
+      'Contract pricing lists, customer-specific pricing, tiered pricing, and volume pricing breaks read live from the ERP.',
       'Cost basis from current standard or landed cost, with freight, surcharge, and minimum-order rules on top.',
       'A margin floor per product line, below which the agent cannot produce a number and must escalate.',
     ],
@@ -194,7 +194,7 @@ const PIPELINE: PipelineStep[] = [
   {
     n: '07',
     title: 'Quote assembly and human approval',
-    body: 'The output is a draft in your own template, shown to an estimator with its reasoning visible. Approval is a real gate, and it is the point of the whole design.',
+    body: 'The output is a draft in your own template, shown to an estimator with its reasoning visible. Human in the loop approval is a real gate across the quote-to-cash workflow.',
     points: [
       'Every line traced back to the source document and page, checkable in seconds.',
       'An approval screen showing confidence, matched part, price rule applied, and resulting margin.',
@@ -206,7 +206,7 @@ const PIPELINE: PipelineStep[] = [
     title: 'Send, log, and follow up',
     body: 'An approved quote goes back through the channel it arrived on, and becomes a record in your systems rather than an attachment in a sent folder.',
     points: [
-      'Quote written back to the ERP or quoting system, linked to the original request.',
+      'Quote written back to the ERP sync or quoting system, linked to the original request.',
       'EDI 843 returned where an EDI 840 came in, portal responses posted back to Coupa, Ariba, or Jaggaer.',
       'Follow-up on open quotes, with won, lost, and no-decision outcomes recorded.',
     ],
@@ -214,14 +214,14 @@ const PIPELINE: PipelineStep[] = [
 ];
 
 const HUMAN_GATES = [
-  'Any line where extraction confidence falls below the threshold you set.',
+  'Human in the loop signoff for any line where extraction confidence falls below threshold.',
   'Any part the catalogue cannot match, and every substitution proposed.',
   'Any price that would land below the margin floor for that product line.',
-  'Anything export controlled, certification bearing, or safety critical.',
-  'New customers, and accounts on a credit hold or a past-due balance.',
+  'Role-based access control (RBAC) gates for export controlled, certification bearing, or safety critical parts.',
+  'New customers, accounts on a credit limit hold, or past-due net terms balances.',
   'Non-standard terms: liquidated damages, retainage, or a date the plant has not confirmed.',
-  'Every quote above whatever value threshold you choose.',
-  'The send itself, until you have watched enough approvals go through untouched.',
+  'Agent orchestration stops for every quote above whatever value threshold you choose.',
+  'Function calling and tool use writes stay gated until you approve final dispatch.',
 ];
 
 const ERP_SYSTEMS = [
@@ -577,7 +577,7 @@ const FAQ_ITEMS = [
   },
 ];
 
-const FAQ_SCHEMA = {
+const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: FAQ_ITEMS.map((item) => ({
@@ -598,7 +598,7 @@ const FAQ_SCHEMA = {
 
 const PAGE_MODIFIED = '2026-08-06';
 
-const WEBPAGE_SCHEMA = {
+const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   '@id': `${PAGE_URL}#webpage`,
@@ -617,7 +617,7 @@ const WEBPAGE_SCHEMA = {
   isPartOf: { '@type': 'WebSite', '@id': 'https://factoryjet.com/#website', url: 'https://factoryjet.com', name: 'FactoryJet' },
 };
 
-const SERVICE_SCHEMA = {
+const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: 'RFQ and bidding agent development',
@@ -634,7 +634,7 @@ const SERVICE_SCHEMA = {
   audience: { '@type': 'BusinessAudience', name: 'Manufacturers, fabricators, distributors and contractors' },
 };
 
-const HOWTO_SCHEMA = {
+const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How an RFQ and bidding agent turns an inbound request into a quote',
@@ -690,10 +690,10 @@ function TickList({ items }: { items: ReadonlyArray<string> }) {
 export default function RFQBiddingAgentPage() {
   return (
     <>
-      <script id="rfq-webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBPAGE_SCHEMA) }} />
-      <script id="rfq-service-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
-      <script id="rfq-howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOWTO_SCHEMA) }} />
-      <script id="rfq-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
+      <script id="rfq-webpage-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script id="rfq-service-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script id="rfq-howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script id="rfq-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <SiteHeader cta={{ label: 'Talk to the Founder', modal: true, region: 'us' }} />
       <BreadcrumbSchema items={BREADCRUMB_ITEMS} />

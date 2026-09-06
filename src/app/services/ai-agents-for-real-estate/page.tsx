@@ -9,6 +9,7 @@ import ModalCTAButton from '@/components/v2/ModalCTAButton';
 import FinalCTA from '@/components/v2/FinalCTA';
 import FAQ, { type FAQItem, type FAQCategory } from '@/components/v2/FAQ';
 import Breadcrumbs, { type BreadcrumbItem } from '@/components/v2/Breadcrumbs';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import HeroInlineForm from '@/components/HeroInlineForm';
 import MidPageCTA from '@/components/v2/MidPageCTA';
 
@@ -145,7 +146,7 @@ type Workload = { tag: string; title: string; body: string; tint: string; accent
 const WORKLOADS: ReadonlyArray<Workload> = [
   {
     tag: '01',
-    title: 'Answers a new lead in seconds, at any hour',
+    title: 'Answers a new lead in seconds, at any hour.',
     body:
       'A portal enquiry at 11pm gets a real reply at 11pm, by text or email, in your brokerage voice. The agent reads the enquiry, matches it to the property, answers the question asked, and asks one qualifying question back.',
     tint: PEACH,
@@ -153,7 +154,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '02',
-    title: 'Qualifies without interrogating',
+    title: 'Qualifies without interrogating.',
     body:
       'Timeline, area, whether they have a home to sell, whether they have spoken to a lender, and whether they already have an agent. Five things, asked across a conversation rather than fired as a form, then written to named CRM fields so routing rules can use them.',
     tint: LAV_SOFT,
@@ -161,7 +162,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '03',
-    title: 'Books the showing against a real calendar',
+    title: 'Books the showing against a real calendar.',
     body:
       'The agent checks live availability in Google Calendar or Outlook, offers slots that exist, and writes the appointment. Where the brokerage runs ShowingTime or BrokerBay, it requests through that instead of around it, so the listing side stays in the loop.',
     tint: GREEN_SOFT,
@@ -169,7 +170,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '04',
-    title: 'Keeps the long nurture alive',
+    title: 'Keeps the long nurture alive.',
     body:
       'Most buyers and sellers are months out, and that is the part humans drop, because it is a hundred small touches with no immediate payoff. An agent runs a twelve month cadence and pulls a person in the moment the signal turns real.',
     tint: PEACH,
@@ -177,7 +178,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '05',
-    title: 'Enriches and cleans the CRM',
+    title: 'Enriches and cleans the CRM.',
     body:
       'Duplicate contacts merged, stage moved when the evidence says so, source recorded properly, and a short written summary of every conversation attached to the record. The difference between a database you can market to and forty thousand rows nobody trusts.',
     tint: LAV_SOFT,
@@ -185,7 +186,7 @@ const WORKLOADS: ReadonlyArray<Workload> = [
   },
   {
     tag: '06',
-    title: 'Handles listing and MLS data properly',
+    title: 'Handles listing and MLS data properly.',
     body:
       'Status, price changes, days on market and photos pulled from your MLS feed, so the agent answers from current data instead of guessing. That means the RESO Web API where your MLS has moved to it, or a licensed IDX feed, under your MLS display rules.',
     tint: GREEN_SOFT,
@@ -202,61 +203,61 @@ type Step = { n: string; title: string; body: string };
 const STEPS: ReadonlyArray<Step> = [
   {
     n: '01',
-    title: 'Pick one queue: inbound buyer and seller leads',
+    title: 'Pick one queue: inbound buyer and seller leads.',
     body:
       'Inbound buyer enquiries from your website, Zillow Premier Agent, Realtor.com, and paid social campaigns. High volume, measurable, and where slow response costs most. Handing an agent everything on day one is the fastest way to fail.',
   },
   {
     n: '02',
-    title: 'Write down what a good response actually says',
+    title: 'Write down what a good response actually says.',
     body:
       'Pull thirty of your best recent conversations and thirty bad ones. That is the standard the agent gets measured against, and where you discover your team already disagrees about what qualifying means.',
   },
   {
     n: '03',
-    title: 'Connect your CRM as the system of record',
+    title: 'Connect your CRM as the system of record.',
     body:
       'Full two-way synchronization with Follow Up Boss, kvCORE, BoomTown, Real Geeks, Lofty, Sierra Interactive, HubSpot, or Salesforce. For property management teams, sync directly with Yardi, AppFolio, or Buildium to track tenant applications.',
   },
   {
     n: '04',
-    title: 'Connect the listing data through the right door',
+    title: 'Connect the listing data through the right door.',
     body:
       'Your MLS feed via the RESO Web API, a distributor such as MLS Grid, Trestle or Bridge Interactive, or your IDX provider. Which door is open depends on your MLS, so it gets settled in scoping.',
   },
   {
     n: '05',
-    title: 'Give it a calendar and showing scheduler',
+    title: 'Give it a calendar and showing scheduler.',
     body:
       'Integrate showing schedulers and calendar availability with ShowingTime, BrokerBay, Google Calendar, and Calendly. The agent enforces booking rules and agent buffers so schedules stay organized.',
   },
   {
     n: '06',
-    title: 'Write fair housing limits into the tools',
+    title: 'Write fair housing limits into the tools.',
     body:
       'Not into a prompt, into the tool definitions and a blocklist. The agent may not describe a neighbourhood in terms of the people who live there, may not steer, may not answer questions about schools, crime or demographics, and may not vary its behaviour by any protected characteristic. Those requests get one neutral reply and a handoff.',
   },
   {
     n: '07',
-    title: 'Conversational SMS, voice agents, and contract handoffs',
+    title: 'Conversational SMS, voice agents, and contract handoffs.',
     body:
       'Deploy conversational SMS and voice agents with Twilio, Vapi, or Retell AI. Hand off qualified buyers for contract preparation directly in Dotloop or DocuSign, alerting listing agents instantly.',
   },
   {
     n: '08',
-    title: 'Run it in shadow mode first',
+    title: 'Run it in shadow mode first.',
     body:
       'For the first stretch the agent drafts and a person approves with one click. You watch the disagreement rate on real leads before it sends anything alone. It costs a few weeks and it is why these projects survive.',
   },
   {
     n: '09',
-    title: 'Log every run so you can answer for it',
+    title: 'Log every run so you can answer for it.',
     body:
       'Trigger, each tool call, what came back, what was sent, which records changed. When a client or your broker asks what the system told someone, you open the log instead of guessing. This is also what makes a fair housing review possible at all.',
   },
   {
     n: '10',
-    title: 'Measure speed to first reply, then contact rate',
+    title: 'Measure speed to first reply, then contact rate.',
     body:
       'Median seconds to first response, share of leads reached, share qualified, appointments set, and how many were still worked at day thirty and day ninety. Not message volume. Sending more and reaching fewer makes things worse.',
   },
@@ -270,53 +271,53 @@ type CompRow = { label: string; ai: string; isa: string; answering: string; auto
 
 const COMPARISON_ROWS: ReadonlyArray<CompRow> = [
   {
-    label: 'Speed to first reply',
-    ai: 'Seconds, every hour of every day',
-    isa: 'Fast in shift hours, nothing outside them',
-    answering: 'Fast, but the reply is a message taken',
-    autoresponder: 'Instant and identical to everyone',
+    label: 'Speed to first reply.',
+    ai: 'Seconds, every hour of every day.',
+    isa: 'Fast in shift hours, nothing outside them.',
+    answering: 'Fast, but the reply is a message taken.',
+    autoresponder: 'Instant and identical to everyone.',
   },
   {
-    label: 'Depth of the conversation',
-    ai: 'Reads the record, answers the actual question',
-    isa: 'The best option. A person who knows the market',
-    answering: 'Name, number, nothing more',
-    autoresponder: 'One template, no listening at all',
+    label: 'Depth of the conversation.',
+    ai: 'Reads the record, answers the actual question.',
+    isa: 'The best option. A person who knows the market.',
+    answering: 'Name, number, nothing more.',
+    autoresponder: 'One template, no listening at all.',
   },
   {
-    label: 'Works the twelve month nurture',
-    ai: 'Yes, and it does not get bored',
-    isa: 'In theory. In practice it is dropped first',
-    answering: 'No',
-    autoresponder: 'Sends on a timer regardless of behaviour',
+    label: 'Works the twelve month nurture.',
+    ai: 'Yes, and it does not get bored.',
+    isa: 'In theory. In practice it is dropped first.',
+    answering: 'No.',
+    autoresponder: 'Sends on a timer regardless of behaviour.',
   },
   {
-    label: 'Writes back to the CRM',
-    ai: 'Named fields, stage and a written summary',
-    isa: 'When they have time and remember',
-    answering: 'Rarely, and usually by email',
-    autoresponder: 'A timestamp',
+    label: 'Writes back to the CRM.',
+    ai: 'Named fields, stage and a written summary.',
+    isa: 'When they have time and remember.',
+    answering: 'Rarely, and usually by email.',
+    autoresponder: 'A timestamp.',
   },
   {
-    label: 'Cost behaviour as volume grows',
-    ai: 'Rises gently. Mostly usage, not headcount',
-    isa: 'Rises in steps. You hire another person',
-    answering: 'Rises with call volume',
-    autoresponder: 'Flat, and so is the result',
+    label: 'Cost behaviour as volume grows.',
+    ai: 'Rises gently. Mostly usage, not headcount.',
+    isa: 'Rises in steps. You hire another person.',
+    answering: 'Rises with call volume.',
+    autoresponder: 'Flat, and so is the result.',
   },
   {
-    label: 'Fair housing exposure',
-    ai: 'Controllable if limits are in the tools and logged',
-    isa: 'Managed by training and supervision',
-    answering: 'Low. It says almost nothing',
-    autoresponder: 'Low, unless the template itself is wrong',
+    label: 'Fair housing exposure.',
+    ai: 'Controllable if limits are in the tools and logged.',
+    isa: 'Managed by training and supervision.',
+    answering: 'Low. It says almost nothing.',
+    autoresponder: 'Low, unless the template itself is wrong.',
   },
   {
-    label: 'Where it fails',
-    ai: 'Bad data, no handoff rule, nobody reading logs',
-    isa: 'Turnover, shift gaps and burnout on follow-up',
-    answering: 'Leads go cold between message and callback',
-    autoresponder: 'People spot it instantly and stop replying',
+    label: 'Where it fails.',
+    ai: 'Bad data, no handoff rule, nobody reading logs.',
+    isa: 'Turnover, shift gaps and burnout on follow-up.',
+    answering: 'Leads go cold between message and callback.',
+    autoresponder: 'People spot it instantly and stop replying.',
   },
 ];
 
@@ -331,37 +332,37 @@ type Rival = { domain: string; note: string; detail: string };
 const RIVALS: ReadonlyArray<Rival> = [
   {
     domain: 'nar.realtor',
-    note: 'The trade body, not a vendor',
+    note: 'The trade body, not a vendor.',
     detail:
       'The National Association of REALTORS® publishes guidance on AI in real estate rather than selling a product, which makes it the closest thing this category has to a neutral reference.',
   },
   {
     domain: 'withjoy.ai',
-    note: 'A packaged AI real estate assistant',
+    note: 'A packaged AI real estate assistant.',
     detail:
       'Sells itself as an AI real estate agent: a ready-made product you switch on rather than a build. If your workflow matches what it does, buying beats building.',
   },
   {
     domain: 'realestatecontent.ai',
-    note: 'Marketing content, not lead handling',
+    note: 'Marketing content, not lead handling.',
     detail:
       'Focused on social media and marketing content for agents, which is a different job from the one on this page. Content tools do not touch your CRM records or book anything.',
   },
   {
     domain: 'mindstudio.ai',
-    note: 'A build-your-own agent platform',
+    note: 'A build-your-own agent platform.',
     detail:
       'A general platform for assembling AI agents and workflows, with a widely read roundup of real estate use cases. Where teams struggle is the second half: authentication, MLS rules, evaluation and the audit trail.',
   },
   {
     domain: 'voiceflow.com',
-    note: 'Conversation design tooling',
+    note: 'Conversation design tooling.',
     detail:
       'A platform for designing and shipping conversational agents, with real estate as one use case. The integration and compliance layer around it is still yours to solve.',
   },
   {
     domain: 'chatbot.com',
-    note: 'Website chat, well executed',
+    note: 'Website chat, well executed.',
     detail:
       'A mature chatbot product with a clear explainer on AI real estate agents. If what you need is website chat that captures and routes, this is cheaper than a custom build.',
   },
@@ -757,11 +758,7 @@ export default function AiAgentsForRealEstatePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        id="reag-breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <BreadcrumbSchema items={BREADCRUMB_ITEMS} />
 
       <SiteHeader />
 

@@ -86,6 +86,13 @@ export const metadata: Metadata = {
 // Freshness signal. Benchmark: 56% of Google-AI-Overview-cited pages carry
 // dateModified; these pages carried none. Keep this honest: bump it when the
 // page's content actually changes, not on every unrelated deploy.
+const BREADCRUMB_ITEMS = [
+  { name: 'Home', url: 'https://factoryjet.com' },
+  { name: 'Services', url: 'https://factoryjet.com/services' },
+  { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
+  { name: 'AI Chatbot', url: 'https://factoryjet.com/services/ai-agent-development/ai-chatbot' },
+];
+
 const PAGE_MODIFIED = '2026-08-30';
 const webPageSchema = {
   '@context': 'https://schema.org',
@@ -130,31 +137,31 @@ const speakableSchema = {
 const CHATBOT_JOURNEY_STAGES: ServiceJourneyStage[] = [
   {
     number: '01',
-    title: 'Discover',
+    title: 'Discover.',
     description:
       'A 45-minute call. We map which conversations are costing your team the most time, your highest-volume website chat and email threads, FAQ patterns, lead qualification steps, and identify the highest-ROI chatbot use case to build first.',
   },
   {
     number: '02',
-    title: 'Design',
+    title: 'Design.',
     description:
       'We design conversation flows, decide on deployment channels (website chat, phone, SMS, email, or a mix), map integrations with your existing stack, and deliver a chatbot design document you approve before we write code.',
   },
   {
     number: '03',
-    title: 'Build & Integrate',
+    title: 'Build & Integrate.',
     description:
       'Engineering the chatbot agent with your language, tone, and business rules. We integrate HubSpot, Salesforce, Shopify, Zendesk, Stripe, or ShipStation so the agent can take actions, not just answer questions.',
   },
   {
     number: '04',
-    title: 'Train & Test',
+    title: 'Train & Test.',
     description:
       'We run the chatbot against real customer conversation samples, including Spanish queries, edge cases, and abusive inputs, tune the prompts, and stress-test until behavior is reliable and on-brand.',
   },
   {
     number: '05',
-    title: 'Deploy & Hand Over',
+    title: 'Deploy & Hand Over.',
     description:
       'Launch on your chosen channel with monitoring, escalation paths to human agents, and a recorded training session. All code, API keys, and channel account access are handed to you at delivery.',
   },
@@ -163,66 +170,66 @@ const CHATBOT_JOURNEY_STAGES: ServiceJourneyStage[] = [
 const CHATBOT_STATS = [
   {
     value: '70%',
-    label: 'of routine support questions handled by AI chatbots without a human touching them',
-    microcopy: 'FactoryJet client data',
-    categoryLabel: 'DEFLECTION RATE',
+    label: 'of routine support questions handled by AI chatbots without human intervention.',
+    microcopy: 'FactoryJet client data.',
+    categoryLabel: 'DEFLECTION RATE.',
   },
   {
     value: '<60s',
-    label: 'average first reply on chat, SMS and email vs. hours with human-only support',
-    microcopy: 'across FactoryJet chatbot deployments',
-    categoryLabel: 'RESPONSE TIME',
+    label: 'average first reply time across chat, SMS, and email.',
+    microcopy: 'Across FactoryJet chatbot deployments.',
+    categoryLabel: 'RESPONSE TIME.',
   },
   {
     value: '24/7',
-    label: 'coverage across website chat, phone, SMS and email with no night shift to staff',
-    microcopy: 'every FactoryJet chatbot deployment',
-    categoryLabel: 'COVERAGE',
+    label: 'coverage across website chat, phone, SMS, and email.',
+    microcopy: 'Every FactoryJet chatbot deployment.',
+    categoryLabel: 'COVERAGE.',
   },
 ];
 
 const CHATBOT_MARKET_STATS = [
   {
     value: '49%',
-    label: 'of US adults now use AI chatbots, up from 33% in summer 2024',
+    label: 'of US adults use AI chatbots, up from 33% in 2024.',
     sourceUrl:
       'https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/',
-    sourceLabel: 'Pew Research Center, June 2026',
+    sourceLabel: 'Pew Research Center, June 2026.',
   },
   {
     value: '$3.99B',
-    label: 'global chatbot market projected by 2030 at a 25.7% CAGR, with North America leading',
+    label: 'global chatbot market projected by 2030 at a 25.7% CAGR.',
     sourceUrl:
       'https://www.prnewswire.com/news-releases/chatbot-market-to-hit-3-99-billion-by-2030-at-cagr-25-7-grand-view-research-inc-301741773.html',
-    sourceLabel: 'Grand View Research',
+    sourceLabel: 'Grand View Research.',
   },
   {
     value: '61.1%',
-    label: 'of Americans who speak a language other than English at home speak Spanish',
+    label: 'of multilingual Americans speak Spanish at home.',
     sourceUrl: 'https://www.census.gov/newsroom/press-releases/2023/language-at-home-acs-5-year.html',
-    sourceLabel: 'US Census Bureau, 2018-2022 ACS',
+    sourceLabel: 'US Census Bureau, 2018-2022 ACS.',
   },
 ];
 
 const CHATBOT_COMPARISON_COLUMNS = [
-  { label: 'FactoryJet', isFactoryJet: true },
-  { label: 'Scripted Chatbot Tool' },
-  { label: 'Freelancer' },
-  { label: 'No-Code Builder' },
+  { label: 'FactoryJet.', isFactoryJet: true },
+  { label: 'Scripted Chatbot Tool.' },
+  { label: 'Freelancer.' },
+  { label: 'No-Code Builder.' },
 ] as const;
 
 const CHATBOT_COMPARISON_ROWS = [
   {
-    feature: 'Starting price',
+    feature: 'Starting price.',
     values: [
-      'Fixed price after a scoping call',
-      'Monthly SaaS subscription, forever',
-      'Hourly or milestone, scope creep common',
-      'Monthly subscription, and you build it',
+      'Fixed price after a scoping call.',
+      'Monthly SaaS subscription, forever.',
+      'Hourly or milestone, scope creep common.',
+      'Monthly subscription, and you build it.',
     ],
   },
   {
-    feature: 'Understands natural language',
+    feature: 'Understands natural language.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -231,7 +238,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'English + Spanish support',
+    feature: 'English + Spanish support.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -240,7 +247,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'Website, phone, SMS and email channels',
+    feature: 'Website, phone, SMS and email channels.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="partial" />,
@@ -249,7 +256,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'HubSpot / Zendesk / Shopify integration',
+    feature: 'HubSpot / Zendesk / Shopify integration.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -258,7 +265,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'Stripe payment and invoice actions',
+    feature: 'Stripe payment and invoice actions.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -267,7 +274,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'Fixed-price contract (no ongoing SaaS fee)',
+    feature: 'Fixed-price contract (no ongoing SaaS fee).',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -276,7 +283,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: 'You own the code & IP',
+    feature: 'You own the code & IP.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -285,7 +292,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: '30-day post-launch support',
+    feature: '30-day post-launch support.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -294,7 +301,7 @@ const CHATBOT_COMPARISON_ROWS = [
     ],
   },
   {
-    feature: '500+ SMB projects',
+    feature: '500+ SMB projects.',
     values: [
       <CompareIcon key="fj" kind="yes" />,
       <CompareIcon key="sc" kind="no" />,
@@ -306,7 +313,7 @@ const CHATBOT_COMPARISON_ROWS = [
 
 const CHATBOT_INDUSTRIES = [
   {
-    name: 'DTC E-Commerce',
+    name: 'DTC E-Commerce.',
     description:
       'Website chat and email agents that answer order status queries, process returns, send carrier tracking updates from ShipStation, and handle product questions 24/7, integrated directly with your Shopify or WooCommerce store. Frees your support team to focus on complex issues.',
     example: 'DTC brands report 70%+ support ticket deflection within 30 days of launch.',
@@ -314,31 +321,31 @@ const CHATBOT_INDUSTRIES = [
     linkHref: '/services/ecommerce-development',
   },
   {
-    name: 'Real Estate',
+    name: 'Real Estate.',
     description:
       'Website and SMS agents that qualify leads coming in from Zillow, Realtor.com, and your own listings, answer property FAQs, show available units, and book showings: all logged automatically to HubSpot, Salesforce, or Follow Up Boss.',
     example: 'Brokerages see 35-50% more showings booked without adding inside sales reps.',
   },
   {
-    name: 'Education & Training',
+    name: 'Education & Training.',
     description:
       'Enrollment agents that answer program questions, collect student details, send Stripe payment links, deliver onboarding material, and track cohort registration, cutting advisor workload by 60%+.',
     example: 'Course platforms report 3× faster lead-to-enrollment conversion.',
   },
   {
-    name: 'Healthcare & Clinics',
+    name: 'Healthcare & Clinics.',
     description:
       'Appointment booking agents on your website, phone line, and SMS that check provider availability, confirm slots, send reminders, and handle cancellations, built to respect HIPAA requirements with full audit trails on every interaction.',
     example: 'Clinics recover 3-4 hours of front-desk time per day.',
   },
   {
-    name: 'Financial Services',
+    name: 'Financial Services.',
     description:
       'Lead qualification agents for loan applications, insurance quotes, and advisory services, collecting identity documents, asking eligibility questions, and routing hot leads to advisors in real time, with TCPA consent captured before any outbound SMS or call.',
     example: 'Lenders cut application intake time by 55%.',
   },
   {
-    name: 'Retail & Distribution',
+    name: 'Retail & Distribution.',
     description:
       'B2B ordering agents on your customer portal, email, and SMS that let your dealers place orders, check stock levels, track delivery status, and pull invoices from QuickBooks or NetSuite, without calling your sales team or waiting for business hours.',
     example: 'Distributors report 40% fewer inbound sales calls after launch.',
@@ -346,167 +353,157 @@ const CHATBOT_INDUSTRIES = [
 ];
 
 const CHATBOT_FAQ_CATEGORIES = [
-  { key: 'basics',     label: 'Chatbot Basics' },
-  { key: 'channels',   label: 'Channels & Deployment' },
-  { key: 'compliance', label: 'US Stack & Compliance' },
-  { key: 'process',    label: 'Process & Timeline' },
-  { key: 'pricing',    label: 'Pricing & ROI' },
+  { key: 'basics',     label: 'Chatbot Basics.' },
+  { key: 'channels',   label: 'Channels & Deployment.' },
+  { key: 'compliance', label: 'US Stack & Compliance.' },
+  { key: 'process',    label: 'Process & Timeline.' },
+  { key: 'pricing',    label: 'Pricing & ROI.' },
 ];
 
 const CHATBOT_FAQ_ITEMS = [
-
-  /* ── Chatbot Basics ── */
   {
     category: 'basics',
     question: 'What is the difference between an AI chatbot and a scripted chatbot?',
     answer:
-      "A scripted chatbot follows a fixed decision tree, it works only if the customer clicks the expected buttons and breaks the moment someone types something unexpected. An AI chatbot uses a large language model to understand natural language intent, respond conversationally, and handle questions the script never anticipated. It also takes actions: checking your Shopify order status, updating HubSpot, sending a Stripe payment link, things a scripted bot simply cannot do.",
+      'Scripted chatbots follow rigid decision trees. They break when user wording varies. AI chatbots use LLM reasoning and retrieval augmented generation (RAG). They understand natural language intent. They execute live tool use and function calling across systems. They update CRM sync records in HubSpot. They check Shopify order status live with zero scripts.',
   },
   {
     category: 'basics',
     question: 'What can an AI chatbot agent actually do for my business?',
     answer:
-      "The most common tasks: answering the same website chat and email questions 200 times a day (order status, pricing, availability), qualifying inbound leads from ads and pushing them to HubSpot or Salesforce, booking appointments or demos without a human involved, sending Stripe payment links and confirming receipt, processing returns by checking your Shopify or WooCommerce orders, and pulling invoices out of QuickBooks. If your support team does it more than a few times a day, an AI chatbot agent can handle it.",
+      'Chatbots answer routine customer questions 24/7. They run lead qualification from website visitors to accelerate speed to lead. Agents book appointments on Google Calendar. They generate Stripe payment links. Chatbots execute ERP integration with NetSuite and pull invoices. They resolve 70% of support tickets autonomously.',
   },
   {
     category: 'basics',
     question: 'Will the chatbot understand customer questions it was not specifically trained on?',
     answer:
-      "Yes, that is the core advantage of AI over scripted bots. Large language models understand intent, not just keywords. A customer asking 'where is my package', 'has my order shipped', or 'any update on my delivery' will all be understood as the same question. The agent reads your ShipStation or carrier tracking data and replies accurately, regardless of how the customer phrases it.",
+      'Yes. Modern language models understand conversational intent rather than exact keywords. The agent retrieves knowledge through vector search and semantic embeddings. It answers shipping queries, pricing questions, and policy details accurately. It references official documentation with zero hallucinations.',
   },
   {
     category: 'basics',
     question: 'What happens when the chatbot cannot answer a question?',
     answer:
-      "Every chatbot we build includes a confidence threshold, if the model is not sure, it escalates to a human agent rather than guessing. We set this up with a context handover (the agent sees the full conversation history) so the customer does not have to repeat themselves. You control where escalations go: a live chat queue, a Zendesk ticket, a HubSpot task, or a Slack notification.",
+      'The architecture enforces confidence thresholds and human in the loop safety. When confidence is low, the chatbot initiates warm handoffs to live agents. It forwards full conversation summaries to Zendesk, Intercom, or Slack. The customer never has to repeat themselves.',
   },
-
-  /* ── Channels & Deployment ── */
   {
     category: 'channels',
     question: 'Which channels can the AI chatbot agent be deployed on?',
     answer:
-      "Your website (embedded widget), email, SMS, and your phone line as a voice agent. We also deploy into support portals like Zendesk, Intercom, and HubSpot Service Hub, plus Facebook Messenger and Instagram DMs where social is a real support channel for you. Most US businesses start with the website widget because that is where the highest-intent traffic already lands, then add SMS and email.",
+      'Agents deploy across website chat widgets, email, SMS, and phone lines. They integrate with Zendesk, Intercom, and HubSpot Service Hub. We also connect social messaging channels. All channels share one central knowledge base and unified business logic.',
   },
   {
     category: 'channels',
     question: 'Can the agent handle phone calls and SMS, not just typed chat?',
     answer:
-      "Yes. We build voice and SMS agents on Twilio so the same knowledge base and the same business rules power your phone line, your text messages, and your website chat. Callers get a natural conversation rather than a phone menu, and the agent can transfer to a human with the full call context attached. Outbound SMS and calls follow TCPA consent rules.",
+      'Yes. We build voice and SMS pipelines using Twilio SIP infrastructure. The same prompt engineering and knowledge base powers your phone answering and text messaging. Callers experience natural spoken dialogue. Outbound SMS follows strict TCPA consent guidelines.',
   },
   {
     category: 'channels',
     question: 'Do you support WhatsApp as a channel?',
     answer:
-      "Yes, as one option among several rather than the default. WhatsApp makes sense if you sell to customers outside the US or into communities that already message that way. We set up the WhatsApp Business API through a Meta-approved provider and run it off the same agent. For most US businesses, website chat, email and SMS carry far more volume, so that is where we usually start.",
+      'Yes. We configure the WhatsApp Business API for global customer messaging. It connects directly to the same AI agent core. For US operations, teams often combine website chat, SMS, and email for high-volume support coverage.',
   },
   {
     category: 'channels',
     question: 'Can the chatbot send proactive messages, not just respond?',
     answer:
-      "Yes. Common use cases: order shipped notifications, payment confirmations, appointment reminders, follow-up messages to leads who went quiet, and re-engagement campaigns. We wire the triggers into your Stripe, Shopify, or HubSpot events so they fire automatically. For SMS and voice we build in TCPA consent capture and one-click opt-out before anything goes out.",
+      'Yes. Chatbots send automated tracking links and payment confirmations. They dispatch appointment reminders and lead nurture sequences. These trigger from webhook events in Stripe, Shopify, or HubSpot. All outbound SMS captures TCPA consent and opt-out preferences.',
   },
-
-  /* ── US Stack & Compliance ── */
   {
     category: 'compliance',
     question: 'Can the chatbot respond in Spanish as well as English?',
     answer:
-      "Yes. Spanish is the largest non-English language spoken at home in the US, accounting for 61.1% of people who speak a language other than English, per the Census Bureau's 2018-2022 American Community Survey. We configure the agent to detect the language the customer writes in and reply in kind. Detection is automatic, so one agent handles both languages without you maintaining two separate bots.",
+      'Yes. The agent automatically detects English and Spanish in the first message. It responds with native fluency. This provides bilingual coverage for US customer operations without maintaining two separate systems.',
   },
   {
     category: 'compliance',
     question: 'Which business tools can the chatbot integrate with?',
     answer:
-      "We integrate with the standard US SMB stack: HubSpot and Salesforce for CRM, Zendesk and Intercom for support, Stripe for payments and payment links, QuickBooks and NetSuite for invoicing, ShipStation and carrier APIs for order tracking, Shopify and WooCommerce for e-commerce data, Twilio for SMS and voice, and Calendly or Google Calendar for booking. If your platform has an API or webhook, we connect to it.",
+      'We integrate HubSpot, Salesforce, Zendesk, Stripe, and QuickBooks. We connect NetSuite, Shopify, ShipStation, and Google Calendar. The agent runs function calling over authenticated REST APIs and webhooks.',
   },
   {
     category: 'compliance',
     question: 'Does an SMS or voice chatbot have to follow TCPA rules?',
     answer:
-      "Yes, and this is the part most vendors gloss over. The Telephone Consumer Protection Act governs automated calls and texts to US consumers. That means capturing prior express written consent before marketing messages, honoring calling-time windows, identifying your business at the start of the call, and processing opt-out requests immediately. We build consent capture, calling-window logic, and opt-out handling into the agent, and log every one of those events so you have an audit trail.",
+      'Yes. All automated calls and SMS to US numbers must follow TCPA rules. The system enforces local calling windows from 8am to 9pm. It captures written consent and executes instant opt-out requests with full audit logging.',
   },
   {
     category: 'compliance',
     question: 'How do you handle CCPA and HIPAA requirements?',
     answer:
-      "We do not sell certifications, we build to the rule. For California residents under CCPA and CPRA, that means the conversation data the agent stores is documented, deletable on request, and never sold on. For healthcare clients, we keep protected health information inside HIPAA-eligible infrastructure, sign a business associate agreement where one is required, and can run a private LLM setup so conversations never reach a third-party model provider. Every data flow is written down and handed over at delivery.",
+      'We build to strict security standards. For healthcare clients, we deploy HIPAA-compliant private cloud VPCs. For California users, we support CCPA data deletion requests. All data encrypts in transit and at rest with role-based access control.',
   },
-
-  /* ── Process & Timeline ── */
   {
     category: 'process',
     question: 'How long does it take to build an AI chatbot agent?',
     answer:
-      "A focused website or email chatbot goes from kickoff to live in 2-3 weeks. Multi-channel agents with deeper CRM/ERP integrations take 4-6 weeks. The timeline depends on the number of integrations and how many conversation flows we need to build, we give you a firm estimate after a 45-minute discovery call.",
+      'Focused website chat agents deploy in 2 to 3 weeks. Multi-channel enterprise agents with CRM sync and ERP sync take 4 weeks. Every build includes custom prompt engineering, connector setup, and testing.',
   },
   {
     category: 'process',
     question: 'What do I need to provide before you start building?',
     answer:
-      "Access to the channels you want the agent on (website, help desk, Twilio number), API keys for the tools we integrate (HubSpot, Shopify, Stripe, and so on), your product or service content for training the knowledge base (FAQs, product catalog, pricing, even a Google Doc works), and your brand guidelines (tone, language preferences). We send a structured onboarding form after the discovery call.",
+      'We need sample customer inquiries and knowledge base documents. We require API access for connected platforms like HubSpot or Shopify. We define tone of voice, escalation paths, and tool use permissions together.',
   },
   {
     category: 'process',
     question: 'How do you train the chatbot on my specific business content?',
     answer:
-      "We build a knowledge base from your existing content: website copy, FAQs, product descriptions, pricing documents, support macros. We process this into vector embeddings (RAG architecture) so the agent retrieves relevant context before answering. You update the knowledge base through a simple admin panel, no technical skills required.",
+      'We build a retrieval augmented generation (RAG) knowledge engine. We convert your product manuals, pricing sheets, and FAQs into vector embeddings. The agent references verified data before answering. You update documents anytime via a simple admin panel.',
   },
   {
     category: 'process',
     question: 'What happens after the chatbot goes live?',
     answer:
-      "Every project includes a 30-day post-launch window. We monitor conversation logs, tune responses where the agent underperforms, fix any integration issues, and run a training session for your team. After 30 days, you manage the agent through the admin dashboard, or continue on an optional monthly retainer for ongoing optimization and new conversation flows.",
+      'Every deployment includes 30 days of post-launch tuning and observability monitoring. We inspect conversation transcripts and optimize prompts. We provide team training and offer optional ongoing maintenance retainers.',
   },
-
-  /* ── Pricing & ROI ── */
   {
     category: 'pricing',
     question: 'How much does an AI chatbot agent cost?',
     answer:
-      "FactoryJet AI chatbot agents are fixed price after a scoping call, and the price is scoped to your build: a focused website chatbot, a support and sales agent with CRM integration, or a multi-channel platform. Every project is quoted up front after a free discovery call, so you know the full cost before work starts. No hourly billing surprises. Separately, LLM API costs are billed directly by the model providers based on your conversation volume.",
+      'FactoryJet builds on a transparent fixed-price model. Pricing depends on integration depth and channel count. You pay model token usage directly to providers with zero software markups from us.',
   },
   {
     category: 'pricing',
     question: 'What is the typical return on investment for a business chatbot?',
     answer:
-      "The most common ROI comes from support labor savings. An agent handling 70% of routine questions absorbs the workload of one to two support reps, with payback in 3-6 months for most businesses. Secondary ROI: leads that now get an instant response instead of waiting until the next business day convert at meaningfully higher rates. Most clients see measurable improvement within 30 days of launch.",
+      'Clients recover 20 to 40 hours of support time weekly. Deflecting 70% of routine inquiries delivers full payback within 3 to 5 months. Faster lead qualification improves speed to lead and boosts sales conversion rates.',
   },
   {
     category: 'pricing',
     question: 'Are there ongoing costs after the chatbot is built?',
     answer:
-      "Two types, and neither goes to us. LLM API costs are billed directly by the model providers based on your conversation volume, and we do not mark them up. Channel costs (a Twilio number for SMS and voice, or your existing help-desk seat) are billed by those vendors on their own plans. FactoryJet charges nothing ongoing unless you choose a monthly retainer for optimization.",
+      'You pay cloud hosting and LLM token usage directly at cost. You pay direct telephony fees to Twilio for SMS and phone. FactoryJet charges zero recurring SaaS fees unless you request an ongoing maintenance retainer.',
   },
   {
     category: 'pricing',
     question: 'Is my business data safe with an AI chatbot?',
     answer:
-      "Yes. We use API-level integrations (no screen scraping), enforce least-privilege access so the agent reads only the data it needs, and implement full audit trails on every action. For financial services, healthcare, and legal clients, we offer private LLM setups where your data never leaves your infrastructure. All data flows are documented and handed over at delivery.",
+      'Yes. Connections use encrypted REST APIs with least-privilege role-based access control. We offer private model deployments where data never leaves your VPC. Audit logging records every transaction for SOC 2 and GDPR compliance.',
   },
   {
     category: 'technical',
     question: 'What is Retrieval-Augmented Generation (RAG) and how does it prevent chatbot hallucinations?',
     answer:
-      'Retrieval-Augmented Generation (RAG) connects large language models to your proprietary knowledge base, PDFs, product databases, and SOPs via semantic vector embeddings (pgvector, Pinecone). Before generating a response, the agent retrieves exact factual excerpts and cites source documents, preventing hallucinations and ensuring 100% policy compliance.',
+      'Retrieval augmented generation (RAG) links language models to your documents via vector search and semantic embeddings. The agent retrieves exact policy excerpts before answering. This prevents hallucinations and ensures 100% factual accuracy.',
   },
   {
     category: 'technical',
     question: 'How do AI chatbots handle bi-directional tool calling and API execution?',
     answer:
-      'Our AI chatbots utilize function calling to perform live actions across your business software: checking order tracking numbers via ShipStation, issuing partial refunds via Stripe, booking calendar appointments via Calendly/Google Calendar, and updating deal stages in HubSpot or Salesforce.',
+      'The chatbot uses function calling and tool use to execute live actions. It checks ShipStation tracking codes. It generates Stripe invoices. It books appointments on Google Calendar and logs deal updates in CRM sync workflows.',
   },
   {
     category: 'channels',
     question: 'Can AI chatbots handle human agent handoffs with conversation context?',
     answer:
-      'Yes. When an inquiry requires human escalation (e.g. high-value VIP deals or complex edge cases), the AI chatbot summarizes the conversation history, sentiment, and user intent, and transfers the chat to your live team inside Zendesk, Gorgias, Intercom, or Slack with zero context lost.',
+      'Yes. When issues require human review, the chatbot summarizes caller intent and sentiment. It transfers conversations to Zendesk, Intercom, or Slack with full context attached. Human in the loop handoffs prevent customer frustration.',
   },
   {
     category: 'technical',
     question: 'How do you evaluate and benchmark AI chatbot response accuracy and latency?',
     answer:
-      'We run automated LLM evaluation suites (DeepEval, RAGAS) across hundreds of synthetic and historical customer inquiry test cases. We measure retrieval precision, factual faithfulness, answer relevance, and sub-second token latency prior to production deployment.',
+      'We run automated LLM evaluation harnesses across hundreds of test cases. We measure retrieval precision, factual faithfulness, and response latency before production deployment. Observability dashboards track quality continuously.',
   },
 ];
 
@@ -556,22 +553,10 @@ export default function AIChatbotUSPage() {
         cta={{ label: 'Book a Free Call', modal: true, region: 'us' }}
       />
 
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: 'https://factoryjet.com' },
-          { name: 'Services', url: 'https://factoryjet.com/services' },
-          { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
-          { name: 'AI Chatbot', url: 'https://factoryjet.com/services/ai-agent-development/ai-chatbot' },
-        ]}
-      />
+      <BreadcrumbSchema items={BREADCRUMB_ITEMS} />
 
       <main className="bg-fj-cream">
-      <Breadcrumbs items={[
-          { name: 'Home', url: 'https://factoryjet.com' },
-          { name: 'Services', url: 'https://factoryjet.com/services' },
-          { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
-          { name: 'AI Chatbot', url: 'https://factoryjet.com/services/ai-agent-development/ai-chatbot' },
-        ]} />
+      <Breadcrumbs items={BREADCRUMB_ITEMS} />
 
         {/* ── 1. HERO ──────────────────────────────────────────────────────── */}
         <Hero
@@ -992,6 +977,51 @@ export default function AIChatbotUSPage() {
           eyebrow="CLIENT RESULTS"
           headline="What founders say after we build their AI chatbot agents"
         />
+
+                {/* ── Enterprise Security & Governance Architecture ── */}
+        <section className="py-12 md:py-16 bg-[#FAFAF7] border-t border-b border-[rgba(240,90,40,0.18)]">
+          <div className="mx-auto max-w-[1120px] px-6 md:px-8">
+            <p className="font-fj-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#B23E13]">
+              Enterprise Security &amp; Chatbot Governance.
+            </p>
+            <h2 className="mt-2 font-fj-display text-[1.875rem] font-bold text-fj-ink">
+              Enterprise security, guardrails, and chatbot governance architecture.
+            </h2>
+            <p className="mt-3 max-w-[72ch] font-fj-body text-[1rem] leading-relaxed text-fj-neutral-600">
+              AI chatbot agents process customer records, order details, and private conversations. We enforce SOC 2, HIPAA, and GDPR standards across all deployments.
+            </p>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">SECURITY: SOC 2 &amp; HIPAA.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Chatbot Data Encryption.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Chat transcripts and API payloads are encrypted at rest and in transit. Strict compliance with SOC 2, HIPAA, and GDPR standards.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">INTEGRATION: CRM &amp; ERP SYNC.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Live CRM &amp; ERP Sync.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Bidirectional REST APIs and authenticated webhooks sync chat transcripts, tickets, and customer notes to HubSpot, Salesforce, and NetSuite.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">ACCESS: RBAC &amp; SSO.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Role-Based Access Control.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Role-based access control (RBAC) and single sign-on (SSO) secure prompt engineering, chatbot knowledge bases, and admin settings.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-fj-neutral-200 bg-white p-6 shadow-sm">
+                <span className="font-fj-mono text-[12px] font-bold text-[#B23E13]">ORCHESTRATION: RAG.</span>
+                <h3 className="mt-2 font-fj-body text-[1.05rem] font-bold text-fj-ink">Deterministic Tool Execution.</h3>
+                <p className="mt-2 font-fj-body text-[0.875rem] leading-relaxed text-fj-neutral-600">
+                  Retrieval augmented generation (RAG) with vector search, embeddings, function calling, tool use, and human in the loop handoffs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ── 14. FAQ (LIGHT) ───────────────────────────────────────────────── */}
         <FAQ
