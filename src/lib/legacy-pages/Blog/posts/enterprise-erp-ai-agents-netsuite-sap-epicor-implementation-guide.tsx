@@ -18,6 +18,14 @@ export const post: BlogPost = {
     description:
       'Architecture guide for integrating AI agents with NetSuite SuiteTalk, SAP S/4HANA, and Epicor Kinetic REST APIs.',
   },
+  keyTakeaways: [
+    'ERP integration scope, not call or task volume, is what drives the cost and the timeline of an enterprise AI agent. Writing reliably into NetSuite, SAP or Epicor is the engineering; the conversational layer rarely is.',
+    'Every ERP models the same business object differently, so an agent has to be built against each platform\'s actual schema rather than a generic connector. This is why "we integrate with any ERP" is a warning sign rather than a feature.',
+    'Read-only agents ship in weeks and are low risk. Write-back agents that create orders, quotes or inventory movements need approval workflows, audit trails and rollback paths, and that is where projects slip.',
+    'Sandbox parity matters more than people expect. If your ERP sandbox does not mirror production customisations, testing proves very little and problems surface after go-live.',
+    'You should own the connectors, the prompts and the state machines at the end of the engagement, with no per-seat licensing, otherwise you have rented a dependency rather than built an asset.',
+    'Start with one high-frequency, low-risk workflow and prove it end to end before widening scope. Enterprise AI agent programmes fail from breadth, not from difficulty.',
+  ],
   content: (
     <article className="prose prose-lg max-w-none text-[#14110F]">
       {/* KEY TAKEAWAYS */}

@@ -18,36 +18,39 @@ export const post: BlogPost = {
     description:
       'TCO breakdown comparing in-house BDCs, offshore call centers, and custom AI voice telephony for handling calls.',
   },
+  keyTakeaways: [
+    'Custom AI voice agents run at wholesale telephony and compute rates, roughly $0.03 to $0.06 a minute, against $1.75 to $3.25 a minute for outsourced human answering and $4,200 to $5,500 a month per in-house BDC seat.',
+    'Sub-500ms turnaround is achievable: low-latency SIP and WebRTC pipelines with streaming speech-to-text and token-streaming models hold natural turn-taking under about 480 milliseconds.',
+    'Concurrency is the structural advantage. Human call centres queue or drop overflow during a morning rush; a voice pipeline answers every simultaneous call on the first ring.',
+    'The agent writes confirmed appointments and parsed intake straight into your practice management system, DMS or CRM, so nobody rekeys anything.',
+    'On a custom build you own the repository, the telephony backend and the prompt state machines outright, with no per-seat licensing.',
+    'In-house receptionists and BDC reps cost $38,000 to $55,000 in base pay before payroll taxes, benefits, software seats and management overhead.',
+    'If you would rather buy than build, our comparison of eight AI receptionist products lists published pricing for each, and for most small businesses buying is the right answer.',
+  ],
+  faqs: [
+    { q: 'Can customers tell they are speaking with an AI voice agent?', a: 'Many will not on a routine booking, because sub-500ms latency, natural inflection and immediate contextual understanding remove the tells people listen for. Some will, and that is fine. We would rather build agents that introduce themselves honestly as a digital assistant than ones that try to pass, because a caller who feels deceived is worse for you than one who knew from the start.' },
+    { q: 'What happens when a caller has a complex or emotional situation?', a: 'The agent runs deterministic sentiment and complexity triggers. When a caller expresses frustration, describes serious injury, or asks for a specific specialist, it executes an immediate warm transfer to on-call staff with a summary of the conversation already captured, so your colleague does not start from nothing.' },
+    { q: 'How does the AI voice agent integrate with our existing phone numbers?', a: 'You keep your numbers. We set up conditional call forwarding or SIP trunk routing from your existing carrier, whether that is RingCentral, Vonage, Dialpad, Cisco or AT&T, to the voice gateway. You choose whether it handles overflow only, after hours only, or every call.' },
+    { q: 'What does it actually cost per minute to run a voice agent?', a: 'Wholesale SIP trunking through a provider such as Twilio or Telnyx runs roughly $0.004 to $0.008 a minute. Speech-to-text, model inference and neural text-to-speech add roughly $0.03 to $0.05. That puts all-in variable cost under about $0.06 a minute. Those figures line up with what vendors publish: Retell breaks out voice infrastructure at $0.055 a minute and text-to-speech from $0.015, and Vapi lists calls at $0.05 a minute.' },
+    { q: 'How does the agent avoid talking over the caller?', a: 'Barge-in handling. If the caller starts speaking while the agent is talking, audio playback stops within about 50 milliseconds and the agent listens. Getting this wrong is the single most common reason a voice agent feels robotic, and it is worth testing explicitly before launch.' },
+    { q: 'Can the voice agent take card payments securely?', a: 'Yes, through PCI-DSS compliant gateways such as Stripe or Authorize.net using DTMF keypad capture, so the card number is entered on the keypad and never spoken into a recording or transcript. Never accept a design where card details are read aloud.' },
+    { q: 'How does the agent handle callers who do not speak English?', a: 'Real-time language detection switches the conversation into Spanish, French or Portuguese and writes standardised English notes back into your CRM, so your team reads one consistent record regardless of the language the call happened in.' },
+    { q: 'Which CRM and scheduling systems can it connect to?', a: 'We build bi-directional connectors against the system your bookings actually live in. Ones we have worked with include Salesforce, HubSpot, Clio, Filevine, CDK Global, Reynolds and Reynolds, Tekion, Xtime, ServiceTitan, Jobber, AthenaHealth and Dentrix. If yours is not listed we scope a connector against its API during discovery.' },
+    { q: 'Who owns the code and the call recordings?', a: 'You do, on a custom build. That means the full repository, the telephony backend and the prompt state machines, with no per-seat licensing and no dependency on us to keep operating. This is the main structural difference from renting a product, and it is worth getting in writing whoever you hire.' },
+    { q: 'Can the agent make outbound calls as well as answer them?', a: 'Yes: appointment reminders, follow-ups and recall campaigns. Outbound is more regulated than inbound, so any build has to observe TCPA rules and STIR/SHAKEN caller ID attestation. Treat an agency that waves this away as a warning sign.' },
+    { q: 'How long does it take to build and deploy a custom voice agent?', a: 'Typically three to five weeks for an agent connected to your calendar or CRM, covering telephony routing, voice persona tuning and end-to-end testing. The pace is usually set by how quickly you can hand over system credentials and decide your call rules, not by the engineering.' },
+    { q: 'What infrastructure does it need to run on?', a: 'Lightweight containers on a cloud virtual machine with AWS, Google Cloud or DigitalOcean, or on-premise if you require it. Hosting itself is modest, roughly $40 to $80 a month; the meaningful running cost is per-minute usage, not servers.' },
+    { q: 'Should I build a custom voice agent or just buy a product?', a: 'Buy, in most cases. If your calls are fairly standard and your scheduling software is mainstream, an off-the-shelf AI receptionist will be live faster and cheaper than anything custom. Our comparison of eight AI receptionist products lists published pricing, from about $79 a month flat to $0.05 a minute usage-based. Building earns its cost when you hit a wall those products cannot pass.' },
+    { q: 'When does a custom build genuinely beat an off-the-shelf product?', a: 'Four situations, in our experience. An intake process that does not fit the product logic flows. A system it will not integrate with. Compliance it does not cover at a price you will pay, such as HIPAA add-ons that run into thousands a month. Or a workflow spanning several tools that has to stay consistent across all of them. Outside those, buy the product.' },
+    { q: 'How does an AI voice agent compare with a human answering service on cost?', a: 'It is not close on raw cost, and that is the point of this comparison. Human services price per call or per minute of human attention: published rates run to $1,725 a month for 500 minutes at one established provider, and $810 a month for 90 calls at another. A voice agent handling the same load runs in the tens of dollars of usage. What you lose is genuine human judgement on the hard calls, which is why the sensible design keeps a human transfer path.' },
+    { q: 'Will an AI voice agent damage customer experience?', a: 'It can, if you deploy it badly. The failure modes are predictable: no clean handoff to a human, an agent that cannot admit it does not know, and long latency that makes people talk over it. It also fixes a worse experience most businesses already inflict, which is nobody answering at all. Start with after-hours only, listen to real recordings weekly, and expand once you trust it.' },
+    { q: 'What happens if the AI cannot answer the question?', a: 'It should say so and route to a person, not guess. Insist on hearing this path demoed before you buy or build, because it is where weak implementations fall over. A good agent captures what it learned first, so the human picks up with context rather than asking the caller to start again.' },
+    { q: 'Do we need to record calls, and what about consent?', a: 'Recording is useful for tuning the agent but it is not mandatory, and consent rules vary by state, with several requiring all-party consent. Decide deliberately rather than by default. If you handle health information you also need a signed BAA with any vendor touching the audio, and you should confirm retention periods in writing.' },
+    { q: 'How do we measure whether the voice agent is working?', a: 'Four numbers monthly: calls answered against calls received, bookings completed by the agent, transfers to a human and why, and abandoned calls. Traffic-style metrics tell you nothing here. The single most revealing habit is listening to five real recordings a week for the first two months.' },
+    { q: 'Can it handle a sudden spike in call volume?', a: 'Yes, and this is where the economics diverge most sharply from human services. Concurrency is a configuration setting rather than a hiring decision, so a storm, a product recall or a busy Monday gets answered on the first ring instead of queued. Those are exactly the moments when calls are worth the most and human front desks drop them.' },
+  ],
   content: (
     <article className="prose prose-lg max-w-none text-[#14110F]">
-      {/* KEY TAKEAWAYS */}
-      <div className="my-8 p-6 sm:p-8 rounded-2xl bg-[#FFF8F5] border-2 border-[#F05A28]/30 shadow-sm not-prose">
-        <div className="font-mono text-xs uppercase tracking-wider text-[#F05A28] font-bold mb-3">
-          // ARCHITECTURAL EXECUTIVE SUMMARY &amp; KEY TAKEAWAYS
-        </div>
-        <ul className="space-y-2.5 text-sm sm:text-base text-[#14110F]">
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Wholesale Voice Telephony Economics:</strong> Custom AI voice agents operate at pure wholesale telephony and compute rates (averaging $0.03 to $0.06 per minute) compared to $1.75 to $3.25 per minute for outsourced human answering services and $4,200 to $5,500 monthly per in-house BDC agent seat.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Sub-500ms Acoustic Turnaround:</strong> By combining low-latency WebRTC/SIP pipelines with streaming neural speech-to-text and token-streaming language models, modern voice agents achieve natural conversational turn-taking under 480 milliseconds without conversational lag.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Infinite Concurrent Call Scaling:</strong> Unlike human call centers that queue callers or drop overflow calls during peak morning rushes, voice AI pipelines answer 100 simultaneous inbound calls on the first ring with zero hold times.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Direct Database &amp; CRM Sync:</strong> Custom AI voice receptionists write confirmed appointments, parsed intake data, and vehicle/case details directly into practice management systems, DMS platforms, or CRMs without manual data entry.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>100% Code &amp; IP Ownership:</strong> Enterprise brands and mid-market service businesses own their complete Git repository, Python telephony backend, and prompt state machines with zero recurring per-seat software licensing fees.</span>
-          </li>
-        </ul>
-      </div>
 
       <h2>The Inbound Phone Call Paradox in Modern Business</h2>
       <p>
@@ -174,66 +177,15 @@ export const post: BlogPost = {
       </ul>
 
       {/* FREQUENTLY ASKED QUESTIONS */}
-      <h2>Frequently Asked Questions on Voice AI vs. Human Answering</h2>
-
-      <h3>1. Can customers tell they are speaking with an AI voice agent?</h3>
+      <h2>Before you build: should you just buy one?</h2>
       <p>
-        With sub-500ms latency, dynamic inflection, natural filler words, and immediate contextual understanding, over 85 percent of callers complete their appointment booking or inquiry without asking whether the agent is human. Transparency protocols can also explicitly introduce the agent as a digital assistant.
+        Everything above assumes a custom build, so it is worth saying plainly that for many businesses that is the wrong answer. Off-the-shelf AI receptionist products start around $79 a month flat or $0.05 a minute usage-based, and if your calls are reasonably standard and your scheduling software is mainstream, one of them will be live faster and cheaper than anything custom. We compared eight of them on published pricing in{' '}
+        <Link href="/blog/best-ai-receptionist-small-business" className="text-[#F05A28] underline">the best AI receptionists for small business</Link>, including the one ranking on Google page one that starts at $30,000 a year.
       </p>
-
-      <h3>2. What happens when a caller has a complex or emotional situation?</h3>
       <p>
-        Our voice agents implement deterministic sentiment and complexity triggers. When a caller expresses frustration, describes severe physical trauma, or requests an experienced specialist, the agent executes an immediate warm transfer to on-call staff with a screen-pop summary of the conversation.
-      </p>
-
-      <h3>3. How does the AI voice agent integrate with our existing telephone numbers?</h3>
-      <p>
-        You do not need to change your public phone numbers. We set up simple conditional call forwarding or SIP trunk routing from your existing carrier (RingCentral, Vonage, Dialpad, Cisco, or AT&amp;T) to the AI voice gateway for overflow, after-hours, or 100 percent primary call handling.
-      </p>
-
-      <h3>4. What is the wholesale per-minute cost to operate the voice agent?</h3>
-      <p>
-        Wholesale telephony (SIP trunking via Twilio/Telnyx) costs approximately $0.004 to $0.008 per minute. Neural speech-to-text, LLM inference tokens, and neural text-to-speech cost between $0.03 and $0.05 per minute. Total all-in variable operating costs average under $0.06 per minute.
-      </p>
-
-      <h3>5. How does the voice agent prevent caller interruption overlap?</h3>
-      <p>
-        We build dynamic barge-in algorithms. If the customer begins speaking while the AI is responding, the agent instantly stops audio playback within 50 milliseconds and listens to the caller new instruction.
-      </p>
-
-      <h3>6. Can the voice agent collect credit card payments securely?</h3>
-      <p>
-        Yes. The voice agent integrates with PCI-DSS compliant payment gateways (Stripe, Authorize.net) using DTMF dual-tone multi-frequency keypad capture, ensuring sensitive cardholder numbers are never recorded in audio transcripts.
-      </p>
-
-      <h3>7. How does the AI agent handle non-English speaking callers?</h3>
-      <p>
-        The agent features automated real-time multi-lingual detection, switching fluently into Spanish, French, or Portuguese, and staging translated English summaries in your CRM.
-      </p>
-
-      <h3>8. Which CRM and scheduling systems connect to the voice agent?</h3>
-      <p>
-        We build native bi-directional connectors for Salesforce, HubSpot, Clio, Filevine, CDK Global, Reynolds and Reynolds, Tekion, Xtime, ServiceTitan, Jobber, AthenaHealth, and Dentrix.
-      </p>
-
-      <h3>9. Who owns the source code and caller audio recordings?</h3>
-      <p>
-        Your business receives 100 percent ownership of the complete Git repository, Python backend telephony connectors, and prompt state machines with zero recurring per-user software licensing royalties.
-      </p>
-
-      <h3>10. Can the AI voice agent make outbound confirmation calls?</h3>
-      <p>
-        Yes. The system can execute automated outbound reminder calls, customer satisfaction follow-ups, and recall notification campaigns, observing all TCPA and STIR/SHAKEN caller ID regulations.
-      </p>
-
-      <h3>11. How long does it take to build and deploy a custom voice agent?</h3>
-      <p>
-        A customized voice agent connecting to your calendar or CRM deploys in production within 3 to 5 weeks, including telephony routing, voice persona tuning, and end-to-end load testing.
-      </p>
-
-      <h3>12. What infrastructure is required to host the custom voice agent?</h3>
-      <p>
-        The system runs inside lightweight Docker containers deployed on dedicated cloud virtual machines (AWS, Google Cloud, or DigitalOcean) or on-premise servers for approximately $40 to $80 per month in total server hosting costs.
+        A custom build earns its cost when you hit a wall those products cannot pass: an intake process that does not fit their logic flows, a system they will not integrate with, compliance they do not cover at a price you will pay, or a workflow spanning several tools. If you are a medical or dental practice, the compliance maths changes enough to deserve its own treatment, which is in{' '}
+        <Link href="/blog/how-much-does-an-ai-medical-receptionist-cost-2026" className="text-[#F05A28] underline">what an AI medical receptionist costs</Link>. If you have already decided you need something built, the scope sits on our{' '}
+        <Link href="/services/ai-receptionist" className="text-[#F05A28] underline">AI receptionist service page</Link>.
       </p>
 
       <div className="my-10 p-8 rounded-2xl bg-[#FFF8F5] border border-[#E7DED6] text-center not-prose">

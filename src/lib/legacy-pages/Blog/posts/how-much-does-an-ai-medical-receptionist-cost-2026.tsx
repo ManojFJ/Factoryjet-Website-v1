@@ -68,41 +68,53 @@ export const post: BlogPost = {
       q: 'How do we get started with a practice audit?',
       a: 'Schedule a 30-minute discovery session with founder Bhavesh Barot. We will audit your practice call volume, review your EHR integration requirements, and deliver a fixed-price technical blueprint within 24 hours.',
     },
+    {
+      q: 'Is an AI medical receptionist cheaper than hiring front-desk staff?',
+      a: 'Almost always on direct cost, though the comparison people usually make is the wrong one. A full-time front-desk hire carries base pay plus payroll taxes, benefits, cover for holiday and sickness, and a workstation. An AI agent carries usage-based telephony and model cost plus the build. The honest framing is not replacement but coverage: the agent takes the routine, repetitive calls at every hour, and your staff keep the work that genuinely needs a person in the room.',
+    },
+    {
+      q: 'Should a small practice buy an off-the-shelf AI receptionist instead of building one?',
+      a: 'Very possibly, and you should price both before deciding. Off-the-shelf products start around $79 a month flat, and if your intake is standard and your practice management software is mainstream, one of them will be live faster and cheaper than a custom build. The catch in healthcare specifically is compliance pricing: one popular developer platform lists HIPAA as a $2,000 a month add-on, which turns the cheapest option into one of the dearest for a small practice. We compared eight products on published pricing so you can check this yourself.',
+    },
+    {
+      q: 'What should I check before signing with any AI receptionist vendor as a medical practice?',
+      a: 'Five things. Will they sign a BAA, in writing, before you send a single call. What is their data retention period, because some platforms retain call history for as little as 14 days and others far longer than you want. Where is audio processed and stored. Is HIPAA included or a paid add-on, and at what price. And what happens to your data if you leave. A vendor that hesitates on the first or last of those is not ready for healthcare.',
+    },
+    {
+      q: 'Can an AI receptionist handle prescription refill requests?',
+      a: 'It can capture and route them, and that is where it should stop. The agent takes the medication, the pharmacy and the patient identifiers, writes the request into your system and routes it to clinical staff for approval. It should never confirm, authorise or advise on a refill. Any vendor suggesting otherwise is describing a clinical decision, which is not what a receptionist does, AI or human.',
+    },
+    {
+      q: 'How does an AI receptionist handle a patient describing a medical emergency?',
+      a: 'By recognising it fast and getting out of the way. The agent listens for defined emergency language, chest pain, difficulty breathing, severe bleeding, and immediately instructs the caller to hang up and dial 911 while escalating to a human. This is the single most important behaviour to test before go-live, and you should insist on hearing it demonstrated rather than described.',
+    },
+    {
+      q: 'Will patients accept talking to an AI receptionist?',
+      a: 'Most accept it for routine tasks such as booking, rescheduling, opening hours and directions, particularly outside office hours when the alternative is voicemail. Acceptance drops sharply when the agent cannot admit uncertainty or has no clean route to a person. Practices that succeed here introduce it honestly, start with after-hours only, and listen to real recordings weekly for the first couple of months.',
+    },
+    {
+      q: 'Does an AI receptionist reduce no-shows?',
+      a: 'Indirectly, and usually more than the booking function itself does. Automated confirmation and reminder messages sent at the point of booking are what move no-show rates, and an agent that books the appointment can trigger those in the same conversation. Ask any vendor how reminders are sent, when, and whether patients can reschedule by replying, because a reminder with no easy reschedule path just converts a no-show into a cancellation.',
+    },
+    {
+      q: 'Can it work alongside our existing answering service rather than replacing it?',
+      a: 'Yes, and for many practices that is the sensible first step. A common arrangement is the agent takes overflow and after-hours calls while your existing service or staff keep daytime, then you widen its remit once you trust it. It also lets you compare the two directly on your own call mix rather than on a vendor case study.',
+    },
+    {
+      q: 'How do we measure whether it is working?',
+      a: 'Four numbers monthly: calls answered against calls received, appointments booked by the agent, transfers to a human and the reason for each, and abandoned calls. Traffic-style metrics are meaningless here. The most useful habit is not a metric at all: listen to five real recordings a week and you will find the gaps faster than any dashboard shows them.',
+    },
+  ],
+  keyTakeaways: [
+    'Cost is usage-based, not a flat subscription. Telephony, speech-to-text, model tokens and hosting all scale with call volume, so a busy practice pays more than a quiet one and any single advertised rate should be treated with suspicion.',
+    'EHR integration scope, not call volume, is usually what moves the build price. Writing reliably into Epic, Cerner, AthenaHealth or Dentrix is the engineering, and it is where timelines slip.',
+    'HIPAA is not a feature you switch on. Business Associate Agreements have to be executed across every telephony gateway, cloud host and speech pipeline that touches patient audio.',
+    'Compliance pricing can invert the whole comparison. One popular developer platform lists HIPAA at $2,000 a month, which makes the cheapest per-minute option one of the most expensive for a small practice.',
+    'Buying often beats building for a standard practice. Off-the-shelf AI receptionists start around $79 a month, and a custom build earns its cost only when your intake, your systems or your compliance needs will not fit one.',
+    'Emergency handling is the behaviour to test before go-live, not after. The agent should recognise emergency language, tell the caller to dial 911, and escalate immediately.',
   ],
   content: (
     <article className="prose prose-lg max-w-none text-[#14110F]">
-      {/* KEY TAKEAWAYS */}
-      <div className="my-8 p-6 sm:p-8 rounded-2xl bg-[#FFF8F5] border-2 border-[#F05A28]/30 shadow-sm not-prose">
-        <div className="font-mono text-xs uppercase tracking-wider text-[#F05A28] font-bold mb-3">
-          // EXECUTIVE SUMMARY &amp; KEY TAKEAWAYS
-        </div>
-        <ul className="space-y-2.5 text-sm sm:text-base text-[#14110F]">
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>What Drives Custom Build Cost:</strong> The one-time engineering investment scales with EHR API complexity (Epic, Cerner, Dentrix, AthenaHealth), the number of practice locations, and how deep the custom clinical triage logic needs to go. We scope this precisely after a discovery call rather than quoting a blanket rate.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Ongoing Variable Telephony &amp; Compute Costs:</strong> Infrastructure costs (Twilio SIP trunking, Deepgram Nova-2 medical speech-to-text, and zero-retention LLM inference) are usage-based and scale with total call minutes rather than a flat monthly fee, so busier practices pay proportionally more and quieter ones pay less.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Comparison to Human Front-Desk Staff:</strong> A full-time medical or dental receptionist in the US earns $42,000 to $54,000 annually in base salary plus 25% to 30% in taxes and healthcare benefits, while only covering 40 hours per week.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Comparison to Traditional Answering Services:</strong> Outsourced medical call centers charge $1.50 to $2.75 per minute ($1,200 to $3,500 monthly) while only taking static handwritten messages without real-time EHR calendar booking.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>Clinical Payback Period:</strong> Private medical practices and dental clinics typically achieve complete cost recovery within 60 to 90 days by capturing 100% of after-hours emergency and new patient hygiene calls.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#F05A28] font-bold">&bull;</span>
-            <span><strong>HIPAA Compliance Requirement:</strong> Business Associate Agreements (BAAs) must be executed across every telephony gateway, cloud VPC host, and speech recognition pipeline to prevent severe OCR financial penalties.</span>
-          </li>
-        </ul>
-      </div>
 
       <h2>Introduction: The Shifting Economics of Healthcare Front Desks</h2>
       <p>
@@ -311,6 +323,17 @@ export const post: BlogPost = {
           <strong>Weeks 5 to 6, Staff Shadowing &amp; Live Phone Cutover:</strong> Route overflow or after-hours practice phone lines to the AI agent while clinical staff monitor live bookings and calibrate performance.
         </li>
       </ol>
+
+      <h2>Before you build: should your practice just buy one?</h2>
+      <p>
+        This guide has costed a custom build, so it is worth saying plainly that for many practices that is the wrong answer. Off-the-shelf AI receptionist products start around $79 a month flat, and if your intake is standard and your practice management software is mainstream, one of them will be live faster and cheaper than anything custom. We compared eight of them on published pricing in{' '}
+        <Link href="/blog/best-ai-receptionist-small-business" className="text-[#F05A28] underline">the best AI receptionists for small business</Link>.
+      </p>
+      <p>
+        Healthcare is where that comparison can invert, though, and it is why this page exists separately. One popular developer platform lists HIPAA as a $2,000 a month add-on, which turns the cheapest per-minute option into one of the most expensive for a small practice. Price the compliance before you price the minutes. For the underlying economics against human answering services, see our{' '}
+        <Link href="/blog/ai-voice-agents-vs-human-answering-services-cost-comparison-2026" className="text-[#F05A28] underline">AI voice agents versus human answering cost comparison</Link>, and if you have decided you need something built, the scope sits on our{' '}
+        <Link href="/services/ai-receptionist" className="text-[#F05A28] underline">AI receptionist service page</Link>.
+      </p>
 
       <h2>Conclusion: Converting Fixed Overhead into Practice Revenue Growth</h2>
       <p>

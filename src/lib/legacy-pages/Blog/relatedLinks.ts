@@ -217,6 +217,13 @@ const SERVICE_RULES: ServiceRule[] = [
     weight: 3,
   },
   {
+    href: '/services/ai-receptionist',
+    label: 'AI Receptionist',
+    blurb: 'A custom AI receptionist that answers every call and books it into your system.',
+    keywords: ['ai receptionist', 'receptionist', 'answering service', 'ai voice agent', 'voice agent', 'phone answering', 'missed call', 'ai phone'],
+    weight: 5,
+  },
+  {
     href: '/services/ai-automation',
     label: 'AI Automation',
     blurb: 'Automate the repetitive work a small team should not be doing.',

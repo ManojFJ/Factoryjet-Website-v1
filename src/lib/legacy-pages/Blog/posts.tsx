@@ -81,6 +81,7 @@ import { post as bestLocalSeoCompaniesUsaPost } from './posts/best-local-seo-com
 import { post as bestSeoConsultingCompaniesUsaPost } from './posts/best-seo-consulting-companies-usa';
 import { post as bestEcommerceDevelopmentAgenciesUsaPost } from './posts/best-ecommerce-development-agencies-usa';
 import { post as bestEcommerceSeoAgenciesUsaPost } from './posts/best-ecommerce-seo-agencies-usa';
+import { post as bestAiReceptionistSmallBusinessPost } from './posts/best-ai-receptionist-small-business';
 import { post as howToSellOnTiktokShop2026Post } from './posts/how-to-sell-on-tiktok-shop-2026';
 import { post as agenticAiVsGenerativeAiPost } from './posts/agentic-ai-vs-generative-ai';
 import { post as agenticAiVsAiAgentsPost } from './posts/agentic-ai-vs-ai-agents';
@@ -4806,6 +4807,7 @@ export const POSTS: BlogPost[] = [
   bestSeoConsultingCompaniesUsaPost,
   bestEcommerceDevelopmentAgenciesUsaPost,
   bestEcommerceSeoAgenciesUsaPost,
+  bestAiReceptionistSmallBusinessPost,
   bestSeoAgenciesUsaPost,
   howToSellOnTiktokShop2026Post,
   agenticAiVsGenerativeAiPost,

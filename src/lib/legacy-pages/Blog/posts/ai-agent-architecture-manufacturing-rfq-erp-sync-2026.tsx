@@ -68,6 +68,14 @@ export const post: BlogPost = {
       a: 'Yes. You receive 100 percent source code, Git repositories, and connector ownership with zero ongoing vendor licensing royalties.',
     },
   ],
+  keyTakeaways: [
+    'RFQ quoting is the highest-value manufacturing workflow to automate first, because it is high frequency, highly repetitive and directly gates revenue, and because slow quotes lose orders to whoever answers faster.',
+    'The hard part is not reading the RFQ, it is pricing it. An agent has to reach live cost data, material pricing and capacity in your ERP, which is an integration problem rather than a language problem.',
+    'Keep a human approval step on any quote that leaves the building. The agent should assemble and price the quote and hand it to an estimator, not send it, until the error rate is proven over real volume.',
+    'Structured extraction beats free-form parsing for RFQ documents. Define the fields you need, validate them against your part master, and flag anything that does not resolve rather than guessing.',
+    'Measure it on quotes turned around per day and win rate on quoted work, not on time saved. Time saved is easy to claim and impossible to bank.',
+    'Start with one product family and one customer type. Manufacturing RFQs vary enormously across lines, and an agent tuned for one is rarely correct for another without rework.',
+  ],
   content: (
     <article className="prose prose-lg max-w-none text-[#14110F]">
       {/* KEY TAKEAWAYS */}
