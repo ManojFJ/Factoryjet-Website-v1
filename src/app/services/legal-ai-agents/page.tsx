@@ -366,12 +366,12 @@ export default function LegalAiAgentsPage() {
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFF8F5] border border-[#F05A28]/30 mb-6">
                   <span className="font-mono text-xs text-[#F05A28] font-bold tracking-wide">
-                    // PRIVILEGED LEGAL AI AGENTS &amp. LAW FIRM AUTOMATION
+                    // PRIVILEGED LEGAL AI AGENTS &amp; LAW FIRM AUTOMATION
                   </span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#14110F] font-heading leading-tight mb-6">
-                  Custom Legal AI Agents with Live Clio &amp. Filevine Sync.
+                  Custom Legal AI Agents with Live Clio &amp; Filevine Sync.
                 </h1>
 
                 <p className="text-lg sm:text-xl text-[#46403B] mb-8 leading-relaxed">
@@ -389,7 +389,7 @@ export default function LegalAiAgentsPage() {
                 <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-[#E7DED6] text-xs font-mono text-[#6E655F]">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#F05A28]" />
-                    <span>Clio, MyCase &amp. Filevine Sync</span>
+                    <span>Clio, MyCase &amp; Filevine Sync</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#F05A28]" />
@@ -421,7 +421,7 @@ export default function LegalAiAgentsPage() {
                       <span className="text-[#F05A28] font-bold">PRIVILEGE ENCLAVE</span>
                     </div>
                     <div className="font-bold text-[#14110F]">
-                      Clio Manage &bull. Inbound M&amp;A Agreement Redlined in 42s (0 Hallucinations)
+                      Clio Manage &bull; Inbound M&amp;A Agreement Redlined in 42s (0 Hallucinations)
                     </div>
                   </div>
                 </div>
@@ -435,7 +435,7 @@ export default function LegalAiAgentsPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl border border-[#F05A28]/30 bg-white p-6 sm:p-8 shadow-sm">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // EXECUTIVE SUMMARY &amp. SYSTEM DEFINITION
+                // EXECUTIVE SUMMARY &amp; SYSTEM DEFINITION
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-[#14110F] font-heading mb-4">
                 What is a Legal AI Agent?.
@@ -535,7 +535,7 @@ export default function LegalAiAgentsPage() {
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
                 // ENTERPRISE LEGAL CAPABILITIES
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Engineered for High-Stakes Law Firms and Corporate Counsel..</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Engineered for High-Stakes Law Firms and Corporate Counsel.</h2>
               <p className="text-lg text-[#46403B]">
                 Everything required to automate routine legal operations securely while preserving absolute attorney-client privilege.
               </p>
@@ -546,7 +546,7 @@ export default function LegalAiAgentsPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#FFF8F5] border border-[#F05A28]/20 flex items-center justify-center text-[#F05A28] font-bold font-mono text-lg mb-6">
                   01
                 </div>
-                <h3 className="text-xl font-bold text-[#14110F] mb-3">24/7 AI Legal Client Intake &amp. Qualification.</h3>
+                <h3 className="text-xl font-bold text-[#14110F] mb-3">24/7 AI Legal Client Intake &amp; Qualification.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                   Answers incoming telephone calls instantly. Replies to website chats and texts. Evaluates case criteria accurately. Captures incident facts. Checks statute of limitations dates. Schedules attorney consultations.
                 </p>
@@ -588,7 +588,7 @@ export default function LegalAiAgentsPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#FFF8F5] border border-[#F05A28]/20 flex items-center justify-center text-[#F05A28] font-bold font-mono text-lg mb-6">
                   03
                 </div>
-                <h3 className="text-xl font-bold text-[#14110F] mb-3">Discovery Indexing &amp. Line-Citation Synthesis.</h3>
+                <h3 className="text-xl font-bold text-[#14110F] mb-3">Discovery Indexing &amp; Line-Citation Synthesis.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                   Processes large deposition transcripts. Indexes interrogatories and exhibit binders. Ingests exports from Relativity review platforms. Generates structured factual chronologies. Attaches exact page-and-line coordinates.
                 </p>
@@ -615,7 +615,7 @@ export default function LegalAiAgentsPage() {
                 </p>
                 <ul className="space-y-2 text-xs font-mono text-[#6E655F]">
                   <li className="flex items-center gap-2">
-                    <span className="text-[#F05A28]">&bull;</span> Direct Clio, Filevine &amp. MyCase query
+                    <span className="text-[#F05A28]">&bull;</span> Direct Clio, Filevine &amp; MyCase query
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-[#F05A28]">&bull;</span> Corporate entity alias resolution
@@ -630,7 +630,7 @@ export default function LegalAiAgentsPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#FFF8F5] border border-[#F05A28]/20 flex items-center justify-center text-[#F05A28] font-bold font-mono text-lg mb-6">
                   05
                 </div>
-                <h3 className="text-xl font-bold text-[#14110F] mb-3">Medical Specials &amp. Chronology Extraction.</h3>
+                <h3 className="text-xl font-bold text-[#14110F] mb-3">Medical Specials &amp; Chronology Extraction.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                   Processes disorganized medical records, billing ledgers, and physical therapy notes. Categorizes records by medical provider, tabulates specials, and drafts settlement demand outlines.
                 </p>
@@ -651,7 +651,7 @@ export default function LegalAiAgentsPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#FFF8F5] border border-[#F05A28]/20 flex items-center justify-center text-[#F05A28] font-bold font-mono text-lg mb-6">
                   06
                 </div>
-                <h3 className="text-xl font-bold text-[#14110F] mb-3">Court Deadline Docketing &amp. Calendar Sync.</h3>
+                <h3 className="text-xl font-bold text-[#14110F] mb-3">Court Deadline Docketing &amp; Calendar Sync.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                   Watches your federal CM/ECF and PACER dockets, plus state e-filing portals, for new filings. Calculates statutory deadlines from jurisdiction rules and stages events directly into your practice calendar.
                 </p>
@@ -725,11 +725,11 @@ export default function LegalAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FAFAF7] p-8 rounded-2xl border border-[#E7DED6] shadow-sm">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    01. CORPORATE TRANSACTIONAL &amp. M&amp;A DUE DILIGENCE
+                    01. CORPORATE TRANSACTIONAL &amp; M&amp;A DUE DILIGENCE
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated Data Room Analysis &amp. Disclosure Schedule Synthesis.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated Data Room Analysis &amp; Disclosure Schedule Synthesis.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
-                    Corporate lawyers review virtual data rooms. They check commercial contracts. They review customer agreements. They inspect employment covenants and debt instruments.. Missing one change of control provision or non-compete clause can jeopardize a multi-million dollar acquisition.
+                    Corporate lawyers review virtual data rooms. They check commercial contracts. They review customer agreements. They inspect employment covenants and debt instruments. Missing one change of control provision or non-compete clause can jeopardize a multi-million dollar acquisition.
                   </p>
                   <p className="text-[#46403B] leading-relaxed mb-6">
                     Our M&amp;A due diligence agent ingests virtual data rooms. It indexes files stored in NetDocuments. It sorts agreements by contract type. It flags restrictive covenants. It assigns risk scores based on deal terms. It compiles a due diligence memo. It attaches direct links to source clauses.
@@ -739,7 +739,7 @@ export default function LegalAiAgentsPage() {
                       Change of Control Detection.
                     </li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">
-                      Indemnity &amp. Cap Analysis.
+                      Indemnity &amp; Cap Analysis.
                     </li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">
                       Disclosure Schedule Drafting.
@@ -776,9 +776,9 @@ export default function LegalAiAgentsPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    02. PERSONAL INJURY &amp. MASS TORT LITIGATION
+                    02. PERSONAL INJURY &amp; MASS TORT LITIGATION
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">24/7 Immediate Lead Qualification &amp. Medical Chronology Assembly.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">24/7 Immediate Lead Qualification &amp; Medical Chronology Assembly.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Personal injury practices lose high-value cases after hours. Callers drop off when hitting voicemail. Once a retainer is signed, paralegals sort records. Disorganized hospital files and billing summaries consume months.
                   </p>
@@ -797,7 +797,7 @@ export default function LegalAiAgentsPage() {
                       Medical Specials Calculation.
                     </li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">
-                      Filevine &amp. MyCase API Sync.
+                      Filevine &amp; MyCase API Sync.
                     </li>
                   </ul>
                 </div>
@@ -807,9 +807,9 @@ export default function LegalAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FAFAF7] p-8 rounded-2xl border border-[#E7DED6] shadow-sm">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    03. COMMERCIAL REAL ESTATE &amp. TITLE PRACTICE
+                    03. COMMERCIAL REAL ESTATE &amp; TITLE PRACTICE
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated Lease Abstraction &amp. Title Commitment Triage.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated Lease Abstraction &amp; Title Commitment Triage.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Commercial real estate deals involve long lease agreements. Each agreement carries CAM reconciliation terms. They include tenant option dates and co-tenancy rules. They also contain environmental indemnity covenants.
                   </p>
@@ -858,9 +858,9 @@ export default function LegalAiAgentsPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    04. INTELLECTUAL PROPERTY &amp. TRADEMARK PROSECUTION
+                    04. INTELLECTUAL PROPERTY &amp; TRADEMARK PROSECUTION
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">USPTO Office Action Triage &amp. Prior Art Discovery Indexing.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">USPTO Office Action Triage &amp; Prior Art Discovery Indexing.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     IP boutique law firms handle thousands of trademark renewals, USPTO office actions, and patent claim charts. Manually reviewing examiner rejections under Section 2(d) or 103 obviousness consumes valuable partner and associate time.
                   </p>
@@ -885,9 +885,9 @@ export default function LegalAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FAFAF7] p-8 rounded-2xl border border-[#E7DED6] shadow-sm">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    05. ESTATE PLANNING &amp. FAMILY LAW PRACTICE
+                    05. ESTATE PLANNING &amp; FAMILY LAW PRACTICE
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Asset Inventory Compilation &amp. Standardized Document Assembly.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Asset Inventory Compilation &amp; Standardized Document Assembly.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Estate planning attorneys lose hours to admin work. That means client asset questionnaires, beneficiary checks, and formatting trusts, wills, powers of attorney, and healthcare directives.
                   </p>
@@ -902,7 +902,7 @@ export default function LegalAiAgentsPage() {
                       Trust Schedule Assembly.
                     </li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">
-                      Smokeball &amp. Clio Document Sync.
+                      Smokeball &amp; Clio Document Sync.
                     </li>
                   </ul>
                 </div>
@@ -938,7 +938,7 @@ export default function LegalAiAgentsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Practice Management &amp. Intake CRM.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Practice Management &amp; Intake CRM.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">Clio Manage</span>: matter records, contacts, and billing entries sync after every qualified intake call.</li>
                   <li><span className="font-bold text-[#14110F]">Clio Grow</span>: for firms running Grow ahead of Manage, new leads land straight in its intake pipeline.</li>
@@ -950,7 +950,7 @@ export default function LegalAiAgentsPage() {
               </div>
 
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Document Management &amp. E-Discovery.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Document Management &amp; E-Discovery.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">NetDocuments</span>: cloud document management with matter-level folders. Redlines and signed engagement letters file into the right workspace on their own.</li>
                   <li><span className="font-bold text-[#14110F]">iManage</span>: enterprise document and email management for larger firms and corporate legal departments running iManage Work.</li>
@@ -959,7 +959,7 @@ export default function LegalAiAgentsPage() {
               </div>
 
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Billing, Ops &amp. E-Signature.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Billing, Ops &amp; E-Signature.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">Litify</span>: a Salesforce-native legal operations platform. The agent writes matter and billing updates through Litify&rsquo;s own API.</li>
                   <li><span className="font-bold text-[#14110F]">QuickBooks</span>: for trust accounting kept outside the practice management suite, approved billing narratives export on the same schedule as the main sync.</li>
@@ -978,7 +978,7 @@ export default function LegalAiAgentsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // SYSTEM ARCHITECTURE &amp. INTEGRATION
+                // SYSTEM ARCHITECTURE &amp; INTEGRATION
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Enterprise Legal AI Engineering Blueprint.</h2>
               <p className="text-base sm:text-lg text-[#46403B]">
@@ -1063,9 +1063,9 @@ export default function LegalAiAgentsPage() {
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 01 // WEEKS 1-2.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">PMS Schema &amp. Privilege Audit.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">PMS Schema &amp; Privilege Audit.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
-                    We map custom matter fields. We support Clio, Filevine, and MyCase. We support PracticePanther and Smokeball. We map document templates in NetDocuments and iManage.. We execute binding NDAs and set up a private, zero-data-retention environment.
+                    We map custom matter fields. We support Clio, Filevine, and MyCase. We support PracticePanther and Smokeball. We map document templates in NetDocuments and iManage. We execute binding NDAs and set up a private, zero-data-retention environment.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
@@ -1076,39 +1076,39 @@ export default function LegalAiAgentsPage() {
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 02 // WEEKS 2-3.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Parsing Pipeline &amp. Playbooks.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Parsing Pipeline &amp; Playbooks.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We construct multi-modal parsing pipelines for legal contracts, pleadings, and transcripts. We encode your firm negotiation playbooks, clause preferences, and intake qualification logic into deterministic state machines.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: Custom legal extraction models &amp. citation verification engine
+                  Deliverable: Custom legal extraction models &amp; citation verification engine
                 </div>
               </li>
 
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 03 // WEEKS 3-4.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Approval Console &amp. PMS Staging.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Approval Console &amp; PMS Staging.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We deploy a side-by-side human review console. It runs on role-based access control (RBAC) with single sign-on (SSO). So a paralegal sees drafts awaiting review while only partners can export the privileged audit trail. Attorneys verify contract redlines, test conflict checking, and validate matter staging in your live sandbox.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: Lawyer review dashboard &amp. staging environment integration
+                  Deliverable: Lawyer review dashboard &amp; staging environment integration
                 </div>
               </li>
 
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 04 // WEEKS 5-6.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Live Rollout &amp. Code Handover.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Live Rollout &amp; Code Handover.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We route active client intake channels, telephony numbers, and document queues to the production agent pipeline. We train your attorneys and paralegals, hand over complete Git repository documentation, and complete the full IP handover.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: Full source code, Docker configs &amp. operations manual
+                  Deliverable: Full source code, Docker configs &amp; operations manual
                 </div>
               </li>
             </ul>
@@ -1162,7 +1162,7 @@ export default function LegalAiAgentsPage() {
                     <td className="p-4 sm:p-6 text-[#6E655F]">Manual Data Entry.</td>
                   </tr>
                   <tr>
-                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">Citation &amp. Hallucination Control.</td>
+                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">Citation &amp; Hallucination Control.</td>
                     <td className="p-4 sm:p-6 font-bold text-[#F05A28] bg-[#FFF8F5]">
                       Exact Page/Line Coordinates
                     </td>
@@ -1178,7 +1178,7 @@ export default function LegalAiAgentsPage() {
                     <td className="p-4 sm:p-6 text-[#6E655F]">$150k - $225k associate salary.</td>
                   </tr>
                   <tr>
-                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">Data Sovereignty &amp. Privacy.</td>
+                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">Data Sovereignty &amp; Privacy.</td>
                     <td className="p-4 sm:p-6 font-bold text-[#F05A28] bg-[#FFF8F5]">
                       Private VPC or On-Premise Enclave
                     </td>
@@ -1200,7 +1200,7 @@ export default function LegalAiAgentsPage() {
                   <div className="relative rounded-xl overflow-hidden aspect-square">
                     <Image
                       src="/bhavesh_image.webp"
-                      alt="Bhavesh Barot, Founder &amp. CEO of FactoryJet"
+                      alt="Bhavesh Barot, Founder &amp; CEO of FactoryJet"
                       width={682}
                       height={1024}
                       quality={95}
@@ -1211,7 +1211,7 @@ export default function LegalAiAgentsPage() {
                   <div className="pt-4 text-center">
                     <div className="font-bold text-lg text-[#14110F]">Bhavesh Barot.</div>
                     <div className="font-mono text-xs text-[#F05A28] font-bold">
-                      Founder &amp. CEO, FactoryJet
+                      Founder &amp; CEO, FactoryJet
                     </div>
                     <div className="mt-3">
                       <a
@@ -1277,7 +1277,7 @@ export default function LegalAiAgentsPage() {
                 className="p-6 rounded-xl bg-white border border-[#E7DED6] hover:border-[#F05A28] transition-colors group"
               >
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">SPOKE 01.</div>
-                <h3 className="font-bold text-lg text-[#14110F] group-hover:text-[#F05A28] transition-colors mb-2">Law Firm SEO &amp. Client Acquisition &rarr;.</h3>
+                <h3 className="font-bold text-lg text-[#14110F] group-hover:text-[#F05A28] transition-colors mb-2">Law Firm SEO &amp; Client Acquisition &rarr;.</h3>
                 <p className="text-sm text-[#46403B]">
                   High-intent local and regional legal search engine optimization to capture qualified claimants.
                 </p>
@@ -1310,7 +1310,7 @@ export default function LegalAiAgentsPage() {
 
         {/* STRUCTURED FAQ SECTION */}
         <FAQ
-          eyebrow="// LEGAL AI QUESTIONS &amp. ANSWERS"
+          eyebrow="// LEGAL AI QUESTIONS &amp; ANSWERS"
           headline="Frequently Asked Questions on Legal AI Agents."
           lead="Everything managing partners, chief technology officers, and practice administrators need to know about privilege, practice management sync, and code ownership."
           categories={FAQ_CATEGORIES}
@@ -1323,7 +1323,7 @@ export default function LegalAiAgentsPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#F05A28]/30 mb-6">
               <span className="font-mono text-xs text-[#F05A28] font-bold tracking-wide">
-                // AUTOMATE INTAKE &bull. ZERO SEAT FEES &bull. 100% PRIVACY ENCLAVES
+                // AUTOMATE INTAKE &bull; ZERO SEAT FEES &bull; 100% PRIVACY ENCLAVES
               </span>
             </div>
 

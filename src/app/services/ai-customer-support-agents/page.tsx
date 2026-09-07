@@ -922,7 +922,7 @@ export default function AiCustomerSupportAgentsPage() {
                 <h3 className="text-lg font-bold text-[#14110F] mb-3">Tested Before It Talks to a Customer</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   Before launch, the agent runs against an evaluation harness built from your own historical tickets. It has to clear a minimum accuracy score first. We re-run it after every change. The same evaluation approach carries over to our{' '}
-                  <Link href="/services/ai-sdr-development" className="underline hover:text-[#F05A28]">
+                  <Link href="/services/ai-sdr" className="underline hover:text-[#F05A28]">
                     AI SDR agents
                   </Link>{' '}
                   that qualify inbound leads before a rep joins the call.

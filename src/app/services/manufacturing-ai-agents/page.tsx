@@ -429,7 +429,7 @@ export default function ManufacturingAiAgentsPage() {
                       <span className="text-[#F05A28] font-bold">ACTIVE AGENT</span>
                     </div>
                     <div className="font-bold text-[#14110F]">
-                      NetSuite ERP &bull. 42 RFQ Line Items Reconciled (0.8s)
+                      NetSuite ERP &bull; 42 RFQ Line Items Reconciled (0.8s)
                     </div>
                   </div>
                 </div>
@@ -485,7 +485,7 @@ export default function ManufacturingAiAgentsPage() {
               </div>
               <div>
                 <div className="text-3xl sm:text-4xl font-extrabold text-[#F05A28] font-mono mb-1">
-                  &lt. 20 Min
+                  &lt; 20 Min
                 </div>
                 <div className="text-xs sm:text-sm text-[#6E655F]">
                   Typical RFQ package assembly
@@ -554,7 +554,7 @@ export default function ManufacturingAiAgentsPage() {
                   </p>
                   <ul className="flex flex-wrap gap-2 text-xs font-mono text-[#6E655F] list-none">
                     <li className="px-2.5 py-1 rounded bg-[#FFF8F5] border border-[#F05A28]/20">
-                      Fanuc, Haas &amp. Mazak Rate Matching
+                      Fanuc, Haas &amp; Mazak Rate Matching
                     </li>
                     <li className="px-2.5 py-1 rounded bg-[#FFF8F5] border border-[#F05A28]/20">
                       STEP & DWG Extraction
@@ -752,7 +752,7 @@ export default function ManufacturingAiAgentsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">ERP &amp. Business Systems.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">ERP &amp; Business Systems.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">NetSuite</span>: real-time inventory, MRP (material requirements planning), work orders, and quote-to-cash sync.</li>
                   <li><span className="font-bold text-[#14110F]">SAP S/4HANA</span> and <span className="font-bold text-[#14110F]">SAP Business One</span>: material master data and production order sync.</li>
@@ -765,7 +765,7 @@ export default function ManufacturingAiAgentsPage() {
               </div>
 
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Shop-Floor, MES &amp. SCADA.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Shop-Floor, MES &amp; SCADA.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">Siemens Opcenter</span>: manufacturing execution system (MES) data for work order status, genealogy, and production line changeovers.</li>
                   <li><span className="font-bold text-[#14110F]">Rockwell Automation</span> and <span className="font-bold text-[#14110F]">Allen-Bradley</span>: PLC and SCADA telemetry for machine state and downtime.</li>
@@ -777,7 +777,7 @@ export default function ManufacturingAiAgentsPage() {
               </div>
 
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Sourcing, EDI &amp. Distributor APIs.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Sourcing, EDI &amp; Distributor APIs.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">DigiKey</span>, <span className="font-bold text-[#14110F]">Mouser</span>, <span className="font-bold text-[#14110F]">Newark</span>, and <span className="font-bold text-[#14110F]">Arrow</span>: live stock, price break, and lead-time APIs.</li>
                   <li><span className="font-bold text-[#14110F]">EDI 830, 850, 855, 856, 860, and 862</span>: planning, order, and shipping transaction sets.</li>
@@ -1143,7 +1143,7 @@ export default function ManufacturingAiAgentsPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#F05A28]/30 mb-6">
               <span className="font-mono text-xs text-[#F05A28] font-bold tracking-wide">
-                // AUTOMATE RFQS &bull. ZERO SEAT TAXES &bull. 100% CODE OWNERSHIP
+                // AUTOMATE RFQS &bull; ZERO SEAT TAXES &bull; 100% CODE OWNERSHIP
               </span>
             </div>
             

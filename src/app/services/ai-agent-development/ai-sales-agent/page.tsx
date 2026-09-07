@@ -19,9 +19,9 @@ import '@/components/v2/PlatformPage.css';
 const PAGE_MODIFIED = '2026-08-21';
 
 export const metadata: Metadata = {
-  title: 'AI Sales & SDR Agents for US B2B Companies | FactoryJet',
+  title: 'AI Sales Agents for US B2B Companies | FactoryJet',
   description:
-    'Custom AI sales agents and autonomous SDRs for US B2B teams. Sub-60-second speed to lead, ICP qualification, calendar booking and bi-directional CRM sync.',
+    'Custom AI sales agents for US B2B teams. Sub-60-second speed to lead, ICP qualification, calendar booking and bi-directional CRM sync with HubSpot and Salesforce.',
   keywords: [
     'ai sales agents',
     'custom ai sdr development',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'FactoryJet',
-    title: 'AI Sales & SDR Agents for US B2B Companies | FactoryJet',
+    title: 'AI Sales Agents for US B2B Companies | FactoryJet',
     description:
       'Custom AI sales agents that engage inbound leads in under 60 seconds, qualify on your ICP, book meetings on AE calendars, and update HubSpot/Salesforce.',
     url: 'https://factoryjet.com/services/ai-agent-development/ai-sales-agent',
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
         url: 'https://factoryjet.com/images/us/services/hero-ai-agent-us.webp',
         width: 1200,
         height: 800,
-        alt: 'FactoryJet AI Sales and SDR Agent Development Services',
+        alt: 'FactoryJet AI Sales Agent Development Services',
       },
     ],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Sales & SDR Agents USA | FactoryJet',
+    title: 'AI Sales Agents for B2B | FactoryJet',
     description:
       'Turn inbound leads into qualified meetings in under 60 seconds. Custom AI SDRs wired into HubSpot, Salesforce, and Google Calendar.',
     images: ['https://factoryjet.com/images/us/services/hero-ai-agent-us.webp'],
@@ -300,9 +300,9 @@ const serviceSchema = {
   '@type': 'Service',
   '@id': 'https://factoryjet.com/services/ai-agent-development/ai-sales-agent#service',
   serviceType: 'AI sales agent development',
-  name: 'Custom AI Sales & SDR Agent Development',
+  name: 'Custom AI Sales Agent Development',
   description:
-    'Custom AI sales agents and autonomous SDRs for US B2B teams. Sub-60-second speed to lead, ICP qualification, calendar booking and bi-directional CRM sync with HubSpot and Salesforce.',
+    'Custom AI sales agents for US B2B teams. Sub-60-second speed to lead, ICP qualification, calendar booking and bi-directional CRM sync with HubSpot and Salesforce.',
   provider: {
     '@type': 'Organization',
     '@id': 'https://factoryjet.com/#organization',
@@ -321,7 +321,7 @@ const webPageSchema = {
   '@type': 'WebPage',
   '@id': 'https://factoryjet.com/services/ai-agent-development/ai-sales-agent#webpage',
   url: 'https://factoryjet.com/services/ai-agent-development/ai-sales-agent',
-  name: 'AI Sales & SDR Agents for US B2B Companies | FactoryJet',
+  name: 'AI Sales Agents for US B2B Companies | FactoryJet',
   description:
     'Custom AI sales agents that engage inbound leads in under 60 seconds, qualify on your ICP, book meetings on AE calendars, and update HubSpot/Salesforce.',
   dateModified: PAGE_MODIFIED,
@@ -333,7 +333,7 @@ const BREADCRUMB_ITEMS = [
   { name: 'Home', url: 'https://factoryjet.com' },
   { name: 'Services', url: 'https://factoryjet.com/services' },
   { name: 'AI Agent Development', url: 'https://factoryjet.com/services/ai-agent-development' },
-  { name: 'AI Sales & SDR Agents', url: 'https://factoryjet.com/services/ai-agent-development/ai-sales-agent' },
+  { name: 'AI Sales Agents', url: 'https://factoryjet.com/services/ai-agent-development/ai-sales-agent' },
 ];
 
 const breadcrumbSchema = {
@@ -539,7 +539,7 @@ export default function AISalesAgentPage() {
           <div className="pp-wrap" style={{ paddingTop: 'clamp(40px,5vh,72px)', paddingBottom: 'clamp(44px,6vh,84px)', position: 'relative' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 'clamp(32px,5vw,56px)', alignItems: 'center' }} className="pp-herogrid">
               <div>
-                <p className="pp-eyebrow">AI sales and SDR agents for US operations.</p>
+                <p className="pp-eyebrow">AI sales agents for US operations.</p>
                 <h1 style={{ margin: '14px 0 12px', maxWidth: '19ch' }}>Turn inbound leads into qualified meetings in under 60 seconds.</h1>
                 <p className="pp-lead" style={{ maxWidth: '52ch' }}>
                   FactoryJet builds custom AI sales development agents for US B2B companies. We eliminate the 42-hour response lag. Our AI SDR engages inbound leads within 60 seconds. It works across forms, ads, and email. It qualifies leads on your ICP. It answers objections and books meetings on AE calendars.

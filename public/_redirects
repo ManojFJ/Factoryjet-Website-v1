@@ -306,3 +306,12 @@
 /author/vikram-malhotra /author/bhavesh-barot 301
 /author/priya-singh /author/bhavesh-barot 301
 /author/anjali-gupta /author/bhavesh-barot 301
+
+# Head-term retarget (2026-09-07). Both pages shipped targeting a long-tail
+# variant with ZERO measured US search volume, while the head term next to it
+# had real demand: "contractor ai receptionist" 0/mo vs "ai receptionist"
+# 12,100/mo, and "ai sdr development" 0/mo vs "ai sdr" 1,900/mo (DataForSEO,
+# location 2840). Pages were <2 weeks old with near-zero impressions, so the
+# slug move costs nothing now and would get expensive later.
+/services/contractor-ai-receptionist /services/ai-receptionist 301
+/services/ai-sdr-development /services/ai-sdr 301

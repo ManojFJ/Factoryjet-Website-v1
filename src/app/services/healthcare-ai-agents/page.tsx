@@ -657,7 +657,7 @@ export default function HealthcareAiAgentsPage() {
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
                 // TAILORED CLINICAL DOMAINS
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Specialized Architectures for Every Healthcare Sector..</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Specialized Architectures for Every Healthcare Sector.</h2>
               <p className="text-lg text-[#46403B]">
                 Medical workflows differ vastly between surgical centers and dental operatories. We build custom logic tailored to your exact clinical specialty.
               </p>
@@ -689,10 +689,10 @@ export default function HealthcareAiAgentsPage() {
                     Dental practices lose a lot of calls during peak hygiene hours, when the front desk is busiest. Our dental AI voice agent connects directly to Dentrix, Eaglesoft, Open Dental, and Curve Dental. It books routine cleanings and screens emergency dental pain. It also schedules cosmetic consultations and checks dental PPO coverage, usually in under ninety seconds.
                   </p>
                   <ul className="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6] list-none">
-                    <li>&bull. Dentrix / Eaglesoft Sync.</li>
-                    <li>&bull. Hygiene Recall Automation.</li>
-                    <li>&bull. Emergency Triage Paging.</li>
-                    <li>&bull. Dental PPO Copay Pre-Check.</li>
+                    <li>&bull; Dentrix / Eaglesoft Sync.</li>
+                    <li>&bull; Hygiene Recall Automation.</li>
+                    <li>&bull; Emergency Triage Paging.</li>
+                    <li>&bull; Dental PPO Copay Pre-Check.</li>
                   </ul>
                 </div>
               </div>
@@ -712,10 +712,10 @@ export default function HealthcareAiAgentsPage() {
                     for non-clinical hospital departments like billing or facilities.
                   </p>
                   <ul className="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6] list-none">
-                    <li>&bull. Epic FHIR R4 Integration.</li>
-                    <li>&bull. Concurrent Call Scaling.</li>
-                    <li>&bull. Referral Intake Parsing.</li>
-                    <li>&bull. Clinical Lab Inquiry Routing.</li>
+                    <li>&bull; Epic FHIR R4 Integration.</li>
+                    <li>&bull; Concurrent Call Scaling.</li>
+                    <li>&bull; Referral Intake Parsing.</li>
+                    <li>&bull; Clinical Lab Inquiry Routing.</li>
                   </ul>
                 </div>
                 <div className="lg:col-span-6 order-1 lg:order-2">
@@ -752,21 +752,21 @@ export default function HealthcareAiAgentsPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                    // CHIROPRACTORS, PHYSICAL THERAPY &amp. WELLNESS
+                    // CHIROPRACTORS, PHYSICAL THERAPY &amp; WELLNESS
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#14110F] mb-4">After-Hours New Patient Capture &amp. Treatment Plan Follow-Ups.</h3>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#14110F] mb-4">After-Hours New Patient Capture &amp; Treatment Plan Follow-Ups.</h3>
                   <p className="text-sm sm:text-base text-[#46403B] leading-relaxed mb-6">
                     Independent practitioners often run with just one front-desk coordinator, who cannot answer the phone while checking in a patient. Our voice agent answers every after-hours call instead. It explains initial consultation fees and collects injury history. It also books the first adjustment into ChiroTouch or Jane App, and texts the intake paperwork automatically. The same after-hours capture pattern shows up in home-service trades. see our{' '}
-                    <Link href="/services/contractor-ai-receptionist" className="underline hover:text-[#F05A28]">
+                    <Link href="/services/ai-receptionist" className="underline hover:text-[#F05A28]">
                       contractor AI receptionist
                     </Link>{' '}
                     page for that version.
                   </p>
                   <ul className="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6] list-none">
-                    <li>&bull. ChiroTouch / Jane App Sync.</li>
-                    <li>&bull. Treatment Plan Reactivation.</li>
-                    <li>&bull. Zero Missed Inbound Leads.</li>
-                    <li>&bull. SMS Paperwork Dispatch.</li>
+                    <li>&bull; ChiroTouch / Jane App Sync.</li>
+                    <li>&bull; Treatment Plan Reactivation.</li>
+                    <li>&bull; Zero Missed Inbound Leads.</li>
+                    <li>&bull; SMS Paperwork Dispatch.</li>
                   </ul>
                 </div>
               </div>
@@ -775,9 +775,9 @@ export default function HealthcareAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                    // URGENT CARE &amp. SURGERY CENTERS
+                    // URGENT CARE &amp; SURGERY CENTERS
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#14110F] mb-4">Pre-Op Instructions &amp. Urgent Care Wait-Time Guidance.</h3>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#14110F] mb-4">Pre-Op Instructions &amp; Urgent Care Wait-Time Guidance.</h3>
                   <p className="text-sm sm:text-base text-[#46403B] leading-relaxed mb-6">
                     Ambulatory surgery centers (ASCs) and urgent care clinics get heavy call volume from anxious patients. Most calls ask about fasting rules, arrival times, or walk-in wait times. Our voice agent gives clear, rule-based pre-op fasting instructions, confirms transportation, and updates patients on the current wait. If a caller sounds non-compliant, it flags the case directly to a surgical coordinator. The same rule-based approach carries over to other regulated settings. our{' '}
                     <Link href="/services/chemical-pharmaceutical-ai-agents" className="underline hover:text-[#F05A28]">
@@ -786,10 +786,10 @@ export default function HealthcareAiAgentsPage() {
                     follow comparable safety scripts.
                   </p>
                   <ul className="grid grid-cols-2 gap-4 text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6] list-none">
-                    <li>&bull. Pre-Op Fasting Protocols.</li>
-                    <li>&bull. Real-Time Wait-Time Feeds.</li>
-                    <li>&bull. Post-Op Check Call Automation.</li>
-                    <li>&bull. Transportation Rule Confirmations.</li>
+                    <li>&bull; Pre-Op Fasting Protocols.</li>
+                    <li>&bull; Real-Time Wait-Time Feeds.</li>
+                    <li>&bull; Post-Op Check Call Automation.</li>
+                    <li>&bull; Transportation Rule Confirmations.</li>
                   </ul>
                 </div>
                 <div className="lg:col-span-6 order-1 lg:order-2">
@@ -826,7 +826,7 @@ export default function HealthcareAiAgentsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Medical &amp. Hospital EHR.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Medical &amp; Hospital EHR.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">Epic</span>, via Epic App Orchard: ambulatory scheduling, patient lookup, and encounter notes.</li>
                   <li><span className="font-bold text-[#14110F]">Cerner</span> (Oracle Health): provider templates and patient demographics through your interface engine.</li>
@@ -849,7 +849,7 @@ export default function HealthcareAiAgentsPage() {
               </div>
 
               <div className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
-                <h3 className="text-lg font-bold text-[#14110F] mb-4">Chiropractic &amp. Wellness.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-4">Chiropractic &amp; Wellness.</h3>
                 <ul className="space-y-3 text-sm text-[#46403B] leading-relaxed list-none">
                   <li><span className="font-bold text-[#14110F]">ChiroTouch</span>: visit-type scheduling and treatment-plan reactivation calls.</li>
                   <li><span className="font-bold text-[#14110F]">Jane App</span>: wellness and physical therapy booking with intake-form sync.</li>
@@ -873,9 +873,9 @@ export default function HealthcareAiAgentsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // TECHNICAL ARCHITECTURE &amp. SECURITY SPECIFICATION
+                // TECHNICAL ARCHITECTURE &amp; SECURITY SPECIFICATION
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">The Healthcare AI Telephony &amp. EHR Integration Stack.</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">The Healthcare AI Telephony &amp; EHR Integration Stack.</h2>
               <p className="text-lg text-[#46403B]">
                 How we hit sub-500ms voice response, zero-retention HIPAA security, and reliable two-way database sync.
               </p>
@@ -883,8 +883,8 @@ export default function HealthcareAiAgentsPage() {
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 list-none">
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
-                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">01 // TELEPHONY INGRESS &amp. SBC ROUTING.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Carrier-Grade SIP Trunking &amp. Audio Streaming.</h3>
+                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">01 // TELEPHONY INGRESS &amp; SBC ROUTING.</div>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Carrier-Grade SIP Trunking &amp; Audio Streaming.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   We deploy dedicated SIP trunks through Twilio and Telnyx. These feature Session Border Controller (SBC) redundancy in case one carrier path fails. Audio streams over WebSockets straight into our real-time voice pipeline, so there is no transcoding delay. Packet delivery stays under 100 milliseconds across every US telecom carrier we test against. Some hospital networks already run RingCentral, Genesys, Five9, or Aircall as their main contact-center platform. We connect alongside it through a SIP handoff. You do not have to replace it.
                 </p>
@@ -899,16 +899,16 @@ export default function HealthcareAiAgentsPage() {
               </li>
 
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
-                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">03 // DETERMINISTIC REASONING &amp. STATE MACHINE.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">LangGraph Cyclical Orchestration &amp. Guardrails.</h3>
+                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">03 // DETERMINISTIC REASONING &amp; STATE MACHINE.</div>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">LangGraph Cyclical Orchestration &amp; Guardrails.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   We never connect a raw generative LLM straight to phone audio without rule-based guardrails around it. Our state machine, built on LangGraph, enforces strict clinical boundaries on every turn of the call. It follows defined clinical protocols, collects the required patient details in order, and handles interruptions without losing its place. It cannot invent medical advice or a drug dosage that was never approved.
                 </p>
               </li>
 
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
-                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">04 // FHIR R4 &amp. EHR BI-DIRECTIONAL BRIDGES.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Real-Time Provider Scheduling &amp. Patient Records.</h3>
+                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">04 // FHIR R4 &amp; EHR BI-DIRECTIONAL BRIDGES.</div>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Real-Time Provider Scheduling &amp; Patient Records.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   Our system reads live provider templates, operatory buffers, and appointment rules straight from your EHR through FHIR R4 APIs. When it books a visit, the agent locks that calendar slot right away. It creates a new patient record, or matches an existing chart number. Then it logs the encounter notes directly in your clinical system.
                 </p>
@@ -932,7 +932,7 @@ export default function HealthcareAiAgentsPage() {
 
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">07 // PRESCRIPTION REFILL MESSAGE QUEUES.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Asynchronous Nursing Inbox &amp. Pharmacy Routing.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Asynchronous Nursing Inbox &amp; Pharmacy Routing.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   For non-urgent refill requests, the voice agent collects the exact prescription name, dosage, prescribing doctor, and pharmacy phone number. It formats that into a structured clinical inbox task inside your EHR. Your EHR may not support automated routing. In that scenario, the agent sends the request through an encrypted Redis queue to nurses.
                 </p>
@@ -940,7 +940,7 @@ export default function HealthcareAiAgentsPage() {
 
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">08 // ACUTE EMERGENCY CLINICAL TRIAGE.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Automated 911 Warning &amp. On-Call Warm Transfer.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Automated 911 Warning &amp; On-Call Warm Transfer.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   Our clinical safety classifier listens for acute emergency phrases: severe chest pain, stroke symptoms, uncontrolled bleeding, respiratory distress. The moment it hears one, the AI tells the caller to dial 911. It keeps the line open and starts a warm SIP transfer to the on-call physician&apos;s triage line. This call routing decision happens in under a second. A legacy IVR menu tree would make an anxious caller press through options first.
                 </p>
@@ -948,14 +948,14 @@ export default function HealthcareAiAgentsPage() {
 
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">09 // BILINGUAL SPANISH DETECTION.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Sub-3-Second Language Switching &amp. English Note Logging.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Sub-3-Second Language Switching &amp; English Note Logging.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   Bilingual support matters in most US metro markets. Our voice agent hears whether a patient is speaking English or Spanish within the first three words, then switches instantly. It runs the entire scheduling conversation in natural Spanish, and still writes standardized English clinical notes inside the EHR.
                 </p>
               </li>
 
               <li className="p-8 rounded-2xl bg-white border border-[#E7DED6]">
-                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">10 // IMMUTABLE AUDIT LOGGING &amp. TELEMETRY.</div>
+                <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">10 // IMMUTABLE AUDIT LOGGING &amp; TELEMETRY.</div>
                 <h3 className="text-lg font-bold text-[#14110F] mb-2">Operational Visibility on SOC 2 Type II Infrastructure.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   Every inbound call, API transaction, appointment confirmation, and emergency transfer gets logged into an immutable, encrypted audit trail. Practice administrators see a real-time dashboard with call completion rates, average handle times, triage resolution rates, and audio latency.
@@ -981,7 +981,7 @@ export default function HealthcareAiAgentsPage() {
             <ol className="grid grid-cols-1 md:grid-cols-2 gap-8 list-none">
               <li className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 1 // WEEK 1.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Clinical Workflow Audit &amp. EHR API Architecture.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Clinical Workflow Audit &amp; EHR API Architecture.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   We map your appointment templates, provider buffers, and insurance rules. For Epic clients, this includes requesting Epic App Orchard sandbox access. For Dentrix, Eaglesoft, or Open Dental, we request direct read access to your practice database instead.
                 </p>
@@ -989,7 +989,7 @@ export default function HealthcareAiAgentsPage() {
 
               <li className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 2 // WEEKS 2 TO 3.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Voice Pipeline Engineering &amp. HIPAA Compliance Shield.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Voice Pipeline Engineering &amp; HIPAA Compliance Shield.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   We provision SIP trunks through Twilio or Telnyx and tune the speech model for your specialty&apos;s vocabulary. Your HIPAA Business Associate Agreement (BAA) is signed before any real patient audio reaches our infrastructure.
                 </p>
@@ -997,7 +997,7 @@ export default function HealthcareAiAgentsPage() {
 
               <li className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 3 // WEEKS 3 TO 4.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Deterministic Clinical Triage &amp. Edge-Case Guardrails.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Deterministic Clinical Triage &amp; Edge-Case Guardrails.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   We build the state machine that handles emergencies, refill requests, and bilingual Spanish calls. Every emergency path gets tested against real red-flag phrases before launch, not just happy-path scripts.
                 </p>
@@ -1005,7 +1005,7 @@ export default function HealthcareAiAgentsPage() {
 
               <li className="p-8 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6]">
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 4 // WEEKS 4 TO 6.</div>
-                <h3 className="text-lg font-bold text-[#14110F] mb-2">Pilot Telephony Shadowing &amp. Live Practice Cutover.</h3>
+                <h3 className="text-lg font-bold text-[#14110F] mb-2">Pilot Telephony Shadowing &amp; Live Practice Cutover.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed">
                   The agent shadows live calls next to your front desk first, so nothing goes live untested. Once accuracy holds steady, we run a zero-downtime phone cutover, usually overnight or on a weekend.
                 </p>
@@ -1172,7 +1172,7 @@ export default function HealthcareAiAgentsPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#F05A28]/30 mb-6">
               <span className="font-mono text-xs text-[#F05A28] font-bold tracking-wide">
-                // ZERO MISSED PATIENTS &bull. BUILT FOR HIPAA-COMPLIANT OPERATION
+                // ZERO MISSED PATIENTS &bull; BUILT FOR HIPAA-COMPLIANT OPERATION
               </span>
             </div>
             

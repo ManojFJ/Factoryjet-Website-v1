@@ -369,13 +369,13 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFF8F5] border border-[#F05A28]/30 mb-6">
                   <span className="font-mono text-xs text-[#F05A28] font-bold tracking-wide">
-                    // GXP COMPLIANT CHEMICAL &amp. PHARMA AI AGENTS
+                    // GXP COMPLIANT CHEMICAL &amp; PHARMA AI AGENTS
                   </span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#14110F] font-heading leading-tight mb-6">Chemical &amp. Pharma AI Agents with{' '}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#14110F] font-heading leading-tight mb-6">Chemical &amp; Pharma AI Agents with{' '}
                   <span>
-                    Live LIMS &amp. SAP QM Sync.
+                    Live LIMS &amp; SAP QM Sync.
                   </span>.</h1>
 
                 <p className="text-lg sm:text-xl text-[#46403B] mb-8 leading-relaxed">
@@ -393,11 +393,11 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                 <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-[#E7DED6] text-xs font-mono text-[#6E655F]">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#F05A28]" />
-                    <span>FDA 21 CFR Part 11 &amp. GxP Ready.</span>
+                    <span>FDA 21 CFR Part 11 &amp; GxP Ready.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#F05A28]" />
-                    <span>LabWare, SampleManager &amp. SAP QM Sync.</span>
+                    <span>LabWare, SampleManager &amp; SAP QM Sync.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#F05A28]" />
@@ -425,7 +425,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                       <span className="text-[#F05A28] font-bold">21 CFR PART 11</span>
                     </div>
                     <div className="font-bold text-[#14110F]">
-                      LabWare LIMS &bull. Batch #8492-B Reviewed in 54s (0 OOS Deviations).
+                      LabWare LIMS &bull; Batch #8492-B Reviewed in 54s (0 OOS Deviations).
                     </div>
                   </div>
                 </div>
@@ -439,10 +439,10 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl border border-[#F05A28]/30 bg-white p-6 sm:p-8 shadow-sm">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // EXECUTIVE SUMMARY &amp. SYSTEM DEFINITION
+                // EXECUTIVE SUMMARY &amp; SYSTEM DEFINITION
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-[#14110F] font-heading mb-4">
-                What is a Chemical &amp. Pharmaceutical AI Agent?.
+                What is a Chemical &amp; Pharmaceutical AI Agent?.
               </h2>
               <p className="text-base sm:text-lg text-[#46403B] leading-relaxed">
                 A chemical AI agent is automated software. It connects to LIMS platforms like LabWare. It connects to manufacturing execution systems. It syncs with ERP tools like SAP QM. It interfaces with regulatory databases. It automates electronic batch record audits. It flags out-of-specification deviations instantly. It calculates GHS chemical hazard classifications. It authors 16-section Safety Data Sheets. It maintains FDA 21 CFR Part 11 cryptographic audit trails. It removes manual data-entry bottlenecks.
@@ -458,7 +458,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
                 // VERIFIED LIFE SCIENCES BENCHMARKS
               </div>
-              <h2 className="text-3xl font-extrabold text-[#14110F] font-heading">The Cost of Regulatory Bottlenecks in Chemical &amp. Pharma Plants.</h2>
+              <h2 className="text-3xl font-extrabold text-[#14110F] font-heading">The Cost of Regulatory Bottlenecks in Chemical &amp; Pharma Plants.</h2>
               <p className="text-base sm:text-lg text-[#46403B] mt-3">
                 Manual quality reviews delay releases. Paper-based batch records create bottlenecks. Compliance backlogs constrain factory throughput.
               </p>
@@ -525,7 +525,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                   rel="noopener noreferrer"
                   className="text-xs font-mono text-[#6E655F] underline decoration-[#6E655F]/40 underline-offset-2 hover:text-[#B23E13] hover:decoration-[#B23E13] transition-colors"
                 >
-                  Source: McKinsey &amp. Company, Life Sciences Practice.
+                  Source: McKinsey &amp; Company, Life Sciences Practice.
                 </a>
               </div>
             </div>
@@ -537,7 +537,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // ENTERPRISE CHEMICAL &amp. PHARMA CAPABILITIES
+                // ENTERPRISE CHEMICAL &amp; PHARMA CAPABILITIES
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Engineered for High-Stakes GxP and Chemical Manufacturing.</h2>
               <p className="text-lg text-[#46403B]">
@@ -625,7 +625,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#FFF8F5] border border-[#F05A28]/20 flex items-center justify-center text-[#F05A28] font-bold font-mono text-lg mb-6">
                   06
                 </div>
-                <h3 className="text-xl font-bold text-[#14110F] mb-3">Bi-Directional LIMS &amp. ERP Quality Sync.</h3>
+                <h3 className="text-xl font-bold text-[#14110F] mb-3">Bi-Directional LIMS &amp; ERP Quality Sync.</h3>
                 <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                   The agent connects directly to LabWare. It integrates Thermo Fisher SampleManager. It syncs Waters CDS chromatography platforms. Approved results push to SAP QM. Status updates flow into NetSuite.
                 </p>
@@ -644,7 +644,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // TAILORED LIFE SCIENCES &amp. CHEMICAL SECTORS
+                // TAILORED LIFE SCIENCES &amp; CHEMICAL SECTORS
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Engineered for High-Stakes Regulatory Workflows.</h2>
               <p className="text-base sm:text-lg text-[#46403B]">
@@ -657,9 +657,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FAFAF7] p-8 rounded-2xl border border-[#E7DED6] shadow-sm">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    01. SPECIALTY CHEMICAL FORMULATIONS &amp. SDS AUTHORING
+                    01. SPECIALTY CHEMICAL FORMULATIONS &amp; SDS AUTHORING
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Formulation Optimization &amp. Automated GHS SDS Generation.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Formulation Optimization &amp; Automated GHS SDS Generation.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Specialty chemical formulators handle coatings, adhesives, and lubricants. Staff spend heavy time on manual tasks. They review raw material safety sheets by hand. They calculate hazard statements one by one.
                   </p>
@@ -702,9 +702,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    02. PHARMACEUTICAL BATCH RECORD REVIEW &amp. GMP COMPLIANCE
+                    02. PHARMACEUTICAL BATCH RECORD REVIEW &amp; GMP COMPLIANCE
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated EBR Reconciliation &amp. Out-of-Specification (OOS) Triage.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated EBR Reconciliation &amp; Out-of-Specification (OOS) Triage.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Pharma plants face batch release delays. Quality assurance teams verify hundreds of pages. They check operator signatures manually. They inspect autoclave cycles by hand. They review analytical chromatography runs line by line.
                   </p>
@@ -723,9 +723,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FAFAF7] p-8 rounded-2xl border border-[#E7DED6] shadow-sm">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    03. FDA 21 CFR PART 11 &amp. GXP QUALITY COMPLIANCE
+                    03. FDA 21 CFR PART 11 &amp; GXP QUALITY COMPLIANCE
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Cryptographic Audit Logging &amp. CAPA Root-Cause Investigation.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Cryptographic Audit Logging &amp; CAPA Root-Cause Investigation.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Regulatory audits require instant traceability. FDA, EMA, and ISO inspectors review records closely. Auditors inspect every change log and user session. They examine deviation reports in detail.
                   </p>
@@ -788,9 +788,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    04. CHEMICAL SUPPLY CHAIN &amp. RAW MATERIAL SOURCING
+                    04. CHEMICAL SUPPLY CHAIN &amp; RAW MATERIAL SOURCING
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Supplier Certificate of Analysis (CoA) Ingestion &amp. Lot Tracking.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Supplier Certificate of Analysis (CoA) Ingestion &amp; Lot Tracking.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Chemical manufacturers receive thousands of shipments yearly. Each shipment includes a vendor Certificate of Analysis. Vendor PDFs arrive in differing formats. Test units vary across suppliers. Electronic data interchange can automate intake.
                   </p>
@@ -798,7 +798,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                     Our supply chain agent parses vendor CoAs instantly. It compares assay percentages to purchase specs. It checks viscosity limits and moisture thresholds. It updates raw material lot status in SAP. It syncs records with NetSuite. It flags non-conforming shipments before unloading starts.
                   </p>
                   <ul className="flex flex-wrap gap-2 text-xs font-mono text-[#6E655F] list-none">
-                    <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">Automated CoA OCR &amp. Spec Check.</li>
+                    <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">Automated CoA OCR &amp; Spec Check.</li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">SAP / NetSuite Lot Release Sync.</li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">Supplier Quality Scoring.</li>
                   </ul>
@@ -809,9 +809,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FAFAF7] p-8 rounded-2xl border border-[#E7DED6] shadow-sm">
                 <div className="lg:col-span-6 order-2 lg:order-1">
                   <div className="font-mono text-xs text-[#F05A28] font-bold uppercase mb-2">
-                    05. GLOBAL REGULATORY FILING (TSCA, REACH &amp. PROP 65)
+                    05. GLOBAL REGULATORY FILING (TSCA, REACH &amp; PROP 65)
                   </div>
-                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated Chemical Inventory Screening &amp. Regulatory Declarations.</h3>
+                  <h3 className="text-2xl font-bold text-[#14110F] font-heading mb-4">Automated Chemical Inventory Screening &amp; Regulatory Declarations.</h3>
                   <p className="text-[#46403B] leading-relaxed mb-4">
                     Selling chemicals in North America and Europe requires screening. Teams must track CAS numbers against restriction lists. Three main frameworks apply:{' '}
                     <a
@@ -829,7 +829,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                     Our regulatory agent tracks chemical lists. It checks active formulas. It cross-references your bills of materials. It creates customer compliance certificates fast. It drafts regulatory notices.
                   </p>
                   <ul className="flex flex-wrap gap-2 text-xs font-mono text-[#6E655F] list-none">
-                    <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">TSCA &amp. REACH Restriction Screening.</li>
+                    <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">TSCA &amp; REACH Restriction Screening.</li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">Prop 65 Safe Harbor Analysis.</li>
                     <li className="px-2.5 py-1 rounded bg-white border border-[#F05A28]/20">Customer Compliance Certificates.</li>
                   </ul>
@@ -891,9 +891,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
-                // SYSTEM ARCHITECTURE &amp. INTEGRATION
+                // SYSTEM ARCHITECTURE &amp; INTEGRATION
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Enterprise Chemical &amp. Pharma AI Engineering Blueprint.</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">Enterprise Chemical &amp; Pharma AI Engineering Blueprint.</h2>
               <p className="text-base sm:text-lg text-[#46403B]">
                 We build validated AI pipelines for life sciences firms. We support chemical producers with deterministic software.
               </p>
@@ -966,7 +966,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
               <div className="font-mono text-xs text-[#F05A28] font-bold uppercase tracking-wider mb-2">
                 // DEPLOYMENT METHODOLOGY
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">4-Phase GxP Implementation &amp. Validation Roadmap.</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#14110F] font-heading mb-4">4-Phase GxP Implementation &amp; Validation Roadmap.</h2>
               <p className="text-base sm:text-lg text-[#46403B]">
                 Go from regulatory audit to production deployment in 8 to 12 weeks.
               </p>
@@ -975,46 +975,46 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 list-none">
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between"><div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 01 // WEEKS 1-3.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">GxP Schema &amp. LIMS Audit.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">GxP Schema &amp; LIMS Audit.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We map your LIMS database schemas. We inspect master batch record templates. We review standard operating procedures. We configure zero-data-retention environments.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: User Requirements Specification (URS) &amp. Validation Plan.
+                  Deliverable: User Requirements Specification (URS) &amp; Validation Plan.
                 </div>.</li>
 
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between"><div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 02 // WEEKS 4-6.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Parsing &amp. GHS Rules Build.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">Parsing &amp; GHS Rules Build.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We build multi-modal parsing pipelines. We ingest executed batch records and supplier CoAs. We process analytical chromatography runs. We encode GHS classification rules.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: Functional Design Specification (FDS) &amp. Custom Extractors.
+                  Deliverable: Functional Design Specification (FDS) &amp; Custom Extractors.
                 </div>.</li>
 
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between"><div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 03 // WEEKS 7-9.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">LIMS Sync &amp. QA Console Staging.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">LIMS Sync &amp; QA Console Staging.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We deploy a side-by-side QA review dashboard. Quality engineers verify batch records. They review deviation flags. They validate automated LIMS and SAP QM synchronization.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: QA Review Console &amp. Sandbox Integration Validation.
+                  Deliverable: QA Review Console &amp; Sandbox Integration Validation.
                 </div>.</li>
 
               <li className="p-6 rounded-2xl bg-[#FAFAF7] border border-[#E7DED6] shadow-sm flex flex-col justify-between"><div>
                   <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">PHASE 04 // WEEKS 10-12.</div>
-                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">CSV / CSA Validation &amp. Handover.</h3>
+                  <h3 className="text-lg font-bold text-[#14110F] font-heading mb-3">CSV / CSA Validation &amp; Handover.</h3>
                   <p className="text-sm text-[#46403B] leading-relaxed mb-4">
                     We execute IQ, OQ, and PQ test protocols. We train quality assurance staff. We deliver complete Git repositories. You receive full intellectual property ownership.
                   </p>
                 </div>
                 <div className="text-xs font-mono text-[#6E655F] pt-4 border-t border-[#E7DED6]">
-                  Deliverable: Executed IQ/OQ/PQ Package &amp. Full Source Code.
+                  Deliverable: Executed IQ/OQ/PQ Package &amp; Full Source Code.
                 </div>.</li>
             </ul>
           </div>
@@ -1045,7 +1045,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                       Generic Cloud SaaS
                     </th>
                     <th className="p-4 sm:p-6 font-bold text-[#6E655F]">
-                      Manual QA &amp. Regulatory Staff
+                      Manual QA &amp; Regulatory Staff
                     </th>
                   </tr>
                 </thead>
@@ -1059,9 +1059,9 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                     <td className="p-4 sm:p-6 text-[#6E655F]">8 to 14 Days.</td>
                   </tr>
                   <tr>
-                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">LIMS &amp. SAP QM Integration.</td>
+                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">LIMS &amp; SAP QM Integration.</td>
                     <td className="p-4 sm:p-6 font-bold text-[#F05A28] bg-[#FFF8F5]">
-                      Native LabWare &amp. SampleManager Sync.
+                      Native LabWare &amp; SampleManager Sync.
                     </td>
                     <td className="p-4 sm:p-6 text-[#6E655F]">Manual CSV Export/Import.</td>
                     <td className="p-4 sm:p-6 text-[#6E655F]">Manual Re-Keying.</td>
@@ -1083,7 +1083,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                     <td className="p-4 sm:p-6 text-[#6E655F]">$120k - $160k QA specialist salary.</td>
                   </tr>
                   <tr>
-                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">Formulation Privacy &amp. Enclaves.</td>
+                    <td className="p-4 sm:p-6 font-semibold text-[#14110F]">Formulation Privacy &amp; Enclaves.</td>
                     <td className="p-4 sm:p-6 font-bold text-[#F05A28] bg-[#FFF8F5]">
                       Air-Gapped Private VPC or On-Prem.
                     </td>
@@ -1105,7 +1105,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                   <div className="relative rounded-xl overflow-hidden aspect-square">
                     <Image
                       src="/bhavesh_image.webp"
-                      alt="Bhavesh Barot, Founder &amp. CEO of FactoryJet"
+                      alt="Bhavesh Barot, Founder &amp; CEO of FactoryJet"
                       width={682}
                       height={1024}
                       quality={95}
@@ -1116,7 +1116,7 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
                   <div className="pt-4 text-center">
                     <div className="font-bold text-lg text-[#14110F]">Bhavesh Barot.</div>
                     <div className="font-mono text-xs text-[#F05A28] font-bold">
-                      Founder &amp. CEO, FactoryJet.
+                      Founder &amp; CEO, FactoryJet.
                     </div>
                     <div className="mt-3">
                       <a
@@ -1233,8 +1233,8 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
 
         {/* STRUCTURED FAQ SECTION */}
         <FAQ
-          eyebrow="// CHEMICAL &amp. PHARMA AI QUESTIONS &amp. ANSWERS"
-          headline="Frequently Asked Questions on Chemical &amp. Pharmaceutical AI."
+          eyebrow="// CHEMICAL &amp; PHARMA AI QUESTIONS &amp; ANSWERS"
+          headline="Frequently Asked Questions on Chemical &amp; Pharmaceutical AI."
           lead="Everything quality directors and lab managers need to know. Learn about GxP validation and SDS authoring. Understand full software ownership."
           categories={FAQ_CATEGORIES}
           items={FAQ_ITEMS}
@@ -1246,12 +1246,12 @@ export default function ChemicalPharmaceuticalAiAgentsPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#F05A28]/30 mb-6">
               <span className="font-mono text-xs text-[#F05A28] font-bold tracking-wide">
-                // GXP VALIDATED &bull. ZERO SEAT FEES &bull. 100% AIR-GAPPED ENCLAVES
+                // GXP VALIDATED &bull; ZERO SEAT FEES &bull; 100% AIR-GAPPED ENCLAVES
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#14110F] font-heading mb-6">
-              Ready to Modernize Quality &amp. Compliance with Custom AI?
+              Ready to Modernize Quality &amp; Compliance with Custom AI?
             </h2>
 
             <p className="text-lg text-[#46403B] max-w-2xl mx-auto mb-10 leading-relaxed">

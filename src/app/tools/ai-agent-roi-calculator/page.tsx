@@ -683,7 +683,7 @@ export default function AiAgentRoiCalculatorPage() {
               </Link>
 
               <Link
-                href="/services/ai-sdr-development"
+                href="/services/ai-sdr"
                 className="p-6 rounded-xl bg-[#FAFAF7] border border-[#E7DED6] hover:border-[#F05A28] transition-colors group"
               >
                 <div className="font-mono text-xs text-[#F05A28] font-bold mb-2">SERVICE 02</div>

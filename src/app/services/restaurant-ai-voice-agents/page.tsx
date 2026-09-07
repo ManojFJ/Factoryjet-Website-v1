@@ -756,7 +756,7 @@ export default function RestaurantAiVoiceAgentsPage() {
                   </p>
                   <p className="text-[#46403B] leading-relaxed mb-6">
                     The same after-hours lead-capture pattern shows up in home-service trades. See our{' '}
-                    <Link href="/services/contractor-ai-receptionist" className="underline hover:text-[#F05A28]">
+                    <Link href="/services/ai-receptionist" className="underline hover:text-[#F05A28]">
                       contractor AI receptionist
                     </Link>{' '}
                     page for that version. For the invoice itself, we can sync it to QuickBooks or send it straight through Toast.
