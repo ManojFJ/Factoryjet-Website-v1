@@ -13,8 +13,8 @@ import { US_FOOTER_COLUMNS } from '@/data/usFooterColumns';
 import '@/components/v2/PlatformPage.css';
 
 const CALENDLY = 'https://calendly.com/bhavesh-factoryjet/30min';
-const CANONICAL_URL = 'https://factoryjet.com/services/ai-sdr-development';
-const PAGE_MODIFIED = '2026-09-03';
+const CANONICAL_URL = 'https://factoryjet.com/services/ai-sdr';
+const PAGE_MODIFIED = '2026-09-07';
 
 /** Single source of truth for the breadcrumb trail. Feeds BOTH the visible
  *  <Breadcrumbs> component and the BreadcrumbList JSON-LD below, so the two
@@ -22,27 +22,29 @@ const PAGE_MODIFIED = '2026-09-03';
 const BREADCRUMB_ITEMS: BreadcrumbItem[] = [
   { name: 'Home', url: 'https://factoryjet.com' },
   { name: 'Services', url: 'https://factoryjet.com/services' },
-  { name: 'AI SDR Development', url: CANONICAL_URL },
+  { name: 'AI SDR', url: CANONICAL_URL },
 ];
 
 export const metadata: Metadata = {
-  title: 'Custom AI SDR Development Services USA | FactoryJet',
+  title: 'AI SDR | Custom AI SDR & BDR Agents for B2B | FactoryJet',
   description:
-    'Custom AI SDR agent development for US B2B teams. Automate sub-minute speed to lead, CRM qualification, and HubSpot calendar booking. Get a free proposal.',
+    'Custom AI SDR and AI BDR agents for B2B teams. Your AI sales development rep replies to every inbound lead in under 60 seconds, qualifies it against your ICP, and books the meeting. Get a free proposal.',
   keywords: [
+    'ai sdr',
+    'ai bdr',
     'ai sdr agent',
-    'autonomous b2b sales agent',
-    'ai lead qualification agent',
-    'custom ai sdr development',
-    'speed to lead automation',
-    'ai sales representative development',
-    'b2b lead qualification bot',
-    'hubspot ai sdr integration',
+    'ai sdr software',
+    'ai sdr tools',
+    'best ai sdr',
+    'ai sdr company',
+    'ai sales development representative',
+    'custom ai sdr',
+    'ai outbound sales agent',
   ],
   openGraph: {
     type: 'website',
     siteName: 'FactoryJet',
-    title: 'Custom AI SDR Development Services USA | FactoryJet',
+    title: 'AI SDR | Custom AI SDR & BDR Agents for B2B | FactoryJet',
     description:
       'Build custom autonomous AI SDR agents that qualify inbound leads in sub-60 seconds, enrich firmographic data, and schedule pre-qualified meetings on Account Executive calendars.',
     url: CANONICAL_URL,
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Custom AI SDR Development Services USA | FactoryJet',
+    title: 'AI SDR | Custom AI SDR & BDR Agents for B2B | FactoryJet',
     description:
       'Custom AI SDR agents for B2B teams: sub-minute response times, firmographic qualification, calendar booking, and bi-directional HubSpot / Salesforce CRM sync.',
     images: ['https://factoryjet.com/og-default.png'],
@@ -95,6 +97,18 @@ const FAQ_CATEGORIES: ReadonlyArray<FAQCategory> = [
 ];
 
 const FAQ_ITEMS: ReadonlyArray<FAQItem> = [
+  {
+    category: 'basics',
+    question: 'What is the difference between an AI SDR and an AI BDR?',
+    answer:
+      'The split mirrors the human roles. An AI SDR works inbound: it picks up leads who already raised a hand through a form, chat, or ad click, qualifies them, and books the meeting. An AI BDR works outbound: it researches accounts that match your ICP, finds the right contact, and opens a conversation cold. The underlying engineering is largely shared, so most teams start with the inbound AI SDR because the intent is already there and the payback is faster, then add outbound BDR sequences once the qualification logic is proven.',
+  },
+  {
+    category: 'basics',
+    question: 'Is an AI SDR the same as AI SDR software you buy off the shelf?',
+    answer:
+      'No, and the difference matters. Off-the-shelf AI SDR tools give you a fixed qualification flow, a fixed data provider, and a fixed set of CRM fields, and you adapt your process to fit. We build the agent against your ICP definition, your CRM schema, your routing rules, and your calendar logic, so it qualifies the way your best rep qualifies. You also own the code and the prompts at the end, rather than renting a seat and losing the workflow if you leave.',
+  },
   {
     category: 'basics',
     question: 'What is an AI SDR, and how does it speed up your sales pipeline?',
@@ -240,8 +254,8 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   '@id': `${CANONICAL_URL}#service`,
-  serviceType: 'Custom AI SDR development',
-  name: 'Custom AI SDR Development Services',
+  serviceType: 'AI SDR and AI BDR agent development',
+  name: 'AI SDR Agent Development',
   description:
     'Custom AI SDR agent development for US B2B teams: autonomous sub-minute speed to lead, firmographic data enrichment, multi-criteria qualification, and automated CRM calendar booking.',
   provider: {
@@ -306,7 +320,7 @@ const webPageSchema = {
   '@type': 'WebPage',
   '@id': `${CANONICAL_URL}#webpage`,
   url: CANONICAL_URL,
-  name: 'Custom AI SDR Development Services USA | FactoryJet',
+  name: 'AI SDR | Custom AI SDR & BDR Agents for B2B | FactoryJet',
   description:
     'Custom AI Sales Development Representative (SDR) agent engineering for US B2B and wholesale brands: sub-60s lead response, firmographic enrichment, and calendar booking.',
   dateModified: `${PAGE_MODIFIED}T00:00:00Z`,
@@ -328,7 +342,7 @@ const STATS = [
   { b: '100% Owned.', s: 'Private Git repo & zero per-seat fees.' },
 ];
 
-export default function AiSdrDevelopmentPage() {
+export default function AiSdrPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -354,9 +368,9 @@ export default function AiSdrDevelopmentPage() {
                 We build custom AI Sales Development Representatives, or AI SDRs, for B2B teams. The agent replies to a new inbound lead in under 60 seconds. It looks up the company and checks whether the lead fits your Ideal Customer Profile (ICP), then books a meeting straight onto your Account Executive&apos;s calendar.
               </p>
               <HeroInlineForm
-                source="services_ai_sdr_development"
+                source="services_ai_sdr"
                 region="us"
-                submitLabel="Request AI SDR Architecture Audit"
+                submitLabel="Get a free AI SDR proposal"
               />
             </div>
 
