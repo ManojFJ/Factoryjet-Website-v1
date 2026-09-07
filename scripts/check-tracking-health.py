@@ -111,10 +111,31 @@ def main():
         if not t.get("firingTriggerId"):
             fail(f"GA4 config tag '{t['name']}' has NO firing trigger, so it never runs.")
         ids = [p.get("value") for p in t.get("parameter", []) if p.get("key") in ("tagId", "measurementId")]
-        if MEASUREMENT_ID not in ids:
-            fail(f"GA4 config tag '{t['name']}' points at {ids}, expected {MEASUREMENT_ID}.")
-        else:
+        # A Google tag ID (GT-...) is NOT a wrong measurement ID. It is a router that
+        # forwards to one or more GA4 destinations, and Google's own UI now creates
+        # config tags this way. Verified on the live site 2026-09-07: the container
+        # loads gtag/js?id=GT-PZQZRZH and the resulting beacon is
+        # analytics.google.com/g/collect?v=2&tid=G-N40S2Q8E1J, i.e. correct routing.
+        #
+        # The previous version of this check demanded the literal G- string in the
+        # GTM parameter and failed otherwise. That produced a permanent FAIL against
+        # a correctly configured container, which is worse than no check: a health
+        # script that always says BROKEN trains everyone to ignore it, and it nearly
+        # caused a working tag to be "fixed".
+        #
+        # Whether data actually lands is not knowable from the container definition,
+        # so it is not asserted here. CHECK 2 below reads the property directly and
+        # is the authoritative gate.
+        if MEASUREMENT_ID in ids:
             note(f"config tag OK: '{t['name']}' -> {MEASUREMENT_ID}, triggers {t.get('firingTriggerId')}")
+        elif any((i or "").startswith("GT-") for i in ids):
+            gt = next(i for i in ids if (i or "").startswith("GT-"))
+            note(f"config tag OK: '{t['name']}' -> Google tag {gt}, which routes to a GA4 "
+                 f"destination. Routing is not visible in the container definition, so "
+                 f"arrival is confirmed by the page_view check below, not here.")
+        else:
+            fail(f"GA4 config tag '{t['name']}' points at {ids}, expected {MEASUREMENT_ID} "
+                 f"or a GT- Google tag that routes to it.")
 
     # CHECK 1b — the Google tag MUST fire on Initialization, not Page View.
     #
