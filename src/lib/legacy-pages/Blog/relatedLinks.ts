@@ -70,6 +70,13 @@ const SERVICE_RULES: ServiceRule[] = [
     weight: 3,
   },
   {
+    href: '/services/law-firm-seo',
+    label: 'Law Firm SEO',
+    blurb: 'SEO built for the practice areas and case types that actually pay.',
+    keywords: ['law firm seo', 'attorney seo', 'lawyer seo', 'legal seo', 'law firm marketing', 'personal injury seo'],
+    weight: 4,
+  },
+  {
     href: '/services/local-seo',
     label: 'Local SEO',
     blurb: 'Show up in the map pack and in searches near you.',

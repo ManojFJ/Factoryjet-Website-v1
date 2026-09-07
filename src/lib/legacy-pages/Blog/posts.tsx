@@ -76,6 +76,7 @@ import { post as bestGeoAgenciesPost } from './posts/best-geo-agencies';
 import { post as generativeEngineOptimizationGuidePost } from './posts/generative-engine-optimization-guide';
 import { post as bestGeoAiVisibilityTools2026Post } from './posts/best-geo-ai-visibility-tools-2026';
 import { post as bestAiSeoAgenciesUsaPost } from './posts/best-ai-seo-agencies-usa';
+import { post as bestLawFirmSeoCompaniesUsaPost } from './posts/best-law-firm-seo-companies-usa';
 import { post as howToSellOnTiktokShop2026Post } from './posts/how-to-sell-on-tiktok-shop-2026';
 import { post as agenticAiVsGenerativeAiPost } from './posts/agentic-ai-vs-generative-ai';
 import { post as agenticAiVsAiAgentsPost } from './posts/agentic-ai-vs-ai-agents';
@@ -4796,6 +4797,7 @@ export const POSTS: BlogPost[] = [
   generativeEngineOptimizationGuidePost,
   bestGeoAiVisibilityTools2026Post,
   bestAiSeoAgenciesUsaPost,
+  bestLawFirmSeoCompaniesUsaPost,
   bestSeoAgenciesUsaPost,
   howToSellOnTiktokShop2026Post,
   agenticAiVsGenerativeAiPost,
