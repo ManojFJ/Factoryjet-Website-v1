@@ -1,13 +1,16 @@
 # FactoryJet — robots.txt
 # AI retrieval / search bots are welcomed (core to our AIO/GEO strategy).
-# AI training-only scrapers are blocked. Content Signals below declare our
-# usage policy per contentsignals.org (search + AI answers = yes, training = no).
-# NOTE: sourced from a static file (was src/app/robots.ts). Keep the two rule
-# sets (AI retrieval = allow, AI training = disallow) in sync with any policy change.
+# Model-vendor training crawlers (OpenAI, Anthropic) are ALSO welcomed: we want
+# their models to know FactoryJet exists without needing a live fetch. Third-party
+# data brokers that resell scraped corpora are still blocked. Content Signals below
+# declare that policy per contentsignals.org (search + AI answers + training = yes).
+# NOTE: sourced from a static file (was src/app/robots.ts). Keep the three rule
+# sets (AI retrieval = allow, vendor training = allow, data brokers = disallow)
+# in sync with any policy change.
 
 User-agent: *
 Allow: /
-Content-Signal: search=yes, ai-input=yes, ai-train=no
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Disallow: /shopdetail/
 Disallow: /shop/
 Disallow: /store/
@@ -88,17 +91,21 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# ─── AI TRAINING bots we currently ALLOW ───
-# ⚠️ UNRESOLVED POLICY CONFLICT (flagged 2026-08-02, needs Bhavesh's decision):
-# the Content-Signal line above declares "ai-train=no", yet the three bots below
-# are training crawlers we allow. Behaviour and declared policy disagree.
-# Two consistent options:
-#   (a) keep these allowed and change Content-Signal to ai-train=yes
-#   (b) set these to Disallow and keep ai-train=no
-# Per OpenAI's docs, disallowing GPTBot does NOT affect ChatGPT search/citation
-# eligibility (that is governed solely by OAI-SearchBot above), so option (b)
-# costs us nothing in AI visibility. Left as-is pending a decision — do not
-# "tidy" this without resolving the conflict.
+# ─── AI TRAINING bots we deliberately ALLOW ───
+# RESOLVED 2026-09-09 by Bhavesh: option (a). The Content-Signal line above now
+# reads ai-train=yes, which matches the three Allow rules below. Declared policy
+# and actual behaviour agree again.
+#
+# WHY allow training: FactoryJet sells AI visibility. A model that absorbed our
+# pages during training can name us with no retrieval step at all, which is the
+# cheapest form of the exact outcome we sell. We host nothing on this domain that
+# is worth withholding from a model, so there is no cost on the other side.
+#
+# This is NOT a blanket ai-train=yes for everyone. Access control (the Disallow
+# rules below) and usage permission (Content-Signal) are separate layers: we grant
+# the permission generally, then refuse access to the data brokers in the next
+# section. First-party vendor crawlers whose models we want to reach = allowed.
+# Third parties who scrape to resell a corpus = still blocked.
 User-agent: GPTBot
 Allow: /
 
